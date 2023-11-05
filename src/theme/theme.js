@@ -9,6 +9,7 @@ const theme = createTheme({
       buttonclick: '#D6821A',
       lightsecond: '#8EA3EE',
       footercontrast: '#1339C1',
+      divider: '#D7D7D7',
     },
   },
   breakpoints: {
