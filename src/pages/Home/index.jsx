@@ -1,12 +1,12 @@
 import React from 'react';
-import { Container } from '@mui/material';
+import { Box, Container, Typography } from '@mui/material';
 
 function HomeContent() {
   return (
     <Container>
-      <div>
-        <p>Hello</p>
-      </div>
+      <Box>
+        <Typography>Hello</Typography>
+      </Box>
     </Container>
   );
 }

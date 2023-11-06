@@ -1,34 +1,24 @@
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Outlet } from 'react-router-dom';
 import styled from '@emotion/styled';
 import {
   AppBar,
   Box,
   Button,
   Container,
-  Divider,
+  Grid,
   IconButton,
   List,
-  ListItem,
   Stack,
   SwipeableDrawer,
   Toolbar,
-  Typography,
   useTheme,
 } from '@mui/material';
 import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import logo from './small-logo.png';
-
-const LinkText = styled(Typography)`
-  color: ${(props) => props.theme.typography.fontColor};
-  font-weight: ${(props) => props.theme.typography.const.fontWeight.normal};
-  text-transform: uppercase;
-  text-align: center;
-  :hover {
-    cursor: pointer;
-  }
-`;
+import { BurgerMenu, RowMenu } from '../Menu/index';
+import Footer from '../Footer';
 
 const SupportBtn = styled(Button)`
   color: ${(props) => props.theme.typography.fontColor};
@@ -40,24 +30,6 @@ const SupportBtn = styled(Button)`
     cursor: pointer;
   }
 `;
-
-const menuTextStyle = {
-  fontSize: {
-    xs: '1rem',
-    md: '0.75rem',
-    /* lg: '0.75rem', */
-    xl: '1rem',
-  },
-};
-
-const menuItems = [
-  { text: 'Про нас', link: '#' },
-  { text: 'Співпраця', link: '#' },
-  { text: 'Команда', link: '#' },
-  { text: 'Новини', link: '#' },
-  { text: 'Донати', link: '#' },
-  { text: 'Партнери', link: '#' },
-];
 
 function Header() {
   const [open, setState] = useState(false);
@@ -76,7 +48,7 @@ function Header() {
   return (
     <Container>
       <AppBar
-        position="fixed"
+        position="static"
         sx={{
           backgroundColor: 'white',
           boxShadow: 'none',
@@ -123,14 +95,7 @@ function Header() {
                   },
                   display: { xs: 'none', md: 'flex' },
                 }}>
-                {menuItems.map((item) => (
-                  <NavLink
-                    key={item.text}
-                    to={item.link}
-                    style={{ textDecoration: 'none' }}>
-                    <LinkText sx={menuTextStyle}>{item.text}</LinkText>
-                  </NavLink>
-                ))}
+                <RowMenu />
               </Stack>
             </Stack>
             <NavLink to="#">
@@ -190,48 +155,25 @@ function Header() {
                 },
               }}>
               <IconButton
+                onClick={toggleDrawer(false)}
                 style={{
                   color: theme.palette.colors.mainsecond,
                   justifyContent: 'end',
                   paddingTop: '12px',
                 }}>
-                <CloseRoundedIcon
-                  onClick={toggleDrawer(false)}
-                  fontSize="large"
-                />
+                <CloseRoundedIcon fontSize="large" />
               </IconButton>
               <List style={{ margin: '0 auto 31px', padding: '0 29px' }}>
-                {menuItems.map((item, index) => (
-                  <>
-                    <ListItem
-                      key={item.text}
-                      to={item.link}
-                      style={{ padding: '12px 0' }}>
-                      <NavLink
-                        to={item.link}
-                        style={{
-                          textDecoration: 'none',
-                          margin: '0 auto',
-                          padding: '0',
-                        }}>
-                        <LinkText sx={menuTextStyle}>{item.text}</LinkText>
-                      </NavLink>
-                    </ListItem>
-                    {index !== menuItems.length - 1 && (
-                      <Divider
-                        style={{
-                          color: theme.palette.colors.divider,
-                          borderColor: theme.palette.colors.divider,
-                        }}
-                      />
-                    )}
-                  </>
-                ))}
+                <BurgerMenu />
               </List>
             </SwipeableDrawer>
           </Toolbar>
         </Container>
       </AppBar>
+      <main>
+        <Outlet />
+      </main>
+      <Footer />
     </Container>
   );
 }
