@@ -3,7 +3,7 @@ import { Box, Container, Typography } from '@mui/material';
 
 function HomeContent() {
   return (
-    <Container>
+    <Container maxWidth="xl">
       <Box>
         <Typography>Hello</Typography>
       </Box>

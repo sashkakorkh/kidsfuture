@@ -17,8 +17,9 @@ import {
 import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import logo from './small-logo.png';
-import { BurgerMenu, RowMenu } from '../Menu/index';
+import Menu from '../Menu/index';
 import Footer from '../Footer';
+import SupportButton from '../Button';
 
 const SupportBtn = styled(Button)`
   color: ${(props) => props.theme.typography.fontColor};
@@ -34,6 +35,28 @@ const SupportBtn = styled(Button)`
 function Header() {
   const [open, setState] = useState(false);
   const theme = useTheme();
+  const burgerMenuStyle = {
+    containerStyle: {
+      padding: '12px 0',
+    },
+    itemStyle: {
+      fontSize: {
+        xs: '1rem',
+        md: '0.75rem',
+        xl: '1rem',
+      },
+    },
+  };
+  const headerMenuStyle = {
+    containerStyle: {},
+    itemStyle: {
+      fontSize: {
+        xs: '1rem',
+        md: '0.75rem',
+        lg: '1rem',
+      },
+    },
+  };
 
   const toggleDrawer = (openMenu) => (event) => {
     if (
@@ -46,7 +69,7 @@ function Header() {
   };
 
   return (
-    <Container>
+    <Container maxWidth="100%" disableGutters>
       <AppBar
         position="static"
         sx={{
@@ -95,36 +118,11 @@ function Header() {
                   },
                   display: { xs: 'none', md: 'flex' },
                 }}>
-                <RowMenu />
+                <Menu tag="div" styleConfig={headerMenuStyle} />
               </Stack>
             </Stack>
             <NavLink to="#">
-              <SupportBtn
-                variant="outlined"
-                sx={{
-                  outline: '1px solid #4366E3',
-                  padding: '0',
-                  height: {
-                    xs: '32px',
-                    md: '33px',
-                    lg: '43px',
-                    /*   xl: '43px', */
-                  },
-                  width: {
-                    xs: '125px',
-                    md: '180px',
-                    lg: '232px',
-                    /* xl: '232px', */
-                  },
-                  fontSize: {
-                    xs: '0.7rem',
-                    md: '0.875rem',
-                    lg: '1.125rem',
-                    /* xl: '1.125rem', */
-                  },
-                }}>
-                Підтримати фонд
-              </SupportBtn>
+              <SupportButton header />
             </NavLink>
             <IconButton
               aria-label="open drawer"
@@ -164,7 +162,7 @@ function Header() {
                 <CloseRoundedIcon fontSize="large" />
               </IconButton>
               <List style={{ margin: '0 auto 31px', padding: '0 29px' }}>
-                <BurgerMenu />
+                <Menu tag="li" styleConfig={burgerMenuStyle} />
               </List>
             </SwipeableDrawer>
           </Toolbar>
