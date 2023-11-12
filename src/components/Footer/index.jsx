@@ -3,15 +3,12 @@ import { NavLink } from 'react-router-dom';
 import {
   Box,
   Container,
-  Icon,
   IconButton,
   Link,
   Stack,
   Typography,
   useTheme,
 } from '@mui/material';
-import MailOutlineIcon from '@mui/icons-material/MailOutline';
-import CallOutlinedIcon from '@mui/icons-material/CallOutlined';
 import logo from './logo-white.png';
 import fblogo from '../Header/fb-logo.png';
 import instlogo from '../Header/insta-logo.png';
@@ -45,11 +42,12 @@ function Footer() {
       <Container
         maxWidth="xl"
         sx={{
-          height: { xs: '328px', md: '267px', lg: '210px' },
+          height: { xs: '', md: '267px', lg: '210px' },
           padding: {
-            xs: '1.3rem 1.6rem 1.9rem 1rem',
+            xs: '1.4rem 1.6rem 1.9rem 1rem',
             md: '2.5rem 5.25rem 3.12rem 3.25rem',
-            lg: '3.1rem 4.5rem 1.4rem 6.2rem',
+            lg: '3.1rem 2.25rem 1.4rem 2.2rem',
+            xl: '3.1rem 4.5rem 1.4rem 6.2rem',
           },
           position: 'relative',
         }}>
@@ -62,8 +60,8 @@ function Footer() {
             <Box
               sx={{
                 position: 'relative',
-                top: '-10px',
-                height: { xs: '44px', md: '74px', lg: '87px' },
+                top: { xs: '0', md: '-10px' },
+                height: { xs: '36px', md: '74px', lg: '87px' },
                 width: { xs: '44px', md: '87px', lg: '97px' },
               }}>
               <img src={logo} alt="Logo" height="100%" width="100%" />
@@ -72,13 +70,14 @@ function Footer() {
           <Box
             display="grid"
             sx={{
+              marginLeft: { lg: '0.5rem' },
               fontStretch: 'extra-condensed',
               position: { md: 'absolute', lg: 'static' },
               bottom: { md: '70px' },
               left: { md: '50%' },
               transform: { md: 'translateX(-50%)', lg: 'none' },
               justifyItems: 'baseline',
-              gap: { md: '24px', lg: '24px' },
+              gap: { xs: '8px', md: '24px', lg: '24px' },
             }}
             gridTemplateColumns={{
               xs: '1fr',
@@ -88,20 +87,28 @@ function Footer() {
             gridTemplateRows={{ xs: '1fr', md: '1fr', lg: 'repeat(2, 1fr)' }}>
             <Menu tag="div" styleConfig={footerMenuStyle} />
           </Box>
-          <Stack sx={{ marginTop: '5px', marginLeft: '30px' }}>
+          <Stack
+            sx={{
+              marginTop: '5px',
+              marginLeft: { xs: '', md: '1.25rem' },
+              position: { xs: 'absolute', md: 'static' },
+              bottom: '29%',
+              left: '50%',
+            }}>
             <Box
               display="flex"
               alignItems="center"
               gap="1rem"
-              sx={{ marginBottom: '23px' }}>
-              <img
-                src={phone}
-                alt="phone"
-                style={{
-                  height: { xs: '31px', md: '30px', lg: '16px' },
-                  width: { xs: '31px', md: '30px', lg: '16px' },
-                }}
-              />
+              sx={{
+                marginBottom: { xs: '8px', md: '25px' },
+              }}>
+              <Box
+                sx={{
+                  height: { xs: '16px', md: '30px', lg: '31px' },
+                  width: { xs: '16px', md: '30px', lg: '31px' },
+                }}>
+                <img src={phone} alt="phone" width="100%" height="100%" />
+              </Box>
               <Link
                 to="tel:+38093 549 8057"
                 sx={{
@@ -115,15 +122,17 @@ function Footer() {
                 +38093 549 8057
               </Link>
             </Box>
-            <Box display="flex" alignItems="center" gap="1rem">
-              <img
-                src={mail}
-                alt="mail"
-                style={{
-                  height: { xs: '31px', md: '30px', lg: '16px' },
-                  width: { xs: '31px', md: '30px', lg: '16px' },
-                }}
-              />
+            <Box
+              display="flex"
+              alignItems="center"
+              sx={{ gap: { xs: '8px', md: '16px' } }}>
+              <Box
+                sx={{
+                  height: { xs: '16px', md: '30px', lg: '31px' },
+                  width: { xs: '16px', md: '30px', lg: '31px' },
+                }}>
+                <img src={mail} alt="mail" width="100%" height="100%" />
+              </Box>
               <Link
                 to="mailto:info@kidsfuture.org.ua"
                 sx={{
@@ -144,9 +153,10 @@ function Footer() {
               justifyContent="space-between"
               sx={{
                 marginTop: { lg: '-7px' },
-                position: { md: 'absolute', lg: 'static' },
-                top: { md: '84px' },
-                right: { md: '74px' },
+                position: { xs: 'absolute', lg: 'static' },
+                top: { xs: '31%', md: '84px' },
+                left: { xs: '48%', md: 'unset' },
+                right: { xs: 'unset', md: '74px' },
               }}>
               <IconButton>
                 {/*  <Link to="#"> */}
@@ -182,18 +192,17 @@ function Footer() {
               to="https://policies.google.com/privacy?hl=uk"
               noWrap="true"
               sx={{
-                fontSize: { md: '1rem' },
+                fontSize: { xs: '0.75rem', md: '1rem' },
                 fontFamily: theme.typography.const.fontFamily.primary,
                 fontWeight: theme.typography.const.fontWeight.bold,
                 color: 'white',
                 textDecoration: 'underline white',
-                position: { md: 'absolute', lg: 'static' },
-                bottom: { md: '20px' },
-                left: { md: '50%' },
+                position: { xs: 'absolute', lg: 'static' },
+                bottom: { xs: '17%', md: '20px' },
+                left: { xs: '50%' },
                 transform: { md: 'translateX(-50%)', lg: 'none' },
                 cursor: 'pointer',
                 textUnderline: '',
-                textWrap: 'no-wrap',
               }}>
               Політика конфіденційності
             </Link>
@@ -208,9 +217,11 @@ function Footer() {
         }}>
         <Typography
           color="white"
-          sx={{ fontSize: { xs: '0.75rem', md: '1rem' } }}
+          sx={{
+            fontSize: { xs: '0.75rem', md: '1rem' },
+            padding: { xs: '8px 0', md: '16px 0' },
+          }}
           style={{
-            padding: '16px 0',
             textAlign: 'center',
             fontWeight: theme.typography.const.fontWeight.bold,
           }}>

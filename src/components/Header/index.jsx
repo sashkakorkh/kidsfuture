@@ -1,12 +1,9 @@
 import React, { useState } from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
-import styled from '@emotion/styled';
 import {
   AppBar,
   Box,
-  Button,
   Container,
-  Grid,
   IconButton,
   List,
   Stack,
@@ -20,17 +17,6 @@ import logo from './small-logo.png';
 import Menu from '../Menu/index';
 import Footer from '../Footer';
 import SupportButton from '../Button';
-
-const SupportBtn = styled(Button)`
-  color: ${(props) => props.theme.typography.fontColor};
-  font-weight: ${(props) => props.theme.typography.const.fontWeight.bold};
-  text-transform: uppercase;
-  border-radius: 48px;
-  text-align: center;
-  :hover {
-    cursor: pointer;
-  }
-`;
 
 function Header() {
   const [open, setState] = useState(false);
@@ -121,7 +107,7 @@ function Header() {
                 <Menu tag="div" styleConfig={headerMenuStyle} />
               </Stack>
             </Stack>
-            <NavLink to="#">
+            <NavLink to="#" style={{ marginLeft: '13px' }}>
               <SupportButton header />
             </NavLink>
             <IconButton

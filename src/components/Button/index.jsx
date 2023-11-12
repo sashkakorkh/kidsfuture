@@ -22,7 +22,7 @@ function SupportButton({ header }) {
       style={{
         outline: header ? '1px solid #4366E3' : '1px solid white',
         color: header ? 'black' : 'white',
-        textWrap: 'no-wrap',
+        textWrap: 'nowrap',
       }}
       sx={{
         padding: '0',
@@ -42,7 +42,6 @@ function SupportButton({ header }) {
           xs: '0.7rem',
           md: '0.875rem',
           lg: '1.125rem',
-          /* xl: '1.125rem', */
         },
       }}>
       Підтримати фонд
