@@ -34,6 +34,7 @@ const theme = createTheme({
     },
     fontFamily: 'PT Sans, sans-serif',
     fontColor: 'black',
+    lineHeight: '1',
   },
 });
 

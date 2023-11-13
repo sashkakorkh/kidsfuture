@@ -16,7 +16,7 @@ import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import logo from './small-logo.png';
 import Menu from '../Menu/index';
 import Footer from '../Footer';
-import SupportButton from '../Button';
+import { OutlinedButton } from '../Button';
 
 function Header() {
   const [open, setState] = useState(false);
@@ -73,7 +73,6 @@ function Header() {
                 xs: '1rem 1.28rem 1rem 1.25rem',
                 md: '1rem 2.2rem 1rem 2rem',
                 lg: '1.06rem 3.1rem 1.06rem 2.8rem',
-                /* xl: '1.06rem 3.1rem 1.06rem 2.8rem' */
               },
             }}>
             <Stack direction="row" alignItems="center">
@@ -83,12 +82,12 @@ function Header() {
                     height: {
                       xs: '48px',
                       md: '45px',
-                      lg: '69px' /* xl: '69px' */,
+                      lg: '69px',
                     },
                     width: {
                       xs: '48px',
                       md: '45px',
-                      lg: '69px' /* xl: '69px' */,
+                      lg: '69px',
                     },
                   }}>
                   <img src={logo} alt="Logo" height="100%" width="100%" />
@@ -100,7 +99,7 @@ function Header() {
                 sx={{
                   marginLeft: {
                     md: '1.25rem',
-                    lg: '3.94rem' /* xl: '3.94rem' */,
+                    lg: '3.94rem',
                   },
                   display: { xs: 'none', md: 'flex' },
                 }}>
@@ -108,17 +107,18 @@ function Header() {
               </Stack>
             </Stack>
             <NavLink to="#" style={{ marginLeft: '13px' }}>
-              <SupportButton header />
+              <OutlinedButton textColorBlack text="Підтримати фонд" />
             </NavLink>
             <IconButton
               aria-label="open drawer"
               onClick={toggleDrawer(true)}
               style={{ color: theme.palette.colors.mainsecond }}
               sx={{
-                mr: 2,
+                lineHeight: '1',
                 display: {
                   xs: 'block',
                   md: 'none',
+                  padding: '0',
                 },
               }}>
               <MenuRoundedIcon fontSize="large" />
@@ -143,11 +143,11 @@ function Header() {
                 style={{
                   color: theme.palette.colors.mainsecond,
                   justifyContent: 'end',
-                  paddingTop: '12px',
+                  padding: '0',
                 }}>
                 <CloseRoundedIcon fontSize="large" />
               </IconButton>
-              <List style={{ margin: '0 auto 31px', padding: '0 29px' }}>
+              <List style={{ margin: '0 25px 31px 25px', padding: '0' }}>
                 <Menu tag="li" styleConfig={burgerMenuStyle} />
               </List>
             </SwipeableDrawer>

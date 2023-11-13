@@ -2,14 +2,7 @@ import React from 'react';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
-import {
-  Box,
-  Divider,
-  Grid,
-  ListItem,
-  Typography,
-  useTheme,
-} from '@mui/material';
+import { Divider, Typography, useTheme } from '@mui/material';
 import { NavLink } from 'react-router-dom';
 
 const LinkText = styled(Typography)`
@@ -81,17 +74,28 @@ const menuItems = [
 
 function Menu({ tag, styleConfig }) {
   const { itemStyle, containerStyle } = styleConfig;
+  const theme = useTheme();
   const ElementTag = tag;
   return (
     <>
-      {menuItems.map((item) => (
-        <ElementTag key={item.text} style={containerStyle}>
-          <NavLink to={item.link} style={{ textDecoration: 'none' }}>
-            <LinkText sx={itemStyle} style={itemStyle} noWrap="true">
-              {item.text}
-            </LinkText>
-          </NavLink>
-        </ElementTag>
+      {menuItems.map((item, index) => (
+        <React.Fragment key={item.text}>
+          <ElementTag style={containerStyle}>
+            <NavLink to={item.link} style={{ textDecoration: 'none' }}>
+              <LinkText sx={itemStyle} style={itemStyle} noWrap>
+                {item.text}
+              </LinkText>
+            </NavLink>
+          </ElementTag>
+          {tag === 'li' && index !== menuItems.length - 1 && (
+            <Divider
+              style={{
+                color: theme.palette.colors.divider,
+                borderColor: theme.palette.colors.divider,
+              }}
+            />
+          )}
+        </React.Fragment>
       ))}
     </>
   );

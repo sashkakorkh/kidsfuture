@@ -16,7 +16,7 @@ import youtubelogo from '../Header/youtube-logo.png';
 import phone from '../Header/phone.png';
 import mail from '../Header/mail.png';
 import Menu from '../Menu/index';
-import SupportButton from '../Button';
+import { OutlinedButton } from '../Button';
 
 function Footer() {
   const theme = useTheme();
@@ -190,7 +190,6 @@ function Footer() {
             </Stack>
             <Link
               to="https://policies.google.com/privacy?hl=uk"
-              noWrap="true"
               sx={{
                 fontSize: { xs: '0.75rem', md: '1rem' },
                 fontFamily: theme.typography.const.fontFamily.primary,
@@ -203,11 +202,12 @@ function Footer() {
                 transform: { md: 'translateX(-50%)', lg: 'none' },
                 cursor: 'pointer',
                 textUnderline: '',
+                textWrap: 'nowrap',
               }}>
               Політика конфіденційності
             </Link>
           </Stack>
-          <SupportButton header={false} />
+          <OutlinedButton textColorBlack={false} text="Підтримати фонд" />
         </Stack>
       </Container>
       <Box
