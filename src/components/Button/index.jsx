@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 const StyledBtn = styled(Button)`
   font-weight: ${(props) => props.theme.typography.const.fontWeight.bold};
   border-radius: 48px;
-  box-shadow: 'unset';
+  box-shadow: unset;
   :hover {
     cursor: pointer;
   }
@@ -31,7 +31,7 @@ export function OutlinedButton({ textColorBlack, text }) {
       md: '0.875rem',
       lg: '1.125rem',
     },
-    texAlign: 'center',
+    textAlign: 'center',
     textTransform: 'uppercase',
     backgroundColor: 'transparent',
     fontWeight: theme.typography.const.fontWeight.bold,
@@ -57,17 +57,19 @@ export function ContainedButton({ textColorBlack, text }) {
     height: {
       xs: '34px',
       md: '49px',
-      lg: '54px',
+      lg: '43px',
+      xl: '54px',
     },
     width: {
       xs: '128px',
       md: '205px',
-      lg: '254px',
+      lg: '186px',
+      xl: '254px',
     },
     fontSize: {
       xs: '0.875rem',
       md: '1rem',
-      lg: '1.25rem',
+      xl: '1.25rem',
     },
     texAlign: 'center',
     textTransform: 'uppercase',

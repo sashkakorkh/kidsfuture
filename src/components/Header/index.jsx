@@ -38,9 +38,10 @@ function Header() {
     itemStyle: {
       fontSize: {
         xs: '1rem',
-        md: '0.75rem',
+        md: '0.825rem',
         lg: '1rem',
       },
+      marginRight: { md: '1rem', lg: '1.5rem' },
     },
   };
 
@@ -95,7 +96,7 @@ function Header() {
               </NavLink>
               <Stack
                 direction="row"
-                spacing={{ md: 1, lg: 1.5, xl: 1.5 }}
+                /* spacing={{ md: 1, lg: 1.5, xl: 1.5 }} */
                 sx={{
                   marginLeft: {
                     md: '1.25rem',
