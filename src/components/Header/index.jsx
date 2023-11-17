@@ -5,6 +5,7 @@ import {
   Box,
   Container,
   IconButton,
+  Link,
   List,
   Stack,
   SwipeableDrawer,
@@ -107,8 +108,12 @@ function Header() {
                 <Menu tag="div" styleConfig={headerMenuStyle} />
               </Stack>
             </Stack>
-            <NavLink to="#" style={{ marginLeft: '13px' }}>
-              <OutlinedButton textColorBlack text="Підтримати фонд" />
+            <NavLink to="/donate" style={{ marginLeft: '13px' }}>
+              <OutlinedButton
+                textColorBlack
+                text="Підтримати фонд"
+                btnSupport
+              />
             </NavLink>
             <IconButton
               aria-label="open drawer"

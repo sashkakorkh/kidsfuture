@@ -40,7 +40,7 @@ function Footer() {
         backgroundColor: theme.palette.colors.mainsecond,
       }}>
       <Container
-        maxWidth="xl"
+        maxWidth="100%"
         sx={{
           height: { xs: '', md: '267px', lg: '210px' },
           padding: {
@@ -207,7 +207,11 @@ function Footer() {
               Політика конфіденційності
             </Link>
           </Stack>
-          <OutlinedButton textColorBlack={false} text="Підтримати фонд" />
+          <OutlinedButton
+            textColorBlack={false}
+            text="Підтримати фонд"
+            btnSupport
+          />
         </Stack>
       </Container>
       <Box

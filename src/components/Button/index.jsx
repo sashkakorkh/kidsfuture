@@ -7,12 +7,15 @@ const StyledBtn = styled(Button)`
   font-weight: ${(props) => props.theme.typography.const.fontWeight.bold};
   border-radius: 48px;
   box-shadow: unset;
+  text-wrap: nowrap;
+  line-height: 1;
+  border: 
   :hover {
     cursor: pointer;
   }
 `;
 
-export function OutlinedButton({ textColorBlack, text }) {
+export function OutlinedButton({ textColorBlack, text, btnSupport }) {
   const theme = useTheme();
   const btnSupportStyle = {
     padding: '0',
@@ -32,25 +35,36 @@ export function OutlinedButton({ textColorBlack, text }) {
       lg: '1.125rem',
     },
     textAlign: 'center',
-    textTransform: 'uppercase',
     backgroundColor: 'transparent',
+    textTransform: 'uppercase',
     fontWeight: theme.typography.const.fontWeight.bold,
-    textWrap: 'nowrap',
   };
+
+  const btnDonateStyle = {
+    padding: '0',
+    height: '34px',
+    width: '146px',
+    fontSize: '1rem',
+    textAlign: 'center',
+    backgroundColor: 'transparent',
+    textTransform: 'capitalize',
+    fontWeight: theme.typography.const.fontWeight.bold,
+  };
+  const sxStyle = btnSupport ? btnSupportStyle : btnDonateStyle;
   return (
     <StyledBtn
       variant="outlined"
       style={{
-        outline: textColorBlack ? '1px solid #4366E3' : '1px solid white',
+        border: textColorBlack ? '1px solid #4366E3' : '1px solid white',
         color: textColorBlack ? 'black' : 'white',
       }}
-      sx={btnSupportStyle}>
+      sx={sxStyle}>
       {text}
     </StyledBtn>
   );
 }
 
-export function ContainedButton({ textColorBlack, text }) {
+export function ContainedButton({ textColorBlack, text, wider }) {
   const theme = useTheme();
   const btnBlueStyle = {
     padding: '0',
@@ -74,8 +88,6 @@ export function ContainedButton({ textColorBlack, text }) {
     texAlign: 'center',
     textTransform: 'uppercase',
     fontWeight: theme.typography.const.fontWeight.bold,
-    textWrap: 'nowrap',
-    lineHeight: '1',
     backgroundColor: theme.palette.colors.mainsecond,
     color: 'white',
     '&:hover': {
@@ -91,7 +103,7 @@ export function ContainedButton({ textColorBlack, text }) {
     },
     width: {
       xs: '128px',
-      md: '154px',
+      md: wider ? '184px' : '154px',
     },
     fontSize: {
       xs: '0.875rem',
@@ -100,8 +112,6 @@ export function ContainedButton({ textColorBlack, text }) {
     textAlign: 'center',
     textTransform: 'uppercase',
     fontWeight: theme.typography.const.fontWeight.bold,
-    textWrap: 'nowrap',
-    lineHeight: '1',
     backgroundColor: 'white',
     color: 'black',
     '&:hover': {
@@ -119,9 +129,15 @@ export function ContainedButton({ textColorBlack, text }) {
 OutlinedButton.propTypes = {
   text: PropTypes.string.isRequired,
   textColorBlack: PropTypes.bool.isRequired,
+  btnSupport: PropTypes.bool.isRequired,
 };
 
 ContainedButton.propTypes = {
   text: PropTypes.string.isRequired,
   textColorBlack: PropTypes.bool.isRequired,
+  wider: PropTypes.bool,
+};
+
+ContainedButton.defaultProps = {
+  wider: false,
 };

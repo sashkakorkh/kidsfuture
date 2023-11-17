@@ -41,36 +41,6 @@ const menuItems = [
     link: '#',
   },
 ];
-// export function BurgerMenu() {
-//   const theme = useTheme();
-//   return (
-//     <>
-//       {menuItems.map((item, index) => (
-//         <>
-//           <ListItem key={item.text} style={{ padding: '12px 0' }}>
-//             <NavLink
-//               to={item.link}
-//               style={{
-//                 textDecoration: 'none',
-//                 margin: '0 auto',
-//                 padding: '0',
-//               }}>
-//               <LinkText sx={menuTextStyle}>{item.text}</LinkText>
-//             </NavLink>
-//           </ListItem>
-//           {index !== menuItems.length - 1 && (
-//             <Divider
-//               style={{
-//                 color: theme.palette.colors.divider,
-//                 borderColor: theme.palette.colors.divider,
-//               }}
-//             />
-//           )}
-//         </>
-//       ))}
-//     </>
-//   );
-// }
 
 function Menu({ tag, styleConfig }) {
   const { itemStyle, containerStyle } = styleConfig;
