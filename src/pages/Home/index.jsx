@@ -8,20 +8,25 @@ import {
   useTheme,
 } from '@mui/material';
 /* import styled from '@emotion/styled'; */
-import banner from './boy_and_girl.png';
+import banner from './images/boy_and_girl.png';
 import { ContainedButton, OutlinedButton } from '../../components/Button';
 /* import diamond from './bg_diamond.png';
 import triangle from './bg_triangle.png';
 import square from './bg_square.png'; */
-import girl from './girl_studying.png';
-import people from './happy_people.png';
-import diamondElement from './diamond_el.png';
-import halfDiamond from './half_diamond_aim.png';
-import diamondAim from './diamond_aim.png';
-import yellowTriangle from './yellow_triangle.png';
-import activity1 from './activity_1.png';
-import activity2 from './activity_2.png';
-import activity3 from './activity_3.png';
+import girl from './images/girl_studying.png';
+import people from './images/happy_people.png';
+import diamondElement from './images/diamond_el.png';
+import blueTriangle from './images/half_diamond_aim.png';
+import diamondAim from './images/diamond_aim.png';
+import yellowTriangle from './images/yellow_triangle.png';
+import activity1 from './images/activity_1.png';
+import activity2 from './images/activity_2.png';
+import activity3 from './images/activity_3.png';
+import threeTriangles from './images/bg_triangle.png';
+import twoTriangles from './images/bg_twoTriangles.png';
+import darkBlueTriangle from './images/bg_darkBlueTriangle.png';
+import diamondTriangle from './images/bg_diamondTriangle.png';
+import squareTriangle from './images/bg_squareTriangles.png';
 
 function HomeContent() {
   const theme = useTheme();
@@ -34,7 +39,7 @@ function HomeContent() {
       md: '2.5rem',
     },
     marginBottom: {
-      xs: '8px',
+      xs: '11px',
       md: '16px',
     },
   };
@@ -77,12 +82,12 @@ function HomeContent() {
             sx={{
               flexDirection: { xs: 'column', lg: 'row' },
               padding: {
-                xs: '0 1rem',
+                xs: '0 1rem 0 1.2rem',
                 md: '0 6rem',
                 lg: '0 5rem 0 9rem',
                 xl: '0 5rem 0 12rem',
               },
-              marginTop: { xs: '15px', md: '40px', lg: '54px' },
+              marginTop: { xs: '27px', md: '40px', lg: '54px' },
             }}>
             <Stack>
               <Typography
@@ -91,6 +96,7 @@ function HomeContent() {
                 sx={{
                   fontFamily: theme.typography.const.fontFamily.secondary,
                   fontWeight: theme.typography.const.fontWeight.bold,
+                  lineHeight: '1.2',
                   fontSize: {
                     xs: '2.25rem',
                     md: '3.25rem',
@@ -113,7 +119,7 @@ function HomeContent() {
                     xl: '1.25rem',
                   },
                   margin: {
-                    xs: '8px 0 16px 0',
+                    xs: '11px 0 16px 0',
                     lg: '22px 0 30px 0',
                     xl: '22px 0 51px 0',
                   },
@@ -131,34 +137,79 @@ function HomeContent() {
             </Stack>
             <Box
               sx={{
-                flex: '1 1 auto',
-                bottom: { xs: '', md: '', lg: '33px', xl: '54px' },
-                right: { xs: '', md: '', lg: '0', xl: '52px' },
-                height: {
-                  xs: '264px',
-                  md: '456px',
-                  lg: '382px',
-                  xl: '592px',
+                '::before': {
+                  content: '""',
+                  position: 'absolute',
+                  top: { xs: '', md: '-10px' },
+                  left: { xs: '', md: '-10px' },
+                  right: { xs: '33px' },
+                  bottom: { xs: '120px' },
+                  width: { xs: '30px', md: '58px' },
+                  height: { xs: '30px', md: '58px' },
+                  backgroundImage: `url(${squareTriangle})`,
+                  backgroundRepeat: 'no-repeat',
+                  backgroundSize: 'contain',
+                  opacity: 1,
+                  zIndex: -1,
                 },
-                width: {
-                  xs: '310px',
-                  md: '544px',
-                  lg: '935px',
-                  xl: '1454px',
+                '::after': {
+                  content: '""',
+                  position: 'absolute',
+                  top: {
+                    xs: '',
+                    md: '-10px',
+                  },
+                  left: {
+                    xs: '',
+                    md: '-10px',
+                  },
+                  bottom: { xs: '218px' },
+                  right: { xs: '62px' },
+                  width: {
+                    xs: '66px',
+                    md: '58px',
+                  },
+                  height: {
+                    xs: '94px',
+                    md: '58px',
+                  },
+                  backgroundImage: `url(${threeTriangles})`,
+                  backgroundRepeat: 'no-repeat',
+                  backgroundSize: 'contain',
+                  opacity: 1,
+                  zIndex: -1,
                 },
-                maxWidth: {
-                  lg: '935px',
-                  xl: '1454px',
-                },
-                margin: { xs: '96px auto 0', md: '68px auto 0', lg: '0' },
-                position: 'relative',
               }}>
-              <img
-                src={banner}
-                alt="boy and girl smilling"
-                width="100%"
-                height="100%"
-              />
+              <Box
+                sx={{
+                  bottom: { lg: '33px', xl: '54px' },
+                  right: { lg: '0', xl: '52px' },
+                  height: {
+                    xs: '275px',
+                    md: '456px',
+                    lg: '382px',
+                    xl: '592px',
+                  },
+                  width: {
+                    xs: '328px',
+                    md: '544px',
+                    lg: '935px',
+                    xl: '1454px',
+                  },
+                  maxWidth: {
+                    lg: '935px',
+                    xl: '1454px',
+                  },
+                  margin: { xs: '98px auto 0', md: '68px auto 0', lg: '0' },
+                  position: 'relative',
+                }}>
+                <img
+                  src={banner}
+                  alt="boy and girl smilling"
+                  width="100%"
+                  height="100%"
+                />
+              </Box>
             </Box>
           </Stack>
         </Container>
@@ -176,7 +227,7 @@ function HomeContent() {
                 backgroundSize: 'cover',
                 position: 'relative',
                 padding: {
-                  xs: '35px 69px 34px 20px',
+                  xs: '38px 68px 34px 20px',
                   md: '50px 63px 66px 34px',
                   lg: '69px 131px 68px 51px',
                 },
@@ -195,7 +246,7 @@ function HomeContent() {
               </Typography>
               <Typography
                 sx={{
-                  fontSize: { xs: '1rem', lg: '1.125rem' },
+                  fontSize: { xs: '0.875rem', lg: '1.125rem' },
                   lineHeight: '1.3',
                   marginBottom: '20px',
                   color: 'white',
@@ -217,7 +268,7 @@ function HomeContent() {
                 backgroundSize: 'cover',
                 position: 'relative',
                 padding: {
-                  xs: '35px 69px 34px 20px',
+                  xs: '38px 69px 33px 20px',
                   md: '50px 63px 66px 34px',
                   lg: '69px 190px 68px 51px',
                 },
@@ -236,9 +287,9 @@ function HomeContent() {
               </Typography>
               <Typography
                 sx={{
-                  fontSize: { xs: '1rem', lg: '1.125rem' },
+                  fontSize: { xs: '0.875rem', lg: '1.125rem' },
                   lineHeight: '1.3',
-                  marginBottom: '20px',
+                  marginBottom: '16px',
                   color: 'white',
                   textAlign: 'left',
                 }}>
@@ -258,7 +309,7 @@ function HomeContent() {
                 backgroundSize: 'cover',
                 position: 'relative',
                 padding: {
-                  xs: '35px 69px 34px 20px',
+                  xs: '38px 69px 33px 20px',
                   md: '50px 63px 66px 34px',
                   lg: '69px 148px 68px 51px',
                 },
@@ -277,7 +328,7 @@ function HomeContent() {
               </Typography>
               <Typography
                 sx={{
-                  fontSize: { xs: '1rem', lg: '1.125rem' },
+                  fontSize: { xs: '0.875rem', lg: '1.125rem' },
                   lineHeight: '1.3',
                   marginBottom: '20px',
                   color: 'white',
@@ -299,7 +350,7 @@ function HomeContent() {
         <Container maxWidth="xl" disableGutters>
           <Stack
             sx={{
-              margin: { xs: '50px 0', md: '100px 0', lg: '91px 0 117px 0' },
+              margin: { xs: '54px 0', md: '100px 0', lg: '91px 0 117px 0' },
               padding: {
                 xs: '0 1.5rem',
                 md: '0 5rem',
@@ -314,7 +365,7 @@ function HomeContent() {
                 alignItems: 'center',
                 gap: { lg: '232px' },
                 margin: {
-                  xs: '0 auto 50px',
+                  xs: '0 auto 54px',
                   lg: '0',
                 },
               }}>
@@ -325,10 +376,10 @@ function HomeContent() {
                     content: '""',
                     position: 'absolute',
                     top: { xs: '-28px', md: '-35px', lg: '-157px' },
-                    right: { xs: '17px', md: '7px', lg: '-22px' },
+                    right: { xs: '24px', md: '7px', lg: '-22px' },
                     width: { xs: '20px', md: '36px', lg: '41px' },
                     height: { xs: '20px', md: '36px', lg: '41px' },
-                    backgroundImage: `url(${halfDiamond})`,
+                    backgroundImage: `url(${blueTriangle})`,
                     backgroundRepeat: 'no-repeat',
                     backgroundSize: 'contain',
                     opacity: 1,
@@ -337,8 +388,8 @@ function HomeContent() {
                   '::before': {
                     content: '""',
                     position: 'absolute',
-                    top: { xs: '13px', md: '79px', lg: '-31px' },
-                    right: { xs: '-12px', md: '-46px', lg: '-93px' },
+                    top: { xs: '12px', md: '79px', lg: '-31px' },
+                    right: { xs: '-4px', md: '-46px', lg: '-93px' },
                     width: { xs: '12px', md: '32px', lg: '36px' },
                     height: { xs: '12px', md: '32px', lg: '36px' },
                     backgroundImage: `url(${diamondAim})`,
@@ -350,8 +401,8 @@ function HomeContent() {
                 }}>
                 <Box
                   sx={{
-                    maxWidth: { xs: '217px', md: '360px' },
-                    paddingLeft: { xs: '4rem' },
+                    maxWidth: { md: '360px' },
+                    padding: { xs: '0 2rem 0 4rem' },
                     position: 'relative',
                     margin: { xs: '0 auto' },
                     top: { lg: '-60px' },
@@ -397,6 +448,10 @@ function HomeContent() {
                     md: '680px',
                     lg: '709px',
                   },
+                  height: {
+                    xs: '237px',
+                  },
+                  paddingRight: { xs: '21px' },
                 }}>
                 <img
                   src={girl}
@@ -425,10 +480,10 @@ function HomeContent() {
                     position: 'absolute',
                     top: { xs: '-12px', md: '15px', lg: '377px' },
                     left: { lg: '-54px' },
-                    right: { xs: '25px', md: '49px', lg: '' },
+                    right: { xs: '39px', md: '49px', lg: '' },
                     width: { xs: '12px', md: '32px', lg: '27px' },
                     height: { xs: '12px', md: '32px', lg: '27px' },
-                    backgroundImage: `url(${halfDiamond})`,
+                    backgroundImage: `url(${blueTriangle})`,
                     backgroundRepeat: 'no-repeat',
                     backgroundSize: 'contain',
                     opacity: 1,
@@ -438,8 +493,8 @@ function HomeContent() {
                   '::before': {
                     content: '""',
                     position: 'absolute',
-                    top: { xs: '-39px', md: '-45px', lg: '298px' },
-                    right: { xs: '47px', md: '3px', lg: '' },
+                    top: { xs: '-41px', md: '-45px', lg: '298px' },
+                    right: { xs: '61px', md: '3px', lg: '' },
                     left: { lg: '-109px' },
                     width: { xs: '13px', md: '34px', lg: '41px' },
                     height: { xs: '13px', md: '34px', lg: '41px' },
@@ -452,15 +507,15 @@ function HomeContent() {
                 }}>
                 <Box
                   sx={{
-                    maxWidth: { xs: '217px', md: '360px' },
-                    paddingLeft: { xs: '4rem' },
+                    maxWidth: { md: '360px' },
+                    padding: { xs: '0 2rem 0 3.9rem' },
                     position: 'relative',
                     margin: { xs: '0 auto' },
                     '::after': {
                       content: '""',
                       position: 'absolute',
-                      top: { xs: '-1px', md: '-10px' },
-                      left: { xs: '31px', md: '-10px' },
+                      top: { xs: '-3px', md: '-10px' },
+                      left: { xs: '29px', md: '-10px' },
                       width: { xs: '25px', md: '58px' },
                       height: { xs: '25px', md: '58px' },
                       backgroundImage: `url(${diamondElement})`,
@@ -499,6 +554,9 @@ function HomeContent() {
                     md: '680px',
                     lg: '709px',
                   },
+                  height: {
+                    xs: '329px',
+                  },
                 }}>
                 <img
                   src={people}
@@ -512,7 +570,10 @@ function HomeContent() {
         </Container>
       </section>
       <section>
-        <Container maxWidth="xl" disableGutters>
+        <Container
+          maxWidth="xl"
+          disableGutters
+          sx={{ marginBottom: { xs: '50px' } }}>
           <Box
             sx={{
               padding: { xs: '0 1.25rem', md: '0 2.19rem', lg: '0 6rem' },
@@ -541,145 +602,257 @@ function HomeContent() {
               </Typography>
             </Box>
           </Box>
-          <Grid
-            container
-            alignItems="center"
+          <Box
             sx={{
-              rowGap: { xs: '26px', md: '10px', lg: '16px' },
-              padding: {
-                xs: '0 1.25rem 0 1.25rem',
-                lg: '0 14.25rem 0 14.25rem',
+              position: 'relative',
+              '::before': {
+                content: '""',
+                position: 'absolute',
+                top: { xs: '15px', md: '-10px' },
+                left: { xs: '26px', md: '-10px' },
+                right: { xs: '' },
+                width: { xs: '26px', md: '58px' },
+                height: { xs: '19px', md: '58px' },
+                backgroundImage: `url(${darkBlueTriangle})`,
+                backgroundRepeat: 'no-repeat',
+                backgroundSize: 'contain',
+                opacity: 1,
+                zIndex: -1,
+              },
+              '::after': {
+                content: '""',
+                position: 'absolute',
+                top: { xs: '-37px', md: '-10px' },
+                left: { xs: '', md: '-10px' },
+                right: { xs: '19px' },
+                width: { xs: '48px', md: '58px' },
+                height: { xs: '68px', md: '58px' },
+                backgroundImage: `url(${threeTriangles})`,
+                backgroundRepeat: 'no-repeat',
+                backgroundSize: 'contain',
+                opacity: 1,
+                zIndex: -1,
               },
             }}>
             <Grid
-              item
-              xs={12}
-              md={6}
-              /* sx={{ paddingLeft: { md: '20px', lg: '232px' } }} */
-            >
-              <Box
+              container
+              alignItems="center"
+              sx={{
+                rowGap: { xs: '26px', md: '10px', lg: '16px' },
+                padding: {
+                  xs: '0 1.25rem 0 1.25rem',
+                  lg: '0 14.25rem 0 14.25rem',
+                },
+                '::before': {
+                  content: '""',
+                  position: 'absolute',
+                  top: { xs: '347px', md: '-10px' },
+                  left: { xs: '', md: '-10px' },
+                  right: { xs: '19px' },
+                  width: { xs: '27px', md: '58px' },
+                  height: { xs: '27px', md: '58px' },
+                  backgroundImage: `url(${yellowTriangle})`,
+                  backgroundRepeat: 'no-repeat',
+                  backgroundSize: 'contain',
+                  transform: 'rotateZ(180deg)',
+                  opacity: 1,
+                  zIndex: -1,
+                },
+                '::after': {
+                  content: '""',
+                  position: 'absolute',
+                  top: { xs: '312px', md: '-10px' },
+                  left: { xs: '', md: '-10px' },
+                  right: { xs: '75px' },
+                  width: { xs: '13px', md: '58px' },
+                  height: { xs: '9px', md: '58px' },
+                  backgroundImage: `url(${blueTriangle})`,
+                  backgroundRepeat: 'no-repeat',
+                  backgroundSize: 'contain',
+                  transform: 'rotateZ(270deg)',
+                  opacity: 1,
+                  zIndex: -1,
+                },
+              }}>
+              <Grid
+                item
+                xs={12}
+                md={6}
+                /* sx={{ paddingLeft: { md: '20px', lg: '232px' } }} */
+              >
+                <Box
+                  sx={{
+                    width: { xs: '320px', md: '344px', lg: '548px' },
+                    height: { xs: '320px', md: '378px', lg: '548px' },
+                    borderRadius: { xs: '320px', md: '300px 300px 0px 300px' },
+                    background: {
+                      xs: theme.palette.colors.mainsecond,
+                      md: theme.palette.colors.circle,
+                    },
+                    opacity: { xs: '.8', md: '.9' },
+                  }}>
+                  <Box sx={circleTextBoxStyles}>
+                    <Typography component="h4" sx={circleBoxTitleStyles}>
+                      Бізнес
+                    </Typography>
+                    <Typography sx={circleTextStyles}>
+                      Долучайтесь до створення проектів та програм, які
+                      допоможуть дітям реалізувати свій потенціал. Ваша
+                      підтримка може стати кроком до покращення життя багатьох
+                      маленьких українців
+                    </Typography>
+                    <ContainedButton textColorBlack text="Долучитися" />
+                  </Box>
+                </Box>
+              </Grid>
+              <Grid
+                item
+                xs={12}
+                md={6}
                 sx={{
-                  width: { xs: '320px', md: '344px', lg: '548px' },
-                  height: { xs: '320px', md: '378px', lg: '548px' },
-                  borderRadius: { xs: '320px', md: '300px 300px 0px 300px' },
-                  background: {
-                    xs: theme.palette.colors.mainsecond,
-                    md: theme.palette.colors.circle,
+                  position: 'relative',
+                  '::before': {
+                    content: '""',
+                    position: 'absolute',
+                    top: { xs: '', md: '-10px' },
+                    bottom: { xs: '-22px' },
+                    left: { xs: '2px', md: '-10px' },
+                    right: { xs: '' },
+                    width: { xs: '36px', md: '58px' },
+                    height: { xs: '18px', md: '58px' },
+                    backgroundImage: `url(${twoTriangles})`,
+                    backgroundRepeat: 'no-repeat',
+                    backgroundSize: 'contain',
+                    opacity: 1,
+                    zIndex: -1,
                   },
-                  opacity: { xs: '.8', md: '.9' },
-                }}>
-                <Box sx={circleTextBoxStyles}>
-                  <Typography component="h4" sx={circleBoxTitleStyles}>
-                    Бізнес
-                  </Typography>
-                  <Typography sx={circleTextStyles}>
-                    Долучайтесь до створення проектів та програм, які допоможуть
-                    дітям реалізувати свій потенціал. Ваша підтримка може стати
-                    кроком до покращення життя багатьох маленьких українців
-                  </Typography>
-                  <ContainedButton textColorBlack text="Долучитися" />
-                </Box>
-              </Box>
-            </Grid>
-            <Grid
-              item
-              xs={12}
-              md={6}
-              /* sx={{ paddingRight: { md: '20px', lg: '232px' } }} */
-            >
-              <Box
-                sx={{
-                  width: { xs: '320px', md: '344px', lg: '548px' },
-                  height: { xs: '320px', md: '378px', lg: '548px' },
-                  borderRadius: { xs: '320px', md: '300px 300px 300px 0px' },
-                  background: {
-                    xs: theme.palette.colors.circle,
-                    md: theme.palette.colors.mainsecond,
-                  },
-                  opacity: { xs: '.9', md: '.8' },
-                }}>
-                <Box sx={circleTextBoxStyles}>
-                  <Typography component="h4" sx={circleBoxTitleStyles}>
-                    ГО
-                  </Typography>
-                  <Typography sx={circleTextStyles}>
-                    Готові співпрацювати задля створення проектів для розвитку
-                    дітей? Звертайтеся до нас, разом ми можемо зробити більше
-                    для дітей та їх майбутнього
-                  </Typography>
-                  <ContainedButton textColorBlack text="Долучитися" />
-                </Box>
-              </Box>
-            </Grid>
-            <Grid
-              item
-              xs={12}
-              md={6}
-              /* sx={{ paddingLeft: { md: '20px', lg: '232px' } }} */
-            >
-              <Box
-                sx={{
-                  width: { xs: '320px', md: '344px', lg: '548px' },
-                  height: { xs: '320px', md: '378px', lg: '548px' },
-                  borderRadius: { xs: '320px', md: '300px 0px 300px 300px' },
-                  background: theme.palette.colors.mainsecond,
-                  opacity: '0.8',
-                }}>
-                <Box sx={circleTextBoxStyles}>
-                  <Typography component="h4" sx={circleBoxTitleStyles}>
-                    Фонд
-                  </Typography>
-                  <Typography sx={circleTextStyles}>
-                    Ми відкриті для обміну ідеями, знаннями та досвідом в роботі
-                    з дітьми та створенні проектів, які б забезпечували розвиток
-                    їх талантів та навичок. Втілимо мрії дітей разом
-                  </Typography>
-                  <ContainedButton textColorBlack text="Долучитися" />
-                </Box>
-              </Box>
-            </Grid>
-            <Grid
-              item
-              xs={12}
-              md={6}
-              /* sx={{ paddingRight: { md: '20px', lg: '232px' } }} */
-            >
-              <Box
-                sx={{
-                  width: '100%',
-                  maxWidth: { xs: '320px', md: '344px', lg: '548px' },
-                  height: { xs: '320px', md: '378px', lg: '548px' },
-                  borderRadius: { xs: '320px', md: '0 300px 300px 300px' },
-                  background: theme.palette.colors.circle,
-                  opacity: '0.9',
                 }}>
                 <Box
                   sx={{
-                    color: 'white',
-                    padding: {
-                      xs: '37px 50px 0 50px',
-                      md: '57px 34px 0 34px',
-                      lg: '150px 63px 0 63px',
+                    width: { xs: '320px', md: '344px', lg: '548px' },
+                    height: { xs: '320px', md: '378px', lg: '548px' },
+                    borderRadius: { xs: '320px', md: '300px 300px 300px 0px' },
+                    background: {
+                      xs: theme.palette.colors.circle,
+                      md: theme.palette.colors.mainsecond,
                     },
-                    display: 'flex',
-                    alignItems: 'center',
-                    flexDirection: 'column',
+                    opacity: { xs: '.9', md: '.8' },
                   }}>
-                  <Typography component="h4" sx={circleBoxTitleStyles}>
-                    Волонтери
-                  </Typography>
-                  <Typography sx={circleTextStyles}>
-                    Обожнюєте розвивати таланти та навички дітей? Наші проекти
-                    та програми потребують волонтерської допомоги в проведенні
-                    різноманітних заходів, розвитку креативних ідей та роботі з
-                    дітьми. Долучайтеся до нас та станьте частиною команди, яка
-                    змінює життя дітей на краще.
-                  </Typography>
-                  <ContainedButton textColorBlack text="Долучитися" wider />
+                  <Box sx={circleTextBoxStyles}>
+                    <Typography component="h4" sx={circleBoxTitleStyles}>
+                      ГО
+                    </Typography>
+                    <Typography sx={circleTextStyles}>
+                      Готові співпрацювати задля створення проектів для розвитку
+                      дітей? Звертайтеся до нас, разом ми можемо зробити більше
+                      для дітей та їх майбутнього
+                    </Typography>
+                    <ContainedButton textColorBlack text="Долучитися" />
+                  </Box>
                 </Box>
-              </Box>
+              </Grid>
+              <Grid
+                item
+                xs={12}
+                md={6}
+                /* sx={{ paddingLeft: { md: '20px', lg: '232px' } }} */
+              >
+                <Box
+                  sx={{
+                    width: { xs: '320px', md: '344px', lg: '548px' },
+                    height: { xs: '320px', md: '378px', lg: '548px' },
+                    borderRadius: { xs: '320px', md: '300px 0px 300px 300px' },
+                    background: theme.palette.colors.mainsecond,
+                    opacity: '0.8',
+                  }}>
+                  <Box sx={circleTextBoxStyles}>
+                    <Typography component="h4" sx={circleBoxTitleStyles}>
+                      Фонд
+                    </Typography>
+                    <Typography sx={circleTextStyles}>
+                      Ми відкриті для обміну ідеями, знаннями та досвідом в
+                      роботі з дітьми та створенні проектів, які б забезпечували
+                      розвиток їх талантів та навичок. Втілимо мрії дітей разом
+                    </Typography>
+                    <ContainedButton textColorBlack text="Долучитися" />
+                  </Box>
+                </Box>
+              </Grid>
+              <Grid
+                item
+                xs={12}
+                md={6}
+                sx={{
+                  position: 'relative',
+                  '::before': {
+                    content: '""',
+                    position: 'absolute',
+                    top: { xs: '-41px', md: '-10px' },
+                    bottom: { xs: '' },
+                    left: { xs: '', md: '-10px' },
+                    right: { xs: '1px' },
+                    width: { xs: '47px', md: '58px' },
+                    height: { xs: '74px', md: '58px' },
+                    backgroundImage: `url(${diamondTriangle})`,
+                    backgroundRepeat: 'no-repeat',
+                    backgroundSize: 'contain',
+                    opacity: 1,
+                    zIndex: -1,
+                  },
+                  '::after': {
+                    content: '""',
+                    position: 'absolute',
+                    top: { xs: '', md: '-10px' },
+                    bottom: { xs: '2px' },
+                    left: { xs: '1px', md: '-10px' },
+                    right: { xs: '' },
+                    width: { xs: '20px', md: '58px' },
+                    height: { xs: '14px', md: '58px' },
+                    backgroundImage: `url(${blueTriangle})`,
+                    backgroundRepeat: 'no-repeat',
+                    backgroundSize: 'contain',
+                    transform: 'rotateZ(270deg)',
+                    opacity: 1,
+                    zIndex: -1,
+                  },
+                }}>
+                <Box
+                  sx={{
+                    width: '100%',
+                    maxWidth: { xs: '320px', md: '344px', lg: '548px' },
+                    height: { xs: '320px', md: '378px', lg: '548px' },
+                    borderRadius: { xs: '320px', md: '0 300px 300px 300px' },
+                    background: theme.palette.colors.circle,
+                    opacity: '0.9',
+                  }}>
+                  <Box
+                    sx={{
+                      color: 'white',
+                      padding: {
+                        xs: '37px 50px 0 50px',
+                        md: '57px 34px 0 34px',
+                        lg: '150px 63px 0 63px',
+                      },
+                      display: 'flex',
+                      alignItems: 'center',
+                      flexDirection: 'column',
+                    }}>
+                    <Typography component="h4" sx={circleBoxTitleStyles}>
+                      Волонтери
+                    </Typography>
+                    <Typography sx={circleTextStyles}>
+                      Обожнюєте розвивати таланти та навички дітей? Наші проекти
+                      та програми потребують волонтерської допомоги в проведенні
+                      різноманітних заходів, розвитку креативних ідей та роботі
+                      з дітьми. Долучайтеся до нас та станьте частиною команди,
+                      яка змінює життя дітей на краще.
+                    </Typography>
+                    <ContainedButton textColorBlack text="Долучитися" wider />
+                  </Box>
+                </Box>
+              </Grid>
             </Grid>
-          </Grid>
+          </Box>
         </Container>
       </section>
     </div>

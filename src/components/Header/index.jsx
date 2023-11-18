@@ -4,6 +4,7 @@ import {
   AppBar,
   Box,
   Container,
+  CssBaseline,
   IconButton,
   Link,
   List,
@@ -12,12 +13,12 @@ import {
   Toolbar,
   useTheme,
 } from '@mui/material';
-import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import logo from './small-logo.png';
 import Menu from '../Menu/index';
 import Footer from '../Footer';
 import { OutlinedButton } from '../Button';
+import menuIcon from './menu.png';
 
 function Header() {
   const [open, setState] = useState(false);
@@ -57,7 +58,14 @@ function Header() {
   };
 
   return (
-    <Container maxWidth="100%" disableGutters>
+    <div
+      style={{
+        overflow: 'hidden',
+        display: 'flex',
+        flexDirection: 'column',
+        minHeight: '100vh',
+      }}>
+      <CssBaseline />
       <AppBar
         position="static"
         sx={{
@@ -108,13 +116,16 @@ function Header() {
                 <Menu tag="div" styleConfig={headerMenuStyle} />
               </Stack>
             </Stack>
-            <NavLink to="/donate" style={{ marginLeft: '13px' }}>
-              <OutlinedButton
-                textColorBlack
-                text="Підтримати фонд"
-                btnSupport
-              />
-            </NavLink>
+            <Box
+              sx={{ marginLeft: { md: '13px' }, marginRight: { xs: '24px' } }}>
+              <NavLink to="/donate">
+                <OutlinedButton
+                  textColorBlack
+                  text="Підтримати фонд"
+                  btnSupport
+                />
+              </NavLink>
+            </Box>
             <IconButton
               aria-label="open drawer"
               onClick={toggleDrawer(true)}
@@ -127,7 +138,12 @@ function Header() {
                   padding: '0',
                 },
               }}>
-              <MenuRoundedIcon fontSize="large" />
+              <img
+                src={menuIcon}
+                alt="burger-menu-icon"
+                width="100%"
+                height="100%"
+              />
             </IconButton>
             <SwipeableDrawer
               anchor="right"
@@ -164,7 +180,7 @@ function Header() {
         <Outlet />
       </main>
       <Footer />
-    </Container>
+    </div>
   );
 }
 

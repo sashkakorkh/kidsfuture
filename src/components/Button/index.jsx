@@ -9,7 +9,6 @@ const StyledBtn = styled(Button)`
   box-shadow: unset;
   text-wrap: nowrap;
   line-height: 1;
-  border: 
   :hover {
     cursor: pointer;
   }
@@ -42,9 +41,9 @@ export function OutlinedButton({ textColorBlack, text, btnSupport }) {
 
   const btnDonateStyle = {
     padding: '0',
-    height: '34px',
-    width: '146px',
-    fontSize: '1rem',
+    height: { xs: '36px' },
+    width: { xs: '136px' },
+    fontSize: { xs: '0.812rem' },
     textAlign: 'center',
     backgroundColor: 'transparent',
     textTransform: 'capitalize',
