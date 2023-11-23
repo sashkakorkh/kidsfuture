@@ -6,7 +6,6 @@ import {
   Container,
   CssBaseline,
   IconButton,
-  Link,
   List,
   Stack,
   SwipeableDrawer,
@@ -14,11 +13,9 @@ import {
   useTheme,
 } from '@mui/material';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
-import logo from './small-logo.png';
 import Menu from '../Menu/index';
 import Footer from '../Footer';
 import { OutlinedButton } from '../Button';
-import menuIcon from './menu.png';
 
 function Header() {
   const [open, setState] = useState(false);
@@ -100,7 +97,12 @@ function Header() {
                       lg: '69px',
                     },
                   }}>
-                  <img src={logo} alt="Logo" height="100%" width="100%" />
+                  <img
+                    src={`${process.env.PUBLIC_URL}/images/small-logo.png`}
+                    alt="Logo"
+                    height="100%"
+                    width="100%"
+                  />
                 </Box>
               </NavLink>
               <Stack
@@ -139,7 +141,7 @@ function Header() {
                 },
               }}>
               <img
-                src={menuIcon}
+                src={`${process.env.PUBLIC_URL}/images/menu.png`}
                 alt="burger-menu-icon"
                 width="100%"
                 height="100%"

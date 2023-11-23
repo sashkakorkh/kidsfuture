@@ -8,32 +8,15 @@ import {
   useTheme,
 } from '@mui/material';
 /* import styled from '@emotion/styled'; */
-import banner from './images/boy_and_girl.png';
+import { NavLink } from 'react-router-dom';
 import { ContainedButton, OutlinedButton } from '../../components/Button';
-/* import diamond from './bg_diamond.png';
-import triangle from './bg_triangle.png';
-import square from './bg_square.png'; */
-import girl from './images/girl_studying.png';
-import people from './images/happy_people.png';
-import diamondElement from './images/diamond_el.png';
-import blueTriangle from './images/half_diamond_aim.png';
-import diamondAim from './images/diamond_aim.png';
-import yellowTriangle from './images/yellow_triangle.png';
-import activity1 from './images/activity_1.png';
-import activity2 from './images/activity_2.png';
-import activity3 from './images/activity_3.png';
-import threeTriangles from './images/bg_triangle.png';
-import twoTriangles from './images/bg_twoTriangles.png';
-import darkBlueTriangle from './images/bg_darkBlueTriangle.png';
-import diamondTriangle from './images/bg_diamondTriangle.png';
-import squareTriangle from './images/bg_squareTriangles.png';
 
 function HomeContent() {
   const theme = useTheme();
   const sectionTitleStyles = {
     fontFamily: theme.typography.const.fontFamily.secondary,
     fontWeight: theme.typography.const.fontWeight.normal,
-    lineHeight: '1',
+    lineHeight: 'normal',
     fontSize: {
       xs: '1.25rem',
       md: '2.5rem',
@@ -88,8 +71,50 @@ function HomeContent() {
                 xl: '0 5rem 0 12rem',
               },
               marginTop: { xs: '27px', md: '40px', lg: '54px' },
+              '::before': {
+                content: '""',
+                position: 'absolute',
+                top: { xs: '', md: '-10px' },
+                left: { xs: '', md: '-10px' },
+                right: { xs: '33px' },
+                bottom: { xs: '120px' },
+                width: { xs: '30px', md: '58px' },
+                height: { xs: '30px', md: '58px' },
+                backgroundImage: `url(${process.env.PUBLIC_URL}/bgElements/bg_squareTriangles.png)`,
+                backgroundRepeat: 'no-repeat',
+                backgroundSize: 'contain',
+                opacity: 1,
+                zIndex: -1,
+              },
+              '::after': {
+                content: '""',
+                position: 'absolute',
+                top: {
+                  xs: '',
+                  md: '-10px',
+                },
+                left: {
+                  xs: '',
+                  md: '-10px',
+                },
+                bottom: { xs: '218px' },
+                right: { xs: '62px' },
+                width: {
+                  xs: '66px',
+                  md: '58px',
+                },
+                height: {
+                  xs: '94px',
+                  md: '58px',
+                },
+                backgroundImage: `url(${process.env.PUBLIC_URL}/bgElements/bg_3triangles.png)`,
+                backgroundRepeat: 'no-repeat',
+                backgroundSize: 'contain',
+                opacity: 1,
+                zIndex: -1,
+              },
             }}>
-            <Stack>
+            <Stack sx={{ maxWidth: { lg: '526px', xl: '567px' } }}>
               <Typography
                 variant="h1"
                 component="h1"
@@ -135,7 +160,7 @@ function HomeContent() {
               </Typography>
               <ContainedButton textColorBlack={false} text="Долучитися" />
             </Stack>
-            <Box
+            {/* <Box
               sx={{
                 '::before': {
                   content: '""',
@@ -179,50 +204,57 @@ function HomeContent() {
                   opacity: 1,
                   zIndex: -1,
                 },
+              }}> */}
+            <Box
+              sx={{
+                height: {
+                  lg: '410px',
+                  xl: '544px',
+                },
+                width: {
+                  xl: '1454px',
+                },
               }}>
               <Box
                 sx={{
-                  bottom: { lg: '33px', xl: '54px' },
-                  right: { lg: '0', xl: '52px' },
+                  bottom: { lg: '40px', xl: '44px' },
+                  right: { xl: '24px' },
                   height: {
                     xs: '275px',
                     md: '456px',
-                    lg: '382px',
+                    lg: '450px',
                     xl: '592px',
                   },
                   width: {
                     xs: '328px',
                     md: '544px',
-                    lg: '935px',
-                    xl: '1454px',
-                  },
-                  maxWidth: {
-                    lg: '935px',
-                    xl: '1454px',
+                    lg: '559px',
+                    xl: '705px',
                   },
                   margin: { xs: '98px auto 0', md: '68px auto 0', lg: '0' },
                   position: 'relative',
                 }}>
                 <img
-                  src={banner}
+                  src={`${process.env.PUBLIC_URL}/images/boy_and_girl.png`}
                   alt="boy and girl smilling"
                   width="100%"
                   height="100%"
                 />
               </Box>
             </Box>
+            {/*  </Box> */}
           </Stack>
         </Container>
       </section>
       <section>
-        <Container maxWidth="100%" disableGutters maxHeight="100%">
+        <Container maxWidth="100%" disableGutters>
           <Stack
             sx={{
               flexDirection: { xs: 'column', md: 'row' },
             }}>
             <Box
               sx={{
-                backgroundImage: `linear-gradient(rgba(67, 102, 227, 0.90), rgba(67, 102, 227, 0.90)), url(${activity1})`,
+                backgroundImage: `linear-gradient(rgba(67, 102, 227, 0.90), rgba(67, 102, 227, 0.90)), url(${process.env.PUBLIC_URL}/images/activity_1.png)`,
                 backgroundRepeat: 'no-repeat',
                 backgroundSize: 'cover',
                 position: 'relative',
@@ -236,7 +268,7 @@ function HomeContent() {
                 component="h3"
                 sx={{
                   fontSize: { xs: '1.25rem', lg: '2rem' },
-                  lineHeight: '1',
+                  lineHeight: 'normal',
                   marginBottom: '8px',
                   color: 'white',
                   textAlign: 'left',
@@ -263,7 +295,7 @@ function HomeContent() {
             </Box>
             <Box
               sx={{
-                backgroundImage: `linear-gradient(rgba(249, 152, 32, 0.90), rgba(249, 152, 32, 0.90)), url(${activity2})`,
+                backgroundImage: `linear-gradient(rgba(249, 152, 32, 0.90), rgba(249, 152, 32, 0.90)), url(${process.env.PUBLIC_URL}/images/activity_2.png)`,
                 backgroundRepeat: 'no-repeat',
                 backgroundSize: 'cover',
                 position: 'relative',
@@ -277,7 +309,7 @@ function HomeContent() {
                 component="h3"
                 sx={{
                   fontSize: { xs: '1.25rem', lg: '2rem' },
-                  lineHeight: '1',
+                  lineHeight: 'normal',
                   marginBottom: '8px',
                   color: 'white',
                   textAlign: 'left',
@@ -304,7 +336,7 @@ function HomeContent() {
             </Box>
             <Box
               sx={{
-                backgroundImage: `linear-gradient(rgba(94, 117, 199, 0.90), rgba(94, 117, 199, 0.90)), url(${activity3})`,
+                backgroundImage: `linear-gradient(rgba(94, 117, 199, 0.90), rgba(94, 117, 199, 0.90)), url(${process.env.PUBLIC_URL}/images/activity_3.png)`,
                 backgroundRepeat: 'no-repeat',
                 backgroundSize: 'cover',
                 position: 'relative',
@@ -318,7 +350,7 @@ function HomeContent() {
                 component="h3"
                 sx={{
                   fontSize: { xs: '1.25rem', lg: '2rem' },
-                  lineHeight: '1',
+                  lineHeight: 'normal',
                   marginBottom: '8px',
                   color: 'white',
                   textAlign: 'left',
@@ -346,7 +378,7 @@ function HomeContent() {
           </Stack>
         </Container>
       </section>
-      <section>
+      <section id="about">
         <Container maxWidth="xl" disableGutters>
           <Stack
             sx={{
@@ -379,7 +411,7 @@ function HomeContent() {
                     right: { xs: '24px', md: '7px', lg: '-22px' },
                     width: { xs: '20px', md: '36px', lg: '41px' },
                     height: { xs: '20px', md: '36px', lg: '41px' },
-                    backgroundImage: `url(${blueTriangle})`,
+                    backgroundImage: `url(${process.env.PUBLIC_URL}/bgElements/bg_light_blue_triangle.png)`,
                     backgroundRepeat: 'no-repeat',
                     backgroundSize: 'contain',
                     opacity: 1,
@@ -392,7 +424,7 @@ function HomeContent() {
                     right: { xs: '-4px', md: '-46px', lg: '-93px' },
                     width: { xs: '12px', md: '32px', lg: '36px' },
                     height: { xs: '12px', md: '32px', lg: '36px' },
-                    backgroundImage: `url(${diamondAim})`,
+                    backgroundImage: `url(${process.env.PUBLIC_URL}/bgElements/bg_diamnd_blue_darkblue.png)`,
                     backgroundRepeat: 'no-repeat',
                     backgroundSize: 'contain',
                     opacity: 1,
@@ -414,7 +446,7 @@ function HomeContent() {
                       left: { xs: '31px', md: '-10px' },
                       width: { xs: '25px', md: '58px' },
                       height: { xs: '25px', md: '58px' },
-                      backgroundImage: `url(${diamondElement})`,
+                      backgroundImage: `url(${process.env.PUBLIC_URL}/bgElements/bg_diamnd_blue_yellow.png)`,
                       backgroundRepeat: 'no-repeat',
                       backgroundSize: 'contain',
                       opacity: 1,
@@ -454,7 +486,7 @@ function HomeContent() {
                   paddingRight: { xs: '21px' },
                 }}>
                 <img
-                  src={girl}
+                  src={`${process.env.PUBLIC_URL}/images/girl_studying.png`}
                   alt="girl studying at home"
                   width="100%"
                   height="100%"
@@ -483,7 +515,7 @@ function HomeContent() {
                     right: { xs: '39px', md: '49px', lg: '' },
                     width: { xs: '12px', md: '32px', lg: '27px' },
                     height: { xs: '12px', md: '32px', lg: '27px' },
-                    backgroundImage: `url(${blueTriangle})`,
+                    backgroundImage: `url(${process.env.PUBLIC_URL}/bgElements/bg_BlueTriangle.png)`,
                     backgroundRepeat: 'no-repeat',
                     backgroundSize: 'contain',
                     opacity: 1,
@@ -498,7 +530,7 @@ function HomeContent() {
                     left: { lg: '-109px' },
                     width: { xs: '13px', md: '34px', lg: '41px' },
                     height: { xs: '13px', md: '34px', lg: '41px' },
-                    backgroundImage: `url(${yellowTriangle})`,
+                    backgroundImage: `url(${process.env.PUBLIC_URL}/bgElements/bg_light_blue_triangle.png)`,
                     backgroundRepeat: 'no-repeat',
                     backgroundSize: 'contain',
                     opacity: 1,
@@ -518,7 +550,7 @@ function HomeContent() {
                       left: { xs: '29px', md: '-10px' },
                       width: { xs: '25px', md: '58px' },
                       height: { xs: '25px', md: '58px' },
-                      backgroundImage: `url(${diamondElement})`,
+                      backgroundImage: `url(${process.env.PUBLIC_URL}/bgElements/bg_diamnd_blue_yellow.png)`,
                       backgroundRepeat: 'no-repeat',
                       backgroundSize: 'contain',
                       opacity: 1,
@@ -559,7 +591,7 @@ function HomeContent() {
                   },
                 }}>
                 <img
-                  src={people}
+                  src={`${process.env.PUBLIC_URL}/images/happy_people.png`}
                   alt="three men and a woman standing and smiling"
                   width="100%"
                   height="100%"
@@ -569,7 +601,7 @@ function HomeContent() {
           </Stack>
         </Container>
       </section>
-      <section>
+      <section id="cooperation">
         <Container
           maxWidth="xl"
           disableGutters
@@ -592,7 +624,7 @@ function HomeContent() {
                 sx={{
                   fontSize: { xs: '0.875rem', md: '1.125rem' },
                   textAlign: 'left',
-                  padding: { md: '0 21rem', lg: '0 16rem' },
+                  padding: { md: '0 2rem', lg: '0 16rem' },
                   lineHeight: '1.3',
                   marginTop: { xs: '1rem', md: '1.4rem' },
                 }}>
@@ -613,7 +645,7 @@ function HomeContent() {
                 right: { xs: '' },
                 width: { xs: '26px', md: '58px' },
                 height: { xs: '19px', md: '58px' },
-                backgroundImage: `url(${darkBlueTriangle})`,
+                backgroundImage: `url(${process.env.PUBLIC_URL}/bgElements/bg_BlueTriangle.png)`,
                 backgroundRepeat: 'no-repeat',
                 backgroundSize: 'contain',
                 opacity: 1,
@@ -627,7 +659,7 @@ function HomeContent() {
                 right: { xs: '19px' },
                 width: { xs: '48px', md: '58px' },
                 height: { xs: '68px', md: '58px' },
-                backgroundImage: `url(${threeTriangles})`,
+                backgroundImage: `url(${process.env.PUBLIC_URL}/bgElements/bg_3triangles.png)`,
                 backgroundRepeat: 'no-repeat',
                 backgroundSize: 'contain',
                 opacity: 1,
@@ -651,7 +683,7 @@ function HomeContent() {
                   right: { xs: '19px' },
                   width: { xs: '27px', md: '58px' },
                   height: { xs: '27px', md: '58px' },
-                  backgroundImage: `url(${yellowTriangle})`,
+                  backgroundImage: `url(${process.env.PUBLIC_URL}/bgElements/bg_yellow_triangle.png)`,
                   backgroundRepeat: 'no-repeat',
                   backgroundSize: 'contain',
                   transform: 'rotateZ(180deg)',
@@ -666,7 +698,7 @@ function HomeContent() {
                   right: { xs: '75px' },
                   width: { xs: '13px', md: '58px' },
                   height: { xs: '9px', md: '58px' },
-                  backgroundImage: `url(${blueTriangle})`,
+                  backgroundImage: `url(${process.env.PUBLIC_URL}/bgElements/bg_light_blue_triangle.png)`,
                   backgroundRepeat: 'no-repeat',
                   backgroundSize: 'contain',
                   transform: 'rotateZ(270deg)',
@@ -720,7 +752,7 @@ function HomeContent() {
                     right: { xs: '' },
                     width: { xs: '36px', md: '58px' },
                     height: { xs: '18px', md: '58px' },
-                    backgroundImage: `url(${twoTriangles})`,
+                    backgroundImage: `url(${process.env.PUBLIC_URL}/bgElements/bg_2Triangles.png)`,
                     backgroundRepeat: 'no-repeat',
                     backgroundSize: 'contain',
                     opacity: 1,
@@ -793,7 +825,7 @@ function HomeContent() {
                     right: { xs: '1px' },
                     width: { xs: '47px', md: '58px' },
                     height: { xs: '74px', md: '58px' },
-                    backgroundImage: `url(${diamondTriangle})`,
+                    backgroundImage: `url(${process.env.PUBLIC_URL}/bgElements/bg_diamond_triangle.png)`,
                     backgroundRepeat: 'no-repeat',
                     backgroundSize: 'contain',
                     opacity: 1,
@@ -808,7 +840,7 @@ function HomeContent() {
                     right: { xs: '' },
                     width: { xs: '20px', md: '58px' },
                     height: { xs: '14px', md: '58px' },
-                    backgroundImage: `url(${blueTriangle})`,
+                    backgroundImage: `url(${process.env.PUBLIC_URL}/bgElements/bg_light_blue_triangle.png)`,
                     backgroundRepeat: 'no-repeat',
                     backgroundSize: 'contain',
                     transform: 'rotateZ(270deg)',
@@ -854,6 +886,158 @@ function HomeContent() {
             </Grid>
           </Box>
         </Container>
+      </section>
+      <section id="team">
+        <Container
+          maxWidth="xl"
+          disableGutters
+          sx={{ marginBottom: { xs: '50px' } }}>
+          <Typography sx={sectionTitleStyles} style={{ textAlign: 'center' }}>
+            Команда
+          </Typography>
+          <Box
+            sx={{
+              padding: { xs: '0 1.28rem 0 1.38rem', md: '0 2.2rem 0 2.3rem' },
+              marginTop: { xs: '26px', md: '50px' },
+            }}>
+            <Stack
+              sx={{
+                flexDirection: { xs: 'column', md: 'row' },
+                alignItems: 'center',
+                justifyContent: 'flex-start',
+                marginBottom: { xs: '26px', lg: '50px' },
+              }}>
+              <Box sx={{ maxWidth: { md: '500px', lg: '600px' } }}>
+                <Typography
+                  sx={{
+                    fontSize: { xs: '1.125rem', md: '1.5rem', lg: '2rem' },
+                    marginBottom: { xs: '8px' },
+                    lineHeight: 'normal',
+                  }}>
+                  Олександр Синько
+                </Typography>
+                <Typography
+                  sx={{
+                    fontSize: { xs: '1rem', md: '1.25rem', lg: '1.5' },
+                    fontWeight: theme.typography.const.fontWeight.bold,
+                    marginBottom: { xs: '8px' },
+                    lineHeight: 'normal',
+                  }}>
+                  Засновник фонду
+                </Typography>
+                <Box
+                  sx={{
+                    marginBottom: { xs: '26px' },
+                  }}>
+                  <Typography
+                    sx={{
+                      marginBottom: '8px',
+                      fontSize: { xs: '0.875rem', md: '1rem', lg: '1.125' },
+                      lineHeight: 'normal',
+                    }}>
+                    Режисер, продюсер, спортивний тренер, менеджер спортивного
+                    клубу.
+                  </Typography>
+                  <Typography
+                    sx={{
+                      fontSize: { xs: '0.875rem', md: '1rem', lg: '1.125' },
+                      lineHeight: 'normal',
+                    }}>
+                    17 років у медія індустрії, працював на дитячо-молодіжних
+                    програмах, створював мультсеріали для дошкільнят та
+                    повнометражний анімаційний фільм Більше 20 років тренерскої
+                    діяльності 3 дітьми та підлітками. Серед Вихованців багато
+                    призерів у тому числі чемпіони світу.
+                  </Typography>
+                </Box>
+              </Box>
+              <Box
+                sx={{
+                  width: '173px',
+                  height: '173px',
+                  position: { md: 'relative' },
+                  bottom: { md: '30px' },
+                  marginLeft: { md: '20px' },
+                }}>
+                <img
+                  src={`${process.env.PUBLIC_URL}/images/founder_man.png`}
+                  alt="Founder of the fond Oleksandr Sinko"
+                  width="100%"
+                  height="100%"
+                />
+              </Box>
+            </Stack>
+            <Stack
+              sx={{
+                flexDirection: { xs: 'column', md: 'row-reverse' },
+                alignItems: 'center',
+                justifyContent: 'space-between',
+              }}>
+              <Box sx={{ maxWidth: { md: '500px', lg: '600px' } }}>
+                <Typography
+                  sx={{
+                    fontSize: { xs: '1.125rem', md: '1.5rem', lg: '2rem' },
+                    marginBottom: { xs: '8px' },
+                    lineHeight: 'normal',
+                  }}>
+                  Катерина Синько
+                </Typography>
+                <Typography
+                  sx={{
+                    fontSize: { xs: '1rem', md: '1.25rem', lg: '1.5' },
+                    fontWeight: theme.typography.const.fontWeight.bold,
+                    marginBottom: { xs: '8px' },
+                    lineHeight: 'normal',
+                  }}>
+                  Засновниця фонду
+                </Typography>
+                <Box
+                  sx={{
+                    marginBottom: { xs: '26px' },
+                  }}>
+                  <Typography
+                    sx={{
+                      marginBottom: '8px',
+                      fontSize: { xs: '0.875rem', md: '1rem', lg: '1.125' },
+                      lineHeight: 'normal',
+                    }}>
+                    Адептка сімейного бізнесу, більше 15 років в PR, маркетингу,
+                    продажах.
+                  </Typography>
+                  <Typography
+                    sx={{
+                      fontSize: { xs: '0.875rem', md: '1rem', lg: '1.125' },
+                      lineHeight: 'normal',
+                    }}>
+                    Приймала участь у реалізації низки проектів у здоров &apos;
+                    ї (ціль ООН). Авторка власних проектів для інвесторів та
+                    стартапів, а також для агро і сімейного фермерства та
+                    інвестування в Україну.
+                  </Typography>
+                </Box>
+              </Box>
+              <Box
+                sx={{
+                  width: '173px',
+                  height: '173px',
+                  position: { md: 'relative' },
+                  bottom: { md: '30px' },
+                }}>
+                <img
+                  src={`${process.env.PUBLIC_URL}/images/founder_woman.png`}
+                  alt="Founder of the fond Kateryna Sinko"
+                  width="100%"
+                  height="100%"
+                />
+              </Box>
+            </Stack>
+          </Box>
+        </Container>
+      </section>
+      <section id="news">
+        <NavLink to="/news">
+          <Typography>Новини</Typography>
+        </NavLink>
       </section>
     </div>
   );

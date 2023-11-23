@@ -18,19 +18,19 @@ const LinkText = styled(Typography)`
 const menuItems = [
   {
     text: 'Про нас',
-    link: '#',
+    link: '/#about',
   },
   {
     text: 'Співпраця',
-    link: '#',
+    link: '/#cooperation',
   },
   {
     text: 'Команда',
-    link: '#',
+    link: '/#team',
   },
   {
     text: 'Новини',
-    link: '#',
+    link: '/#news',
   },
   {
     text: 'Донати',
