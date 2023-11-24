@@ -3,30 +3,30 @@
     "title": "Отримали статус Волонтерської організації",
     "text": "Благодійний Фонд «Розвиток. Діти. Майбутнє» після усіх перевірок. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
     "id": 5,
-    "imagePath": "/imagesForNews/volunteer.png"
+    "imagePath": ["/imagesForNews/volunteer.png"]
   },
   {
     "title": "Діти хочуть знати. Пізнавальна екскурсія до музею",
     "text": "Можна нескінченно довго дивитись на вогонь, воду та дитячі емоції.At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. ",
     "id": 4,
-    "imagePath": "/imagesForNews/kids_at_exhibition.png"
+    "imagePath": ["/imagesForNews/kids_at_exhibition.png"]
   },
   {
     "title": "Допомога Гостомельському центру творчості дітей та юнацтва",
     "text": "Один із напрямків  БФ “Розвиток. Діти. Майбутнє” - це надання засобів.Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. ",
     "id": 3,
-    "imagePath": "/imagesForNews/help_to_kids_center.png"
+    "imagePath": ["/imagesForNews/help_to_kids_center.png"]
   },
   {
     "title": "Lorem",
     "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     "id": 2,
-    "imagePath": "/imagesForNews/hands_with_hearts.png"
+    "imagePath": ["/imagesForNews/hands_with_hearts.png"]
   },
   {
     "title": "Lorem Ipsum",
     "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     "id": 1,
-    "imagePath": "/imagesForNews/people_volunteers.jpg"
+    "imagePath": ["/imagesForNews/people_volunteers.jpg"]
   }
 ]

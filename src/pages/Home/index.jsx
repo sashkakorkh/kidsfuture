@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   Box,
   Container,
@@ -8,11 +8,28 @@ import {
   useTheme,
 } from '@mui/material';
 /* import styled from '@emotion/styled'; */
-import { NavLink } from 'react-router-dom';
 import { ContainedButton, OutlinedButton } from '../../components/Button';
+import Carousel from '../../components/Carousel';
 
 function HomeContent() {
   const theme = useTheme();
+  const [data, setData] = useState([]);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch('/data.json');
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        const jsonData = await response.json();
+        setData(jsonData);
+      } catch (error) {
+        alert.error('Error fetching or parsing JSON:', error.message);
+      }
+    };
+    fetchData();
+  }, []);
+
   const sectionTitleStyles = {
     fontFamily: theme.typography.const.fontFamily.secondary,
     fontWeight: theme.typography.const.fontWeight.normal,
@@ -1035,9 +1052,7 @@ function HomeContent() {
         </Container>
       </section>
       <section id="news">
-        <NavLink to="/news">
-          <Typography>Новини</Typography>
-        </NavLink>
+        <Carousel slidesPerView="3" items={data} showPagination={false} />
       </section>
     </div>
   );
