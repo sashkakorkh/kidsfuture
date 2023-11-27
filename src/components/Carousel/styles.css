@@ -1,41 +1,9 @@
-.swiper {
-  width: 97%;
-  padding-bottom: 30px;
-}
-@media screen and (max-width: 768px) {
-  .swiper {
-    width: 100%;
-  }
+.slick-arrow::before {
+  content: "";
 }
 
-.swiper-slide {
-  text-align: center;
-}
-
-.swiper-pagination {
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: center;
-}
-.swiper-pagination-fraction {
-  bottom: 0;
-}
-.swiper-pagination-bullet {
-  width: 25px;
-  height: 5px;
-  border-radius: 5px;
-}
-.swiper-pagination-bullet-active {
-  background: rgb(46, 45, 45);
-}
-
-.swiper-button-prev,
-.swiper-button-next {
-  color: rgb(202, 199, 199);
-}
-.swiper-button-prev:hover,
-.swiper-button-next:hover {
-  color: rgb(46, 45, 45);
+.hidden {
+  visibility: hidden;
 }
 
 /*# sourceMappingURL=styles.css.map */

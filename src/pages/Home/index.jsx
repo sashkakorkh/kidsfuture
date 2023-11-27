@@ -8,23 +8,29 @@ import {
   useTheme,
 } from '@mui/material';
 /* import styled from '@emotion/styled'; */
+import PropTypes from 'prop-types';
 import { ContainedButton, OutlinedButton } from '../../components/Button';
 import Carousel from '../../components/Carousel';
+import CardNewsItem from '../../components/CardForNewsItem';
 
-function HomeContent() {
+function HomeContent({ setNewsItem }) {
   const theme = useTheme();
   const [data, setData] = useState([]);
+
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('/data.json');
+        const response = await fetch('/news.json');
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
         }
         const jsonData = await response.json();
         setData(jsonData);
+        setLoading(false);
       } catch (error) {
-        alert.error('Error fetching or parsing JSON:', error.message);
+        setLoading(false);
+        throw new Error('Error fetching or parsing JSON:', error.message);
       }
     };
     fetchData();
@@ -1052,10 +1058,25 @@ function HomeContent() {
         </Container>
       </section>
       <section id="news">
-        <Carousel slidesPerView="3" items={data} showPagination={false} />
+        <Container maxWidth="xl" disableGutters sx={{ marginBottom: '50px' }}>
+          <Box sx={{ padding: { xs: '0 3rem 0 3rem' } }}>
+            <Carousel
+              items={data}
+              showPagination
+              isLoading={loading}
+              renderContent={(item) => (
+                <CardNewsItem item={item} setItem={setNewsItem} />
+              )}
+            />
+          </Box>
+        </Container>
       </section>
     </div>
   );
 }
 
 export default HomeContent;
+
+HomeContent.propTypes = {
+  setNewsItem: PropTypes.func.isRequired,
+};
