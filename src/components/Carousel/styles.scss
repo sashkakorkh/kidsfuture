@@ -5,3 +5,49 @@
 .hidden {
   visibility: hidden;
 }
+
+.arrow-home {
+  @media screen and (min-width: 360px) {
+    width: 16px;
+    height: 28px;
+    top: 32%;
+    right: -8px;
+  }
+  @media screen and (min-width: 768px) {
+    width: 16px;
+    height: 28px;
+    top: 33%;
+    right: 15px;
+  }
+  @media screen and (min-width: 1024px) {
+    width: 16px;
+    height: 28px;
+    top: 33%;
+    right: 15px;
+  }
+  &.slick-prev {
+    right: 0;
+    left: -8px;
+    z-index: 1;
+    top: 29%;
+  }
+}
+
+.arrow-news {
+  @media screen and (min-width: 360px) {
+    width: 10px;
+    height: 18px;
+  }
+  @media screen and (min-width: 768px) {
+    width: 16px;
+    height: 28px;
+    top: 33%;
+    right: 15px;
+  }
+  @media screen and (min-width: 1024px) {
+    width: 16px;
+    height: 28px;
+    top: 33%;
+    right: 15px;
+  }
+}

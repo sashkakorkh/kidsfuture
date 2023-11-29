@@ -125,6 +125,19 @@ export function ContainedButton({ textColorBlack, text, wider }) {
   );
 }
 
+export function TextButton({ text }) {
+  const theme = useTheme();
+  const textBtnStyles = {
+    textTransform: 'uppercase',
+    fontWeight: theme.typography.const.fontWeight.bold,
+    color: theme.palette.colors.mainsecond,
+    lineHeight: 'normal',
+    padding: '0',
+    minWidth: '53px',
+  };
+  return <Button sx={textBtnStyles}>{text}</Button>;
+}
+
 OutlinedButton.propTypes = {
   text: PropTypes.string.isRequired,
   textColorBlack: PropTypes.bool.isRequired,
@@ -139,4 +152,8 @@ ContainedButton.propTypes = {
 
 ContainedButton.defaultProps = {
   wider: false,
+};
+
+TextButton.propTypes = {
+  text: PropTypes.string.isRequired,
 };

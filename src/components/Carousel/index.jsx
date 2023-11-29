@@ -4,11 +4,20 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import './styles.scss';
 import PropTypes from 'prop-types';
+import { useLocation } from 'react-router-dom';
 
-function SamplePrevArrow({ className, style, onClick, currentSlide }) {
+function SamplePrevArrow({
+  className,
+  style,
+  onClick,
+  currentSlide,
+  classForPage,
+}) {
   return (
     <div
-      className={`${className} ${currentSlide === 0 ? 'hidden' : ''}`}
+      className={`${className} ${classForPage} ${
+        currentSlide === 0 ? 'hidden' : ''
+      }`}
       role="button"
       tabIndex={0}
       aria-label="Next"
@@ -36,6 +45,7 @@ SamplePrevArrow.propTypes = {
     display: PropTypes.string,
     backgroundImage: PropTypes.string,
   }),
+  classForPage: PropTypes.string.isRequired,
   onClick: PropTypes.func,
   currentSlide: PropTypes.number.isRequired,
 };
@@ -52,12 +62,13 @@ function SampleNextArrow({
   onClick,
   currentSlide,
   totalSlides,
+  classForPage,
 }) {
   return (
     <div
-      className={`${className} ${
+      className={`${className} ${classForPage} ${
         currentSlide === totalSlides - 1 ? 'hidden' : ''
-      }`}
+      } `}
       role="button"
       tabIndex={0}
       aria-label="Next"
@@ -85,6 +96,7 @@ SampleNextArrow.propTypes = {
     backgroundImage: PropTypes.string,
     transform: PropTypes.string,
   }),
+  classForPage: PropTypes.string.isRequired,
   onClick: PropTypes.func,
   currentSlide: PropTypes.number.isRequired,
   totalSlides: PropTypes.number.isRequired,
@@ -98,6 +110,23 @@ SampleNextArrow.defaultProps = {
 
 function Carousel({ items, showPagination, isLoading, renderContent }) {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const location = useLocation();
+  const currentPath = location.pathname;
+  /*  const theme = useTheme(); */
+  const stylesArrowHome = {
+    width: { xs: '16px' },
+    height: { xs: '28px' },
+    top: { xs: '33%' },
+    right: { xs: '-15px' },
+  };
+  const stylesArrowNews = {
+    width: { xs: '10px' },
+    height: { xs: '18px' },
+    top: { xs: '33%' },
+    right: { xs: '-15px' },
+  };
+  const classForArrow = currentPath === '/' ? 'arrow-home' : 'arrow-news';
+
   const settings = {
     dots: showPagination,
     infinite: false,
@@ -106,9 +135,18 @@ function Carousel({ items, showPagination, isLoading, renderContent }) {
     autoplay: false,
     initialSlide: 0,
     nextArrow: (
-      <SampleNextArrow currentSlide={currentSlide} totalSlides={items.length} />
+      <SampleNextArrow
+        currentSlide={currentSlide}
+        totalSlides={items.length}
+        classForPage={classForArrow}
+      />
     ),
-    prevArrow: <SamplePrevArrow currentSlide={currentSlide} />,
+    prevArrow: (
+      <SamplePrevArrow
+        currentSlide={currentSlide}
+        classForPage={classForArrow}
+      />
+    ),
     beforeChange: (oldIndex, newIndex) => {
       setCurrentSlide(newIndex);
     },
@@ -146,8 +184,8 @@ function Carousel({ items, showPagination, isLoading, renderContent }) {
           prevArrow={settings.prevArrow}
           responsive={settings.responsive}
           beforeChange={settings.beforeChange}>
-          {items.map((item, index) => (
-            <div key={item.title}>{renderContent(item)}</div>
+          {items.map((item) => (
+            <div key={item.id}>{renderContent(item)}</div>
           ))}
         </Slider>
       )}

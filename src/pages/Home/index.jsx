@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 import {
   Box,
   Container,
@@ -8,34 +9,12 @@ import {
   useTheme,
 } from '@mui/material';
 /* import styled from '@emotion/styled'; */
-import PropTypes from 'prop-types';
 import { ContainedButton, OutlinedButton } from '../../components/Button';
 import Carousel from '../../components/Carousel';
 import CardNewsItem from '../../components/CardForNewsItem';
 
-function HomeContent({ setNewsItem }) {
+function HomeContent({ data, loading }) {
   const theme = useTheme();
-  const [data, setData] = useState([]);
-
-  const [loading, setLoading] = useState(true);
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch('/news.json');
-        if (!response.ok) {
-          throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-        const jsonData = await response.json();
-        setData(jsonData);
-        setLoading(false);
-      } catch (error) {
-        setLoading(false);
-        throw new Error('Error fetching or parsing JSON:', error.message);
-      }
-    };
-    fetchData();
-  }, []);
-
   const sectionTitleStyles = {
     fontFamily: theme.typography.const.fontFamily.secondary,
     fontWeight: theme.typography.const.fontWeight.normal,
@@ -282,7 +261,7 @@ function HomeContent({ setNewsItem }) {
                 backgroundSize: 'cover',
                 position: 'relative',
                 padding: {
-                  xs: '38px 68px 34px 20px',
+                  xs: '36px 68px 34px 20px',
                   md: '50px 63px 66px 34px',
                   lg: '69px 131px 68px 51px',
                 },
@@ -303,7 +282,7 @@ function HomeContent({ setNewsItem }) {
                 sx={{
                   fontSize: { xs: '0.875rem', lg: '1.125rem' },
                   lineHeight: '1.3',
-                  marginBottom: '20px',
+                  marginBottom: '15px',
                   color: 'white',
                   textAlign: 'left',
                 }}>
@@ -323,7 +302,7 @@ function HomeContent({ setNewsItem }) {
                 backgroundSize: 'cover',
                 position: 'relative',
                 padding: {
-                  xs: '38px 69px 33px 20px',
+                  xs: '36px 69px 34px 20px',
                   md: '50px 63px 66px 34px',
                   lg: '69px 190px 68px 51px',
                 },
@@ -364,7 +343,7 @@ function HomeContent({ setNewsItem }) {
                 backgroundSize: 'cover',
                 position: 'relative',
                 padding: {
-                  xs: '38px 69px 33px 20px',
+                  xs: '36px 69px 33px 20px',
                   md: '50px 63px 66px 34px',
                   lg: '69px 148px 68px 51px',
                 },
@@ -385,7 +364,7 @@ function HomeContent({ setNewsItem }) {
                 sx={{
                   fontSize: { xs: '0.875rem', lg: '1.125rem' },
                   lineHeight: '1.3',
-                  marginBottom: '20px',
+                  marginBottom: '15px',
                   color: 'white',
                   textAlign: 'left',
                 }}>
@@ -405,7 +384,11 @@ function HomeContent({ setNewsItem }) {
         <Container maxWidth="xl" disableGutters>
           <Stack
             sx={{
-              margin: { xs: '54px 0', md: '100px 0', lg: '91px 0 117px 0' },
+              margin: {
+                xs: '48px 0',
+                md: '100px 0',
+                lg: '91px 0 117px 0',
+              },
               padding: {
                 xs: '0 1.5rem',
                 md: '0 5rem',
@@ -487,7 +470,7 @@ function HomeContent({ setNewsItem }) {
                         md: '1.25rem',
                       },
                       marginBottom: {
-                        xs: '26px',
+                        xs: '22px',
                         md: '50px',
                         lg: '0',
                       },
@@ -538,7 +521,7 @@ function HomeContent({ setNewsItem }) {
                     right: { xs: '39px', md: '49px', lg: '' },
                     width: { xs: '12px', md: '32px', lg: '27px' },
                     height: { xs: '12px', md: '32px', lg: '27px' },
-                    backgroundImage: `url(${process.env.PUBLIC_URL}/bgElements/bg_BlueTriangle.png)`,
+                    backgroundImage: `url(${process.env.PUBLIC_URL}/bgElements/bg_light_blue_triangle.png)`,
                     backgroundRepeat: 'no-repeat',
                     backgroundSize: 'contain',
                     opacity: 1,
@@ -553,7 +536,7 @@ function HomeContent({ setNewsItem }) {
                     left: { lg: '-109px' },
                     width: { xs: '13px', md: '34px', lg: '41px' },
                     height: { xs: '13px', md: '34px', lg: '41px' },
-                    backgroundImage: `url(${process.env.PUBLIC_URL}/bgElements/bg_light_blue_triangle.png)`,
+                    backgroundImage: `url(${process.env.PUBLIC_URL}/bgElements/bg_yellow_triangle.png)`,
                     backgroundRepeat: 'no-repeat',
                     backgroundSize: 'contain',
                     opacity: 1,
@@ -628,7 +611,7 @@ function HomeContent({ setNewsItem }) {
         <Container
           maxWidth="xl"
           disableGutters
-          sx={{ marginBottom: { xs: '50px' } }}>
+          sx={{ marginBottom: { xs: '48px' } }}>
           <Box
             sx={{
               padding: { xs: '0 1.25rem', md: '0 2.19rem', lg: '0 6rem' },
@@ -636,7 +619,7 @@ function HomeContent({ setNewsItem }) {
             <Box
               sx={{
                 margin: {
-                  xs: '0 auto 26px',
+                  xs: '0 auto 24px',
                   md: '0 auto 16px',
                   lg: '0 auto 88px',
                 },
@@ -693,7 +676,7 @@ function HomeContent({ setNewsItem }) {
               container
               alignItems="center"
               sx={{
-                rowGap: { xs: '26px', md: '10px', lg: '16px' },
+                rowGap: { xs: '23px', md: '10px', lg: '16px' },
                 padding: {
                   xs: '0 1.25rem 0 1.25rem',
                   lg: '0 14.25rem 0 14.25rem',
@@ -914,14 +897,14 @@ function HomeContent({ setNewsItem }) {
         <Container
           maxWidth="xl"
           disableGutters
-          sx={{ marginBottom: { xs: '50px' } }}>
+          sx={{ marginBottom: { xs: '47px' } }}>
           <Typography sx={sectionTitleStyles} style={{ textAlign: 'center' }}>
             Команда
           </Typography>
           <Box
             sx={{
               padding: { xs: '0 1.28rem 0 1.38rem', md: '0 2.2rem 0 2.3rem' },
-              marginTop: { xs: '26px', md: '50px' },
+              marginTop: { xs: '20px', md: '50px' },
             }}>
             <Stack
               sx={{
@@ -934,7 +917,7 @@ function HomeContent({ setNewsItem }) {
                 <Typography
                   sx={{
                     fontSize: { xs: '1.125rem', md: '1.5rem', lg: '2rem' },
-                    marginBottom: { xs: '8px' },
+                    marginBottom: { xs: '7px' },
                     lineHeight: 'normal',
                   }}>
                   Олександр Синько
@@ -950,7 +933,7 @@ function HomeContent({ setNewsItem }) {
                 </Typography>
                 <Box
                   sx={{
-                    marginBottom: { xs: '26px' },
+                    marginBottom: { xs: '25px' },
                   }}>
                   <Typography
                     sx={{
@@ -978,9 +961,23 @@ function HomeContent({ setNewsItem }) {
                 sx={{
                   width: '173px',
                   height: '173px',
-                  position: { md: 'relative' },
+                  position: 'relative',
                   bottom: { md: '30px' },
                   marginLeft: { md: '20px' },
+                  '::before': {
+                    content: '""',
+                    position: 'absolute',
+                    top: { xs: '', md: '-10px' },
+                    bottom: { xs: '-50px' },
+                    left: { xs: '', md: '-10px' },
+                    right: { xs: '-73px' },
+                    width: { xs: '48px', md: '58px' },
+                    height: { xs: '68px', md: '58px' },
+                    backgroundImage: `url(${process.env.PUBLIC_URL}/bgElements/bg_3triangles.png)`,
+                    backgroundRepeat: 'no-repeat',
+                    backgroundSize: 'contain',
+                    opacity: 1,
+                  },
                 }}>
                 <img
                   src={`${process.env.PUBLIC_URL}/images/founder_man.png`}
@@ -1043,8 +1040,37 @@ function HomeContent({ setNewsItem }) {
                 sx={{
                   width: '173px',
                   height: '173px',
-                  position: { md: 'relative' },
+                  position: 'relative',
                   bottom: { md: '30px' },
+                  '::before': {
+                    content: '""',
+                    position: 'absolute',
+                    top: { xs: '', md: '-10px' },
+                    bottom: { xs: '95px' },
+                    left: { xs: '-65px', md: '-10px' },
+                    right: { xs: '' },
+                    width: { xs: '52px', md: '58px' },
+                    height: { xs: '71px', md: '58px' },
+                    backgroundImage: `url(${process.env.PUBLIC_URL}/bgElements/bg_2blue_yellow_triangles.png)`,
+                    backgroundRepeat: 'no-repeat',
+                    backgroundSize: 'contain',
+                    opacity: 1,
+                    transform: 'rotateZ(270deg)',
+                  },
+                  '::after': {
+                    content: '""',
+                    position: 'absolute',
+                    top: { xs: '', md: '-10px' },
+                    bottom: { xs: '3px' },
+                    left: { xs: '-45px', md: '-10px' },
+                    right: { xs: '' },
+                    width: { xs: '19px', md: '58px' },
+                    height: { xs: '19px', md: '58px' },
+                    backgroundImage: `url(${process.env.PUBLIC_URL}/bgElements/bg_blueTriangle90deg.png)`,
+                    backgroundRepeat: 'no-repeat',
+                    backgroundSize: 'contain',
+                    opacity: 1,
+                  },
                 }}>
                 <img
                   src={`${process.env.PUBLIC_URL}/images/founder_woman.png`}
@@ -1059,14 +1085,19 @@ function HomeContent({ setNewsItem }) {
       </section>
       <section id="news">
         <Container maxWidth="xl" disableGutters sx={{ marginBottom: '50px' }}>
-          <Box sx={{ padding: { xs: '0 3rem 0 3rem' } }}>
+          <Typography sx={sectionTitleStyles} style={{ textAlign: 'center' }}>
+            Новини
+          </Typography>
+          <Box
+            sx={{
+              padding: { xs: '0 1.25rem 0 1.25rem' },
+              marginTop: { xs: '20px', md: '30px', lg: '50px' },
+            }}>
             <Carousel
               items={data}
-              showPagination
+              showPagination={false}
               isLoading={loading}
-              renderContent={(item) => (
-                <CardNewsItem item={item} setItem={setNewsItem} />
-              )}
+              renderContent={(item) => <CardNewsItem item={item} />}
             />
           </Box>
         </Container>
@@ -1078,5 +1109,13 @@ function HomeContent({ setNewsItem }) {
 export default HomeContent;
 
 HomeContent.propTypes = {
-  setNewsItem: PropTypes.func.isRequired,
+  data: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      text: PropTypes.string.isRequired,
+      id: PropTypes.number.isRequired,
+      imagePath: PropTypes.arrayOf(PropTypes.string).isRequired,
+    })
+  ).isRequired,
+  loading: PropTypes.bool.isRequired,
 };

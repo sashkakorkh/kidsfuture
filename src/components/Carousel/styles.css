@@ -6,4 +6,58 @@
   visibility: hidden;
 }
 
+@media screen and (min-width: 360px) {
+  .arrow-home {
+    width: 16px;
+    height: 28px;
+    top: 32%;
+    right: -8px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .arrow-home {
+    width: 16px;
+    height: 28px;
+    top: 33%;
+    right: 15px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .arrow-home {
+    width: 16px;
+    height: 28px;
+    top: 33%;
+    right: 15px;
+  }
+}
+.arrow-home.slick-prev {
+  right: 0;
+  left: -8px;
+  z-index: 1;
+  top: 29%;
+}
+
+@media screen and (min-width: 360px) {
+  .arrow-news {
+    width: 10px;
+    height: 18px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .arrow-news {
+    width: 16px;
+    height: 28px;
+    top: 33%;
+    right: 15px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .arrow-news {
+    width: 16px;
+    height: 28px;
+    top: 33%;
+    right: 15px;
+  }
+}
+
 /*# sourceMappingURL=styles.css.map */

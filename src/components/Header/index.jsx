@@ -18,7 +18,7 @@ import Footer from '../Footer';
 import { OutlinedButton } from '../Button';
 
 function Header() {
-  const [open, setState] = useState(false);
+  const [open, setMenuOpen] = useState(false);
   const theme = useTheme();
   const burgerMenuStyle = {
     containerStyle: {
@@ -51,7 +51,9 @@ function Header() {
     ) {
       return;
     }
-    setState(openMenu);
+    console.log('gggg');
+    setMenuOpen(openMenu);
+    console.log(openMenu);
   };
 
   return (
@@ -172,7 +174,12 @@ function Header() {
                 <CloseRoundedIcon fontSize="large" />
               </IconButton>
               <List style={{ margin: '0 25px 31px 25px', padding: '0' }}>
-                <Menu tag="li" styleConfig={burgerMenuStyle} />
+                <Menu
+                  tag="li"
+                  styleConfig={burgerMenuStyle}
+                  functionToggle={toggleDrawer}
+                  open={open}
+                />
               </List>
             </SwipeableDrawer>
           </Toolbar>

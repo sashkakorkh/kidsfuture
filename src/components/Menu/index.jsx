@@ -42,7 +42,7 @@ const menuItems = [
   },
 ];
 
-function Menu({ tag, styleConfig }) {
+function Menu({ tag, styleConfig, functionToggle }) {
   const { itemStyle, containerStyle } = styleConfig;
   const theme = useTheme();
   const ElementTag = tag;
@@ -50,7 +50,7 @@ function Menu({ tag, styleConfig }) {
     <>
       {menuItems.map((item, index) => (
         <React.Fragment key={item.text}>
-          <ElementTag style={containerStyle}>
+          <ElementTag style={containerStyle} onClick={functionToggle(false)}>
             <NavLink to={item.link} style={{ textDecoration: 'none' }}>
               <LinkText sx={itemStyle} style={itemStyle} noWrap>
                 {item.text}
@@ -79,4 +79,9 @@ Menu.propTypes = {
     containerStyle: PropTypes.instanceOf(Object),
     itemStyle: PropTypes.instanceOf(Object),
   }).isRequired,
+  functionToggle: PropTypes.func,
+};
+
+Menu.defaultProps = {
+  functionToggle: () => {},
 };
