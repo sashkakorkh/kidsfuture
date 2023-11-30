@@ -112,19 +112,6 @@ function Carousel({ items, showPagination, isLoading, renderContent }) {
   const [currentSlide, setCurrentSlide] = useState(0);
   const location = useLocation();
   const currentPath = location.pathname;
-  /*  const theme = useTheme(); */
-  const stylesArrowHome = {
-    width: { xs: '16px' },
-    height: { xs: '28px' },
-    top: { xs: '33%' },
-    right: { xs: '-15px' },
-  };
-  const stylesArrowNews = {
-    width: { xs: '10px' },
-    height: { xs: '18px' },
-    top: { xs: '33%' },
-    right: { xs: '-15px' },
-  };
   const classForArrow = currentPath === '/' ? 'arrow-home' : 'arrow-news';
 
   const settings = {
@@ -134,6 +121,7 @@ function Carousel({ items, showPagination, isLoading, renderContent }) {
     slidesToScroll: 1,
     autoplay: false,
     initialSlide: 0,
+    adaptiveHeight: true,
     nextArrow: (
       <SampleNextArrow
         currentSlide={currentSlide}
@@ -154,8 +142,8 @@ function Carousel({ items, showPagination, isLoading, renderContent }) {
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
+          slidesToShow: 3,
+          slidesToScroll: 3,
         },
       },
       {
@@ -183,9 +171,12 @@ function Carousel({ items, showPagination, isLoading, renderContent }) {
           nextArrow={settings.nextArrow}
           prevArrow={settings.prevArrow}
           responsive={settings.responsive}
-          beforeChange={settings.beforeChange}>
-          {items.map((item) => (
-            <div key={item.id}>{renderContent(item)}</div>
+          beforeChange={settings.beforeChange}
+          adaptiveHeight={settings.adaptiveHeight}>
+          {items.map((item, index) => (
+            <div key={typeof item === 'object' ? item.id : `string-${index}`}>
+              {renderContent(item)}
+            </div>
           ))}
         </Slider>
       )}
@@ -196,14 +187,17 @@ function Carousel({ items, showPagination, isLoading, renderContent }) {
 export default Carousel;
 
 Carousel.propTypes = {
-  items: PropTypes.arrayOf(
-    PropTypes.shape({
-      title: PropTypes.string.isRequired,
-      text: PropTypes.string.isRequired,
-      id: PropTypes.number.isRequired,
-      imagePath: PropTypes.arrayOf(PropTypes.string).isRequired,
-    })
-  ).isRequired,
+  items: PropTypes.oneOfType([
+    PropTypes.arrayOf(
+      PropTypes.shape({
+        title: PropTypes.string.isRequired,
+        text: PropTypes.string.isRequired,
+        id: PropTypes.number.isRequired,
+        imagePath: PropTypes.arrayOf(PropTypes.string).isRequired,
+      })
+    ),
+    PropTypes.arrayOf(PropTypes.string),
+  ]).isRequired,
   showPagination: PropTypes.bool.isRequired,
   isLoading: PropTypes.bool.isRequired,
   renderContent: PropTypes.func.isRequired,

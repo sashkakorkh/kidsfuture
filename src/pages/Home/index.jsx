@@ -29,18 +29,6 @@ function HomeContent({ data, loading }) {
     },
   };
 
-  const circleTextBoxStyles = {
-    color: 'white',
-    padding: {
-      xs: '62px 50px 0 50px',
-      md: '90px 0 0 19px',
-      lg: '162px 108px 0 98px',
-    },
-    display: 'flex',
-    alignItems: 'center',
-    flexDirection: 'column',
-  };
-
   const circleBoxTitleStyles = {
     fontSize: { xs: '1.125rem', md: '1.25rem', lg: '1.5rem' },
     fontWeight: theme.typography.const.fontWeight.bold,
@@ -72,48 +60,32 @@ function HomeContent({ data, loading }) {
                 lg: '0 5rem 0 9rem',
                 xl: '0 5rem 0 12rem',
               },
-              marginTop: { xs: '27px', md: '40px', lg: '54px' },
+              marginTop: { xs: '27px', md: '52px', lg: '54px' },
               '::before': {
                 content: '""',
+                display: { md: 'none' },
                 position: 'absolute',
-                top: { xs: '', md: '-10px' },
-                left: { xs: '', md: '-10px' },
-                right: { xs: '33px' },
-                bottom: { xs: '120px' },
-                width: { xs: '30px', md: '58px' },
-                height: { xs: '30px', md: '58px' },
-                backgroundImage: `url(${process.env.PUBLIC_URL}/bgElements/bg_squareTriangles.png)`,
+                bottom: '150px',
+                left: '20px',
+                width: '12px',
+                height: '12px',
+                backgroundImage: `url(${process.env.PUBLIC_URL}/bgElements/bg_diamnd_blue_darkblue.png)`,
                 backgroundRepeat: 'no-repeat',
                 backgroundSize: 'contain',
                 opacity: 1,
-                zIndex: -1,
               },
               '::after': {
                 content: '""',
                 position: 'absolute',
-                top: {
-                  xs: '',
-                  md: '-10px',
-                },
-                left: {
-                  xs: '',
-                  md: '-10px',
-                },
-                bottom: { xs: '218px' },
-                right: { xs: '62px' },
-                width: {
-                  xs: '66px',
-                  md: '58px',
-                },
-                height: {
-                  xs: '94px',
-                  md: '58px',
-                },
-                backgroundImage: `url(${process.env.PUBLIC_URL}/bgElements/bg_3triangles.png)`,
+                display: { md: 'none' },
+                bottom: '219px',
+                left: '128px',
+                width: '19px',
+                height: '19px',
+                backgroundImage: `url(${process.env.PUBLIC_URL}/bgElements/bg_light_blue_triangle.png)`,
                 backgroundRepeat: 'no-repeat',
                 backgroundSize: 'contain',
                 opacity: 1,
-                zIndex: -1,
               },
             }}>
             <Stack sx={{ maxWidth: { lg: '526px', xl: '567px' } }}>
@@ -147,12 +119,13 @@ function HomeContent({ data, loading }) {
                   },
                   margin: {
                     xs: '11px 0 16px 0',
+                    md: '11px 0 14px 0',
                     lg: '22px 0 30px 0',
                     xl: '22px 0 51px 0',
                   },
                   padding: {
                     xs: '0 1.5rem 0 0',
-                    md: '0 7rem 0 0',
+                    md: '0 7.5rem 0 0',
                     lg: '0',
                     xl: '0 3rem 0 0',
                   },
@@ -162,18 +135,29 @@ function HomeContent({ data, loading }) {
               </Typography>
               <ContainedButton textColorBlack={false} text="Долучитися" />
             </Stack>
-            {/* <Box
+            <Box
               sx={{
+                position: 'relative',
+                height: {
+                  lg: '410px',
+                  xl: '544px',
+                },
+                width: {
+                  xl: '1454px',
+                },
                 '::before': {
                   content: '""',
                   position: 'absolute',
-                  top: { xs: '', md: '-10px' },
-                  left: { xs: '', md: '-10px' },
-                  right: { xs: '33px' },
-                  bottom: { xs: '120px' },
-                  width: { xs: '30px', md: '58px' },
-                  height: { xs: '30px', md: '58px' },
-                  backgroundImage: `url(${squareTriangle})`,
+                  top: { xs: '62px', md: '64px' },
+                  left: { xs: '27px', md: '-83px' },
+                  right: { xs: '' },
+                  bottom: { xs: '' },
+                  width: { xs: '21px', md: '122px' },
+                  height: { xs: '21px', md: '103px' },
+                  backgroundImage: {
+                    xs: `url(${process.env.PUBLIC_URL}/bgElements/bg_diamnd_blue_yellow.png)`,
+                    md: `url(${process.env.PUBLIC_URL}/bgElements/bg_2diamonds_triangle.png)`,
+                  },
                   backgroundRepeat: 'no-repeat',
                   backgroundSize: 'contain',
                   opacity: 1,
@@ -183,38 +167,23 @@ function HomeContent({ data, loading }) {
                   content: '""',
                   position: 'absolute',
                   top: {
-                    xs: '',
-                    md: '-10px',
+                    xs: '-21px',
+                    md: '-52px',
                   },
-                  left: {
-                    xs: '',
-                    md: '-10px',
-                  },
-                  bottom: { xs: '218px' },
-                  right: { xs: '62px' },
+                  bottom: { xs: '' },
+                  right: { xs: '46px', md: '10px' },
                   width: {
                     xs: '66px',
-                    md: '58px',
+                    md: '122px',
                   },
                   height: {
                     xs: '94px',
-                    md: '58px',
+                    md: '174px',
                   },
-                  backgroundImage: `url(${threeTriangles})`,
+                  backgroundImage: `url(${process.env.PUBLIC_URL}/bgElements/bg_3triangles.png)`,
                   backgroundRepeat: 'no-repeat',
                   backgroundSize: 'contain',
                   opacity: 1,
-                  zIndex: -1,
-                },
-              }}> */}
-            <Box
-              sx={{
-                height: {
-                  lg: '410px',
-                  xl: '544px',
-                },
-                width: {
-                  xl: '1454px',
                 },
               }}>
               <Box
@@ -223,7 +192,7 @@ function HomeContent({ data, loading }) {
                   right: { xl: '24px' },
                   height: {
                     xs: '275px',
-                    md: '456px',
+                    md: '459px',
                     lg: '450px',
                     xl: '592px',
                   },
@@ -233,8 +202,26 @@ function HomeContent({ data, loading }) {
                     lg: '559px',
                     xl: '705px',
                   },
-                  margin: { xs: '98px auto 0', md: '68px auto 0', lg: '0' },
+                  margin: {
+                    xs: '98px auto 0',
+                    md: '68px 22px 0 22px',
+                    lg: '0',
+                  },
                   position: 'relative',
+                  '::before': {
+                    content: '""',
+                    position: 'absolute',
+                    top: { xs: '43px', md: '104px' },
+                    left: { xs: '', md: '' },
+                    right: { xs: '20px', md: '-66px' },
+                    bottom: { xs: '' },
+                    width: { xs: '30px', md: '66px' },
+                    height: { xs: '30px', md: '66px' },
+                    backgroundImage: `url(${process.env.PUBLIC_URL}/bgElements/bg_squareTriangles.png)`,
+                    backgroundRepeat: 'no-repeat',
+                    backgroundSize: 'contain',
+                    opacity: 1,
+                  },
                 }}>
                 <img
                   src={`${process.env.PUBLIC_URL}/images/boy_and_girl.png`}
@@ -260,9 +247,10 @@ function HomeContent({ data, loading }) {
                 backgroundRepeat: 'no-repeat',
                 backgroundSize: 'cover',
                 position: 'relative',
+                minWidth: { md: '15rem' },
                 padding: {
                   xs: '36px 68px 34px 20px',
-                  md: '50px 63px 66px 34px',
+                  md: '48px 40px 65px 34px',
                   lg: '69px 131px 68px 51px',
                 },
               }}>
@@ -280,9 +268,9 @@ function HomeContent({ data, loading }) {
               </Typography>
               <Typography
                 sx={{
-                  fontSize: { xs: '0.875rem', lg: '1.125rem' },
+                  fontSize: { xs: '0.875rem', md: '1rem', lg: '1.125rem' },
                   lineHeight: '1.3',
-                  marginBottom: '15px',
+                  marginBottom: '19px',
                   color: 'white',
                   textAlign: 'left',
                 }}>
@@ -301,9 +289,10 @@ function HomeContent({ data, loading }) {
                 backgroundRepeat: 'no-repeat',
                 backgroundSize: 'cover',
                 position: 'relative',
+                minWidth: { md: '15rem' },
                 padding: {
-                  xs: '36px 69px 34px 20px',
-                  md: '50px 63px 66px 34px',
+                  xs: '36px 68px 34px 20px',
+                  md: '47px 67px 65px 36px',
                   lg: '69px 190px 68px 51px',
                 },
               }}>
@@ -311,7 +300,7 @@ function HomeContent({ data, loading }) {
                 component="h3"
                 sx={{
                   fontSize: { xs: '1.25rem', lg: '2rem' },
-                  lineHeight: 'normal',
+                  lineHeight: '1.3',
                   marginBottom: '8px',
                   color: 'white',
                   textAlign: 'left',
@@ -321,9 +310,9 @@ function HomeContent({ data, loading }) {
               </Typography>
               <Typography
                 sx={{
-                  fontSize: { xs: '0.875rem', lg: '1.125rem' },
+                  fontSize: { xs: '0.875rem', md: '1rem', lg: '1.125rem' },
                   lineHeight: '1.3',
-                  marginBottom: '16px',
+                  marginBottom: '19px',
                   color: 'white',
                   textAlign: 'left',
                 }}>
@@ -342,9 +331,10 @@ function HomeContent({ data, loading }) {
                 backgroundRepeat: 'no-repeat',
                 backgroundSize: 'cover',
                 position: 'relative',
+                minWidth: { md: '15rem' },
                 padding: {
-                  xs: '36px 69px 33px 20px',
-                  md: '50px 63px 66px 34px',
+                  xs: '34px 68px 35px 20px',
+                  md: '47px 38px 66px 34px',
                   lg: '69px 148px 68px 51px',
                 },
               }}>
@@ -362,9 +352,9 @@ function HomeContent({ data, loading }) {
               </Typography>
               <Typography
                 sx={{
-                  fontSize: { xs: '0.875rem', lg: '1.125rem' },
+                  fontSize: { xs: '0.875rem', md: '1rem', lg: '1.125rem' },
                   lineHeight: '1.3',
-                  marginBottom: '15px',
+                  marginBottom: '20px',
                   color: 'white',
                   textAlign: 'left',
                 }}>
@@ -386,7 +376,7 @@ function HomeContent({ data, loading }) {
             sx={{
               margin: {
                 xs: '48px 0',
-                md: '100px 0',
+                md: '92px 0',
                 lg: '91px 0 117px 0',
               },
               padding: {
@@ -402,21 +392,27 @@ function HomeContent({ data, loading }) {
                 justifyContent: { lg: 'space-evenly' },
                 alignItems: 'center',
                 gap: { lg: '232px' },
-                margin: {
-                  xs: '0 auto 54px',
+                marginBottom: {
+                  xs: '54px',
+                  md: '48px',
                   lg: '0',
                 },
               }}>
               <Box
                 sx={{
                   position: 'relative',
+                  marginBottom: {
+                    xs: '22px',
+                    md: '50px',
+                    lg: '0',
+                  },
                   '::after': {
                     content: '""',
                     position: 'absolute',
-                    top: { xs: '-28px', md: '-35px', lg: '-157px' },
-                    right: { xs: '24px', md: '7px', lg: '-22px' },
-                    width: { xs: '20px', md: '36px', lg: '41px' },
-                    height: { xs: '20px', md: '36px', lg: '41px' },
+                    top: { xs: '-28px', md: '-33px', lg: '-157px' },
+                    right: { xs: '24px', md: '-105px', lg: '-22px' },
+                    width: { xs: '20px', md: '49px', lg: '41px' },
+                    height: { xs: '20px', md: '49px', lg: '41px' },
                     backgroundImage: `url(${process.env.PUBLIC_URL}/bgElements/bg_light_blue_triangle.png)`,
                     backgroundRepeat: 'no-repeat',
                     backgroundSize: 'contain',
@@ -426,8 +422,8 @@ function HomeContent({ data, loading }) {
                   '::before': {
                     content: '""',
                     position: 'absolute',
-                    top: { xs: '12px', md: '79px', lg: '-31px' },
-                    right: { xs: '-4px', md: '-46px', lg: '-93px' },
+                    top: { xs: '12px', md: '87px', lg: '-31px' },
+                    right: { xs: '-4px', md: '-159px', lg: '-93px' },
                     width: { xs: '12px', md: '32px', lg: '36px' },
                     height: { xs: '12px', md: '32px', lg: '36px' },
                     backgroundImage: `url(${process.env.PUBLIC_URL}/bgElements/bg_diamnd_blue_darkblue.png)`,
@@ -440,7 +436,7 @@ function HomeContent({ data, loading }) {
                 <Box
                   sx={{
                     maxWidth: { md: '360px' },
-                    padding: { xs: '0 2rem 0 4rem' },
+                    padding: { xs: '0 2rem 0 4rem', md: '0 0rem 0 2.1rem' },
                     position: 'relative',
                     margin: { xs: '0 auto' },
                     top: { lg: '-60px' },
@@ -448,8 +444,8 @@ function HomeContent({ data, loading }) {
                     '::after': {
                       content: '""',
                       position: 'absolute',
-                      top: { xs: '-1px', md: '-10px' },
-                      left: { xs: '31px', md: '-10px' },
+                      top: { xs: '-1px', md: '-2px' },
+                      left: { xs: '31px', md: '-40px' },
                       width: { xs: '25px', md: '58px' },
                       height: { xs: '25px', md: '58px' },
                       backgroundImage: `url(${process.env.PUBLIC_URL}/bgElements/bg_diamnd_blue_yellow.png)`,
@@ -469,11 +465,6 @@ function HomeContent({ data, loading }) {
                         xs: '0.875rem',
                         md: '1.25rem',
                       },
-                      marginBottom: {
-                        xs: '22px',
-                        md: '50px',
-                        lg: '0',
-                      },
                     }}>
                     Дати дітям впевненість у власному щасливому майбутньому.
                   </Typography>
@@ -488,8 +479,9 @@ function HomeContent({ data, loading }) {
                   },
                   height: {
                     xs: '237px',
+                    md: '473px',
                   },
-                  paddingRight: { xs: '21px' },
+                  paddingRight: { xs: '21px', md: '36px' },
                 }}>
                 <img
                   src={`${process.env.PUBLIC_URL}/images/girl_studying.png`}
@@ -505,20 +497,25 @@ function HomeContent({ data, loading }) {
                 justifyContent: { lg: 'space-evenly' },
                 alignItems: 'center',
                 gap: { lg: '232px' },
-                margin: {
-                  xs: '0 auto',
+                /*  margin: {
+                  xs: '',
                   lg: '0',
-                },
+                }, */
               }}>
               <Box
                 sx={{
                   position: 'relative',
+                  marginBottom: {
+                    xs: '26px',
+                    md: '50px',
+                    lg: '0',
+                  },
                   '::after': {
                     content: '""',
                     position: 'absolute',
-                    top: { xs: '-12px', md: '15px', lg: '377px' },
+                    top: { xs: '-12px', md: '-120px', lg: '377px' },
                     left: { lg: '-54px' },
-                    right: { xs: '39px', md: '49px', lg: '' },
+                    right: { xs: '39px', md: '22px', lg: '' },
                     width: { xs: '12px', md: '32px', lg: '27px' },
                     height: { xs: '12px', md: '32px', lg: '27px' },
                     backgroundImage: `url(${process.env.PUBLIC_URL}/bgElements/bg_light_blue_triangle.png)`,
@@ -531,8 +528,8 @@ function HomeContent({ data, loading }) {
                   '::before': {
                     content: '""',
                     position: 'absolute',
-                    top: { xs: '-41px', md: '-45px', lg: '298px' },
-                    right: { xs: '61px', md: '3px', lg: '' },
+                    top: { xs: '-41px', md: '-41px', lg: '298px' },
+                    right: { xs: '61px', md: '-69px', lg: '' },
                     left: { lg: '-109px' },
                     width: { xs: '13px', md: '34px', lg: '41px' },
                     height: { xs: '13px', md: '34px', lg: '41px' },
@@ -545,15 +542,15 @@ function HomeContent({ data, loading }) {
                 }}>
                 <Box
                   sx={{
-                    maxWidth: { md: '360px' },
-                    padding: { xs: '0 2rem 0 3.9rem' },
+                    maxWidth: { md: '374px' },
+                    padding: { xs: '0 2rem 0 3.9rem', md: '0' },
                     position: 'relative',
-                    margin: { xs: '0 auto' },
+                    marginLeft: { md: '69px' },
                     '::after': {
                       content: '""',
                       position: 'absolute',
-                      top: { xs: '-3px', md: '-10px' },
-                      left: { xs: '29px', md: '-10px' },
+                      top: { xs: '-3px', md: '-4px' },
+                      left: { xs: '29px', md: '-75px' },
                       width: { xs: '25px', md: '58px' },
                       height: { xs: '25px', md: '58px' },
                       backgroundImage: `url(${process.env.PUBLIC_URL}/bgElements/bg_diamnd_blue_yellow.png)`,
@@ -573,11 +570,6 @@ function HomeContent({ data, loading }) {
                         xs: '0.875rem',
                         md: '1.25rem',
                       },
-                      marginBottom: {
-                        xs: '26px',
-                        md: '50px',
-                        lg: '0',
-                      },
                     }}>
                     Сім’я, розвиток, щасливе майбутнє дитини, родини, України.
                   </Typography>
@@ -594,6 +586,7 @@ function HomeContent({ data, loading }) {
                   },
                   height: {
                     xs: '329px',
+                    md: '657px',
                   },
                 }}>
                 <img
@@ -611,16 +604,16 @@ function HomeContent({ data, loading }) {
         <Container
           maxWidth="xl"
           disableGutters
-          sx={{ marginBottom: { xs: '48px' } }}>
+          sx={{ marginBottom: { xs: '48px', md: '99px' } }}>
           <Box
             sx={{
-              padding: { xs: '0 1.25rem', md: '0 2.19rem', lg: '0 6rem' },
+              padding: { xs: '0 1.25rem', md: '0', lg: '0 6rem' },
             }}>
             <Box
               sx={{
                 margin: {
                   xs: '0 auto 24px',
-                  md: '0 auto 16px',
+                  md: '0 auto 11px',
                   lg: '0 auto 88px',
                 },
                 textAlign: 'center',
@@ -646,25 +639,25 @@ function HomeContent({ data, loading }) {
               '::before': {
                 content: '""',
                 position: 'absolute',
-                top: { xs: '15px', md: '-10px' },
-                left: { xs: '26px', md: '-10px' },
+                top: { xs: '15px', md: '-113px' },
+                left: { xs: '26px', md: '695px' },
                 right: { xs: '' },
-                width: { xs: '26px', md: '58px' },
-                height: { xs: '19px', md: '58px' },
+                width: { xs: '26px', md: '24px' },
+                height: { xs: '19px', md: '17px' },
                 backgroundImage: `url(${process.env.PUBLIC_URL}/bgElements/bg_BlueTriangle.png)`,
                 backgroundRepeat: 'no-repeat',
                 backgroundSize: 'contain',
                 opacity: 1,
-                zIndex: -1,
+                transform: 'rotatey(180deg)',
               },
               '::after': {
                 content: '""',
                 position: 'absolute',
-                top: { xs: '-37px', md: '-10px' },
-                left: { xs: '', md: '-10px' },
+                top: { xs: '-37px', md: '772px' },
+                left: { xs: '', md: '36px' },
                 right: { xs: '19px' },
-                width: { xs: '48px', md: '58px' },
-                height: { xs: '68px', md: '58px' },
+                width: { xs: '48px', md: '35px' },
+                height: { xs: '68px', md: '49px' },
                 backgroundImage: `url(${process.env.PUBLIC_URL}/bgElements/bg_3triangles.png)`,
                 backgroundRepeat: 'no-repeat',
                 backgroundSize: 'contain',
@@ -679,16 +672,17 @@ function HomeContent({ data, loading }) {
                 rowGap: { xs: '23px', md: '10px', lg: '16px' },
                 padding: {
                   xs: '0 1.25rem 0 1.25rem',
+                  md: '0 1.9rem 0 1.9rem',
                   lg: '0 14.25rem 0 14.25rem',
                 },
                 '::before': {
                   content: '""',
                   position: 'absolute',
-                  top: { xs: '347px', md: '-10px' },
-                  left: { xs: '', md: '-10px' },
+                  top: { xs: '347px', md: '380px' },
+                  left: { xs: '', md: '71px' },
                   right: { xs: '19px' },
-                  width: { xs: '27px', md: '58px' },
-                  height: { xs: '27px', md: '58px' },
+                  width: { xs: '27px', md: '23px' },
+                  height: { xs: '27px', md: '24px' },
                   backgroundImage: `url(${process.env.PUBLIC_URL}/bgElements/bg_yellow_triangle.png)`,
                   backgroundRepeat: 'no-repeat',
                   backgroundSize: 'contain',
@@ -699,11 +693,11 @@ function HomeContent({ data, loading }) {
                 '::after': {
                   content: '""',
                   position: 'absolute',
-                  top: { xs: '312px', md: '-10px' },
-                  left: { xs: '', md: '-10px' },
+                  top: { xs: '312px', md: '350px' },
+                  left: { xs: '', md: '34px' },
                   right: { xs: '75px' },
-                  width: { xs: '13px', md: '58px' },
-                  height: { xs: '9px', md: '58px' },
+                  width: { xs: '13px', md: '11px' },
+                  height: { xs: '9px', md: '9px' },
                   backgroundImage: `url(${process.env.PUBLIC_URL}/bgElements/bg_light_blue_triangle.png)`,
                   backgroundRepeat: 'no-repeat',
                   backgroundSize: 'contain',
@@ -722,15 +716,41 @@ function HomeContent({ data, loading }) {
                   sx={{
                     width: { xs: '320px', md: '344px', lg: '548px' },
                     height: { xs: '320px', md: '378px', lg: '548px' },
-                    borderRadius: { xs: '320px', md: '300px 300px 0px 300px' },
+                    borderRadius: { xs: '320px', md: '309px 300px 0px 323px' },
                     background: {
                       xs: theme.palette.colors.mainsecond,
                       md: theme.palette.colors.circle,
                     },
                     opacity: { xs: '.8', md: '.9' },
                   }}>
-                  <Box sx={circleTextBoxStyles}>
-                    <Typography component="h4" sx={circleBoxTitleStyles}>
+                  <Box
+                    sx={{
+                      color: 'white',
+                      padding: {
+                        xs: '62px 50px 0 50px',
+                        md: '92px 0 0 21px',
+                        lg: '162px 108px 0 98px',
+                      },
+                      display: 'flex',
+                      alignItems: 'center',
+                      flexDirection: 'column',
+                    }}>
+                    <Typography
+                      component="h4"
+                      sx={{
+                        fontSize: {
+                          xs: '1.125rem',
+                          md: '1.25rem',
+                          lg: '1.5rem',
+                        },
+                        fontWeight: theme.typography.const.fontWeight.bold,
+                        margin: {
+                          xs: '0 0 8px 0',
+                          md: '0 18px 6px 0',
+                          lg: '16px',
+                        },
+                        textAlign: 'center',
+                      }}>
                       Бізнес
                     </Typography>
                     <Typography sx={circleTextStyles}>
@@ -739,7 +759,9 @@ function HomeContent({ data, loading }) {
                       підтримка може стати кроком до покращення життя багатьох
                       маленьких українців
                     </Typography>
-                    <ContainedButton textColorBlack text="Долучитися" />
+                    <Box sx={{ marginRight: { md: '17px' } }}>
+                      <ContainedButton textColorBlack text="Долучитися" />
+                    </Box>
                   </Box>
                 </Box>
               </Grid>
@@ -752,12 +774,11 @@ function HomeContent({ data, loading }) {
                   '::before': {
                     content: '""',
                     position: 'absolute',
-                    top: { xs: '', md: '-10px' },
+                    top: { xs: '', md: '376px' },
                     bottom: { xs: '-22px' },
-                    left: { xs: '2px', md: '-10px' },
-                    right: { xs: '' },
-                    width: { xs: '36px', md: '58px' },
-                    height: { xs: '18px', md: '58px' },
+                    left: { xs: '2px', md: '300px' },
+                    width: { xs: '36px', md: '40px' },
+                    height: { xs: '18px', md: '20px' },
                     backgroundImage: `url(${process.env.PUBLIC_URL}/bgElements/bg_2Triangles.png)`,
                     backgroundRepeat: 'no-repeat',
                     backgroundSize: 'contain',
@@ -768,16 +789,42 @@ function HomeContent({ data, loading }) {
                 <Box
                   sx={{
                     width: { xs: '320px', md: '344px', lg: '548px' },
-                    height: { xs: '320px', md: '378px', lg: '548px' },
-                    borderRadius: { xs: '320px', md: '300px 300px 300px 0px' },
+                    height: { xs: '320px', md: '376px', lg: '548px' },
+                    borderRadius: { xs: '320px', md: '300px 309px 323px 0px' },
                     background: {
                       xs: theme.palette.colors.circle,
                       md: theme.palette.colors.mainsecond,
                     },
                     opacity: { xs: '.9', md: '.8' },
                   }}>
-                  <Box sx={circleTextBoxStyles}>
-                    <Typography component="h4" sx={circleBoxTitleStyles}>
+                  <Box
+                    sx={{
+                      color: 'white',
+                      padding: {
+                        xs: '62px 50px 0 50px',
+                        md: '101px 10px 0 21px',
+                        lg: '162px 108px 0 98px',
+                      },
+                      display: 'flex',
+                      alignItems: 'center',
+                      flexDirection: 'column',
+                    }}>
+                    <Typography
+                      component="h4"
+                      sx={{
+                        fontSize: {
+                          xs: '1.125rem',
+                          md: '1.25rem',
+                          lg: '1.5rem',
+                        },
+                        fontWeight: theme.typography.const.fontWeight.bold,
+                        margin: {
+                          xs: '0 0 8px 0',
+                          md: '0 16px 6px 0',
+                          lg: '16px',
+                        },
+                        textAlign: 'center',
+                      }}>
                       ГО
                     </Typography>
                     <Typography sx={circleTextStyles}>
@@ -785,7 +832,9 @@ function HomeContent({ data, loading }) {
                       дітей? Звертайтеся до нас, разом ми можемо зробити більше
                       для дітей та їх майбутнього
                     </Typography>
-                    <ContainedButton textColorBlack text="Долучитися" />
+                    <Box sx={{ margin: { md: '0 14px 0 0' } }}>
+                      <ContainedButton textColorBlack text="Долучитися" />
+                    </Box>
                   </Box>
                 </Box>
               </Grid>
@@ -798,13 +847,39 @@ function HomeContent({ data, loading }) {
                 <Box
                   sx={{
                     width: { xs: '320px', md: '344px', lg: '548px' },
-                    height: { xs: '320px', md: '378px', lg: '548px' },
-                    borderRadius: { xs: '320px', md: '300px 0px 300px 300px' },
+                    height: { xs: '320px', md: '376px', lg: '548px' },
+                    borderRadius: { xs: '320px', md: '323px 0px 309px 300px' },
                     background: theme.palette.colors.mainsecond,
                     opacity: '0.8',
                   }}>
-                  <Box sx={circleTextBoxStyles}>
-                    <Typography component="h4" sx={circleBoxTitleStyles}>
+                  <Box
+                    sx={{
+                      color: 'white',
+                      padding: {
+                        xs: '62px 50px 0 50px',
+                        md: '88px 24px 0 30px',
+                        lg: '162px 108px 0 98px',
+                      },
+                      display: 'flex',
+                      alignItems: 'center',
+                      flexDirection: 'column',
+                    }}>
+                    <Typography
+                      component="h4"
+                      sx={{
+                        fontSize: {
+                          xs: '1.125rem',
+                          md: '1.25rem',
+                          lg: '1.5rem',
+                        },
+                        fontWeight: theme.typography.const.fontWeight.bold,
+                        marginBottom: {
+                          xs: '8px',
+                          md: '5px',
+                          lg: '16px',
+                        },
+                        textAlign: 'center',
+                      }}>
                       Фонд
                     </Typography>
                     <Typography sx={circleTextStyles}>
@@ -825,12 +900,12 @@ function HomeContent({ data, loading }) {
                   '::before': {
                     content: '""',
                     position: 'absolute',
-                    top: { xs: '-41px', md: '-10px' },
+                    top: { xs: '-41px', md: '369px' },
                     bottom: { xs: '' },
-                    left: { xs: '', md: '-10px' },
+                    left: { xs: '', md: '279px' },
                     right: { xs: '1px' },
-                    width: { xs: '47px', md: '58px' },
-                    height: { xs: '74px', md: '58px' },
+                    width: { xs: '47px', md: '62px' },
+                    height: { xs: '74px', md: '96px' },
                     backgroundImage: `url(${process.env.PUBLIC_URL}/bgElements/bg_diamond_triangle.png)`,
                     backgroundRepeat: 'no-repeat',
                     backgroundSize: 'contain',
@@ -839,6 +914,7 @@ function HomeContent({ data, loading }) {
                   },
                   '::after': {
                     content: '""',
+                    display: { md: 'none' },
                     position: 'absolute',
                     top: { xs: '', md: '-10px' },
                     bottom: { xs: '2px' },
@@ -858,8 +934,8 @@ function HomeContent({ data, loading }) {
                   sx={{
                     width: '100%',
                     maxWidth: { xs: '320px', md: '344px', lg: '548px' },
-                    height: { xs: '320px', md: '378px', lg: '548px' },
-                    borderRadius: { xs: '320px', md: '0 300px 300px 300px' },
+                    height: { xs: '320px', md: '376px', lg: '548px' },
+                    borderRadius: { xs: '320px', md: '0 323px 309px 300px' },
                     background: theme.palette.colors.circle,
                     opacity: '0.9',
                   }}>
@@ -868,7 +944,7 @@ function HomeContent({ data, loading }) {
                       color: 'white',
                       padding: {
                         xs: '37px 50px 0 50px',
-                        md: '57px 34px 0 34px',
+                        md: '54px 34px 0 34px',
                         lg: '150px 63px 0 63px',
                       },
                       display: 'flex',
@@ -897,21 +973,21 @@ function HomeContent({ data, loading }) {
         <Container
           maxWidth="xl"
           disableGutters
-          sx={{ marginBottom: { xs: '47px' } }}>
+          sx={{ marginBottom: { xs: '47px', md: '72px' } }}>
           <Typography sx={sectionTitleStyles} style={{ textAlign: 'center' }}>
             Команда
           </Typography>
           <Box
             sx={{
               padding: { xs: '0 1.28rem 0 1.38rem', md: '0 2.2rem 0 2.3rem' },
-              marginTop: { xs: '20px', md: '50px' },
+              marginTop: { xs: '20px', md: '49px' },
             }}>
             <Stack
               sx={{
                 flexDirection: { xs: 'column', md: 'row' },
                 alignItems: 'center',
                 justifyContent: 'flex-start',
-                marginBottom: { xs: '26px', lg: '50px' },
+                marginBottom: { xs: '26px', md: '0', lg: '50px' },
               }}>
               <Box sx={{ maxWidth: { md: '500px', lg: '600px' } }}>
                 <Typography
@@ -967,12 +1043,12 @@ function HomeContent({ data, loading }) {
                   '::before': {
                     content: '""',
                     position: 'absolute',
-                    top: { xs: '', md: '-10px' },
+                    top: { xs: '', md: '205px' },
                     bottom: { xs: '-50px' },
-                    left: { xs: '', md: '-10px' },
+                    left: { xs: '', md: '108px' },
                     right: { xs: '-73px' },
-                    width: { xs: '48px', md: '58px' },
-                    height: { xs: '68px', md: '58px' },
+                    width: { xs: '48px', md: '61px' },
+                    height: { xs: '68px', md: '86px' },
                     backgroundImage: `url(${process.env.PUBLIC_URL}/bgElements/bg_3triangles.png)`,
                     backgroundRepeat: 'no-repeat',
                     backgroundSize: 'contain',
@@ -1041,35 +1117,51 @@ function HomeContent({ data, loading }) {
                   width: '173px',
                   height: '173px',
                   position: 'relative',
-                  bottom: { md: '30px' },
+                  bottom: { md: '20px' },
                   '::before': {
                     content: '""',
                     position: 'absolute',
-                    top: { xs: '', md: '-10px' },
+                    top: {
+                      xs: '',
+                      md: '226px',
+                    },
                     bottom: { xs: '95px' },
-                    left: { xs: '-65px', md: '-10px' },
+                    left: {
+                      xs: '-65px',
+                      md: '538px',
+                    },
                     right: { xs: '' },
-                    width: { xs: '52px', md: '58px' },
-                    height: { xs: '71px', md: '58px' },
+                    width: {
+                      xs: '52px',
+                      md: '56px',
+                    },
+                    height: {
+                      xs: '71px',
+                      md: '87px',
+                    },
                     backgroundImage: `url(${process.env.PUBLIC_URL}/bgElements/bg_2blue_yellow_triangles.png)`,
                     backgroundRepeat: 'no-repeat',
                     backgroundSize: 'contain',
                     opacity: 1,
-                    transform: 'rotateZ(270deg)',
+                    transform: {
+                      xs: 'rotateZ(270deg)',
+                      md: 'rotateZ(0deg)',
+                    },
                   },
                   '::after': {
                     content: '""',
                     position: 'absolute',
-                    top: { xs: '', md: '-10px' },
+                    top: { xs: '', md: '198px' },
                     bottom: { xs: '3px' },
-                    left: { xs: '-45px', md: '-10px' },
+                    left: { xs: '-45px', md: '-2px' },
                     right: { xs: '' },
-                    width: { xs: '19px', md: '58px' },
-                    height: { xs: '19px', md: '58px' },
+                    width: { xs: '19px', md: '29px' },
+                    height: { xs: '19px', md: '29px' },
                     backgroundImage: `url(${process.env.PUBLIC_URL}/bgElements/bg_blueTriangle90deg.png)`,
                     backgroundRepeat: 'no-repeat',
                     backgroundSize: 'contain',
                     opacity: 1,
+                    transform: { md: 'rotateZ(270deg)' },
                   },
                 }}>
                 <img
@@ -1090,7 +1182,7 @@ function HomeContent({ data, loading }) {
           </Typography>
           <Box
             sx={{
-              padding: { xs: '0 1.25rem 0 1.25rem' },
+              padding: { xs: '0 1.25rem 0 1.25rem', md: '0 2rem 0 2rem' },
               marginTop: { xs: '20px', md: '30px', lg: '50px' },
             }}>
             <Carousel

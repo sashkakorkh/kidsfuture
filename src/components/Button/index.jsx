@@ -4,7 +4,6 @@ import { Button, useTheme } from '@mui/material';
 import PropTypes from 'prop-types';
 
 const StyledBtn = styled(Button)`
-  font-weight: ${(props) => props.theme.typography.const.fontWeight.bold};
   border-radius: 48px;
   box-shadow: unset;
   text-wrap: nowrap;
@@ -41,13 +40,13 @@ export function OutlinedButton({ textColorBlack, text, btnSupport }) {
 
   const btnDonateStyle = {
     padding: '0',
-    height: { xs: '36px' },
-    width: { xs: '136px' },
-    fontSize: { xs: '0.812rem' },
+    height: { xs: '36px', md: '34px' },
+    width: { xs: '136px', md: '145px' },
+    fontSize: { xs: '0.812rem', md: '1rem' },
     textAlign: 'center',
     backgroundColor: 'transparent',
     textTransform: 'capitalize',
-    fontWeight: theme.typography.const.fontWeight.bold,
+    fontWeight: theme.typography.const.fontWeight.normal,
   };
   const sxStyle = btnSupport ? btnSupportStyle : btnDonateStyle;
   return (
@@ -75,7 +74,7 @@ export function ContainedButton({ textColorBlack, text, wider }) {
     },
     width: {
       xs: '128px',
-      md: '205px',
+      md: '202px',
       lg: '186px',
       xl: '254px',
     },

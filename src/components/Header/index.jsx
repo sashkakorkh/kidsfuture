@@ -33,14 +33,17 @@ function Header() {
     },
   };
   const headerMenuStyle = {
-    containerStyle: {},
+    containerStyle: {
+      fontStretch: { md: 'extra-condensed' },
+    },
     itemStyle: {
       fontSize: {
         xs: '1rem',
         md: '0.825rem',
         lg: '1rem',
       },
-      marginRight: { md: '1rem', lg: '1.5rem' },
+      marginRight: { lg: '1.5rem' },
+      lineHeight: 'normal',
     },
   };
 
@@ -51,9 +54,7 @@ function Header() {
     ) {
       return;
     }
-    console.log('gggg');
     setMenuOpen(openMenu);
-    console.log(openMenu);
   };
 
   return (
@@ -73,7 +74,7 @@ function Header() {
           padding: '0',
           margin: '0',
         }}>
-        <Container maxWidth="xl" sx={{ padding: '0' }}>
+        <Container maxWidth="xl" disableGutters>
           <Toolbar
             disableGutters
             sx={{
@@ -109,19 +110,19 @@ function Header() {
               </NavLink>
               <Stack
                 direction="row"
-                /* spacing={{ md: 1, lg: 1.5, xl: 1.5 }} */
                 sx={{
                   marginLeft: {
                     md: '1.25rem',
                     lg: '3.94rem',
                   },
                   display: { xs: 'none', md: 'flex' },
+                  gap: { md: '10px' },
                 }}>
                 <Menu tag="div" styleConfig={headerMenuStyle} />
               </Stack>
             </Stack>
             <Box
-              sx={{ marginLeft: { md: '13px' }, marginRight: { xs: '24px' } }}>
+              sx={{ marginLeft: { md: '56px' }, marginRight: { xs: '24px' } }}>
               <NavLink to="/donate">
                 <OutlinedButton
                   textColorBlack

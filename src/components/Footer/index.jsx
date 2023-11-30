@@ -70,7 +70,6 @@ function Footer() {
             display="grid"
             sx={{
               marginLeft: { lg: '0.5rem' },
-              fontStretch: 'extra-condensed',
               position: { md: 'absolute', lg: 'static' },
               bottom: { md: '70px' },
               left: { md: '50%' },

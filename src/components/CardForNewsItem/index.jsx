@@ -10,8 +10,8 @@ function CardNewsItem({ item }) {
   return (
     <Box
       sx={{
-        width: { xs: '320px' },
-        height: { xs: '240px' },
+        width: { xs: '320px', md: '219px' },
+        height: { xs: '240px', md: '165px' },
         textAlign: 'left',
       }}>
       <img
