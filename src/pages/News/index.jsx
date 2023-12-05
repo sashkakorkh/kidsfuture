@@ -19,8 +19,8 @@ function News({ data, loading }) {
         <Container
           maxWidth="xl"
           disableGutters
-          sx={{ margin: { xs: '43px 0 48px 0' } }}>
-          <Box sx={{ padding: { xs: '0 3.25rem' } }}>
+          sx={{ margin: { xs: '43px 0 48px 0', md: '113px 0 102px 0' } }}>
+          <Box sx={{ padding: { xs: '0 3.25rem', md: '0 5rem 0 5.6rem' } }}>
             <Carousel
               items={newsItem.imagePath}
               renderContent={(item) => (
@@ -30,12 +30,16 @@ function News({ data, loading }) {
               showPagination
             />
           </Box>
-          <Box sx={{ padding: { xs: '0 1.25rem' }, marginTop: { xs: '53px' } }}>
+          <Box
+            sx={{
+              padding: { xs: '0 1.25rem', md: '0 2.25rem' },
+              marginTop: { xs: '53px', md: '122px' },
+            }}>
             <Typography
               variant="h4"
               sx={{
-                marginBottom: { xs: '16px' },
-                fontSize: { xs: '1.125rem' },
+                marginBottom: { xs: '16px', md: '57px' },
+                fontSize: { xs: '1.125rem', md: '1.5rem' },
                 lineHeight: 'normal',
                 fontWeight: theme.typography.const.fontWeight.bold,
               }}>
@@ -43,7 +47,7 @@ function News({ data, loading }) {
             </Typography>
             <Typography
               sx={{
-                fontSize: { xs: '0.875rem', md: '1rem', lg: '1.125rem' },
+                fontSize: { xs: '0.875rem', md: '1.125rem' },
                 lineHeight: 'normal',
               }}>
               {newsItem.text}
@@ -53,10 +57,9 @@ function News({ data, loading }) {
               style={{
                 textDecoration: 'none',
                 display: 'block',
-                marginTop: '17px',
                 textAlign: 'center',
               }}>
-              <TextButton text="Назад" />
+              <TextButton text="Назад" readBtn={false} />
             </NavLink>
           </Box>
         </Container>

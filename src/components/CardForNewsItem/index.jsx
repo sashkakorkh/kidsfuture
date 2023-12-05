@@ -9,22 +9,27 @@ function CardNewsItem({ item }) {
   const theme = useTheme();
   return (
     <Box
+      className="slick-container"
       sx={{
-        width: { xs: '320px', md: '219px' },
-        height: { xs: '240px', md: '165px' },
         textAlign: 'left',
       }}>
-      <img
-        src={item.imagePath[0]}
-        alt={item.title}
-        width="100%"
-        height="100%"
-      />
+      <Box
+        sx={{
+          width: { xs: '320px', md: '219px', lg: '300px', xl: '436px' },
+          height: { xs: '240px', md: '165px', lg: '226px', xl: '328px' },
+        }}>
+        <img
+          src={item.imagePath[0]}
+          alt={item.title}
+          width="100%"
+          height="100%"
+        />
+      </Box>
       <Typography
         variant="h4"
         sx={{
           marginTop: { xs: '15px' },
-          fontSize: { xs: '1.125rem' },
+          fontSize: { xs: '1.125rem', lg: '1.5rem' },
           lineHeight: 'normal',
           fontWeight: theme.typography.const.fontWeight.bold,
         }}>
@@ -32,7 +37,7 @@ function CardNewsItem({ item }) {
       </Typography>
       <p className="clamp-text">{item.text}</p>
       <NavLink to={`/news/${item.title}`} style={{ textDecoration: 'none' }}>
-        <TextButton text="Читати" />
+        <TextButton text="Читати" readBtn />
       </NavLink>
     </Box>
   );

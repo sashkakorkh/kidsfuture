@@ -112,17 +112,17 @@ function Header() {
                 direction="row"
                 sx={{
                   marginLeft: {
-                    md: '1.25rem',
-                    lg: '3.94rem',
+                    md: '4%',
+                    lg: '5%',
+                    xl: '9%',
                   },
                   display: { xs: 'none', md: 'flex' },
-                  gap: { md: '10px' },
+                  gap: { md: '10px', lg: '0', xl: '4px' },
                 }}>
                 <Menu tag="div" styleConfig={headerMenuStyle} />
               </Stack>
             </Stack>
-            <Box
-              sx={{ marginLeft: { md: '56px' }, marginRight: { xs: '24px' } }}>
+            <Box sx={{ marginRight: { md: '1%', xl: '0' } }}>
               <NavLink to="/donate">
                 <OutlinedButton
                   textColorBlack

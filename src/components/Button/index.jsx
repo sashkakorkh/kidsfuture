@@ -124,16 +124,28 @@ export function ContainedButton({ textColorBlack, text, wider }) {
   );
 }
 
-export function TextButton({ text }) {
+export function TextButton({ text, readBtn }) {
   const theme = useTheme();
-  const textBtnStyles = {
+  const textBtnBack = {
     textTransform: 'uppercase',
     fontWeight: theme.typography.const.fontWeight.bold,
     color: theme.palette.colors.mainsecond,
     lineHeight: 'normal',
     padding: '0',
     minWidth: '53px',
+    marginTop: { xs: '17px', md: '48px' },
+    fontSize: '1rem',
   };
+  const textBtnRead = {
+    textTransform: 'uppercase',
+    fontWeight: theme.typography.const.fontWeight.bold,
+    color: theme.palette.colors.mainsecond,
+    lineHeight: 'normal',
+    padding: '0',
+    minWidth: '53px',
+    fontSize: '1rem',
+  };
+  const textBtnStyles = readBtn ? textBtnRead : textBtnBack;
   return <Button sx={textBtnStyles}>{text}</Button>;
 }
 
@@ -155,4 +167,5 @@ ContainedButton.defaultProps = {
 
 TextButton.propTypes = {
   text: PropTypes.string.isRequired,
+  readBtn: PropTypes.bool.isRequired,
 };
