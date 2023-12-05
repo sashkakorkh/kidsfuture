@@ -4,6 +4,7 @@ import {
   AppBar,
   Box,
   Container,
+  CssBaseline,
   IconButton,
   List,
   Stack,
@@ -11,15 +12,13 @@ import {
   Toolbar,
   useTheme,
 } from '@mui/material';
-import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
-import logo from './small-logo.png';
 import Menu from '../Menu/index';
 import Footer from '../Footer';
 import { OutlinedButton } from '../Button';
 
 function Header() {
-  const [open, setState] = useState(false);
+  const [open, setMenuOpen] = useState(false);
   const theme = useTheme();
   const burgerMenuStyle = {
     containerStyle: {
@@ -34,14 +33,17 @@ function Header() {
     },
   };
   const headerMenuStyle = {
-    containerStyle: {},
+    containerStyle: {
+      fontStretch: { md: 'extra-condensed' },
+    },
     itemStyle: {
       fontSize: {
         xs: '1rem',
         md: '0.825rem',
         lg: '1rem',
       },
-      marginRight: { md: '1rem', lg: '1.5rem' },
+      marginRight: { lg: '1.5rem' },
+      lineHeight: 'normal',
     },
   };
 
@@ -52,11 +54,18 @@ function Header() {
     ) {
       return;
     }
-    setState(openMenu);
+    setMenuOpen(openMenu);
   };
 
   return (
-    <Container maxWidth="100%" disableGutters>
+    <div
+      style={{
+        overflow: 'hidden',
+        display: 'flex',
+        flexDirection: 'column',
+        minHeight: '100vh',
+      }}>
+      <CssBaseline />
       <AppBar
         position="static"
         sx={{
@@ -65,7 +74,7 @@ function Header() {
           padding: '0',
           margin: '0',
         }}>
-        <Container maxWidth="xl" sx={{ padding: '0' }}>
+        <Container maxWidth="xl" disableGutters>
           <Toolbar
             disableGutters
             sx={{
@@ -91,25 +100,37 @@ function Header() {
                       lg: '69px',
                     },
                   }}>
-                  <img src={logo} alt="Logo" height="100%" width="100%" />
+                  <img
+                    src={`${process.env.PUBLIC_URL}/images/small-logo.png`}
+                    alt="Logo"
+                    height="100%"
+                    width="100%"
+                  />
                 </Box>
               </NavLink>
               <Stack
                 direction="row"
-                /* spacing={{ md: 1, lg: 1.5, xl: 1.5 }} */
                 sx={{
                   marginLeft: {
-                    md: '1.25rem',
-                    lg: '3.94rem',
+                    md: '4%',
+                    lg: '5%',
+                    xl: '9%',
                   },
                   display: { xs: 'none', md: 'flex' },
+                  gap: { md: '10px', lg: '0', xl: '4px' },
                 }}>
                 <Menu tag="div" styleConfig={headerMenuStyle} />
               </Stack>
             </Stack>
-            <NavLink to="#" style={{ marginLeft: '13px' }}>
-              <OutlinedButton textColorBlack text="Підтримати фонд" />
-            </NavLink>
+            <Box sx={{ marginRight: { md: '1%', xl: '0' } }}>
+              <NavLink to="/donate">
+                <OutlinedButton
+                  textColorBlack
+                  text="Підтримати фонд"
+                  btnSupport
+                />
+              </NavLink>
+            </Box>
             <IconButton
               aria-label="open drawer"
               onClick={toggleDrawer(true)}
@@ -122,7 +143,12 @@ function Header() {
                   padding: '0',
                 },
               }}>
-              <MenuRoundedIcon fontSize="large" />
+              <img
+                src={`${process.env.PUBLIC_URL}/images/menu.png`}
+                alt="burger-menu-icon"
+                width="100%"
+                height="100%"
+              />
             </IconButton>
             <SwipeableDrawer
               anchor="right"
@@ -149,7 +175,12 @@ function Header() {
                 <CloseRoundedIcon fontSize="large" />
               </IconButton>
               <List style={{ margin: '0 25px 31px 25px', padding: '0' }}>
-                <Menu tag="li" styleConfig={burgerMenuStyle} />
+                <Menu
+                  tag="li"
+                  styleConfig={burgerMenuStyle}
+                  functionToggle={toggleDrawer}
+                  open={open}
+                />
               </List>
             </SwipeableDrawer>
           </Toolbar>
@@ -159,7 +190,7 @@ function Header() {
         <Outlet />
       </main>
       <Footer />
-    </Container>
+    </div>
   );
 }
 

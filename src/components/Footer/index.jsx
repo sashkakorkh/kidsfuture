@@ -9,12 +9,6 @@ import {
   Typography,
   useTheme,
 } from '@mui/material';
-import logo from './logo-white.png';
-import fblogo from '../Header/fb-logo.png';
-import instlogo from '../Header/insta-logo.png';
-import youtubelogo from '../Header/youtube-logo.png';
-import phone from '../Header/phone.png';
-import mail from '../Header/mail.png';
 import Menu from '../Menu/index';
 import { OutlinedButton } from '../Button';
 
@@ -40,7 +34,7 @@ function Footer() {
         backgroundColor: theme.palette.colors.mainsecond,
       }}>
       <Container
-        maxWidth="xl"
+        maxWidth="100%"
         sx={{
           height: { xs: '', md: '267px', lg: '210px' },
           padding: {
@@ -64,14 +58,18 @@ function Footer() {
                 height: { xs: '36px', md: '74px', lg: '87px' },
                 width: { xs: '44px', md: '87px', lg: '97px' },
               }}>
-              <img src={logo} alt="Logo" height="100%" width="100%" />
+              <img
+                src={`${process.env.PUBLIC_URL}/images/logo-white.png`}
+                alt="Logo"
+                height="100%"
+                width="100%"
+              />
             </Box>
           </NavLink>
           <Box
             display="grid"
             sx={{
               marginLeft: { lg: '0.5rem' },
-              fontStretch: 'extra-condensed',
               position: { md: 'absolute', lg: 'static' },
               bottom: { md: '70px' },
               left: { md: '50%' },
@@ -107,7 +105,12 @@ function Footer() {
                   height: { xs: '16px', md: '30px', lg: '31px' },
                   width: { xs: '16px', md: '30px', lg: '31px' },
                 }}>
-                <img src={phone} alt="phone" width="100%" height="100%" />
+                <img
+                  src={`${process.env.PUBLIC_URL}/images/phone.png`}
+                  alt="phone"
+                  width="100%"
+                  height="100%"
+                />
               </Box>
               <Link
                 to="tel:+38093 549 8057"
@@ -131,7 +134,12 @@ function Footer() {
                   height: { xs: '16px', md: '30px', lg: '31px' },
                   width: { xs: '16px', md: '30px', lg: '31px' },
                 }}>
-                <img src={mail} alt="mail" width="100%" height="100%" />
+                <img
+                  src={`${process.env.PUBLIC_URL}/images/mail.png`}
+                  alt="mail"
+                  width="100%"
+                  height="100%"
+                />
               </Box>
               <Link
                 to="mailto:info@kidsfuture.org.ua"
@@ -164,14 +172,12 @@ function Footer() {
                   sx={{
                     width: { xs: '15px', md: '25px', lg: '30px' },
                   }}>
-                  <img src={fblogo} alt="Logo" height="100%" width="100%" />
-                </Box>
-                {/* </Link> */}
-              </IconButton>
-              <IconButton>
-                {/*  <Link to="#"> */}
-                <Box sx={{ width: { xs: '15px', md: '25px', lg: '30px' } }}>
-                  <img src={instlogo} alt="Logo" height="100%" width="100%" />
+                  <img
+                    src={`${process.env.PUBLIC_URL}/images/fb-logo.png`}
+                    alt="Logo"
+                    height="100%"
+                    width="100%"
+                  />
                 </Box>
                 {/* </Link> */}
               </IconButton>
@@ -179,7 +185,19 @@ function Footer() {
                 {/*  <Link to="#"> */}
                 <Box sx={{ width: { xs: '15px', md: '25px', lg: '30px' } }}>
                   <img
-                    src={youtubelogo}
+                    src={`${process.env.PUBLIC_URL}/images/insta-logo.png`}
+                    alt="Logo"
+                    height="100%"
+                    width="100%"
+                  />
+                </Box>
+                {/* </Link> */}
+              </IconButton>
+              <IconButton>
+                {/*  <Link to="#"> */}
+                <Box sx={{ width: { xs: '15px', md: '25px', lg: '30px' } }}>
+                  <img
+                    src={`${process.env.PUBLIC_URL}/images/youtube-logo.png`}
                     alt="Logo"
                     height="100%"
                     width="100%"
@@ -207,7 +225,11 @@ function Footer() {
               Політика конфіденційності
             </Link>
           </Stack>
-          <OutlinedButton textColorBlack={false} text="Підтримати фонд" />
+          <OutlinedButton
+            textColorBlack={false}
+            text="Підтримати фонд"
+            btnSupport
+          />
         </Stack>
       </Container>
       <Box

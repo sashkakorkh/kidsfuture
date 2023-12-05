@@ -1,0 +1,39 @@
+[
+  {
+    "title": "Отримали статус Волонтерської організації",
+    "text": "Благодійний Фонд «Розвиток. Діти. Майбутнє» після усіх перевірок. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
+    "id": 5,
+    "imagePath": ["/imagesForNews/volunteer.png"]
+  },
+  {
+    "title": "Діти хочуть знати. Пізнавальна екскурсія до музею",
+    "text": "Можна нескінченно довго дивитись на вогонь, воду та дитячі емоції.At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. ",
+    "id": 4,
+    "imagePath": ["/imagesForNews/kids_at_exhibition.png"]
+  },
+  {
+    "title": "Допомога Гостомельському центру творчості дітей та юнацтва",
+    "text": "Один із напрямків БФ “Розвиток. Діти. Майбутнє” - це надання засобів для розвитку дітей. Вже не вперше ми допомагаємо діткам Гостомеля та закуповуємо спеціальні засоби для творчого навчання. Так до нас звернувся Гостомельський центр творчості дітей та юнацтва з запитом проспонсорувати закупівлю праски та аксесуарів до неї для гуртків з рукоділля та декоративно-ужиткового мистецтв, портативної акустики для роботи театрального гуртка та виховних заходів. Нехай служать довго та допомагають у творчості!",
+    "id": 3,
+    "imagePath": [
+      "/imagesForNews/help_to_kids_center.png",
+      "/imagesForNews/help_to_kids_center2.png"
+    ]
+  },
+  {
+    "title": "Lorem",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "id": 2,
+    "imagePath": [
+      "/imagesForNews/hands_with_hearts.png",
+      "/imagesForNews/people_volunteers.jpg",
+      "/imagesForNews/people_volunteers.jpg"
+    ]
+  },
+  {
+    "title": "Lorem Ipsum",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "id": 1,
+    "imagePath": ["/imagesForNews/people_volunteers.jpg"]
+  }
+]

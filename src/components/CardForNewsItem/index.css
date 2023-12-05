@@ -1,0 +1,25 @@
+.clamp-text {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  margin-top: 8px;
+  line-height: normal;
+}
+@media screen and (min-width: 360px) {
+  .clamp-text {
+    font-size: 0.875rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .clamp-text {
+    font-size: 1rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .clamp-text {
+    font-size: 1.125rem;
+  }
+}
+
+/*# sourceMappingURL=index.css.map */

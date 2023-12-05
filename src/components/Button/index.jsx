@@ -4,15 +4,16 @@ import { Button, useTheme } from '@mui/material';
 import PropTypes from 'prop-types';
 
 const StyledBtn = styled(Button)`
-  font-weight: ${(props) => props.theme.typography.const.fontWeight.bold};
   border-radius: 48px;
   box-shadow: unset;
+  text-wrap: nowrap;
+  line-height: 1;
   :hover {
     cursor: pointer;
   }
 `;
 
-export function OutlinedButton({ textColorBlack, text }) {
+export function OutlinedButton({ textColorBlack, text, btnSupport }) {
   const theme = useTheme();
   const btnSupportStyle = {
     padding: '0',
@@ -32,25 +33,36 @@ export function OutlinedButton({ textColorBlack, text }) {
       lg: '1.125rem',
     },
     textAlign: 'center',
-    textTransform: 'uppercase',
     backgroundColor: 'transparent',
+    textTransform: 'uppercase',
     fontWeight: theme.typography.const.fontWeight.bold,
-    textWrap: 'nowrap',
   };
+
+  const btnDonateStyle = {
+    padding: '0',
+    height: { xs: '36px', md: '34px' },
+    width: { xs: '136px', md: '145px' },
+    fontSize: { xs: '0.812rem', md: '1rem' },
+    textAlign: 'center',
+    backgroundColor: 'transparent',
+    textTransform: 'capitalize',
+    fontWeight: theme.typography.const.fontWeight.normal,
+  };
+  const sxStyle = btnSupport ? btnSupportStyle : btnDonateStyle;
   return (
     <StyledBtn
       variant="outlined"
       style={{
-        outline: textColorBlack ? '1px solid #4366E3' : '1px solid white',
+        border: textColorBlack ? '1px solid #4366E3' : '1px solid white',
         color: textColorBlack ? 'black' : 'white',
       }}
-      sx={btnSupportStyle}>
+      sx={sxStyle}>
       {text}
     </StyledBtn>
   );
 }
 
-export function ContainedButton({ textColorBlack, text }) {
+export function ContainedButton({ textColorBlack, text, wider }) {
   const theme = useTheme();
   const btnBlueStyle = {
     padding: '0',
@@ -62,7 +74,7 @@ export function ContainedButton({ textColorBlack, text }) {
     },
     width: {
       xs: '128px',
-      md: '205px',
+      md: '202px',
       lg: '186px',
       xl: '254px',
     },
@@ -74,8 +86,6 @@ export function ContainedButton({ textColorBlack, text }) {
     texAlign: 'center',
     textTransform: 'uppercase',
     fontWeight: theme.typography.const.fontWeight.bold,
-    textWrap: 'nowrap',
-    lineHeight: '1',
     backgroundColor: theme.palette.colors.mainsecond,
     color: 'white',
     '&:hover': {
@@ -91,7 +101,7 @@ export function ContainedButton({ textColorBlack, text }) {
     },
     width: {
       xs: '128px',
-      md: '154px',
+      md: wider ? '184px' : '154px',
     },
     fontSize: {
       xs: '0.875rem',
@@ -100,8 +110,6 @@ export function ContainedButton({ textColorBlack, text }) {
     textAlign: 'center',
     textTransform: 'uppercase',
     fontWeight: theme.typography.const.fontWeight.bold,
-    textWrap: 'nowrap',
-    lineHeight: '1',
     backgroundColor: 'white',
     color: 'black',
     '&:hover': {
@@ -116,12 +124,48 @@ export function ContainedButton({ textColorBlack, text }) {
   );
 }
 
+export function TextButton({ text, readBtn }) {
+  const theme = useTheme();
+  const textBtnBack = {
+    textTransform: 'uppercase',
+    fontWeight: theme.typography.const.fontWeight.bold,
+    color: theme.palette.colors.mainsecond,
+    lineHeight: 'normal',
+    padding: '0',
+    minWidth: '53px',
+    marginTop: { xs: '17px', md: '48px' },
+    fontSize: '1rem',
+  };
+  const textBtnRead = {
+    textTransform: 'uppercase',
+    fontWeight: theme.typography.const.fontWeight.bold,
+    color: theme.palette.colors.mainsecond,
+    lineHeight: 'normal',
+    padding: '0',
+    minWidth: '53px',
+    fontSize: '1rem',
+  };
+  const textBtnStyles = readBtn ? textBtnRead : textBtnBack;
+  return <Button sx={textBtnStyles}>{text}</Button>;
+}
+
 OutlinedButton.propTypes = {
   text: PropTypes.string.isRequired,
   textColorBlack: PropTypes.bool.isRequired,
+  btnSupport: PropTypes.bool.isRequired,
 };
 
 ContainedButton.propTypes = {
   text: PropTypes.string.isRequired,
   textColorBlack: PropTypes.bool.isRequired,
+  wider: PropTypes.bool,
+};
+
+ContainedButton.defaultProps = {
+  wider: false,
+};
+
+TextButton.propTypes = {
+  text: PropTypes.string.isRequired,
+  readBtn: PropTypes.bool.isRequired,
 };

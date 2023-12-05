@@ -18,19 +18,19 @@ const LinkText = styled(Typography)`
 const menuItems = [
   {
     text: 'Про нас',
-    link: '#',
+    link: '/#about',
   },
   {
     text: 'Співпраця',
-    link: '#',
+    link: '/#cooperation',
   },
   {
     text: 'Команда',
-    link: '#',
+    link: '/#team',
   },
   {
     text: 'Новини',
-    link: '#',
+    link: '/#news',
   },
   {
     text: 'Донати',
@@ -41,38 +41,8 @@ const menuItems = [
     link: '#',
   },
 ];
-// export function BurgerMenu() {
-//   const theme = useTheme();
-//   return (
-//     <>
-//       {menuItems.map((item, index) => (
-//         <>
-//           <ListItem key={item.text} style={{ padding: '12px 0' }}>
-//             <NavLink
-//               to={item.link}
-//               style={{
-//                 textDecoration: 'none',
-//                 margin: '0 auto',
-//                 padding: '0',
-//               }}>
-//               <LinkText sx={menuTextStyle}>{item.text}</LinkText>
-//             </NavLink>
-//           </ListItem>
-//           {index !== menuItems.length - 1 && (
-//             <Divider
-//               style={{
-//                 color: theme.palette.colors.divider,
-//                 borderColor: theme.palette.colors.divider,
-//               }}
-//             />
-//           )}
-//         </>
-//       ))}
-//     </>
-//   );
-// }
 
-function Menu({ tag, styleConfig }) {
+function Menu({ tag, styleConfig, functionToggle }) {
   const { itemStyle, containerStyle } = styleConfig;
   const theme = useTheme();
   const ElementTag = tag;
@@ -80,7 +50,7 @@ function Menu({ tag, styleConfig }) {
     <>
       {menuItems.map((item, index) => (
         <React.Fragment key={item.text}>
-          <ElementTag style={containerStyle}>
+          <ElementTag style={containerStyle} onClick={functionToggle(false)}>
             <NavLink to={item.link} style={{ textDecoration: 'none' }}>
               <LinkText sx={itemStyle} style={itemStyle} noWrap>
                 {item.text}
@@ -109,4 +79,9 @@ Menu.propTypes = {
     containerStyle: PropTypes.instanceOf(Object),
     itemStyle: PropTypes.instanceOf(Object),
   }).isRequired,
+  functionToggle: PropTypes.func,
+};
+
+Menu.defaultProps = {
+  functionToggle: () => {},
 };
