@@ -7,7 +7,7 @@ const StyledBtn = styled(Button)`
   border-radius: 48px;
   box-shadow: unset;
   text-wrap: nowrap;
-  line-height: 1;
+  line-height: normal;
   :hover {
     cursor: pointer;
   }
@@ -62,65 +62,94 @@ export function OutlinedButton({ textColorBlack, text, btnSupport }) {
   );
 }
 
-export function ContainedButton({ textColorBlack, text, wider }) {
+export function ContainedButton({ btnName, text, wider, onClick }) {
   const theme = useTheme();
-  const btnBlueStyle = {
-    padding: '0',
-    height: {
-      xs: '34px',
-      md: '49px',
-      lg: '43px',
-      xl: '54px',
+  const buttons = {
+    btnBlue: {
+      padding: '0',
+      height: {
+        xs: '34px',
+        md: '49px',
+        lg: '43px',
+        xl: '54px',
+      },
+      width: {
+        xs: '128px',
+        md: '202px',
+        lg: '186px',
+        xl: '254px',
+      },
+      fontSize: {
+        xs: '0.875rem',
+        md: '1rem',
+        xl: '1.25rem',
+      },
+      texAlign: 'center',
+      textTransform: 'uppercase',
+      fontWeight: theme.typography.const.fontWeight.bold,
+      backgroundColor: theme.palette.colors.mainsecond,
+      color: 'white',
+      borderRadius: '48px',
+      boxShadow: 'unset',
+      textWrap: 'nowrap',
+      lineHeight: 'normal',
+      '&:hover': {
+        backgroundColor: theme.palette.colors.mainfirst,
+        cursor: ' pointer',
+      },
     },
-    width: {
-      xs: '128px',
-      md: '202px',
-      lg: '186px',
-      xl: '254px',
+    btnWhite: {
+      padding: '0',
+      height: {
+        xs: '34px',
+        md: '41px',
+      },
+      width: {
+        xs: '128px',
+        md: wider ? '184px' : '154px',
+      },
+      fontSize: {
+        xs: '0.875rem',
+        md: '1rem',
+      },
+      textAlign: 'center',
+      textTransform: 'uppercase',
+      fontWeight: theme.typography.const.fontWeight.bold,
+      backgroundColor: 'white',
+      color: 'black',
+      borderRadius: '48px',
+      boxShadow: 'unset',
+      textWrap: 'nowrap',
+      lineHeight: 'normal',
+      '&:hover': {
+        backgroundColor: theme.palette.colors.mainfirst,
+        cursor: 'pointer',
+      },
     },
-    fontSize: {
-      xs: '0.875rem',
-      md: '1rem',
-      xl: '1.25rem',
-    },
-    texAlign: 'center',
-    textTransform: 'uppercase',
-    fontWeight: theme.typography.const.fontWeight.bold,
-    backgroundColor: theme.palette.colors.mainsecond,
-    color: 'white',
-    '&:hover': {
-      backgroundColor: theme.palette.colors.mainfirst,
+    btnCurrency: {
+      fontSize: { xs: '1.25rem', md: '1.5rem' },
+      fontWeight: theme.typography.const.fontWeight.normal,
+      width: { xs: '80px', md: '108px' },
+      height: { xs: ' 45px', md: '72px' },
+      lineHeight: 'normal',
+      textTransform: 'uppercase',
+      textAlign: 'center',
+      borderRadius: { xs: '15px', md: '25px' },
+      color: 'black',
+      background: '#F99820',
+      boxShadow: 'unset',
+      textWrap: 'nowrap',
+      '&:hover': {
+        backgroundColor: theme.palette.colors.mainfirst,
+        cursor: 'pointer',
+      },
     },
   };
 
-  const btnWhiteStyle = {
-    padding: '0',
-    height: {
-      xs: '34px',
-      md: '41px',
-    },
-    width: {
-      xs: '128px',
-      md: wider ? '184px' : '154px',
-    },
-    fontSize: {
-      xs: '0.875rem',
-      md: '1rem',
-    },
-    textAlign: 'center',
-    textTransform: 'uppercase',
-    fontWeight: theme.typography.const.fontWeight.bold,
-    backgroundColor: 'white',
-    color: 'black',
-    '&:hover': {
-      backgroundColor: theme.palette.colors.mainfirst,
-    },
-  };
-  const styles = textColorBlack ? btnWhiteStyle : btnBlueStyle;
   return (
-    <StyledBtn variant="contained" sx={styles}>
+    <Button variant="contained" sx={buttons[btnName]} onClick={onClick}>
       {text}
-    </StyledBtn>
+    </Button>
   );
 }
 
@@ -143,10 +172,10 @@ export function TextButton({ text, readBtn }) {
     lineHeight: 'normal',
     padding: '0',
     minWidth: '53px',
-    fontSize: '1rem',
+    fontSize: { xs: '0.875rem', md: '1rem' },
   };
   const textBtnStyles = readBtn ? textBtnRead : textBtnBack;
-  return <Button sx={textBtnStyles}>{text}</Button>;
+  return <StyledBtn sx={textBtnStyles}>{text}</StyledBtn>;
 }
 
 OutlinedButton.propTypes = {
@@ -157,12 +186,14 @@ OutlinedButton.propTypes = {
 
 ContainedButton.propTypes = {
   text: PropTypes.string.isRequired,
-  textColorBlack: PropTypes.bool.isRequired,
+  btnName: PropTypes.string.isRequired,
   wider: PropTypes.bool,
+  onClick: PropTypes.func,
 };
 
 ContainedButton.defaultProps = {
   wider: false,
+  onClick: () => {},
 };
 
 TextButton.propTypes = {

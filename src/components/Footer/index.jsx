@@ -113,7 +113,7 @@ function Footer() {
                 />
               </Box>
               <Link
-                to="tel:+38093 549 8057"
+                href="tel:+38093 549 8057"
                 sx={{
                   color: 'white',
                   fontSize: { xs: '0.75rem', md: '1rem' },
@@ -142,7 +142,7 @@ function Footer() {
                 />
               </Box>
               <Link
-                to="mailto:info@kidsfuture.org.ua"
+                href="mailto:info@kidsfuture.org.ua"
                 sx={{
                   color: 'white',
                   fontSize: { xs: '0.75rem', md: '1rem' },
@@ -167,31 +167,31 @@ function Footer() {
                 right: { xs: 'unset', md: '74px' },
               }}>
               <IconButton>
-                {/*  <Link to="#"> */}
-                <Box
-                  sx={{
-                    width: { xs: '15px', md: '25px', lg: '30px' },
-                  }}>
-                  <img
-                    src={`${process.env.PUBLIC_URL}/images/fb-logo.png`}
-                    alt="Logo"
-                    height="100%"
-                    width="100%"
-                  />
-                </Box>
-                {/* </Link> */}
+                <Link href="https://www.facebook.com/kids.future.ua">
+                  <Box
+                    sx={{
+                      width: { xs: '15px', md: '25px', lg: '30px' },
+                    }}>
+                    <img
+                      src={`${process.env.PUBLIC_URL}/images/fb-logo.png`}
+                      alt="Logo"
+                      height="100%"
+                      width="100%"
+                    />
+                  </Box>
+                </Link>
               </IconButton>
               <IconButton>
-                {/*  <Link to="#"> */}
-                <Box sx={{ width: { xs: '15px', md: '25px', lg: '30px' } }}>
-                  <img
-                    src={`${process.env.PUBLIC_URL}/images/insta-logo.png`}
-                    alt="Logo"
-                    height="100%"
-                    width="100%"
-                  />
-                </Box>
-                {/* </Link> */}
+                <Link href="https://www.instagram.com/kids.future.ua">
+                  <Box sx={{ width: { xs: '15px', md: '25px', lg: '30px' } }}>
+                    <img
+                      src={`${process.env.PUBLIC_URL}/images/insta-logo.png`}
+                      alt="Logo"
+                      height="100%"
+                      width="100%"
+                    />
+                  </Box>
+                </Link>
               </IconButton>
               <IconButton>
                 {/*  <Link to="#"> */}
@@ -207,7 +207,7 @@ function Footer() {
               </IconButton>
             </Stack>
             <Link
-              to="https://policies.google.com/privacy?hl=uk"
+              href="https://policies.google.com/privacy?hl=uk"
               sx={{
                 fontSize: { xs: '0.75rem', md: '1rem' },
                 fontFamily: theme.typography.const.fontFamily.primary,

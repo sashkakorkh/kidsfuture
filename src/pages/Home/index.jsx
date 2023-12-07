@@ -12,6 +12,7 @@ import {
 import { ContainedButton, OutlinedButton } from '../../components/Button';
 import Carousel from '../../components/Carousel';
 import CardNewsItem from '../../components/CardForNewsItem';
+import DonateTab from '../../components/Donate';
 
 function HomeContent({ data, loading }) {
   const theme = useTheme();
@@ -19,6 +20,7 @@ function HomeContent({ data, loading }) {
     fontFamily: theme.typography.const.fontFamily.secondary,
     fontWeight: theme.typography.const.fontWeight.normal,
     lineHeight: 'normal',
+    textAlign: 'center',
     fontSize: {
       xs: '1.25rem',
       md: '2.5rem',
@@ -137,7 +139,7 @@ function HomeContent({ data, loading }) {
                 Ми - сімейний благодійний фонд, який розробляє та підтримує
                 проєкти, що спрямовані на всебічний розвиток дітей та підлітків.
               </Typography>
-              <ContainedButton textColorBlack={false} text="Долучитися" />
+              <ContainedButton btnName="btnBlue" text="Долучитися" />
             </Stack>
             <Box
               sx={{
@@ -800,7 +802,7 @@ function HomeContent({ data, loading }) {
                       маленьких українців
                     </Typography>
                     <Box sx={{ marginRight: { md: '17px', xl: '0' } }}>
-                      <ContainedButton textColorBlack text="Долучитися" />
+                      <ContainedButton btnName="btnWhite" text="Долучитися" />
                     </Box>
                   </Box>
                 </Box>
@@ -943,7 +945,7 @@ function HomeContent({ data, loading }) {
                         зробити більше для дітей та їх майбутнього
                       </Typography>
                       <Box sx={{ margin: { md: '0 14px 0 0', xl: '0' } }}>
-                        <ContainedButton textColorBlack text="Долучитися" />
+                        <ContainedButton btnName="btnWhite" text="Долучитися" />
                       </Box>
                     </Box>
                   </Box>
@@ -1022,7 +1024,7 @@ function HomeContent({ data, loading }) {
                       роботі з дітьми та створенні проектів, які б забезпечували
                       розвиток їх талантів та навичок. Втілимо мрії дітей разом
                     </Typography>
-                    <ContainedButton textColorBlack text="Долучитися" />
+                    <ContainedButton btnName="btnWhite" text="Долучитися" />
                   </Box>
                 </Box>
               </Box>
@@ -1106,7 +1108,11 @@ function HomeContent({ data, loading }) {
                       з дітьми. Долучайтеся до нас та станьте частиною команди,
                       яка змінює життя дітей на краще.
                     </Typography>
-                    <ContainedButton textColorBlack text="Долучитися" wider />
+                    <ContainedButton
+                      btnName="btnWhite"
+                      text="Долучитися"
+                      wider
+                    />
                   </Box>
                 </Box>
               </Box>
@@ -1373,9 +1379,7 @@ function HomeContent({ data, loading }) {
       </section>
       <section id="news">
         <Container maxWidth="xl" disableGutters sx={{ marginBottom: '50px' }}>
-          <Typography sx={sectionTitleStyles} style={{ textAlign: 'center' }}>
-            Новини
-          </Typography>
+          <Typography sx={sectionTitleStyles}>Новини</Typography>
           <Box
             sx={{
               padding: { xs: '0 1.25rem 0 1.25rem', md: '0 3.2rem 0 3.2rem' },
@@ -1387,6 +1391,92 @@ function HomeContent({ data, loading }) {
               isLoading={loading}
               renderContent={(item) => <CardNewsItem item={item} />}
             />
+          </Box>
+        </Container>
+      </section>
+      <section id="donate">
+        <Container
+          maxWidth="xl"
+          disableGutters
+          sx={{
+            marginBottom: '167px',
+            position: 'relative',
+            '::before': {
+              content: '""',
+              position: 'absolute',
+              top: { md: '20px', lg: '92px', xl: '80px' },
+              bottom: {
+                md: '-2px',
+                lg: '-73px',
+                xl: '-190px',
+              },
+              width: { md: '147px', xl: '41px' },
+              height: { md: '145px', xl: '41px' },
+              backgroundImage: `url(${process.env.PUBLIC_URL}/bgElements/bg_leaves.png)`,
+              backgroundRepeat: 'no-repeat',
+              backgroundSize: 'contain',
+              transform: { md: 'rotateZ(224deg)', lg: 'rotateZ(0deg)' },
+            },
+            '::after': {
+              content: '""',
+              position: 'absolute',
+              bottom: { md: '-83px', lg: '92px', xl: '80px' },
+              right: {
+                md: '169px',
+                lg: '-73px',
+                xl: '-190px',
+              },
+              width: { md: '147px', xl: '41px' },
+              height: { md: '145px', xl: '41px' },
+              backgroundImage: `url(${process.env.PUBLIC_URL}/bgElements/bg_leaves.png)`,
+              backgroundRepeat: 'no-repeat',
+              backgroundSize: 'contain',
+              transform: { md: 'rotateZ(99deg)', lg: 'rotateZ(0deg)' },
+            },
+          }}>
+          <Typography sx={sectionTitleStyles}>Донати</Typography>
+          <Box sx={{ padding: { md: '0 2.5rem 0 2.3rem' } }}>
+            <Box
+              sx={{
+                position: 'relative',
+                backgroundColor: 'white',
+                zIndex: '1',
+                padding: {
+                  xs: '0 1.25rem 0 1.25rem',
+                  md: '1.7rem 3.6rem 2.12rem 3.6rem',
+                },
+                marginTop: { xs: '16px', md: '68px', lg: '50px' },
+                borderRadius: { md: '60px' },
+                border: { md: ' 4px solid #F99820' },
+                height: { md: '450px' },
+                '::before': {
+                  content: '""',
+                  position: 'absolute',
+                  top: { xs: '-88px', md: '-118px', lg: '92px', xl: '80px' },
+                  right: {
+                    xs: '19px',
+                    md: '-4px',
+                    lg: '-73px',
+                    xl: '-190px',
+                  },
+                  width: { xs: '48px', md: '50px', xl: '41px' },
+                  height: { xs: '68px', md: '75px', xl: '41px' },
+                  backgroundImage: `url(${process.env.PUBLIC_URL}/bgElements/bg_3triangles.png)`,
+                  backgroundRepeat: 'no-repeat',
+                  backgroundSize: 'contain',
+                },
+              }}>
+              <Typography
+                sx={{
+                  fontSize: { xs: '0.875rem', md: '1.25rem' },
+                  lineHeight: 'normal',
+                  marginBottom: { xs: '30px', md: '35px' },
+                }}>
+                Допомогти дитині зрозуміти її вподобання та таланти, і створити
+                необхідну атмосферу для її розвитку.
+              </Typography>
+              <DonateTab />
+            </Box>
           </Box>
         </Container>
       </section>
