@@ -8,11 +8,11 @@ import {
   Grid,
   useTheme,
 } from '@mui/material';
-/* import styled from '@emotion/styled'; */
 import { ContainedButton, OutlinedButton } from '../../components/Button';
 import Carousel from '../../components/Carousel';
 import CardNewsItem from '../../components/CardForNewsItem';
 import DonateTab from '../../components/Donate';
+import RenderPartners from '../../components/Partners';
 
 function HomeContent({ data, loading }) {
   const theme = useTheme();
@@ -52,9 +52,15 @@ function HomeContent({ data, loading }) {
     textAlign: 'left',
   };
 
+  const defaultStylesBgEl = {
+    content: '""',
+    position: 'absolute',
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: 'contain',
+  };
   return (
     <div>
-      <section>
+      <section id="banner" className="scroll-section">
         <Container maxWidth="xl" disableGutters>
           <Stack
             sx={{
@@ -68,30 +74,22 @@ function HomeContent({ data, loading }) {
               },
               marginTop: { xs: '27px', md: '52px', lg: '54px' },
               '::before': {
-                content: '""',
+                ...defaultStylesBgEl,
                 display: { md: 'none' },
-                position: 'absolute',
                 bottom: '150px',
                 left: '20px',
                 width: '12px',
                 height: '12px',
                 backgroundImage: `url(${process.env.PUBLIC_URL}/bgElements/bg_diamnd_blue_darkblue.png)`,
-                backgroundRepeat: 'no-repeat',
-                backgroundSize: 'contain',
-                opacity: 1,
               },
               '::after': {
-                content: '""',
-                position: 'absolute',
+                ...defaultStylesBgEl,
                 display: { md: 'none' },
                 bottom: '219px',
                 left: '128px',
                 width: '19px',
                 height: '19px',
                 backgroundImage: `url(${process.env.PUBLIC_URL}/bgElements/bg_light_blue_triangle.png)`,
-                backgroundRepeat: 'no-repeat',
-                backgroundSize: 'contain',
-                opacity: 1,
               },
             }}>
             <Stack sx={{ maxWidth: { lg: '526px', xl: '567px' } }}>
@@ -108,7 +106,6 @@ function HomeContent({ data, loading }) {
                     lg: '2.5rem',
                     xl: '4rem',
                   },
-                  /*    maxWidth: { md: '457px', lg: '567px' }, */
                 }}>
                 Розвиток. Діти. Майбутнє.
               </Typography>
@@ -139,7 +136,7 @@ function HomeContent({ data, loading }) {
                 Ми - сімейний благодійний фонд, який розробляє та підтримує
                 проєкти, що спрямовані на всебічний розвиток дітей та підлітків.
               </Typography>
-              <ContainedButton btnName="btnBlue" text="Долучитися" />
+              <ContainedButton btnName="btnContainedBlue" text="Долучитися" />
             </Stack>
             <Box
               sx={{
@@ -152,8 +149,7 @@ function HomeContent({ data, loading }) {
                   xl: '1454px',
                 },
                 '::before': {
-                  content: '""',
-                  position: 'absolute',
+                  ...defaultStylesBgEl,
                   top: { xs: '62px', md: '64px', lg: '227px', xl: '366px' },
                   left: { xs: '27px', md: '-83px', lg: '-116px', xl: '-176px' },
                   width: { xs: '21px', md: '122px', lg: '97px', xl: '152px' },
@@ -162,12 +158,9 @@ function HomeContent({ data, loading }) {
                     xs: `url(${process.env.PUBLIC_URL}/bgElements/bg_diamnd_blue_yellow.png)`,
                     md: `url(${process.env.PUBLIC_URL}/bgElements/bg_2diamonds_triangle.png)`,
                   },
-                  backgroundRepeat: 'no-repeat',
-                  backgroundSize: 'contain',
                 },
                 '::after': {
-                  content: '""',
-                  position: 'absolute',
+                  ...defaultStylesBgEl,
                   top: {
                     xs: '-21px',
                     md: '-52px',
@@ -188,8 +181,6 @@ function HomeContent({ data, loading }) {
                     xl: '215px',
                   },
                   backgroundImage: `url(${process.env.PUBLIC_URL}/bgElements/bg_3triangles.png)`,
-                  backgroundRepeat: 'no-repeat',
-                  backgroundSize: 'contain',
                 },
               }}>
               <Box
@@ -215,8 +206,7 @@ function HomeContent({ data, loading }) {
                   },
                   position: 'relative',
                   '::before': {
-                    content: '""',
-                    position: 'absolute',
+                    ...defaultStylesBgEl,
                     top: { xs: '43px', md: '104px', lg: '322px', xl: '444px' },
                     left: { xs: '', md: '' },
                     right: {
@@ -229,8 +219,6 @@ function HomeContent({ data, loading }) {
                     width: { xs: '30px', md: '66px', lg: '42px', xl: '82px' },
                     height: { xs: '30px', md: '66px', lg: '46px', xl: '82px' },
                     backgroundImage: `url(${process.env.PUBLIC_URL}/bgElements/bg_squareTriangles.png)`,
-                    backgroundRepeat: 'no-repeat',
-                    backgroundSize: 'contain',
                   },
                 }}>
                 <img
@@ -241,7 +229,6 @@ function HomeContent({ data, loading }) {
                 />
               </Box>
             </Box>
-            {/*  </Box> */}
           </Stack>
         </Container>
       </section>
@@ -383,7 +370,7 @@ function HomeContent({ data, loading }) {
           </Stack>
         </Container>
       </section>
-      <section id="about">
+      <section id="about" className="scroll-section">
         <Container maxWidth="xl" disableGutters>
           <Stack
             sx={{
@@ -421,8 +408,7 @@ function HomeContent({ data, loading }) {
                     xl: '103px',
                   },
                   '::after': {
-                    content: '""',
-                    position: 'absolute',
+                    ...defaultStylesBgEl,
                     top: {
                       xs: '-28px',
                       md: '-33px',
@@ -438,12 +424,9 @@ function HomeContent({ data, loading }) {
                     width: { xs: '20px', md: '49px', lg: '54px', xl: '46px' },
                     height: { xs: '20px', md: '49px', lg: '54px', xl: '46px' },
                     backgroundImage: `url(${process.env.PUBLIC_URL}/bgElements/bg_light_blue_triangle.png)`,
-                    backgroundRepeat: 'no-repeat',
-                    backgroundSize: 'contain',
                   },
                   '::before': {
-                    content: '""',
-                    position: 'absolute',
+                    ...defaultStylesBgEl,
                     top: { xs: '12px', md: '87px', lg: '-81px', xl: '38px' },
                     right: {
                       xs: '-4px',
@@ -454,8 +437,6 @@ function HomeContent({ data, loading }) {
                     width: { xs: '12px', md: '32px', lg: '32px', xl: '36px' },
                     height: { xs: '12px', md: '32px', lg: '32px', xl: '36px' },
                     backgroundImage: `url(${process.env.PUBLIC_URL}/bgElements/bg_diamnd_blue_darkblue.png)`,
-                    backgroundRepeat: 'no-repeat',
-                    backgroundSize: 'contain',
                   },
                 }}>
                 <Box
@@ -465,8 +446,7 @@ function HomeContent({ data, loading }) {
                     position: 'relative',
                     margin: { xs: '0 auto' },
                     '::after': {
-                      content: '""',
-                      position: 'absolute',
+                      ...defaultStylesBgEl,
                       top: { xs: '-1px', md: '-2px', lg: '0', xl: '-4px' },
                       left: {
                         xs: '31px',
@@ -482,11 +462,11 @@ function HomeContent({ data, loading }) {
                         xl: '58px',
                       },
                       backgroundImage: `url(${process.env.PUBLIC_URL}/bgElements/bg_diamnd_blue_yellow.png)`,
-                      backgroundRepeat: 'no-repeat',
-                      backgroundSize: 'contain',
                     },
                   }}>
-                  <Typography component="h2" sx={sectionTitleStyles}>
+                  <Typography
+                    component="h2"
+                    sx={{ ...sectionTitleStyles, textAlign: 'left' }}>
                     Мета
                   </Typography>
                   <Typography
@@ -542,8 +522,7 @@ function HomeContent({ data, loading }) {
                     xl: '54px',
                   },
                   '::after': {
-                    content: '""',
-                    position: 'absolute',
+                    ...defaultStylesBgEl,
                     top: {
                       xs: '-12px',
                       md: '-120px',
@@ -555,21 +534,16 @@ function HomeContent({ data, loading }) {
                     width: { xs: '12px', md: '32px', lg: '27px', xl: '38px' },
                     height: { xs: '12px', md: '32px', lg: '27px', xl: '30px' },
                     backgroundImage: `url(${process.env.PUBLIC_URL}/bgElements/bg_light_blue_triangle.png)`,
-                    backgroundRepeat: 'no-repeat',
-                    backgroundSize: 'contain',
                     transform: 'rotate(90deg)',
                   },
                   '::before': {
-                    content: '""',
-                    position: 'absolute',
+                    ...defaultStylesBgEl,
                     top: { xs: '-41px', md: '-41px', lg: '289px', xl: '254px' },
                     right: { xs: '61px', md: '-69px', lg: '' },
                     left: { lg: '17px', xl: '-125px' },
                     width: { xs: '13px', md: '34px', lg: '41px' },
                     height: { xs: '13px', md: '34px', lg: '41px' },
                     backgroundImage: `url(${process.env.PUBLIC_URL}/bgElements/bg_yellow_triangle.png)`,
-                    backgroundRepeat: 'no-repeat',
-                    backgroundSize: 'contain',
                   },
                 }}>
                 <Box
@@ -580,8 +554,7 @@ function HomeContent({ data, loading }) {
                     marginLeft: { md: '69px', lg: '51px' },
                     top: { lg: '-52px' },
                     '::after': {
-                      content: '""',
-                      position: 'absolute',
+                      ...defaultStylesBgEl,
                       top: { xs: '-3px', md: '-4px', lg: '1px', xl: '-3px' },
                       left: {
                         xs: '29px',
@@ -597,11 +570,11 @@ function HomeContent({ data, loading }) {
                         xl: '58px',
                       },
                       backgroundImage: `url(${process.env.PUBLIC_URL}/bgElements/bg_diamnd_blue_yellow.png)`,
-                      backgroundRepeat: 'no-repeat',
-                      backgroundSize: 'contain',
                     },
                   }}>
-                  <Typography component="h2" sx={sectionTitleStyles}>
+                  <Typography
+                    component="h2"
+                    sx={{ ...sectionTitleStyles, textAlign: 'left' }}>
                     Цінності
                   </Typography>
                   <Typography
@@ -644,7 +617,7 @@ function HomeContent({ data, loading }) {
           </Stack>
         </Container>
       </section>
-      <section id="cooperation">
+      <section id="cooperation" className="scroll-section">
         <Container
           maxWidth="xl"
           disableGutters
@@ -718,8 +691,7 @@ function HomeContent({ data, loading }) {
                     opacity: { xs: '.8', md: '.9' },
                     position: 'relative',
                     '::before': {
-                      content: '""',
-                      position: 'absolute',
+                      ...defaultStylesBgEl,
                       top: { xs: '12px', md: '-115px', lg: '41px', xl: '75px' },
                       left: {
                         xs: '5px',
@@ -736,13 +708,10 @@ function HomeContent({ data, loading }) {
                         xl: '34px',
                       },
                       backgroundImage: `url(${process.env.PUBLIC_URL}/bgElements/bg_BlueTriangle.png)`,
-                      backgroundRepeat: 'no-repeat',
-                      backgroundSize: 'contain',
                       transform: { md: 'rotatey(180deg)', lg: 'rotatey(0deg)' },
                     },
                     '::after': {
-                      content: '""',
-                      position: 'absolute',
+                      ...defaultStylesBgEl,
                       top: {
                         xs: '-38px',
                         md: '772px',
@@ -759,8 +728,6 @@ function HomeContent({ data, loading }) {
                         xl: '107px',
                       },
                       backgroundImage: `url(${process.env.PUBLIC_URL}/bgElements/bg_3triangles.png)`,
-                      backgroundRepeat: 'no-repeat',
-                      backgroundSize: 'contain',
                     },
                   }}>
                   <Box
@@ -802,7 +769,10 @@ function HomeContent({ data, loading }) {
                       маленьких українців
                     </Typography>
                     <Box sx={{ marginRight: { md: '17px', xl: '0' } }}>
-                      <ContainedButton btnName="btnWhite" text="Долучитися" />
+                      <ContainedButton
+                        btnName="btnContainedWhite"
+                        text="Долучитися"
+                      />
                     </Box>
                   </Box>
                 </Box>
@@ -812,8 +782,7 @@ function HomeContent({ data, loading }) {
                   justifySelf: { xs: 'center', md: 'flex-start' },
                   position: 'relative',
                   '::before': {
-                    content: '""',
-                    position: 'absolute',
+                    ...defaultStylesBgEl,
                     top: {
                       xs: '',
                       md: '376px',
@@ -840,28 +809,22 @@ function HomeContent({ data, loading }) {
                       xl: '41px',
                     },
                     backgroundImage: `url(${process.env.PUBLIC_URL}/bgElements/bg_2Triangles.png)`,
-                    backgroundRepeat: 'no-repeat',
-                    backgroundSize: 'contain',
                   },
                   '::after': {
-                    content: '""',
-                    position: 'absolute',
+                    ...defaultStylesBgEl,
                     top: { xs: '-35px', md: '350px', lg: '466px', xl: '580px' },
                     left: { xs: '', md: '-351px', lg: '-502px', xl: '-725px' },
                     right: { xs: '56px' },
                     width: { xs: '13px', md: '11px', lg: '20px', xl: '20px' },
                     height: { xs: '9px', md: '9px', lg: '14px', xl: '14px' },
                     backgroundImage: `url(${process.env.PUBLIC_URL}/bgElements/bg_light_blue_triangle.png)`,
-                    backgroundRepeat: 'no-repeat',
-                    backgroundSize: 'contain',
                     transform: 'rotateZ(270deg)',
                   },
                 }}>
                 <Box
                   sx={{
                     '::before': {
-                      content: '""',
-                      position: 'absolute',
+                      ...defaultStylesBgEl,
                       top: { xs: '0', md: '380px', lg: '515px', xl: '632px' },
                       left: {
                         xs: '',
@@ -878,8 +841,6 @@ function HomeContent({ data, loading }) {
                         xl: '41px',
                       },
                       backgroundImage: `url(${process.env.PUBLIC_URL}/bgElements/bg_yellow_triangle.png)`,
-                      backgroundRepeat: 'no-repeat',
-                      backgroundSize: 'contain',
                       transform: 'rotateZ(180deg)',
                     },
                   }}>
@@ -945,7 +906,10 @@ function HomeContent({ data, loading }) {
                         зробити більше для дітей та їх майбутнього
                       </Typography>
                       <Box sx={{ margin: { md: '0 14px 0 0', xl: '0' } }}>
-                        <ContainedButton btnName="btnWhite" text="Долучитися" />
+                        <ContainedButton
+                          btnName="btnContainedWhite"
+                          text="Долучитися"
+                        />
                       </Box>
                     </Box>
                   </Box>
@@ -956,16 +920,13 @@ function HomeContent({ data, loading }) {
                   justifySelf: { xs: 'center', md: 'flex-end' },
                   position: 'relative',
                   '::before': {
-                    content: '""',
-                    position: 'absolute',
+                    ...defaultStylesBgEl,
                     display: { xl: 'block' },
                     top: '502px',
                     left: '-97px',
                     width: '20px',
                     height: '14px',
                     backgroundImage: `url(${process.env.PUBLIC_URL}/bgElements/bg_light_blue_triangle.png)`,
-                    backgroundRepeat: 'no-repeat',
-                    backgroundSize: 'contain',
                     transform: 'rotateZ(270deg)',
                   },
                 }}>
@@ -1024,7 +985,10 @@ function HomeContent({ data, loading }) {
                       роботі з дітьми та створенні проектів, які б забезпечували
                       розвиток їх талантів та навичок. Втілимо мрії дітей разом
                     </Typography>
-                    <ContainedButton btnName="btnWhite" text="Долучитися" />
+                    <ContainedButton
+                      btnName="btnContainedWhite"
+                      text="Долучитися"
+                    />
                   </Box>
                 </Box>
               </Box>
@@ -1033,8 +997,7 @@ function HomeContent({ data, loading }) {
                   justifySelf: { xs: 'center', md: 'flex-start' },
                   position: 'relative',
                   '::before': {
-                    content: '""',
-                    position: 'absolute',
+                    ...defaultStylesBgEl,
                     top: { xs: '-41px', md: '368px', lg: '389px', xl: '403px' },
                     bottom: { xs: '' },
                     left: { xs: '', md: '279px', lg: '437px', xl: '588px' },
@@ -1047,13 +1010,10 @@ function HomeContent({ data, loading }) {
                       xl: '170px',
                     },
                     backgroundImage: `url(${process.env.PUBLIC_URL}/bgElements/bg_diamond_triangle.png)`,
-                    backgroundRepeat: 'no-repeat',
-                    backgroundSize: 'contain',
                   },
                   '::after': {
-                    content: '""',
+                    ...defaultStylesBgEl,
                     display: { md: 'none' },
-                    position: 'absolute',
                     top: { xs: '', md: '-10px' },
                     bottom: { xs: '2px' },
                     left: { xs: '1px', md: '-10px' },
@@ -1061,8 +1021,6 @@ function HomeContent({ data, loading }) {
                     width: { xs: '20px', md: '58px' },
                     height: { xs: '14px', md: '58px' },
                     backgroundImage: `url(${process.env.PUBLIC_URL}/bgElements/bg_light_blue_triangle.png)`,
-                    backgroundRepeat: 'no-repeat',
-                    backgroundSize: 'contain',
                     transform: 'rotateZ(270deg)',
                   },
                 }}>
@@ -1109,7 +1067,7 @@ function HomeContent({ data, loading }) {
                       яка змінює життя дітей на краще.
                     </Typography>
                     <ContainedButton
-                      btnName="btnWhite"
+                      btnName="btnContainedWhite"
                       text="Долучитися"
                       wider
                     />
@@ -1120,14 +1078,12 @@ function HomeContent({ data, loading }) {
           </Box>
         </Container>
       </section>
-      <section id="team">
+      <section id="team" className="scroll-section">
         <Container
           maxWidth="xl"
           disableGutters
           sx={{ marginBottom: { xs: '47px', md: '72px', xl: '129px' } }}>
-          <Typography sx={sectionTitleStyles} style={{ textAlign: 'center' }}>
-            Команда
-          </Typography>
+          <Typography sx={sectionTitleStyles}>Команда</Typography>
           <Box
             sx={{
               display: 'flex',
@@ -1204,8 +1160,7 @@ function HomeContent({ data, loading }) {
                   bottom: { md: '30px', xl: '13px' },
                   marginLeft: { md: '20px', xl: '26px' },
                   '::before': {
-                    content: '""',
-                    position: 'absolute',
+                    ...defaultStylesBgEl,
                     top: {
                       xs: '',
                       md: '205px',
@@ -1231,8 +1186,6 @@ function HomeContent({ data, loading }) {
                       xl: '182px',
                     },
                     backgroundImage: `url(${process.env.PUBLIC_URL}/bgElements/bg_3triangles.png)`,
-                    backgroundRepeat: 'no-repeat',
-                    backgroundSize: 'contain',
                   },
                 }}>
                 <img
@@ -1292,7 +1245,6 @@ function HomeContent({ data, loading }) {
                     sx={{
                       fontSize: { xs: '0.875rem', md: '1rem', lg: '1.125rem' },
                       lineHeight: 'normal',
-                      /* paddingRight: { xl: '71px' }, */
                     }}>
                     Приймала участь у реалізації низки проектів у здоров &apos;
                     ї (ціль ООН). Авторка власних проектів для інвесторів та
@@ -1310,8 +1262,7 @@ function HomeContent({ data, loading }) {
                   right: { xs: '21px', xl: '0' },
                   bottom: { md: '20px', xl: '15px' },
                   '::before': {
-                    content: '""',
-                    position: 'absolute',
+                    ...defaultStylesBgEl,
                     top: {
                       xs: '',
                       md: '226px',
@@ -1322,7 +1273,7 @@ function HomeContent({ data, loading }) {
                     left: {
                       xs: '-65px',
                       md: '538px',
-                      lg: '-65px',
+                      lg: '-34px',
                       xl: '-217px',
                     },
                     width: {
@@ -1338,8 +1289,6 @@ function HomeContent({ data, loading }) {
                       xl: '151px',
                     },
                     backgroundImage: `url(${process.env.PUBLIC_URL}/bgElements/bg_2blue_yellow_triangles.png)`,
-                    backgroundRepeat: 'no-repeat',
-                    backgroundSize: 'contain',
                     transform: {
                       xs: 'rotateZ(270deg)',
                       md: 'rotateZ(0deg)',
@@ -1347,22 +1296,19 @@ function HomeContent({ data, loading }) {
                     },
                   },
                   '::after': {
-                    content: '""',
-                    position: 'absolute',
+                    ...defaultStylesBgEl,
                     top: { xs: '', md: '198px', lg: '92px', xl: '80px' },
                     bottom: { xs: '3px' },
                     left: {
                       xs: '-45px',
                       md: '-2px',
-                      lg: '-73px',
+                      lg: '-52px',
                       xl: '-190px',
                     },
                     right: { xs: '' },
                     width: { xs: '19px', md: '29px', xl: '41px' },
                     height: { xs: '19px', md: '29px', xl: '41px' },
                     backgroundImage: `url(${process.env.PUBLIC_URL}/bgElements/bg_blueTriangle90deg.png)`,
-                    backgroundRepeat: 'no-repeat',
-                    backgroundSize: 'contain',
                     transform: { md: 'rotateZ(270deg)', lg: 'rotateZ(0deg)' },
                   },
                 }}>
@@ -1377,8 +1323,11 @@ function HomeContent({ data, loading }) {
           </Box>
         </Container>
       </section>
-      <section id="news">
-        <Container maxWidth="xl" disableGutters sx={{ marginBottom: '50px' }}>
+      <section id="news" className="scroll-section">
+        <Container
+          maxWidth="xl"
+          disableGutters
+          sx={{ marginBottom: { xs: '50px', md: '100px', xl: '82px' } }}>
           <Typography sx={sectionTitleStyles}>Новини</Typography>
           <Box
             sx={{
@@ -1394,48 +1343,45 @@ function HomeContent({ data, loading }) {
           </Box>
         </Container>
       </section>
-      <section id="donate">
+      <section id="donate" className="scroll-section">
         <Container
           maxWidth="xl"
           disableGutters
           sx={{
-            marginBottom: '167px',
+            marginBottom: { xs: '39px', md: '163px', xl: '249px' },
             position: 'relative',
             '::before': {
-              content: '""',
-              position: 'absolute',
-              top: { md: '20px', lg: '92px', xl: '80px' },
-              bottom: {
-                md: '-2px',
-                lg: '-73px',
-                xl: '-190px',
-              },
-              width: { md: '147px', xl: '41px' },
-              height: { md: '145px', xl: '41px' },
+              ...defaultStylesBgEl,
+              top: { md: '20px', lg: '-1px', xl: '14px' },
+              left: { lg: '7px', xl: '133px' },
+              width: { md: '147px', lg: '174px', xl: '251px' },
+              height: { md: '145px', lg: '174px', xl: '248px' },
               backgroundImage: `url(${process.env.PUBLIC_URL}/bgElements/bg_leaves.png)`,
-              backgroundRepeat: 'no-repeat',
-              backgroundSize: 'contain',
-              transform: { md: 'rotateZ(224deg)', lg: 'rotateZ(0deg)' },
+              transform: { md: 'rotateZ(224deg)', lg: 'rotateZ(192deg)' },
             },
             '::after': {
-              content: '""',
-              position: 'absolute',
-              bottom: { md: '-83px', lg: '92px', xl: '80px' },
+              ...defaultStylesBgEl,
+              bottom: { md: '-83px', lg: '-61px', xl: '-56px' },
               right: {
                 md: '169px',
-                lg: '-73px',
-                xl: '-190px',
+                lg: '2px',
+                xl: '208px',
               },
-              width: { md: '147px', xl: '41px' },
-              height: { md: '145px', xl: '41px' },
+              width: { md: '147px', lg: '174px', xl: '227px' },
+              height: { md: '145px', lg: '174px', xl: '224px' },
               backgroundImage: `url(${process.env.PUBLIC_URL}/bgElements/bg_leaves.png)`,
-              backgroundRepeat: 'no-repeat',
-              backgroundSize: 'contain',
               transform: { md: 'rotateZ(99deg)', lg: 'rotateZ(0deg)' },
             },
           }}>
           <Typography sx={sectionTitleStyles}>Донати</Typography>
-          <Box sx={{ padding: { md: '0 2.5rem 0 2.3rem' } }}>
+          <Box
+            sx={{
+              padding: {
+                md: '0 2.5rem 0 2.3rem',
+                lg: '0 5.5rem 0 5.3rem',
+                xl: '0 19rem',
+              },
+            }}>
             <Box
               sx={{
                 position: 'relative',
@@ -1444,39 +1390,161 @@ function HomeContent({ data, loading }) {
                 padding: {
                   xs: '0 1.25rem 0 1.25rem',
                   md: '1.7rem 3.6rem 2.12rem 3.6rem',
+                  xl: '3.7rem 6.7rem 2.12rem 6.6rem',
                 },
                 marginTop: { xs: '16px', md: '68px', lg: '50px' },
                 borderRadius: { md: '60px' },
                 border: { md: ' 4px solid #F99820' },
-                height: { md: '450px' },
+                height: { md: '450px', xl: '485px' },
                 '::before': {
-                  content: '""',
-                  position: 'absolute',
-                  top: { xs: '-88px', md: '-118px', lg: '92px', xl: '80px' },
+                  ...defaultStylesBgEl,
+                  top: {
+                    xs: '-88px',
+                    md: '-118px',
+                    lg: '-135px',
+                    xl: '-118px',
+                  },
                   right: {
                     xs: '19px',
                     md: '-4px',
                     lg: '-73px',
-                    xl: '-190px',
+                    xl: '-182px',
                   },
-                  width: { xs: '48px', md: '50px', xl: '41px' },
-                  height: { xs: '68px', md: '75px', xl: '41px' },
+                  width: { xs: '48px', md: '50px', lg: '80px', xl: '95px' },
+                  height: { xs: '68px', md: '75px', lg: '112px', xl: '135px' },
                   backgroundImage: `url(${process.env.PUBLIC_URL}/bgElements/bg_3triangles.png)`,
-                  backgroundRepeat: 'no-repeat',
-                  backgroundSize: 'contain',
+                },
+                '::after': {
+                  ...defaultStylesBgEl,
+                  display: { xs: 'none', xl: 'block' },
+                  bottom: '-52px',
+                  left: '-216px',
+                  width: '135px',
+                  height: '114px',
+                  backgroundImage: `url(${process.env.PUBLIC_URL}/bgElements/bg_2diamonds_triangle_blue.png)`,
+                  transform: { md: 'rotateZ(99deg)', lg: 'rotateZ(0deg)' },
                 },
               }}>
               <Typography
                 sx={{
                   fontSize: { xs: '0.875rem', md: '1.25rem' },
                   lineHeight: 'normal',
-                  marginBottom: { xs: '30px', md: '35px' },
+                  marginBottom: { xs: '30px', md: '35px', xl: '61px' },
                 }}>
                 Допомогти дитині зрозуміти її вподобання та таланти, і створити
                 необхідну атмосферу для її розвитку.
               </Typography>
               <DonateTab />
             </Box>
+          </Box>
+        </Container>
+      </section>
+      <section id="partners" className="scroll-section">
+        <Container
+          maxWidth="xl"
+          disableGutters
+          sx={{
+            position: 'relative',
+            '::before': {
+              ...defaultStylesBgEl,
+              top: {
+                xs: '-17px',
+                md: '19px',
+                lg: '-135px',
+                xl: '-22px',
+              },
+              left: {
+                xs: '29px',
+                md: '39px',
+                lg: '-73px',
+                xl: '226px',
+              },
+              width: { xs: '13px', md: '16px', lg: '80px', xl: '26px' },
+              height: { xs: '13px', md: '16px', lg: '112px', xl: '26px' },
+              backgroundImage: `url(${process.env.PUBLIC_URL}/bgElements/bg_yellow_triangle.png)`,
+              transform: 'rotateZ(270deg)',
+            },
+            '::after': {
+              ...defaultStylesBgEl,
+              top: {
+                xs: '9px',
+                md: '47px',
+                lg: '-135px',
+                xl: '40px',
+              },
+              left: {
+                xs: '79px',
+                md: '177px',
+                lg: '-73px',
+                xl: '451px',
+              },
+              width: { xs: '16px', md: '20px', lg: '80px', xl: '32px' },
+              height: { xs: '16px', md: '20px', lg: '112px', xl: '32px' },
+              backgroundImage: `url(${process.env.PUBLIC_URL}/bgElements/bg_diamnd_blue_darkblue.png)`,
+              transform: 'rotateZ(90deg)',
+            },
+          }}>
+          <Typography sx={sectionTitleStyles}>Партнери</Typography>
+          <Box
+            sx={{
+              position: 'relative',
+              padding: { xs: '0 1.25rem', sm: '0 2.25rem', md: '0 2.25rem' },
+              margin: { xs: '20px 0 50px 0', md: '50px 0 100px 0' },
+              '::before': {
+                ...defaultStylesBgEl,
+                top: {
+                  xs: '-23px',
+                  md: '-41px',
+                  lg: '-135px',
+                  xl: '-46px',
+                },
+                right: {
+                  xs: '33px',
+                  md: '39px',
+                  lg: '-73px',
+                  xl: '240px',
+                },
+                width: { xs: '20px', md: '27px', lg: '80px', xl: '41px' },
+                height: { xs: '20px', md: '27px', lg: '112px', xl: '41px' },
+                backgroundImage: `url(${process.env.PUBLIC_URL}/bgElements/bg_yellow_triangle.png)`,
+                transform: 'rotateZ(180deg)',
+              },
+              '::after': {
+                ...defaultStylesBgEl,
+                top: {
+                  xs: '-46px',
+                  md: '-66px',
+                  lg: '-135px',
+                  xl: '-75px',
+                },
+                right: {
+                  xs: '93px',
+                  md: '203px',
+                  lg: '-73px',
+                  xl: '482px',
+                },
+                width: {
+                  xs: '10px',
+                  md: '13px',
+                  lg: '80px',
+                  xl: '20px',
+                },
+                height: {
+                  xs: '8px',
+                  md: '10px',
+                  lg: '112px',
+                  xl: '14px',
+                },
+                backgroundImage: `url(${process.env.PUBLIC_URL}/bgElements/bg_light_blue_triangle.png)`,
+                transform: 'rotateZ(270deg)',
+              },
+            }}>
+            <Grid
+              container
+              columns={15}
+              spacing={{ xs: 5, sm: 4, md: 3, lg: 6 }}>
+              <RenderPartners />
+            </Grid>
           </Box>
         </Container>
       </section>

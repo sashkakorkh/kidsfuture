@@ -123,24 +123,23 @@ function Header() {
               </Stack>
             </Stack>
             <Box sx={{ marginRight: { md: '1%', xl: '0' } }}>
-              <NavLink to="/donate">
-                <OutlinedButton
-                  textColorBlack
-                  text="Підтримати фонд"
-                  btnSupport
-                />
-              </NavLink>
+              <OutlinedButton
+                textColorBlack
+                text="Підтримати фонд"
+                btnSupport
+              />
             </Box>
             <IconButton
               aria-label="open drawer"
               onClick={toggleDrawer(true)}
-              style={{ color: theme.palette.colors.mainsecond }}
+              /* style={{ color: theme.palette.colors.mainsecond }} */
               sx={{
                 lineHeight: '1',
                 display: {
                   xs: 'block',
                   md: 'none',
                   padding: '0',
+                  margin: { xs: '23px', md: '0' },
                 },
               }}>
               <img

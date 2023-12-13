@@ -1,22 +1,30 @@
 import React from 'react';
-import styled from '@emotion/styled';
 import { Button, useTheme } from '@mui/material';
 import PropTypes from 'prop-types';
+import { NavLink } from 'react-router-dom';
 
-const StyledBtn = styled(Button)`
-  border-radius: 48px;
-  box-shadow: unset;
-  text-wrap: nowrap;
-  line-height: normal;
-  :hover {
-    cursor: pointer;
-  }
-`;
+const defaultBtnStyles = {
+  borderRadius: '48px',
+  padding: '0',
+  boxShadow: 'unset',
+  textWrap: 'nowrap',
+  lineHeight: 'normal',
+  textAlign: 'center',
+  ':hover': {
+    cursor: 'pointer',
+  },
+};
 
 export function OutlinedButton({ textColorBlack, text, btnSupport }) {
+  const outlinedDefaultStyles = {
+    backgroundColor: 'transparent',
+    border: textColorBlack ? '1px solid #4366E3' : '1px solid white',
+    color: textColorBlack ? 'black' : 'white',
+  };
   const theme = useTheme();
   const btnSupportStyle = {
-    padding: '0',
+    ...defaultBtnStyles,
+    ...outlinedDefaultStyles,
     height: {
       xs: '32px',
       md: '33px',
@@ -32,41 +40,34 @@ export function OutlinedButton({ textColorBlack, text, btnSupport }) {
       md: '0.875rem',
       lg: '1.125rem',
     },
-    textAlign: 'center',
-    backgroundColor: 'transparent',
     textTransform: 'uppercase',
     fontWeight: theme.typography.const.fontWeight.bold,
   };
 
   const btnDonateStyle = {
-    padding: '0',
+    ...defaultBtnStyles,
+    ...outlinedDefaultStyles,
     height: { xs: '36px', md: '34px' },
     width: { xs: '136px', md: '145px' },
     fontSize: { xs: '0.812rem', md: '1rem' },
-    textAlign: 'center',
-    backgroundColor: 'transparent',
     textTransform: 'capitalize',
     fontWeight: theme.typography.const.fontWeight.normal,
   };
-  const sxStyle = btnSupport ? btnSupportStyle : btnDonateStyle;
+  const outlinedStyles = btnSupport ? btnSupportStyle : btnDonateStyle;
   return (
-    <StyledBtn
-      variant="outlined"
-      style={{
-        border: textColorBlack ? '1px solid #4366E3' : '1px solid white',
-        color: textColorBlack ? 'black' : 'white',
-      }}
-      sx={sxStyle}>
-      {text}
-    </StyledBtn>
+    <NavLink to="/#donate" style={{ textDecoration: 'none' }}>
+      <Button variant="outlined" sx={outlinedStyles}>
+        {text}
+      </Button>
+    </NavLink>
   );
 }
 
 export function ContainedButton({ btnName, text, wider, onClick }) {
   const theme = useTheme();
   const buttons = {
-    btnBlue: {
-      padding: '0',
+    btnContainedBlue: {
+      ...defaultBtnStyles,
       height: {
         xs: '34px',
         md: '49px',
@@ -84,22 +85,16 @@ export function ContainedButton({ btnName, text, wider, onClick }) {
         md: '1rem',
         xl: '1.25rem',
       },
-      texAlign: 'center',
       textTransform: 'uppercase',
       fontWeight: theme.typography.const.fontWeight.bold,
       backgroundColor: theme.palette.colors.mainsecond,
       color: 'white',
-      borderRadius: '48px',
-      boxShadow: 'unset',
-      textWrap: 'nowrap',
-      lineHeight: 'normal',
       '&:hover': {
         backgroundColor: theme.palette.colors.mainfirst,
-        cursor: ' pointer',
       },
     },
-    btnWhite: {
-      padding: '0',
+    btnContainedWhite: {
+      ...defaultBtnStyles,
       height: {
         xs: '34px',
         md: '41px',
@@ -112,31 +107,24 @@ export function ContainedButton({ btnName, text, wider, onClick }) {
         xs: '0.875rem',
         md: '1rem',
       },
-      textAlign: 'center',
       textTransform: 'uppercase',
       fontWeight: theme.typography.const.fontWeight.bold,
       backgroundColor: 'white',
       color: 'black',
-      borderRadius: '48px',
-      boxShadow: 'unset',
-      textWrap: 'nowrap',
-      lineHeight: 'normal',
       '&:hover': {
         backgroundColor: theme.palette.colors.mainfirst,
-        cursor: 'pointer',
       },
     },
-    btnCurrency: {
+    btnContainedCurrency: {
       fontSize: { xs: '1.25rem', md: '1.5rem' },
       fontWeight: theme.typography.const.fontWeight.normal,
       width: { xs: '80px', md: '108px' },
       height: { xs: ' 45px', md: '72px' },
       lineHeight: 'normal',
       textTransform: 'uppercase',
-      textAlign: 'center',
       borderRadius: { xs: '15px', md: '25px' },
       color: 'black',
-      background: '#F99820',
+      background: theme.palette.colors.mainfirst,
       boxShadow: 'unset',
       textWrap: 'nowrap',
       '&:hover': {
@@ -147,25 +135,27 @@ export function ContainedButton({ btnName, text, wider, onClick }) {
   };
 
   return (
-    <Button variant="contained" sx={buttons[btnName]} onClick={onClick}>
-      {text}
-    </Button>
+    <>
+      {btnName !== 'btnContainedCurrency' && (
+        <NavLink to="/#donate">
+          <Button variant="contained" sx={buttons[btnName]}>
+            {text}
+          </Button>
+        </NavLink>
+      )}
+      {btnName === 'btnContainedCurrency' && (
+        <Button variant="contained" sx={buttons[btnName]} onClick={onClick}>
+          {text}
+        </Button>
+      )}
+    </>
   );
 }
 
 export function TextButton({ text, readBtn }) {
   const theme = useTheme();
-  const textBtnBack = {
-    textTransform: 'uppercase',
-    fontWeight: theme.typography.const.fontWeight.bold,
-    color: theme.palette.colors.mainsecond,
-    lineHeight: 'normal',
-    padding: '0',
-    minWidth: '53px',
-    marginTop: { xs: '17px', md: '48px' },
-    fontSize: '1rem',
-  };
-  const textBtnRead = {
+  const textBtnStyles = {
+    ...defaultBtnStyles,
     textTransform: 'uppercase',
     fontWeight: theme.typography.const.fontWeight.bold,
     color: theme.palette.colors.mainsecond,
@@ -173,9 +163,9 @@ export function TextButton({ text, readBtn }) {
     padding: '0',
     minWidth: '53px',
     fontSize: { xs: '0.875rem', md: '1rem' },
+    marginTop: readBtn ? undefined : { xs: '17px', md: '48px' },
   };
-  const textBtnStyles = readBtn ? textBtnRead : textBtnBack;
-  return <StyledBtn sx={textBtnStyles}>{text}</StyledBtn>;
+  return <Button sx={textBtnStyles}>{text}</Button>;
 }
 
 OutlinedButton.propTypes = {

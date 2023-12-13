@@ -2,6 +2,7 @@
 import { createTheme } from '@mui/material/styles';
 
 const theme = createTheme({
+  spacing: 4,
   palette: {
     colors: {
       mainfirst: '#F99820',

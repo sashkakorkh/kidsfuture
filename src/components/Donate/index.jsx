@@ -19,41 +19,43 @@ function DonateTab() {
   return (
     <>
       <Stack
-        direction={{ xs: 'column', md: 'row' }}
-        sx={{
-          gap: { xs: '16px', md: '17px' },
-          paddingLeft: { xs: '0.7rem', md: '0' },
-          position: 'relative',
-          marginBottom: { xs: '52px', md: '24px' },
-          justifyContent: { md: 'center' },
-        }}>
-        <ContainedButton
-          btnName="btnCurrency"
-          text="UAH"
-          onClick={() => handleButtonClick('UA')}
-        />
-        <ContainedButton
-          btnName="btnCurrency"
-          text="USD"
-          onClick={() => handleButtonClick('USD')}
-        />
-        <ContainedButton
-          btnName="btnCurrency"
-          text="EUR"
-          onClick={() => handleButtonClick('EUR')}
-        />
-        <ContainedButton
-          btnName="btnCurrency"
-          text="CRYPTO"
-          onClick={() => handleButtonClick('CRYPTO')}
-        />
+        direction={{ xs: 'row' }}
+        sx={{ justifyContent: { sm: 'center' } }}>
+        <Stack
+          direction={{ xs: 'column', md: 'row' }}
+          sx={{
+            gap: { xs: '16px', md: '17px' },
+            paddingLeft: { xs: '0.7rem', md: '0' },
+            marginBottom: { xs: '46px', md: '24px', xl: '57px' },
+          }}>
+          <ContainedButton
+            btnName="btnContainedCurrency"
+            text="UAH"
+            onClick={() => handleButtonClick('UA')}
+          />
+          <ContainedButton
+            btnName="btnContainedCurrency"
+            text="USD"
+            onClick={() => handleButtonClick('USD')}
+          />
+          <ContainedButton
+            btnName="btnContainedCurrency"
+            text="EUR"
+            onClick={() => handleButtonClick('EUR')}
+          />
+          <ContainedButton
+            btnName="btnContainedCurrency"
+            text="CRYPTO"
+            onClick={() => handleButtonClick('CRYPTO')}
+          />
+        </Stack>
         <Box
           sx={{
-            position: 'absolute',
-            top: { xs: '-21px', md: '106px' },
-            right: { xs: '-16px', md: '-61px' },
-            width: { xs: '312px' },
-            height: { xs: '285px' },
+            position: { xs: 'relative', md: 'absolute' },
+            top: { xs: '1px', md: '297px', lg: '259px', xl: '276px' },
+            right: { xs: '-12px', md: '-3px', lg: '64px', xl: '102px' },
+            /*  width: { xs: '312px', xl: '337px' }, */
+            height: { xs: '262px', xl: '287px' },
             zIndex: { xs: '-1' },
           }}>
           <img

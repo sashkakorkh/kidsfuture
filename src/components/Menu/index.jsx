@@ -34,7 +34,7 @@ const menuItems = [
   },
   {
     text: 'Донати',
-    link: '#',
+    link: '/#donate',
   },
   {
     text: 'Партнери',
@@ -59,7 +59,7 @@ function Menu({ tag, styleConfig, functionToggle }) {
           </ElementTag>
           {tag === 'li' && index !== menuItems.length - 1 && (
             <Divider
-              style={{
+              sx={{
                 color: theme.palette.colors.divider,
                 borderColor: theme.palette.colors.divider,
               }}

@@ -5,6 +5,7 @@ import 'slick-carousel/slick/slick-theme.css';
 import './styles.scss';
 import PropTypes from 'prop-types';
 import { useLocation } from 'react-router-dom';
+import { useTheme } from '@mui/material';
 
 function SamplePrevArrow({
   className,
@@ -111,60 +112,52 @@ SampleNextArrow.defaultProps = {
 function Carousel({ items, showPagination, isLoading, renderContent }) {
   const [currentSlide, setCurrentSlide] = useState(0);
   const location = useLocation();
+  const theme = useTheme();
   const currentPath = location.pathname;
   const classForArrow = currentPath === '/' ? 'arrow-home' : 'arrow-news';
   const classForDiv = currentPath === '/' ? 'slick-home' : '';
   const responsiveSliderHome = [
     {
-      breakpoint: 1600,
-      settings: {
-        slidesToShow: 2,
-        slidesToScroll: 2,
-      },
-    },
-    {
-      breakpoint: 1024,
+      breakpoint: theme.breakpoints.values.xl,
       settings: {
         slidesToShow: 3,
         slidesToScroll: 3,
       },
     },
     {
-      breakpoint: 768,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1,
-      },
-    },
-    {
-      breakpoint: 360,
+      breakpoint: theme.breakpoints.values.md,
       settings: {
         slidesToShow: 1,
         slidesToScroll: 1,
       },
     },
   ];
-  /* const responsiveSliderNews = [
+  const responsiveSliderNews = [
     {
-      breakpoint: 1600,
+      breakpoint: theme.breakpoints.values.xs,
       settings: {
         slidesToShow: 1,
         slidesToScroll: 1,
       },
     },
-  ]; */
-  /*   const sliderResponsive =
-    currentPath !== '/' ? responsiveSliderNews : responsiveSliderHome; */
+  ];
+  const sliderResponsive =
+    currentPath === '/' || currentPath.startsWith('/#news')
+      ? responsiveSliderHome
+      : responsiveSliderNews;
+
   const settings = {
     dots: showPagination,
     infinite: false,
     autoplay: false,
     slidesToShow: 3,
     slidesToScroll: 3,
-    responsive: responsiveSliderHome,
+    responsive: sliderResponsive,
     initialSlide: 0,
-    adaptiveHeight: currentPath !== '/',
+    adaptiveHeight: currentPath !== '/#news',
     mobileFirst: true,
+    touchThreshold: 10,
+    waitForAnimate: true,
     nextArrow: (
       <SampleNextArrow
         currentSlide={currentSlide}
@@ -182,7 +175,16 @@ function Carousel({ items, showPagination, isLoading, renderContent }) {
       setCurrentSlide(newIndex);
     },
   };
+  /* if (sliderResponsive) {
+    const screenWidth = window.innerWidth;
 
+    sliderResponsive.forEach((breakpoint) => {
+      if (screenWidth <= breakpoint.breakpoint) {
+        settings.slidesToShow = breakpoint.settings.slidesToShow;
+        settings.slidesToScroll = breakpoint.settings.slidesToScroll;
+      }
+    });
+  } */
   return (
     <>
       {isLoading && <p>Loading...</p>}
@@ -197,7 +199,9 @@ function Carousel({ items, showPagination, isLoading, renderContent }) {
           responsive={settings.responsive}
           beforeChange={settings.beforeChange}
           adaptiveHeight={settings.adaptiveHeight}
-          mobileFirst={settings.mobileFirst}>
+          mobileFirst={settings.mobileFirst}
+          touchThreshold={settings.touchThreshold}
+          waitForAnimate={settings.waitForAnimate}>
           {items.map((item, index) => (
             <div
               key={typeof item === 'object' ? item.id : `string-${index}`}
