@@ -1,0 +1,509 @@
+@media screen and (min-width: 360px) {
+  .logos {
+    padding: 9px 23px 8px 24px;
+  }
+  .logos img {
+    width: 46px;
+  }
+}
+@media screen and (min-width: 480px) {
+  .logos {
+    padding: 10px 21px 11px 21px;
+  }
+  .logos img {
+    width: 88px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .logos {
+    padding: 10px 21px 11px 21px;
+  }
+  .logos img {
+    width: 88px;
+  }
+}
+@media screen and (min-width: 1600px) {
+  .logos {
+    padding: 63px 86px;
+  }
+  .logos img {
+    width: 108px;
+  }
+}
+
+@media screen and (min-width: 360px) {
+  .usaid {
+    padding: 22px 15px;
+  }
+  .usaid img {
+    width: 63px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .usaid {
+    padding: 38px 14px 40px 14px;
+  }
+  .usaid img {
+    width: 103px;
+  }
+}
+@media screen and (min-width: 1600px) {
+  .usaid {
+    padding: 76px 23px;
+  }
+  .usaid img {
+    width: 232px;
+  }
+}
+
+@media screen and (min-width: 360px) {
+  .zagoriy {
+    padding: 13px 11px;
+  }
+  .zagoriy img {
+    width: 71px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .zagoriy {
+    padding: 25px 10px 27px 10px;
+  }
+  .zagoriy img {
+    width: 111px;
+  }
+}
+@media screen and (min-width: 1600px) {
+  .zagoriy {
+    padding: 58px 26px;
+  }
+  .zagoriy img {
+    width: 229px;
+  }
+}
+
+@media screen and (min-width: 360px) {
+  .paragraph {
+    padding: 18px 9px;
+  }
+  .paragraph img {
+    width: 75px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .paragraph {
+    padding: 33px 9px 34px 10px;
+  }
+  .paragraph img {
+    width: 112px;
+  }
+}
+@media screen and (min-width: 1600px) {
+  .paragraph {
+    padding: 76px 26px 77px 27px;
+  }
+  .paragraph img {
+    width: 228px;
+  }
+}
+
+@media screen and (min-width: 360px) {
+  .kiyanochka {
+    padding: 12px 27px;
+  }
+  .kiyanochka img {
+    width: 39px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .kiyanochka {
+    padding: 17px 28px 18px 29px;
+  }
+  .kiyanochka img {
+    width: 74px;
+  }
+}
+@media screen and (min-width: 1600px) {
+  .kiyanochka {
+    padding: 61px 85px 61px 84px;
+  }
+  .kiyanochka img {
+    width: 112px;
+  }
+}
+
+@media screen and (min-width: 360px) {
+  .molochniy {
+    padding: 13px 27px 12px 28px;
+  }
+  .molochniy img {
+    width: 38px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .molochniy {
+    padding: 18px 29px 18px 28px;
+  }
+  .molochniy img {
+    width: 73px;
+  }
+}
+@media screen and (min-width: 1600px) {
+  .molochniy {
+    padding: 70px 93px 71px 94px;
+  }
+  .molochniy img {
+    width: 93px;
+  }
+}
+
+@media screen and (min-width: 360px) {
+  .stoIdei {
+    padding: 21px 12px 20px 12px;
+  }
+  .stoIdei img {
+    width: 69px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .stoIdei {
+    padding: 39px 13px 38px 14px;
+  }
+  .stoIdei img {
+    width: 104px;
+  }
+}
+@media screen and (min-width: 1600px) {
+  .stoIdei {
+    padding: 76px 38px 84px 37px;
+  }
+  .stoIdei img {
+    width: 206px;
+  }
+}
+
+@media screen and (min-width: 360px) {
+  .italiec {
+    padding: 14px 28px 13px 29px;
+  }
+  .italiec img {
+    width: 36px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .italiec {
+    padding: 18px 28px 18px 29px;
+  }
+  .italiec img {
+    width: 74px;
+  }
+}
+@media screen and (min-width: 1600px) {
+  .italiec {
+    padding: 68px 83px 66px 90px;
+  }
+  .italiec img {
+    width: 96px;
+  }
+}
+
+@media screen and (min-width: 360px) {
+  .ednannia {
+    padding: 13px 22px;
+  }
+  .ednannia img {
+    width: 49px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .ednannia {
+    padding: 19px 17px 18px 18px;
+  }
+  .ednannia img {
+    width: 96px;
+  }
+}
+@media screen and (min-width: 1600px) {
+  .ednannia {
+    padding: 65px 71px 65px 70px;
+  }
+  .ednannia img {
+    width: 140px;
+  }
+}
+
+@media screen and (min-width: 360px) {
+  .vanoivano {
+    padding: 10px 24px 9px 25px;
+  }
+  .vanoivano img {
+    width: 44px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .vanoivano {
+    padding: 14px 24px 13px 25px;
+  }
+  .vanoivano img {
+    width: 82px;
+  }
+}
+@media screen and (min-width: 1600px) {
+  .vanoivano {
+    padding: 67px 91px 67px 90px;
+  }
+  .vanoivano img {
+    width: 100px;
+  }
+}
+
+@media screen and (min-width: 360px) {
+  .ayurveda {
+    padding: 11px 26px;
+  }
+  .ayurveda img {
+    width: 41px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .ayurveda {
+    padding: 13px 24px 13px 23px;
+  }
+  .ayurveda img {
+    width: 83px;
+  }
+}
+@media screen and (min-width: 1600px) {
+  .ayurveda {
+    padding: 67px 90px 68px 91px;
+  }
+  .ayurveda img {
+    width: 99px;
+  }
+}
+
+@media screen and (min-width: 360px) {
+  .rud {
+    padding: 13px 25px 13px 26px;
+  }
+  .rud img {
+    width: 42px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .rud {
+    padding: 16px 22px 15px 22px;
+  }
+  .rud img {
+    width: 87px;
+  }
+}
+@media screen and (min-width: 1600px) {
+  .rud {
+    padding: 59px 76px 60px 76px;
+  }
+  .rud img {
+    width: 129px;
+  }
+}
+
+@media screen and (min-width: 360px) {
+  .dpm {
+    padding: 20px 15px 19px 16px;
+  }
+  .dpm img {
+    width: 62px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .dpm {
+    padding: 35px 14px 34px 15px;
+  }
+  .dpm img {
+    width: 102px;
+  }
+}
+@media screen and (min-width: 1600px) {
+  .dpm {
+    padding: 76px 37px 77px 37px;
+  }
+  .dpm img {
+    width: 207px;
+  }
+}
+
+@media screen and (min-width: 360px) {
+  .satori {
+    padding: 15px 29px 14px 30px;
+  }
+  .satori img {
+    width: 24px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .satori {
+    padding: 19px 29px 18px 30px;
+  }
+  .satori img {
+    width: 72px;
+  }
+}
+@media screen and (min-width: 1600px) {
+  .satori {
+    padding: 70px 94px 70px 93px;
+  }
+  .satori img {
+    width: 94px;
+  }
+}
+
+@media screen and (min-width: 360px) {
+  .milkbar {
+    padding: 13px 28px;
+  }
+  .milkbar img {
+    width: 37px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .milkbar {
+    padding: 18px 28px 17px 28px;
+  }
+  .milkbar img {
+    width: 75px;
+  }
+}
+@media screen and (min-width: 1600px) {
+  .milkbar {
+    padding: 70px 94px 71px 94px;
+  }
+  .milkbar img {
+    width: 93px;
+  }
+}
+
+@media screen and (min-width: 360px) {
+  .danit {
+    padding: 19px 10px;
+  }
+  .danit img {
+    width: 69px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .danit {
+    padding: 36px 15px;
+  }
+  .danit img {
+    width: 97px;
+  }
+}
+@media screen and (min-width: 1600px) {
+  .danit {
+    padding: 81px 30px;
+  }
+  .danit img {
+    width: 217px;
+  }
+}
+
+@media screen and (min-width: 360px) {
+  .united_ukrainians {
+    padding: 12px 14px;
+  }
+  .united_ukrainians img {
+    width: 62px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .united_ukrainians {
+    padding: 26px 14px;
+  }
+  .united_ukrainians img {
+    width: 97px;
+  }
+}
+@media screen and (min-width: 1600px) {
+  .united_ukrainians {
+    padding: 55px 29px;
+  }
+  .united_ukrainians img {
+    width: 217px;
+  }
+}
+
+@media screen and (min-width: 360px) {
+  .ranok {
+    padding: 17px 18px;
+  }
+  .ranok img {
+    width: 55px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .ranok {
+    padding: 33px 19px;
+  }
+  .ranok img {
+    width: 87px;
+  }
+}
+@media screen and (min-width: 1600px) {
+  .ranok {
+    padding: 71px 39px;
+  }
+  .ranok img {
+    width: 197px;
+  }
+}
+
+.genesis {
+  padding: 17px 14px;
+}
+@media screen and (min-width: 360px) {
+  .genesis img {
+    width: 58px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .genesis {
+    padding: 34px 20px;
+  }
+  .genesis img {
+    width: 87px;
+  }
+}
+@media screen and (min-width: 1600px) {
+  .genesis {
+    padding: 71px 39px;
+  }
+  .genesis img {
+    width: 197px;
+  }
+}
+
+.naukma {
+  padding: 3px 16px;
+}
+@media screen and (min-width: 360px) {
+  .naukma img {
+    width: 60px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .naukma {
+    padding: 13px 19px;
+  }
+  .naukma img {
+    width: 87px;
+  }
+}
+@media screen and (min-width: 1600px) {
+  .naukma {
+    padding: 22px 39px;
+  }
+  .naukma img {
+    width: 197px;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */

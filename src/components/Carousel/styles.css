@@ -38,22 +38,34 @@
   .arrow-home {
     width: 16px;
     height: 28px;
-    top: 32%;
-    right: -8px;
   }
 }
 @media screen and (min-width: 768px) {
   .arrow-home {
     width: 12px;
     height: 21px;
-    top: 50%;
-    right: -7px;
   }
 }
 @media screen and (min-width: 1024px) {
   .arrow-home {
     width: 16px;
     height: 28px;
+  }
+}
+@media screen and (min-width: 360px) {
+  .arrow-home.slick-next {
+    top: 32%;
+    right: -8px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .arrow-home.slick-next {
+    top: 50%;
+    right: -21px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .arrow-home.slick-next {
     top: 35%;
     right: -33px;
   }
@@ -63,13 +75,13 @@
     right: 0;
     left: -8px;
     z-index: 1;
-    top: 29%;
+    top: 28%;
   }
 }
 @media screen and (min-width: 768px) {
   .arrow-home.slick-prev {
     top: 47%;
-    left: -10px;
+    left: -28px;
   }
 }
 @media screen and (min-width: 1024px) {

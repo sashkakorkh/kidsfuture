@@ -12,6 +12,7 @@ function CardNewsItem({ item }) {
       className="slick-container"
       sx={{
         textAlign: 'left',
+        margin: { xs: '0 auto', md: '0' },
       }}>
       <Box
         sx={{
