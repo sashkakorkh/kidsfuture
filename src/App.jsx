@@ -6,6 +6,7 @@ import Header from './components/Header';
 import theme from './theme/theme';
 import News from './pages/News';
 import ScrollToHashElement from './components/ScrollToSection';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   const [data, setData] = useState([]);
@@ -43,6 +44,7 @@ function App() {
             />
           </Route>
         </Routes>
+        <ScrollToTop />
       </BrowserRouter>
     </ThemeProvider>
   );

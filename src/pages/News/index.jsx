@@ -19,8 +19,20 @@ function News({ data, loading }) {
         <Container
           maxWidth="xl"
           disableGutters
-          sx={{ margin: { xs: '43px 0 48px 0', md: '113px 0 102px 0' } }}>
-          <Box sx={{ padding: { xs: '0 3.25rem', md: '0 5rem 0 5.6rem' } }}>
+          sx={{
+            margin: {
+              xs: '43px 0 48px 0',
+              md: '113px auto 102px ',
+              xl: '159px auto 102px ',
+            },
+          }}>
+          <Box
+            sx={{
+              padding: {
+                xs: '0 3.25rem',
+                md: '0 5rem 0 5.6rem',
+              },
+            }}>
             <Carousel
               items={newsItem.imagePath}
               renderContent={(item) => (
@@ -32,8 +44,13 @@ function News({ data, loading }) {
           </Box>
           <Box
             sx={{
-              padding: { xs: '0 1.25rem', md: '0 2.25rem' },
-              marginTop: { xs: '53px', md: '122px' },
+              padding: {
+                xs: '0 1.25rem',
+                md: '0 2.25rem',
+                lg: '0 7.25rem',
+                xl: '0 12.62rem',
+              },
+              marginTop: { xs: '53px', md: '122px', lg: '190px' },
             }}>
             <Typography
               variant="h4"

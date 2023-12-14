@@ -8,10 +8,10 @@
 }
 @media screen and (min-width: 480px) {
   .logos {
-    padding: 10px 21px 11px 21px;
+    padding: 11px 27px 15px 22px;
   }
   .logos img {
-    width: 88px;
+    width: 70px;
   }
 }
 @media screen and (min-width: 768px) {
@@ -20,6 +20,14 @@
   }
   .logos img {
     width: 88px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .logos {
+    padding: 11px 33px 22px 33px;
+  }
+  .logos img {
+    width: 100px;
   }
 }
 @media screen and (min-width: 1600px) {
@@ -39,12 +47,28 @@
     width: 63px;
   }
 }
+@media screen and (min-width: 480px) {
+  .usaid {
+    padding: 31px 13px 32px 14px;
+  }
+  .usaid img {
+    width: 80px;
+  }
+}
 @media screen and (min-width: 768px) {
   .usaid {
     padding: 38px 14px 40px 14px;
   }
   .usaid img {
     width: 103px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .usaid {
+    padding: 38px 24px 40px 21px;
+  }
+  .usaid img {
+    width: 120px;
   }
 }
 @media screen and (min-width: 1600px) {
@@ -64,12 +88,28 @@
     width: 71px;
   }
 }
+@media screen and (min-width: 480px) {
+  .zagoriy {
+    padding: 23px 10px 17px 10px;
+  }
+  .zagoriy img {
+    width: 96px;
+  }
+}
 @media screen and (min-width: 768px) {
   .zagoriy {
     padding: 25px 10px 27px 10px;
   }
   .zagoriy img {
     width: 111px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .zagoriy {
+    padding: 25px 22px 27px 22px;
+  }
+  .zagoriy img {
+    width: 128px;
   }
 }
 @media screen and (min-width: 1600px) {
@@ -89,12 +129,28 @@
     width: 75px;
   }
 }
+@media screen and (min-width: 480px) {
+  .paragraph {
+    padding: 28px 11px 22px 5px;
+  }
+  .paragraph img {
+    width: 102px;
+  }
+}
 @media screen and (min-width: 768px) {
   .paragraph {
     padding: 33px 9px 34px 10px;
   }
   .paragraph img {
     width: 112px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .paragraph {
+    padding: 33px 9px 34px 10px;
+  }
+  .paragraph img {
+    width: 140px;
   }
 }
 @media screen and (min-width: 1600px) {
@@ -114,12 +170,28 @@
     width: 39px;
   }
 }
+@media screen and (min-width: 480px) {
+  .kiyanochka {
+    padding: 15px 30px;
+  }
+  .kiyanochka img {
+    width: 57px;
+  }
+}
 @media screen and (min-width: 768px) {
   .kiyanochka {
     padding: 17px 28px 18px 29px;
   }
   .kiyanochka img {
     width: 74px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .kiyanochka {
+    padding: 17px 40px 18px 40px;
+  }
+  .kiyanochka img {
+    width: 83px;
   }
 }
 @media screen and (min-width: 1600px) {
@@ -139,12 +211,28 @@
     width: 38px;
   }
 }
+@media screen and (min-width: 480px) {
+  .molochniy {
+    padding: 16px 31px 16px 30px;
+  }
+  .molochniy img {
+    width: 55px;
+  }
+}
 @media screen and (min-width: 768px) {
   .molochniy {
     padding: 18px 29px 18px 28px;
   }
   .molochniy img {
     width: 73px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .molochniy {
+    padding: 18px 43px;
+  }
+  .molochniy img {
+    width: 80px;
   }
 }
 @media screen and (min-width: 1600px) {
@@ -164,12 +252,28 @@
     width: 69px;
   }
 }
+@media screen and (min-width: 480px) {
+  .stoIdei {
+    padding: 30px 12px;
+  }
+  .stoIdei img {
+    width: 84px;
+  }
+}
 @media screen and (min-width: 768px) {
   .stoIdei {
     padding: 39px 13px 38px 14px;
   }
   .stoIdei img {
     width: 104px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .stoIdei {
+    padding: 39px 22px 38px 24px;
+  }
+  .stoIdei img {
+    width: 117px;
   }
 }
 @media screen and (min-width: 1600px) {
@@ -189,12 +293,25 @@
     width: 36px;
   }
 }
+@media screen and (min-width: 480px) {
+  .italiec {
+    padding: 16px 32px 16px 32px;
+  }
+  .italiec img {
+    width: 52px;
+  }
+}
 @media screen and (min-width: 768px) {
   .italiec {
     padding: 18px 28px 18px 29px;
   }
   .italiec img {
     width: 74px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .italiec {
+    padding: 21px 45px;
   }
 }
 @media screen and (min-width: 1600px) {
@@ -214,12 +331,33 @@
     width: 49px;
   }
 }
+@media screen and (min-width: 480px) {
+  .ednannia {
+    padding: 17px 25px;
+  }
+  .ednannia img {
+    width: 66px;
+  }
+}
 @media screen and (min-width: 768px) {
   .ednannia {
     padding: 19px 17px 18px 18px;
   }
   .ednannia img {
     width: 96px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .ednannia {
+    padding: 19px 17px 18px 18px;
+  }
+  .ednannia img {
+    width: 96px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .ednannia {
+    padding: 22px 34px;
   }
 }
 @media screen and (min-width: 1600px) {
@@ -239,12 +377,28 @@
     width: 44px;
   }
 }
+@media screen and (min-width: 480px) {
+  .vanoivano {
+    padding: 12px 26px 9px 26px;
+  }
+  .vanoivano img {
+    width: 63px;
+  }
+}
 @media screen and (min-width: 768px) {
   .vanoivano {
     padding: 14px 24px 13px 25px;
   }
   .vanoivano img {
     width: 82px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .vanoivano {
+    padding: 16px 39px 18px 39px;
+  }
+  .vanoivano img {
+    width: 89px;
   }
 }
 @media screen and (min-width: 1600px) {
@@ -264,12 +418,25 @@
     width: 41px;
   }
 }
+@media screen and (min-width: 480px) {
+  .ayurveda {
+    padding: 13px 29px;
+  }
+  .ayurveda img {
+    width: 59px;
+  }
+}
 @media screen and (min-width: 768px) {
   .ayurveda {
     padding: 13px 24px 13px 23px;
   }
   .ayurveda img {
     width: 83px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .ayurveda {
+    padding: 17px 41px;
   }
 }
 @media screen and (min-width: 1600px) {
@@ -289,12 +456,22 @@
     width: 42px;
   }
 }
+@media screen and (min-width: 480px) {
+  .rud img {
+    width: 63px;
+  }
+}
 @media screen and (min-width: 768px) {
   .rud {
     padding: 16px 22px 15px 22px;
   }
   .rud img {
     width: 87px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .rud {
+    padding: 21px 41px 21px 38px;
   }
 }
 @media screen and (min-width: 1600px) {
@@ -314,12 +491,28 @@
     width: 62px;
   }
 }
+@media screen and (min-width: 480px) {
+  .dpm {
+    padding: 29px 18px 24px 17px;
+  }
+  .dpm img {
+    width: 81px;
+  }
+}
 @media screen and (min-width: 768px) {
   .dpm {
     padding: 35px 14px 34px 15px;
   }
   .dpm img {
     width: 102px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .dpm {
+    padding: 37px 24px 29px 24px;
+  }
+  .dpm img {
+    width: 119px;
   }
 }
 @media screen and (min-width: 1600px) {
@@ -339,12 +532,25 @@
     width: 24px;
   }
 }
+@media screen and (min-width: 480px) {
+  .satori {
+    padding: 18px 33px 18px 34px;
+  }
+  .satori img {
+    width: 50px;
+  }
+}
 @media screen and (min-width: 768px) {
   .satori {
     padding: 19px 29px 18px 30px;
   }
   .satori img {
     width: 72px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .satori {
+    padding: 22px 48px;
   }
 }
 @media screen and (min-width: 1600px) {
@@ -364,12 +570,25 @@
     width: 37px;
   }
 }
+@media screen and (min-width: 480px) {
+  .milkbar {
+    padding: 16px 32px;
+  }
+  .milkbar img {
+    width: 53px;
+  }
+}
 @media screen and (min-width: 768px) {
   .milkbar {
     padding: 18px 28px 17px 28px;
   }
   .milkbar img {
     width: 75px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .milkbar {
+    padding: 20px 46px;
   }
 }
 @media screen and (min-width: 1600px) {
@@ -389,12 +608,28 @@
     width: 69px;
   }
 }
+@media screen and (min-width: 480px) {
+  .danit {
+    padding: 29px 13px;
+  }
+  .danit img {
+    width: 88px;
+  }
+}
 @media screen and (min-width: 768px) {
   .danit {
     padding: 36px 15px;
   }
   .danit img {
     width: 97px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .danit {
+    padding: 40px 27px;
+  }
+  .danit img {
+    width: 112px;
   }
 }
 @media screen and (min-width: 1600px) {
@@ -414,12 +649,28 @@
     width: 62px;
   }
 }
+@media screen and (min-width: 480px) {
+  .united_ukrainians {
+    padding: 22px 18px;
+  }
+  .united_ukrainians img {
+    width: 79px;
+  }
+}
 @media screen and (min-width: 768px) {
   .united_ukrainians {
     padding: 26px 14px;
   }
   .united_ukrainians img {
     width: 97px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .united_ukrainians {
+    padding: 31px 30px;
+  }
+  .united_ukrainians img {
+    width: 110px;
   }
 }
 @media screen and (min-width: 1600px) {
@@ -439,12 +690,28 @@
     width: 55px;
   }
 }
+@media screen and (min-width: 480px) {
+  .ranok {
+    padding: 27px 22px;
+  }
+  .ranok img {
+    width: 71px;
+  }
+}
 @media screen and (min-width: 768px) {
   .ranok {
     padding: 33px 19px;
   }
   .ranok img {
     width: 87px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .ranok {
+    padding: 36px 31px;
+  }
+  .ranok img {
+    width: 103px;
   }
 }
 @media screen and (min-width: 1600px) {
@@ -456,12 +723,20 @@
   }
 }
 
-.genesis {
-  padding: 17px 14px;
-}
 @media screen and (min-width: 360px) {
+  .genesis {
+    padding: 17px 14px;
+  }
   .genesis img {
     width: 58px;
+  }
+}
+@media screen and (min-width: 480px) {
+  .genesis {
+    padding: 26px 19px;
+  }
+  .genesis img {
+    width: 78px;
   }
 }
 @media screen and (min-width: 768px) {
@@ -472,6 +747,14 @@
     width: 87px;
   }
 }
+@media screen and (min-width: 1024px) {
+  .genesis {
+    padding: 35px 29px;
+  }
+  .genesis img {
+    width: 109px;
+  }
+}
 @media screen and (min-width: 1600px) {
   .genesis {
     padding: 71px 39px;
@@ -481,12 +764,20 @@
   }
 }
 
-.naukma {
-  padding: 3px 16px;
-}
 @media screen and (min-width: 360px) {
+  .naukma {
+    padding: 3px 16px;
+  }
   .naukma img {
     width: 60px;
+  }
+}
+@media screen and (min-width: 480px) {
+  .naukma {
+    padding: 9px 23px;
+  }
+  .naukma img {
+    width: 72px;
   }
 }
 @media screen and (min-width: 768px) {
@@ -495,6 +786,14 @@
   }
   .naukma img {
     width: 87px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .naukma {
+    padding: 15px 37px;
+  }
+  .naukma img {
+    width: 94px;
   }
 }
 @media screen and (min-width: 1600px) {

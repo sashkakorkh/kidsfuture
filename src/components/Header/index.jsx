@@ -132,15 +132,14 @@ function Header() {
             <IconButton
               aria-label="open drawer"
               onClick={toggleDrawer(true)}
-              /* style={{ color: theme.palette.colors.mainsecond }} */
               sx={{
                 lineHeight: '1',
                 display: {
                   xs: 'block',
                   md: 'none',
-                  padding: '0',
-                  margin: { xs: '23px', md: '0' },
                 },
+                padding: '0',
+                marginLeft: { xs: '9px', md: '0' },
               }}>
               <img
                 src={`${process.env.PUBLIC_URL}/images/menu.png`}
@@ -166,10 +165,11 @@ function Header() {
               }}>
               <IconButton
                 onClick={toggleDrawer(false)}
-                style={{
+                sx={{
                   color: theme.palette.colors.mainsecond,
                   justifyContent: 'end',
                   padding: '0',
+                  marginLeft: { xs: '10px', sm: '0' },
                 }}>
                 <CloseRoundedIcon fontSize="large" />
               </IconButton>

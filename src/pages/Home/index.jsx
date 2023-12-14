@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import {
   Box,
@@ -1394,7 +1394,7 @@ function HomeContent({ data, loading }) {
                 },
                 marginTop: { xs: '16px', md: '68px', lg: '50px' },
                 borderRadius: { md: '60px' },
-                border: { md: ' 4px solid #F99820' },
+                border: { md: ` 4px solid ${theme.palette.colors.mainfirst}` },
                 height: { md: '450px', xl: '485px' },
                 '::before': {
                   ...defaultStylesBgEl,
@@ -1450,17 +1450,17 @@ function HomeContent({ data, loading }) {
               top: {
                 xs: '-17px',
                 md: '19px',
-                lg: '-135px',
+                lg: '-48px',
                 xl: '-22px',
               },
               left: {
                 xs: '29px',
                 md: '39px',
-                lg: '-73px',
+                lg: '137px',
                 xl: '226px',
               },
-              width: { xs: '13px', md: '16px', lg: '80px', xl: '26px' },
-              height: { xs: '13px', md: '16px', lg: '112px', xl: '26px' },
+              width: { xs: '13px', md: '16px', lg: '26px' },
+              height: { xs: '13px', md: '16px', lg: '26px' },
               backgroundImage: `url(${process.env.PUBLIC_URL}/bgElements/bg_yellow_triangle.png)`,
               transform: 'rotateZ(270deg)',
             },
@@ -1469,17 +1469,17 @@ function HomeContent({ data, loading }) {
               top: {
                 xs: '9px',
                 md: '47px',
-                lg: '-135px',
+                lg: '33px',
                 xl: '40px',
               },
               left: {
                 xs: '79px',
                 md: '177px',
-                lg: '-73px',
+                lg: '287px',
                 xl: '451px',
               },
-              width: { xs: '16px', md: '20px', lg: '80px', xl: '32px' },
-              height: { xs: '16px', md: '20px', lg: '112px', xl: '32px' },
+              width: { xs: '16px', md: '20px', lg: '32px' },
+              height: { xs: '16px', md: '20px', lg: '32px' },
               backgroundImage: `url(${process.env.PUBLIC_URL}/bgElements/bg_diamnd_blue_darkblue.png)`,
               transform: 'rotateZ(90deg)',
             },
@@ -1495,17 +1495,17 @@ function HomeContent({ data, loading }) {
                 top: {
                   xs: '-23px',
                   md: '-41px',
-                  lg: '-135px',
+                  lg: '-50px',
                   xl: '-46px',
                 },
                 right: {
                   xs: '33px',
                   md: '39px',
-                  lg: '-73px',
+                  lg: '101px',
                   xl: '240px',
                 },
-                width: { xs: '20px', md: '27px', lg: '80px', xl: '41px' },
-                height: { xs: '20px', md: '27px', lg: '112px', xl: '41px' },
+                width: { xs: '20px', md: '27px', lg: '41px' },
+                height: { xs: '20px', md: '27px', lg: '41px' },
                 backgroundImage: `url(${process.env.PUBLIC_URL}/bgElements/bg_yellow_triangle.png)`,
                 transform: 'rotateZ(180deg)',
               },
@@ -1514,26 +1514,24 @@ function HomeContent({ data, loading }) {
                 top: {
                   xs: '-46px',
                   md: '-66px',
-                  lg: '-135px',
+                  lg: '-78px',
                   xl: '-75px',
                 },
                 right: {
                   xs: '93px',
                   md: '203px',
-                  lg: '-73px',
+                  lg: '310px',
                   xl: '482px',
                 },
                 width: {
                   xs: '10px',
                   md: '13px',
-                  lg: '80px',
-                  xl: '20px',
+                  lg: '20px',
                 },
                 height: {
                   xs: '8px',
                   md: '10px',
-                  lg: '112px',
-                  xl: '14px',
+                  lg: '14px',
                 },
                 backgroundImage: `url(${process.env.PUBLIC_URL}/bgElements/bg_light_blue_triangle.png)`,
                 transform: 'rotateZ(270deg)',
@@ -1542,7 +1540,9 @@ function HomeContent({ data, loading }) {
             <Grid
               container
               columns={15}
-              spacing={{ xs: 5, sm: 4, md: 3, lg: 6 }}>
+              spacing={{ xs: 5, sm: 3, md: 3, lg: 6 }}
+              sx={{ padding: { sm: '0 1.125rem' } }}
+              zeroMinWidth="true">
               <RenderPartners />
             </Grid>
           </Box>
