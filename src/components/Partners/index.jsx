@@ -135,8 +135,25 @@ function RenderPartners() {
               className={partner.className}
               sx={{
                 border: ` 2px solid ${theme.palette.colors.mainfirst}`,
-                width: { xs: '93px', sm: '120px', md: '130px', xl: '281px' },
-                height: { xs: '63px', sm: '90px', md: '108px', xl: '234px' },
+                width: {
+                  xs: '93px',
+                  sm: '120px',
+                  md: '130px',
+                  lg: '170px',
+                  xl: '281px',
+                },
+                height: {
+                  xs: '63px',
+                  sm: '90px',
+                  md: '108px',
+                  lg: '120px',
+                  xl: '234px',
+                },
+                transition: 'all 0.2s ease-in-out',
+                '&:hover': {
+                  transform: 'scale(1.1)',
+                  border: ` 3px solid ${theme.palette.colors.mainfirst}`,
+                },
               }}>
               <img
                 src={partner.imgUrl}

@@ -16,12 +16,15 @@ const defaultBtnStyles = {
 };
 
 export function OutlinedButton({ textColorBlack, text, btnSupport }) {
+  const theme = useTheme();
   const outlinedDefaultStyles = {
     backgroundColor: 'transparent',
-    border: textColorBlack ? '1px solid #4366E3' : '1px solid white',
+    border: textColorBlack
+      ? `1px solid ${theme.palette.colors.mainsecond}`
+      : '1px solid white',
     color: textColorBlack ? 'black' : 'white',
   };
-  const theme = useTheme();
+
   const btnSupportStyle = {
     ...defaultBtnStyles,
     ...outlinedDefaultStyles,
@@ -42,6 +45,9 @@ export function OutlinedButton({ textColorBlack, text, btnSupport }) {
     },
     textTransform: 'uppercase',
     fontWeight: theme.typography.const.fontWeight.bold,
+    '&:hover': {
+      border: `1px solid ${theme.palette.colors.mainfirst}`,
+    },
   };
 
   const btnDonateStyle = {
@@ -52,6 +58,11 @@ export function OutlinedButton({ textColorBlack, text, btnSupport }) {
     fontSize: { xs: '0.812rem', md: '1rem' },
     textTransform: 'capitalize',
     fontWeight: theme.typography.const.fontWeight.normal,
+    transition: 'all 0.2s ease-in-out',
+    '&:hover': {
+      border: '3px solid white',
+      transform: 'scale(0.95)',
+    },
   };
   const outlinedStyles = btnSupport ? btnSupportStyle : btnDonateStyle;
   return (

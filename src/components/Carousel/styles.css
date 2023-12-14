@@ -113,6 +113,14 @@
     right: 15px;
   }
 }
+@media screen and (min-width: 1600px) {
+  .arrow-news {
+    width: 24px;
+    height: 42px;
+    top: 50%;
+    right: 230px;
+  }
+}
 
 @media screen and (min-width: 360px) {
   .slick-dots {
@@ -155,6 +163,12 @@
     font-size: 12px;
     width: 5px;
     height: 5px;
+  }
+}
+@media screen and (min-width: 1600px) {
+  .slick-dots {
+    bottom: -26px;
+    left: -3px;
   }
 }
 

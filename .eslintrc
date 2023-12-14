@@ -27,7 +27,7 @@
       }
     ],
     "import/extensions": ["warn", "never"],
-    "operator-linebreak": ["warn", "after"],
+    "operator-linebreak": ["warn", "after",{ "overrides": { "?": "before", ":": "before" } }],
     "arrow-body-style": ["warn", "as-needed"],
     "linebreak-style": ["warn", "windows"],
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],

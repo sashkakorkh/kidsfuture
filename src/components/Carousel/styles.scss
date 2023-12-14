@@ -90,6 +90,12 @@
     top: 43%;
     right: 15px;
   }
+  @media screen and (min-width: 1600px) {
+    width: 24px;
+    height: 42px;
+    top: 50%;
+    right: 230px;
+  }
 }
 
 .slick-dots {
@@ -135,5 +141,9 @@
         }
       }
     }
+  }
+  @media screen and (min-width: 1600px) {
+    bottom: -26px;
+    left: -3px;
   }
 }
