@@ -1488,7 +1488,7 @@ function HomeContent({ data, loading }) {
           <Box
             sx={{
               position: 'relative',
-              padding: { xs: '0 1.25rem', sm: '0 2.25rem', md: '0 2.25rem' },
+              padding: { xs: '0 1.25rem', sm: '0 2.25rem', lg: '0 2.25rem' },
               margin: { xs: '20px 0 50px 0', md: '50px 0 100px 0' },
               '::before': {
                 ...defaultStylesBgEl,
@@ -1541,8 +1541,7 @@ function HomeContent({ data, loading }) {
               container
               columns={15}
               spacing={{ xs: 5, sm: 3, md: 3, lg: 6 }}
-              sx={{ padding: { sm: '0 1.125rem' } }}
-              zeroMinWidth="true">
+              sx={{ padding: { sm: '0 1.125rem' } }}>
               <RenderPartners />
             </Grid>
           </Box>
