@@ -64,12 +64,13 @@ function SampleNextArrow({
   currentSlide,
   totalSlides,
   classForPage,
+  slidesToScroll,
 }) {
+  const lastVisibleSlide = currentSlide + slidesToScroll - 1;
+  const classToHideArrow = lastVisibleSlide >= totalSlides - 1 ? 'hidden' : '';
   return (
     <div
-      className={`${className} ${classForPage} ${
-        currentSlide === totalSlides - 1 ? 'hidden' : ''
-      } `}
+      className={`${className} ${classForPage} ${classToHideArrow} `}
       role="button"
       tabIndex={0}
       aria-label="Next"
@@ -101,6 +102,7 @@ SampleNextArrow.propTypes = {
   onClick: PropTypes.func,
   currentSlide: PropTypes.number.isRequired,
   totalSlides: PropTypes.number.isRequired,
+  slidesToScroll: PropTypes.number.isRequired,
 };
 
 SampleNextArrow.defaultProps = {
@@ -112,54 +114,36 @@ SampleNextArrow.defaultProps = {
 function Carousel({ items, showPagination, isLoading, renderContent }) {
   const [currentSlide, setCurrentSlide] = useState(0);
   const location = useLocation();
-  const theme = useTheme();
   const currentPath = location.pathname;
   const classForArrow = currentPath === '/' ? 'arrow-home' : 'arrow-news';
   const classForDiv = currentPath === '/' ? 'slick-home' : '';
   const responsiveSliderHome = [
     {
-      breakpoint: theme.breakpoints.values.xl,
-      settings: {
-        slidesToShow: 3,
-        slidesToScroll: 3,
-      },
-    },
-    {
-      breakpoint: theme.breakpoints.values.md,
+      breakpoint: 767,
       settings: {
         slidesToShow: 1,
         slidesToScroll: 1,
       },
     },
   ];
-  const responsiveSliderNews = [
-    {
-      breakpoint: theme.breakpoints.values.xs,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1,
-      },
-    },
-  ];
-  const sliderResponsive =
-    currentPath === '/' || currentPath.startsWith('/#news')
-      ? responsiveSliderHome
-      : responsiveSliderNews;
-
+  const sliderResponsive = currentPath === '/' ? responsiveSliderHome : null;
+  const cardsToShowScroll = currentPath === '/' ? 3 : 1;
+  const cardAdaptiveHeight = currentPath !== '/';
   const settings = {
     dots: showPagination,
     infinite: false,
     autoplay: false,
-    slidesToShow: 3,
-    slidesToScroll: 3,
+    slidesToShow: cardsToShowScroll,
+    slidesToScroll: cardsToShowScroll,
     responsive: sliderResponsive,
     initialSlide: 0,
-    adaptiveHeight: currentPath !== '/#news',
+    adaptiveHeight: cardAdaptiveHeight,
     mobileFirst: true,
     touchThreshold: 10,
     waitForAnimate: true,
     nextArrow: (
       <SampleNextArrow
+        slidesToScroll={cardsToShowScroll}
         currentSlide={currentSlide}
         totalSlides={items.length}
         classForPage={classForArrow}
@@ -169,22 +153,13 @@ function Carousel({ items, showPagination, isLoading, renderContent }) {
       <SamplePrevArrow
         currentSlide={currentSlide}
         classForPage={classForArrow}
+        totalSlides={items.length}
       />
     ),
     beforeChange: (oldIndex, newIndex) => {
       setCurrentSlide(newIndex);
     },
   };
-  /* if (sliderResponsive) {
-    const screenWidth = window.innerWidth;
-
-    sliderResponsive.forEach((breakpoint) => {
-      if (screenWidth <= breakpoint.breakpoint) {
-        settings.slidesToShow = breakpoint.settings.slidesToShow;
-        settings.slidesToScroll = breakpoint.settings.slidesToScroll;
-      }
-    });
-  } */
   return (
     <>
       {isLoading && <p>Loading...</p>}
@@ -192,14 +167,16 @@ function Carousel({ items, showPagination, isLoading, renderContent }) {
         <Slider
           dots={settings.dots}
           infinite={settings.infinite}
-          initialSlide={settings.initialSlide}
           autoplay={settings.autoplay}
+          slidesToShow={settings.slidesToShow}
+          slidesToScroll={settings.slidesToScroll}
+          responsive={settings.responsive}
+          initialSlide={settings.initialSlide}
+          adaptiveHeight={settings.adaptiveHeight}
           nextArrow={settings.nextArrow}
           prevArrow={settings.prevArrow}
-          responsive={settings.responsive}
-          beforeChange={settings.beforeChange}
-          adaptiveHeight={settings.adaptiveHeight}
           mobileFirst={settings.mobileFirst}
+          beforeChange={settings.beforeChange}
           touchThreshold={settings.touchThreshold}
           waitForAnimate={settings.waitForAnimate}>
           {items.map((item, index) => (

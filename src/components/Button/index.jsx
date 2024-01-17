@@ -19,15 +19,48 @@ export function OutlinedButton({ textColorBlack, text, btnSupport }) {
   const theme = useTheme();
   const outlinedDefaultStyles = {
     backgroundColor: 'transparent',
+    transition: 'all 0.2s ease-in-out',
     border: textColorBlack
       ? `1px solid ${theme.palette.colors.mainsecond}`
       : '1px solid white',
     color: textColorBlack ? 'black' : 'white',
+    '&:hover': {
+      borderWidth: `3px`,
+      transform: 'scale(0.95)',
+    },
   };
 
   const btnSupportStyle = {
     ...defaultBtnStyles,
     ...outlinedDefaultStyles,
+    overflow: 'hidden',
+    position: 'relative',
+    willChange: 'transform',
+    zIndex: 0,
+    '&::after': {
+      backgroundColor: `${theme.palette.colors.mainsecond}`,
+      borderRadius: '48px',
+      content: '""',
+      display: 'block',
+      height: ' 100%',
+      width: '100%',
+      position: 'absolute',
+      left: 0,
+      top: 0,
+      transform: 'translate(-100%, 0) rotate(10deg)',
+      transformOrigin: 'top left',
+      transition: '.2s transform ease-out',
+      willChange: 'transform',
+      zIndex: -1,
+    },
+    '&:hover::after': { transform: 'translate(0, 0)' },
+
+    ' &:hover': {
+      border: '2px solid transparent',
+      color: 'white',
+      transform: 'scale(1.05)',
+      willChange: 'transform',
+    },
     height: {
       xs: '32px',
       md: '33px',
@@ -45,9 +78,9 @@ export function OutlinedButton({ textColorBlack, text, btnSupport }) {
     },
     textTransform: 'uppercase',
     fontWeight: theme.typography.const.fontWeight.bold,
-    '&:hover': {
-      border: `1px solid ${theme.palette.colors.mainfirst}`,
-    },
+    /* '&:hover': {
+      borderColor: `${theme.palette.colors.mainfirst}`,
+    }, */
   };
 
   const btnDonateStyle = {
@@ -58,10 +91,8 @@ export function OutlinedButton({ textColorBlack, text, btnSupport }) {
     fontSize: { xs: '0.812rem', md: '1rem' },
     textTransform: 'capitalize',
     fontWeight: theme.typography.const.fontWeight.normal,
-    transition: 'all 0.2s ease-in-out',
     '&:hover': {
-      border: '3px solid white',
-      transform: 'scale(0.95)',
+      borderColor: '3px solid white',
     },
   };
   const outlinedStyles = btnSupport ? btnSupportStyle : btnDonateStyle;

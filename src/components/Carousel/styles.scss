@@ -11,6 +11,11 @@
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
+  & p {
+    @media screen and (min-width: 1024px) {
+      width: 80%;
+    }
+  }
   & a {
     margin-top: auto;
   }
@@ -25,6 +30,10 @@
   @media screen and (min-width: 1024px) {
     max-width: 300px;
     min-height: 441px;
+  }
+  @media screen and (min-width: 1600px) {
+    max-width: 436px;
+    min-height: 501px;
   }
 }
 
@@ -85,16 +94,23 @@
     right: -45px;
   }
   @media screen and (min-width: 1024px) {
-    width: 16px;
-    height: 28px;
     top: 43%;
     right: 15px;
   }
   @media screen and (min-width: 1600px) {
-    width: 24px;
-    height: 42px;
     top: 50%;
     right: 230px;
+  }
+  &.slick-prev {
+    @media screen and (min-width: 768px) {
+      left: -52px;
+    }
+    @media screen and (min-width: 1024px) {
+      left: 10px;
+    }
+    @media screen and (min-width: 1600px) {
+      left: 230px;
+    }
   }
 }
 

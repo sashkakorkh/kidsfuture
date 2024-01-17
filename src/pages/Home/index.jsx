@@ -376,7 +376,7 @@ function HomeContent({ data, loading }) {
             sx={{
               margin: {
                 xs: '48px 0',
-                md: '103px 0 90px',
+                md: '103px 0 100px',
                 lg: '91px 0 40px 0',
               },
               padding: {
@@ -598,11 +598,13 @@ function HomeContent({ data, loading }) {
                   maxWidth: {
                     xs: '320px',
                     md: '680px',
-                    lg: '709px',
+                    lg: '530px',
+                    xl: '709px',
                   },
                   height: {
                     xs: '329px',
-                    md: '534px',
+                    md: '648px',
+                    lg: '559px',
                     xl: '652px',
                   },
                 }}>
@@ -1259,7 +1261,7 @@ function HomeContent({ data, loading }) {
                   height: '173px',
                   position: 'relative',
                   marginRight: { md: '24px', xl: '78px' },
-                  right: { xs: '21px', xl: '0' },
+                  right: { xs: '21px', md: '4px', xl: '0' },
                   bottom: { md: '20px', xl: '15px' },
                   '::before': {
                     ...defaultStylesBgEl,
@@ -1331,8 +1333,17 @@ function HomeContent({ data, loading }) {
           <Typography sx={sectionTitleStyles}>Новини</Typography>
           <Box
             sx={{
-              padding: { xs: '0 1.25rem 0 1.25rem', md: '0 3.2rem 0 3.2rem' },
-              marginTop: { xs: '20px', md: '30px', lg: '50px' },
+              width: { xs: '92%', md: '90%', xl: '88%' },
+              /*  padding: {
+                xs: '0 1.25rem 0 1.25rem',
+                /!* md: '0 3.2rem 0 3.2rem', *!/
+                lg: '0',
+              }, */
+              margin: {
+                xs: '20px auto 0 auto',
+                md: '30px auto 0 auto',
+                lg: '50px auto 0 auto',
+              },
             }}>
             <Carousel
               items={data}
