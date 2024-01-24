@@ -44,6 +44,10 @@ function Header() {
       },
       marginRight: { lg: '1.5rem' },
       lineHeight: 'normal',
+      transition: 'all 0.2s ease-in-out',
+      '&:hover': {
+        transform: 'scale(1.1)',
+      },
     },
   };
 

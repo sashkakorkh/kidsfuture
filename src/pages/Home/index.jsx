@@ -1334,11 +1334,6 @@ function HomeContent({ data, loading }) {
           <Box
             sx={{
               width: { xs: '92%', md: '90%', xl: '88%' },
-              /*  padding: {
-                xs: '0 1.25rem 0 1.25rem',
-                /!* md: '0 3.2rem 0 3.2rem', *!/
-                lg: '0',
-              }, */
               margin: {
                 xs: '20px auto 0 auto',
                 md: '30px auto 0 auto',
@@ -1397,7 +1392,7 @@ function HomeContent({ data, loading }) {
               sx={{
                 position: 'relative',
                 backgroundColor: 'white',
-                zIndex: '1',
+                zIndex: '3',
                 padding: {
                   xs: '0 1.25rem 0 1.25rem',
                   md: '1.7rem 3.6rem 2.12rem 3.6rem',
