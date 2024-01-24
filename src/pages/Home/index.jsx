@@ -73,24 +73,6 @@ function HomeContent({ data, loading }) {
                 xl: '0 5rem 0 11rem',
               },
               marginTop: { xs: '27px', md: '52px', lg: '54px' },
-              '::before': {
-                ...defaultStylesBgEl,
-                display: { md: 'none' },
-                bottom: '150px',
-                left: '20px',
-                width: '12px',
-                height: '12px',
-                backgroundImage: `url(${process.env.PUBLIC_URL}/bgElements/bg_diamnd_blue_darkblue.png)`,
-              },
-              '::after': {
-                ...defaultStylesBgEl,
-                display: { md: 'none' },
-                bottom: '219px',
-                left: '128px',
-                width: '19px',
-                height: '19px',
-                backgroundImage: `url(${process.env.PUBLIC_URL}/bgElements/bg_light_blue_triangle.png)`,
-              },
             }}>
             <Stack sx={{ maxWidth: { lg: '526px', xl: '567px' } }}>
               <Typography
@@ -136,7 +118,20 @@ function HomeContent({ data, loading }) {
                 Ми - сімейний благодійний фонд, який розробляє та підтримує
                 проєкти, що спрямовані на всебічний розвиток дітей та підлітків.
               </Typography>
-              <ContainedButton btnName="btnContainedBlue" text="Долучитися" />
+              <Box
+                sx={{
+                  '::before': {
+                    ...defaultStylesBgEl,
+                    display: { md: 'none' },
+                    bottom: '130px',
+                    left: '20px',
+                    width: '12px',
+                    height: '12px',
+                    backgroundImage: `url(${process.env.PUBLIC_URL}/bgElements/bg_diamnd_blue_darkblue.png)`,
+                  },
+                }}>
+                <ContainedButton btnName="btnContainedBlue" text="Долучитися" />
+              </Box>
             </Stack>
             <Box
               sx={{
@@ -219,6 +214,15 @@ function HomeContent({ data, loading }) {
                     width: { xs: '30px', md: '66px', lg: '42px', xl: '82px' },
                     height: { xs: '30px', md: '66px', lg: '46px', xl: '82px' },
                     backgroundImage: `url(${process.env.PUBLIC_URL}/bgElements/bg_squareTriangles.png)`,
+                  },
+                  '::after': {
+                    ...defaultStylesBgEl,
+                    display: { md: 'none' },
+                    top: '-46px',
+                    left: '109px',
+                    width: '19px',
+                    height: '19px',
+                    backgroundImage: `url(${process.env.PUBLIC_URL}/bgElements/bg_light_blue_triangle.png)`,
                   },
                 }}>
                 <img
