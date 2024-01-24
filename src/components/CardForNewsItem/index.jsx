@@ -2,7 +2,7 @@ import React from 'react';
 import { Box, Typography, useTheme } from '@mui/material';
 import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
-import './index.scss';
+import './styles.scss';
 import { TextButton } from '../Button';
 
 function CardNewsItem({ item }) {

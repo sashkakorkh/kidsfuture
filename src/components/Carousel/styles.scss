@@ -11,26 +11,32 @@
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
+
   & p {
     @media screen and (min-width: 1024px) {
       width: 80%;
     }
   }
+
   & a {
     margin-top: auto;
   }
+
   @media screen and (min-width: 360px) {
     max-width: 320px;
     min-height: 324px;
   }
+
   @media screen and (min-width: 768px) {
     max-width: 219px;
     min-height: 347px;
   }
+
   @media screen and (min-width: 1024px) {
     max-width: 300px;
     min-height: 441px;
   }
+
   @media screen and (min-width: 1600px) {
     max-width: 436px;
     min-height: 501px;
@@ -42,39 +48,47 @@
     width: 16px;
     height: 28px;
   }
+
   @media screen and (min-width: 768px) {
     width: 12px;
     height: 21px;
   }
+
   @media screen and (min-width: 1024px) {
     width: 16px;
     height: 28px;
   }
+
   &.slick-next {
     @media screen and (min-width: 360px) {
       top: 32%;
       right: -8px;
     }
+
     @media screen and (min-width: 768px) {
       top: 50%;
       right: -21px;
     }
+
     @media screen and (min-width: 1024px) {
       top: 35%;
       right: -33px;
     }
   }
+
   &.slick-prev {
     @media screen and (min-width: 360px) {
+      top: 28%;
       right: 0;
       left: -8px;
       z-index: 1;
-      top: 28%;
     }
+
     @media screen and (min-width: 768px) {
       top: 47%;
       left: -28px;
     }
+
     @media screen and (min-width: 1024px) {
       top: 32%;
       left: -35px;
@@ -87,27 +101,33 @@
     width: 10px;
     height: 18px;
   }
+
   @media screen and (min-width: 768px) {
-    width: 24px;
-    height: 42px;
     top: 49%;
     right: -45px;
+    width: 24px;
+    height: 42px;
   }
+
   @media screen and (min-width: 1024px) {
     top: 43%;
     right: 15px;
   }
+
   @media screen and (min-width: 1600px) {
     top: 50%;
     right: 230px;
   }
+
   &.slick-prev {
     @media screen and (min-width: 768px) {
       left: -52px;
     }
+
     @media screen and (min-width: 1024px) {
       left: 10px;
     }
+
     @media screen and (min-width: 1600px) {
       left: 230px;
     }
@@ -117,8 +137,9 @@
 .slick-dots {
   @media screen and (min-width: 360px) {
     bottom: -6px;
-    padding: 0;
     margin: 0;
+    padding: 0;
+
     & li {
       width: 5px;
       height: 5px;
@@ -128,10 +149,10 @@
         width: 10px;
         height: 10px;
 
-        &:before {
-          font-size: 6px;
+        &::before {
           width: 5px;
           height: 5px;
+          font-size: 6px;
         }
       }
     }
@@ -139,8 +160,9 @@
   @media screen and (min-width: 768px) {
     bottom: -15px;
     left: -8px;
-    padding: 0;
     margin: 0;
+    padding: 0;
+
     & li {
       width: 5px;
       height: 5px;
@@ -150,14 +172,15 @@
         width: 10px;
         height: 10px;
 
-        &:before {
-          font-size: 12px;
+        &::before {
           width: 5px;
           height: 5px;
+          font-size: 12px;
         }
       }
     }
   }
+
   @media screen and (min-width: 1600px) {
     bottom: -26px;
     left: -3px;

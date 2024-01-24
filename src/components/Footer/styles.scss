@@ -1,29 +1,20 @@
-/*
-@keyframes wiggle {
-  0% {
-    transform: rotate(0deg);
-  }
-  50% {
-    transform: rotate(10deg);
-  }
-  100% {
-    transform: rotate(0deg);
-  }
-}
-*/
 @keyframes tilt-shaking {
   0% {
     transform: rotate(0deg);
   }
+
   25% {
     transform: rotate(5deg);
   }
+
   50% {
     transform: rotate(0deg);
   }
+
   75% {
     transform: rotate(-5deg);
   }
+
   100% {
     transform: rotate(0deg);
   }
@@ -33,10 +24,12 @@
   0% {
     transform: skewX(0deg);
   }
+
   50% {
     transform: skewX(-25deg);
   }
+
   100% {
-    transform: skewX(0deg) ;
+    transform: skewX(0deg);
   }
 }

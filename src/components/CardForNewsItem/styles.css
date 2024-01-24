@@ -2,8 +2,8 @@
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
-  overflow: hidden;
   margin-top: 8px;
+  overflow: hidden;
   line-height: normal;
 }
 @media screen and (min-width: 360px) {

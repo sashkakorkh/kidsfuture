@@ -83,10 +83,10 @@
 }
 @media screen and (min-width: 360px) {
   .arrow-home.slick-prev {
+    top: 28%;
     right: 0;
     left: -8px;
     z-index: 1;
-    top: 28%;
   }
 }
 @media screen and (min-width: 768px) {
@@ -110,10 +110,10 @@
 }
 @media screen and (min-width: 768px) {
   .arrow-news {
-    width: 24px;
-    height: 42px;
     top: 49%;
     right: -45px;
+    width: 24px;
+    height: 42px;
   }
 }
 @media screen and (min-width: 1024px) {
@@ -147,8 +147,8 @@
 @media screen and (min-width: 360px) {
   .slick-dots {
     bottom: -6px;
-    padding: 0;
     margin: 0;
+    padding: 0;
   }
   .slick-dots li {
     width: 5px;
@@ -159,18 +159,18 @@
     width: 10px;
     height: 10px;
   }
-  .slick-dots li button:before {
-    font-size: 6px;
+  .slick-dots li button::before {
     width: 5px;
     height: 5px;
+    font-size: 6px;
   }
 }
 @media screen and (min-width: 768px) {
   .slick-dots {
     bottom: -15px;
     left: -8px;
-    padding: 0;
     margin: 0;
+    padding: 0;
   }
   .slick-dots li {
     width: 5px;
@@ -181,10 +181,10 @@
     width: 10px;
     height: 10px;
   }
-  .slick-dots li button:before {
-    font-size: 12px;
+  .slick-dots li button::before {
     width: 5px;
     height: 5px;
+    font-size: 12px;
   }
 }
 @media screen and (min-width: 1600px) {
