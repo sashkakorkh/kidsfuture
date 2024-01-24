@@ -202,7 +202,6 @@ export function ContainedButton({ btnName, text, wider, onClick }) {
       boxShadow: 'unset',
       textWrap: 'nowrap',
       overflow: 'hidden',
-      /*     position: 'relative', */
       willChange: 'transform',
       zIndex: 0,
       '&::after': {

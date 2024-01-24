@@ -11,14 +11,16 @@ function CardNewsItem({ item }) {
     <Box
       className="slick-container"
       sx={{
-        textAlign: 'left',
         margin: { xs: '0 auto', md: '0' },
-      }}>
+        textAlign: 'left',
+      }}
+    >
       <Box
         sx={{
           width: { xs: '320px', md: '219px', lg: '300px', xl: '436px' },
           height: { xs: '240px', md: '165px', lg: '226px', xl: '328px' },
-        }}>
+        }}
+      >
         <img
           src={item.imagePath[0]}
           alt={item.title}
@@ -33,7 +35,8 @@ function CardNewsItem({ item }) {
           fontSize: { xs: '1.125rem', lg: '1.5rem' },
           lineHeight: 'normal',
           fontWeight: theme.typography.const.fontWeight.bold,
-        }}>
+        }}
+      >
         {item.title}
       </Typography>
       <p className="clamp-text">{item.text}</p>

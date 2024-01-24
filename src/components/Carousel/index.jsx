@@ -5,7 +5,6 @@ import 'slick-carousel/slick/slick-theme.css';
 import './styles.scss';
 import PropTypes from 'prop-types';
 import { useLocation } from 'react-router-dom';
-import { useTheme } from '@mui/material';
 
 function SamplePrevArrow({
   className,
@@ -178,11 +177,13 @@ function Carousel({ items, showPagination, isLoading, renderContent }) {
           mobileFirst={settings.mobileFirst}
           beforeChange={settings.beforeChange}
           touchThreshold={settings.touchThreshold}
-          waitForAnimate={settings.waitForAnimate}>
+          waitForAnimate={settings.waitForAnimate}
+        >
           {items.map((item, index) => (
             <div
               key={typeof item === 'object' ? item.id : `string-${index}`}
-              className={classForDiv}>
+              className={classForDiv}
+            >
               {renderContent(item)}
             </div>
           ))}

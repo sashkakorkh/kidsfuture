@@ -126,6 +126,7 @@ function RenderPartners() {
       className: 'naukma',
     },
   ];
+
   return (
     <>
       {partners.map((partner) => (
@@ -134,7 +135,7 @@ function RenderPartners() {
             <Box
               className={partner.className}
               sx={{
-                border: ` 2px solid ${theme.palette.colors.mainfirst}`,
+                border: `2px solid ${theme.palette.colors.mainfirst}`,
                 width: {
                   xs: '93px',
                   sm: '120px',
@@ -152,7 +153,7 @@ function RenderPartners() {
                 transition: 'all 0.2s ease-in-out',
                 '&:hover': {
                   transform: 'scale(1.1)',
-                  border: ` 3px solid ${theme.palette.colors.mainfirst}`,
+                  border: `3px solid ${theme.palette.colors.mainfirst}`,
                 },
               }}>
               <img

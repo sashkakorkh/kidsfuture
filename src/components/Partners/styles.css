@@ -16,7 +16,7 @@
 }
 @media screen and (min-width: 768px) {
   .logos {
-    padding: 10px 21px 11px 21px;
+    padding: 10px 21px 11px;
   }
   .logos img {
     width: 88px;
@@ -24,7 +24,7 @@
 }
 @media screen and (min-width: 1024px) {
   .logos {
-    padding: 11px 33px 22px 33px;
+    padding: 11px 33px 22px;
   }
   .logos img {
     width: 100px;
@@ -57,7 +57,7 @@
 }
 @media screen and (min-width: 768px) {
   .usaid {
-    padding: 38px 14px 40px 14px;
+    padding: 38px 14px 40px;
   }
   .usaid img {
     width: 103px;
@@ -90,7 +90,7 @@
 }
 @media screen and (min-width: 480px) {
   .zagoriy {
-    padding: 23px 10px 17px 10px;
+    padding: 23px 10px 17px;
   }
   .zagoriy img {
     width: 96px;
@@ -98,7 +98,7 @@
 }
 @media screen and (min-width: 768px) {
   .zagoriy {
-    padding: 25px 10px 27px 10px;
+    padding: 25px 10px 27px;
   }
   .zagoriy img {
     width: 111px;
@@ -106,7 +106,7 @@
 }
 @media screen and (min-width: 1024px) {
   .zagoriy {
-    padding: 25px 22px 27px 22px;
+    padding: 25px 22px 27px;
   }
   .zagoriy img {
     width: 128px;
@@ -188,7 +188,7 @@
 }
 @media screen and (min-width: 1024px) {
   .kiyanochka {
-    padding: 17px 40px 18px 40px;
+    padding: 17px 40px 18px;
   }
   .kiyanochka img {
     width: 83px;
@@ -246,7 +246,7 @@
 
 @media screen and (min-width: 360px) {
   .stoIdei {
-    padding: 21px 12px 20px 12px;
+    padding: 21px 12px 20px;
   }
   .stoIdei img {
     width: 69px;
@@ -295,7 +295,7 @@
 }
 @media screen and (min-width: 480px) {
   .italiec {
-    padding: 16px 32px 16px 32px;
+    padding: 16px 32px;
   }
   .italiec img {
     width: 52px;
@@ -347,14 +347,6 @@
     width: 96px;
   }
 }
-@media screen and (min-width: 768px) {
-  .ednannia {
-    padding: 19px 17px 18px 18px;
-  }
-  .ednannia img {
-    width: 96px;
-  }
-}
 @media screen and (min-width: 1024px) {
   .ednannia {
     padding: 22px 34px;
@@ -379,7 +371,7 @@
 }
 @media screen and (min-width: 480px) {
   .vanoivano {
-    padding: 12px 26px 9px 26px;
+    padding: 12px 26px 9px;
   }
   .vanoivano img {
     width: 63px;
@@ -395,7 +387,7 @@
 }
 @media screen and (min-width: 1024px) {
   .vanoivano {
-    padding: 16px 39px 18px 39px;
+    padding: 16px 39px 18px;
   }
   .vanoivano img {
     width: 89px;
@@ -463,7 +455,7 @@
 }
 @media screen and (min-width: 768px) {
   .rud {
-    padding: 16px 22px 15px 22px;
+    padding: 16px 22px 15px;
   }
   .rud img {
     width: 87px;
@@ -476,7 +468,7 @@
 }
 @media screen and (min-width: 1600px) {
   .rud {
-    padding: 59px 76px 60px 76px;
+    padding: 59px 76px 60px;
   }
   .rud img {
     width: 129px;
@@ -509,7 +501,7 @@
 }
 @media screen and (min-width: 1024px) {
   .dpm {
-    padding: 37px 24px 29px 24px;
+    padding: 37px 24px 29px;
   }
   .dpm img {
     width: 119px;
@@ -517,7 +509,7 @@
 }
 @media screen and (min-width: 1600px) {
   .dpm {
-    padding: 76px 37px 77px 37px;
+    padding: 76px 37px 77px;
   }
   .dpm img {
     width: 207px;
@@ -580,7 +572,7 @@
 }
 @media screen and (min-width: 768px) {
   .milkbar {
-    padding: 18px 28px 17px 28px;
+    padding: 18px 28px 17px;
   }
   .milkbar img {
     width: 75px;
@@ -593,7 +585,7 @@
 }
 @media screen and (min-width: 1600px) {
   .milkbar {
-    padding: 70px 94px 71px 94px;
+    padding: 70px 94px 71px;
   }
   .milkbar img {
     width: 93px;
