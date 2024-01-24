@@ -9,7 +9,7 @@ import {
   Typography,
   useTheme,
 } from '@mui/material';
-import './index.scss';
+import './styles.scss';
 import Menu from '../Menu/index';
 import { OutlinedButton } from '../Button';
 
