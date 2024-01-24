@@ -54,9 +54,8 @@ function DonateTab() {
             position: { xs: 'relative', md: 'absolute' },
             top: { xs: '1px', md: '297px', lg: '259px', xl: '276px' },
             right: { xs: '-12px', md: '-3px', lg: '64px', xl: '102px' },
-            /*  width: { xs: '312px', xl: '337px' }, */
             height: { xs: '262px', xl: '287px' },
-            zIndex: { xs: '-1' },
+            zIndex: { xs: '-3' },
           }}>
           <img
             src={`${process.env.PUBLIC_URL}/images/girl.png`}

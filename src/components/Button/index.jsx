@@ -10,6 +10,10 @@ const defaultBtnStyles = {
   textWrap: 'nowrap',
   lineHeight: 'normal',
   textAlign: 'center',
+  overflow: 'hidden',
+  transition: 'all 0.2s ease-in-out',
+  willChange: 'transform',
+  zIndex: 0,
   ':hover': {
     cursor: 'pointer',
   },
@@ -28,6 +32,31 @@ export function OutlinedButton({ textColorBlack, text, btnSupport }) {
   const btnSupportStyle = {
     ...defaultBtnStyles,
     ...outlinedDefaultStyles,
+    '&::after': {
+      backgroundColor: textColorBlack
+        ? `${theme.palette.colors.mainsecond}`
+        : 'white',
+      borderRadius: '48px',
+      content: '""',
+      display: 'block',
+      height: ' 100%',
+      width: '100%',
+      position: 'absolute',
+      left: 0,
+      top: 0,
+      transform: 'translate(-100%, 0) rotate(10deg)',
+      transformOrigin: 'top left',
+      transition: '.2s transform ease-out',
+      willChange: 'transform',
+      zIndex: -1,
+    },
+    '&:hover::after': { transform: 'translate(0, 0)' },
+    ' &:hover': {
+      border: '2px solid transparent',
+      color: textColorBlack ? 'white' : `${theme.palette.colors.mainsecond}`,
+      transform: 'scale(1.05)',
+      willChange: 'transform',
+    },
     height: {
       xs: '32px',
       md: '33px',
@@ -45,9 +74,6 @@ export function OutlinedButton({ textColorBlack, text, btnSupport }) {
     },
     textTransform: 'uppercase',
     fontWeight: theme.typography.const.fontWeight.bold,
-    '&:hover': {
-      border: `1px solid ${theme.palette.colors.mainfirst}`,
-    },
   };
 
   const btnDonateStyle = {
@@ -58,10 +84,10 @@ export function OutlinedButton({ textColorBlack, text, btnSupport }) {
     fontSize: { xs: '0.812rem', md: '1rem' },
     textTransform: 'capitalize',
     fontWeight: theme.typography.const.fontWeight.normal,
-    transition: 'all 0.2s ease-in-out',
     '&:hover': {
       border: '3px solid white',
       transform: 'scale(0.95)',
+      fontWeight: theme.typography.const.fontWeight.bold,
     },
   };
   const outlinedStyles = btnSupport ? btnSupportStyle : btnDonateStyle;
@@ -100,8 +126,26 @@ export function ContainedButton({ btnName, text, wider, onClick }) {
       fontWeight: theme.typography.const.fontWeight.bold,
       backgroundColor: theme.palette.colors.mainsecond,
       color: 'white',
-      '&:hover': {
-        backgroundColor: theme.palette.colors.mainfirst,
+      '&::after': {
+        backgroundColor: `${theme.palette.colors.mainfirst}`,
+        borderRadius: '48px',
+        content: '""',
+        display: 'block',
+        height: ' 100%',
+        width: '100%',
+        position: 'absolute',
+        left: 0,
+        top: 0,
+        transform: 'translate(-100%, 0) rotate(10deg)',
+        transformOrigin: 'top left',
+        transition: '.2s transform ease-out',
+        willChange: 'transform',
+        zIndex: -1,
+      },
+      '&:hover::after': { transform: 'translate(0, 0)' },
+      ' &:hover': {
+        transform: 'scale(1.05)',
+        willChange: 'transform',
       },
     },
     btnContainedWhite: {
@@ -122,8 +166,27 @@ export function ContainedButton({ btnName, text, wider, onClick }) {
       fontWeight: theme.typography.const.fontWeight.bold,
       backgroundColor: 'white',
       color: 'black',
-      '&:hover': {
-        backgroundColor: theme.palette.colors.mainfirst,
+      '&::after': {
+        backgroundColor: `${theme.palette.colors.mainfirst}`,
+        borderRadius: '48px',
+        content: '""',
+        display: 'block',
+        height: ' 100%',
+        width: '100%',
+        position: 'absolute',
+        left: 0,
+        top: 0,
+        transform: 'translate(-100%, 0) rotate(10deg)',
+        transformOrigin: 'top left',
+        transition: '.2s transform ease-out',
+        willChange: 'transform',
+        zIndex: -1,
+      },
+      '&:hover::after': { transform: 'translate(0, 0)' },
+      ' &:hover': {
+        backgroundColor: 'transparent',
+        transform: 'scale(1.05)',
+        willChange: 'transform',
       },
     },
     btnContainedCurrency: {
@@ -138,9 +201,31 @@ export function ContainedButton({ btnName, text, wider, onClick }) {
       background: theme.palette.colors.mainfirst,
       boxShadow: 'unset',
       textWrap: 'nowrap',
-      '&:hover': {
-        backgroundColor: theme.palette.colors.mainfirst,
-        cursor: 'pointer',
+      overflow: 'hidden',
+      /*     position: 'relative', */
+      willChange: 'transform',
+      zIndex: 0,
+      '&::after': {
+        backgroundColor: theme.palette.colors.mainsecond,
+        borderRadius: { xs: '15px', md: '25px' },
+        content: '""',
+        display: 'block',
+        height: ' 100%',
+        width: '100%',
+        position: 'absolute',
+        left: 0,
+        top: 0,
+        transform: 'translate(-100%, 0) rotate(10deg)',
+        transformOrigin: 'top left',
+        transition: '.2s transform ease-out',
+        willChange: 'transform',
+        zIndex: -2,
+      },
+      '&:hover::after': { transform: 'translate(0, 0)' },
+      ' &:hover': {
+        backgroundColor: 'transparent',
+        transform: 'scale(1.05)',
+        willChange: 'transform',
       },
     },
   };
@@ -168,13 +253,35 @@ export function TextButton({ text, readBtn }) {
   const textBtnStyles = {
     ...defaultBtnStyles,
     textTransform: 'uppercase',
+    justifyContent: readBtn ? 'flex-start' : 'flex-end',
     fontWeight: theme.typography.const.fontWeight.bold,
     color: theme.palette.colors.mainsecond,
     lineHeight: 'normal',
-    padding: '0',
-    minWidth: '53px',
+    padding: '0 5px',
+    width: '100px',
     fontSize: { xs: '0.875rem', md: '1rem' },
     marginTop: readBtn ? undefined : { xs: '17px', md: '48px' },
+    '&::after': {
+      content: '""',
+      backgroundImage: `url(${process.env.PUBLIC_URL}/bgElements/arrowSlider.png)`,
+      height: '18px',
+      width: '16px',
+      backgroundRepeat: 'no-repeat',
+      backgroundSize: 'contain',
+      position: 'absolute',
+      opacity: 0,
+      top: '1px',
+      left: readBtn ? '75px' : 0,
+      transform: readBtn ? 'unset' : 'rotate(180deg)',
+    },
+    '&:hover::after': {
+      opacity: 1,
+      left: readBtn ? '85px' : 0,
+    },
+    '&:hover': {
+      transform: 'scale(1.08)',
+      paddingLeft: '10px',
+    },
   };
   return <Button sx={textBtnStyles}>{text}</Button>;
 }

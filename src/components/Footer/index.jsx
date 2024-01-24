@@ -9,6 +9,7 @@ import {
   Typography,
   useTheme,
 } from '@mui/material';
+import './index.scss';
 import Menu from '../Menu/index';
 import { OutlinedButton } from '../Button';
 
@@ -23,6 +24,10 @@ function Footer() {
         xs: '0.75rem',
         md: '1rem',
         xl: '1rem',
+      },
+      transition: 'all 0.2s ease-in-out',
+      '&:hover': {
+        transform: 'scale(1.1)',
       },
     },
   };
@@ -99,6 +104,9 @@ function Footer() {
               gap="1rem"
               sx={{
                 marginBottom: { xs: '8px', md: '25px' },
+                '&:hover img': {
+                  animation: 'tilt-shaking .1s alternate ease infinite',
+                },
               }}>
               <Box
                 sx={{
@@ -128,7 +136,12 @@ function Footer() {
             <Box
               display="flex"
               alignItems="center"
-              sx={{ gap: { xs: '8px', md: '16px' } }}>
+              sx={{
+                gap: { xs: '8px', md: '16px' },
+                '&:hover img': {
+                  animation: 'transformToParallelogram 1s infinite',
+                },
+              }}>
               <Box
                 sx={{
                   height: { xs: '16px', md: '30px', lg: '31px' },
@@ -167,7 +180,13 @@ function Footer() {
                 right: { xs: 'unset', md: '74px' },
               }}>
               <IconButton>
-                <Link href="https://www.facebook.com/kids.future.ua">
+                <Link
+                  href="https://www.facebook.com/kids.future.ua"
+                  sx={{
+                    '&:hover img': {
+                      transform: 'scale(1.09)',
+                    },
+                  }}>
                   <Box
                     sx={{
                       width: { xs: '15px', md: '25px', lg: '30px' },
@@ -177,12 +196,19 @@ function Footer() {
                       alt="Logo"
                       height="100%"
                       width="100%"
+                      style={{ transition: 'all 0.2s ease-in-out' }}
                     />
                   </Box>
                 </Link>
               </IconButton>
               <IconButton>
-                <Link href="https://www.instagram.com/kids.future.ua">
+                <Link
+                  href="https://www.instagram.com/kids.future.ua"
+                  sx={{
+                    '&:hover img': {
+                      transform: 'scale(1.09)',
+                    },
+                  }}>
                   <Box sx={{ width: { xs: '15px', md: '25px', lg: '30px' } }}>
                     <img
                       src={`${process.env.PUBLIC_URL}/images/insta-logo.png`}
@@ -194,16 +220,22 @@ function Footer() {
                 </Link>
               </IconButton>
               <IconButton>
-                {/*  <Link to="#"> */}
-                <Box sx={{ width: { xs: '15px', md: '25px', lg: '30px' } }}>
-                  <img
-                    src={`${process.env.PUBLIC_URL}/images/youtube-logo.png`}
-                    alt="Logo"
-                    height="100%"
-                    width="100%"
-                  />
-                </Box>
-                {/* </Link> */}
+                <Link
+                  href="https://www.youtube.com/"
+                  sx={{
+                    '&:hover img': {
+                      transform: 'scale(1.09)',
+                    },
+                  }}>
+                  <Box sx={{ width: { xs: '15px', md: '25px', lg: '30px' } }}>
+                    <img
+                      src={`${process.env.PUBLIC_URL}/images/youtube-logo.png`}
+                      alt="Logo"
+                      height="100%"
+                      width="100%"
+                    />
+                  </Box>
+                </Link>
               </IconButton>
             </Stack>
             <Link
