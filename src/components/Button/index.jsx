@@ -58,18 +58,17 @@ export function OutlinedButton({ textColorBlack, text, btnSupport }) {
       willChange: 'transform',
     },
     height: {
-      xs: '32px',
-      md: '33px',
-      lg: '43px',
+      xs: '2rem',
+      lg: '2.7rem',
     },
     width: {
-      xs: '125px',
-      md: '180px',
-      lg: '232px',
+      xs: '7.8rem',
+      md: '11.2rem',
+      lg: '14.7rem',
     },
     fontSize: {
       xs: '0.7rem',
-      md: '0.875rem',
+      md: '0.86rem',
       lg: '1.125rem',
     },
     textTransform: 'uppercase',
@@ -92,11 +91,15 @@ export function OutlinedButton({ textColorBlack, text, btnSupport }) {
   };
   const outlinedStyles = btnSupport ? btnSupportStyle : btnDonateStyle;
   return (
-    <NavLink to="/#donate" style={{ textDecoration: 'none' }}>
-      <Button variant="outlined" sx={outlinedStyles}>
-        {text}
-      </Button>
-    </NavLink>
+    /*  <NavLink to="/#donate" style={{ textDecoration: 'none' }}> */
+    <Button
+      component={NavLink}
+      to="/#donate"
+      variant="outlined"
+      sx={outlinedStyles}>
+      {text}
+    </Button>
+    /*     </NavLink> */
   );
 }
 

@@ -72,7 +72,7 @@ function HomeContent({ data, loading }) {
                 lg: '0 4rem 0 6rem',
                 xl: '0 5rem 0 11rem',
               },
-              marginTop: { xs: '27px', md: '52px', lg: '54px' },
+              marginTop: { xs: '1.67rem', md: '52px', lg: '54px' },
             }}>
             <Stack sx={{ maxWidth: { lg: '526px', xl: '567px' } }}>
               <Typography
@@ -81,7 +81,7 @@ function HomeContent({ data, loading }) {
                 sx={{
                   fontFamily: theme.typography.const.fontFamily.secondary,
                   fontWeight: theme.typography.const.fontWeight.bold,
-                  lineHeight: '1.2',
+                  lineHeight: '1.245',
                   fontSize: {
                     xs: '2.25rem',
                     md: '3.25rem',
@@ -103,7 +103,7 @@ function HomeContent({ data, loading }) {
                     xl: '1.25rem',
                   },
                   margin: {
-                    xs: '11px 0 16px 0',
+                    xs: '.5rem 0 1rem 0',
                     md: '11px 0 14px 0',
                     lg: '22px 0 30px 0',
                     xl: '22px 0 51px 0',

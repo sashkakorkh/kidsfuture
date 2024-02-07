@@ -55,7 +55,7 @@ function Footer() {
           sx={{
             justifyContent: 'space-between',
           }}>
-          <NavLink to="/">
+          <Link to="/" component={NavLink}>
             <Box
               sx={{
                 position: 'relative',
@@ -70,7 +70,7 @@ function Footer() {
                 width="100%"
               />
             </Box>
-          </NavLink>
+          </Link>
           <Box
             display="grid"
             sx={{
