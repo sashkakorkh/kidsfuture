@@ -4,7 +4,6 @@ import {
   AppBar,
   Box,
   Container,
-  CssBaseline,
   IconButton,
   List,
   Stack,
@@ -16,18 +15,20 @@ import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import Menu from '../Menu/index';
 import Footer from '../Footer';
 import { OutlinedButton } from '../Button';
+import MenuIcon from '../MenuIcon';
+import HeaderLogo from '../HeaderLogoItem';
 
 function Header() {
   const [open, setMenuOpen] = useState(false);
   const theme = useTheme();
   const burgerMenuStyle = {
     containerStyle: {
-      padding: '12px 0',
+      padding: '.67rem 0',
     },
     itemStyle: {
       fontSize: {
         xs: '1rem',
-        md: '0.75rem',
+        md: '.75rem',
         xl: '1rem',
       },
     },
@@ -39,11 +40,13 @@ function Header() {
     itemStyle: {
       fontSize: {
         xs: '1rem',
-        md: '0.825rem',
+        md: '.725rem',
         lg: '1rem',
       },
-      marginRight: { lg: '1.5rem' },
+      marginRight: { lg: '1.47rem' },
+      marginLeft: { md: '.5rem', lg: '0' },
       lineHeight: 'normal',
+      fontStretch: 'extra-condensed',
       transition: 'all 0.2s ease-in-out',
       '&:hover': {
         transform: 'scale(1.1)',
@@ -69,7 +72,6 @@ function Header() {
         flexDirection: 'column',
         minHeight: '100vh',
       }}>
-      <CssBaseline />
       <AppBar
         position="static"
         sx={{
@@ -94,39 +96,34 @@ function Header() {
                 <Box
                   sx={{
                     height: {
-                      xs: '48px',
-                      md: '45px',
-                      lg: '69px',
+                      xs: '3rem',
+                      md: '2.8rem',
+                      lg: '4.3rem',
                     },
                     width: {
-                      xs: '48px',
-                      md: '45px',
-                      lg: '69px',
+                      xs: '3rem',
+                      md: '2.8rem',
+                      lg: '4.3rem',
                     },
                   }}>
-                  <img
-                    src={`${process.env.PUBLIC_URL}/images/small-logo.png`}
-                    alt="Logo"
-                    height="100%"
-                    width="100%"
-                  />
+                  <HeaderLogo />
                 </Box>
               </NavLink>
               <Stack
                 direction="row"
                 sx={{
                   marginLeft: {
-                    md: '4%',
+                    md: '.8rem',
                     lg: '5%',
-                    xl: '9%',
+                    xl: '3.9rem',
                   },
                   display: { xs: 'none', md: 'flex' },
-                  gap: { md: '10px', lg: '0', xl: '4px' },
+                  gap: { md: '.56rem', lg: '0' },
                 }}>
                 <Menu tag="div" styleConfig={headerMenuStyle} />
               </Stack>
             </Stack>
-            <Box sx={{ marginRight: { md: '1%', xl: '0' } }}>
+            <Box sx={{ marginRight: { xs: '1rem', md: '1%', xl: '0' } }}>
               <OutlinedButton
                 textColorBlack
                 text="Підтримати фонд"
@@ -139,18 +136,15 @@ function Header() {
               sx={{
                 lineHeight: '1',
                 display: {
-                  xs: 'block',
+                  xs: 'inline-flex',
                   md: 'none',
                 },
                 padding: '0',
-                marginLeft: { xs: '9px', md: '0' },
+                marginLeft: { xs: '.6rem', md: '0' },
+                width: '1.29rem',
+                height: '1.2rem',
               }}>
-              <img
-                src={`${process.env.PUBLIC_URL}/images/menu.png`}
-                alt="burger-menu-icon"
-                width="100%"
-                height="100%"
-              />
+              <MenuIcon />
             </IconButton>
             <SwipeableDrawer
               anchor="right"
@@ -159,10 +153,10 @@ function Header() {
               onOpen={toggleDrawer(true)}
               PaperProps={{
                 style: {
-                  width: '200px',
+                  width: '55%',
                   height: 'auto',
                   backgroundColor: '#FFF',
-                  borderRadius: '23px 0px 0px 23px',
+                  borderRadius: '1.43rem 0px 0px 1.43rem',
                   border: '4px solid',
                   borderColor: theme.palette.colors.mainfirst,
                 },
@@ -173,11 +167,11 @@ function Header() {
                   color: theme.palette.colors.mainsecond,
                   justifyContent: 'end',
                   padding: '0',
-                  marginLeft: { xs: '10px', sm: '0' },
+                  marginRight: { xs: '.2rem', sm: '0' },
                 }}>
-                <CloseRoundedIcon fontSize="large" />
+                <CloseRoundedIcon fontSize="Large" />
               </IconButton>
-              <List style={{ margin: '0 25px 31px 25px', padding: '0' }}>
+              <List disablePadding sx={{ margin: '0 1.6rem 0 1.6rem' }}>
                 <Menu
                   tag="li"
                   styleConfig={burgerMenuStyle}
