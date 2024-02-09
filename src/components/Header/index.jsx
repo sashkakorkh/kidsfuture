@@ -15,8 +15,8 @@ import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import Menu from '../Menu/index';
 import Footer from '../Footer';
 import { OutlinedButton } from '../Button';
-import MenuIcon from '../MenuIcon';
-import HeaderLogo from '../HeaderLogoItem';
+import logoBlue from '../../images/bgElements/logoBlue.png';
+import menuIcon from '../../images/bgElements/menuIcon.png';
 
 function Header() {
   const [open, setMenuOpen] = useState(false);
@@ -106,7 +106,12 @@ function Header() {
                       lg: '4.3rem',
                     },
                   }}>
-                  <HeaderLogo />
+                  <img
+                    src={logoBlue}
+                    alt="logotype"
+                    width="100%"
+                    height="100%"
+                  />
                 </Box>
               </NavLink>
               <Stack
@@ -144,7 +149,7 @@ function Header() {
                 width: '1.29rem',
                 height: '1.2rem',
               }}>
-              <MenuIcon />
+              <img src={menuIcon} alt="menu-icon" />
             </IconButton>
             <SwipeableDrawer
               anchor="right"
