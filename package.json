@@ -12,6 +12,12 @@
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "image-minimizer-webpack-plugin": "^4.0.0",
+    "imagemin": "^8.0.1",
+    "imagemin-mozjpeg": "^10.0.0",
+    "imagemin-pngquant": "^9.0.2",
+    "imagemin-svgo": "^10.0.1",
+    "imagemin-webp": "^8.0.0",
     "npm-run-all": "^4.1.1",
     "npm-watch": "^0.3.0",
     "prettier": "^3.0.3",
@@ -22,7 +28,9 @@
     "react-router-dom": "^6.18.0",
     "react-scripts": "5.0.1",
     "react-slick": "^0.29.0",
+    "responsive-loader": "^3.1.2",
     "sass": "^1.69.5",
+    "sharp": "^0.33.2",
     "slick-carousel": "^1.8.1",
     "stylelint": "^8.2.0",
     "stylelint-config-standard": "^17.0.0",
@@ -30,10 +38,10 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start-js": "react-scripts start",
+    "start-js": "craco start",
     "start": "npm-run-all -p watch-styles-sass start-js",
-    "build": "npm run eslint && npm run stylelint-build && react-scripts build",
-    "eject": "react-scripts eject",
+    "build": "npm run eslint && npm run stylelint-build && craco build",
+    "eject": "craco eject",
     "stylelint-dev": "stylelint 'src/**/*.scss' --cache --cache-location './.stylelintcache'; exit 0",
     "stylelint-build": "stylelint 'src/**/*.scss'",
     "watch-styles-sass": "npm-watch",
@@ -74,6 +82,7 @@
     ]
   },
   "devDependencies": {
+    "@craco/craco": "^7.1.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^9.0.0",
@@ -81,10 +90,7 @@
     "eslint-plugin-jsx-a11y": "^6.7.1",
     "eslint-plugin-prettier": "^5.0.1",
     "eslint-plugin-react": "^7.33.2",
-    "image-minimizer-webpack-plugin": "^4.0.0",
-    "imagemin": "^8.0.1",
-    "imagemin-mozjpeg": "^10.0.0",
-    "imagemin-webp": "^8.0.0",
+    "eslint-plugin-regexp": "^2.2.0",
     "standard": "^10.0.3"
   }
 }

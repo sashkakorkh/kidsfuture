@@ -13,6 +13,33 @@ import Carousel from '../../components/Carousel';
 import CardNewsItem from '../../components/CardForNewsItem';
 import DonateTab from '../../components/Donate';
 import RenderPartners from '../../components/Partners';
+import diamndBlueDarkblue from '../../images/bgElements/bg_diamnd_blue_darkblue.png';
+import diamndBlueYellow from '../../images/bgElements/bg_diamnd_blue_yellow.png';
+import twoDiamndsTriangle from '../../images/bgElements/bg_2diamonds_triangle.png';
+import threeTriangles from '../../images/bgElements/bg_3triangles.png';
+import squareTriangles from '../../images/bgElements/bg_squareTriangles.png';
+import lightBlueTriangle from '../../images/bgElements/bg_light_blue_triangle.png';
+import yellowTriangle from '../../images/bgElements/bg_yellow_triangle.png';
+import blueTriangle from '../../images/bgElements/bg_BlueTriangle.png';
+import blueTriangle90 from '../../images/bgElements/bg_blueTriangle90deg.png';
+import twoTriangles from '../../images/bgElements/bg_2Triangles.png';
+import leaves from '../../images/bgElements/bg_leaves.png';
+import diamndTriangle from '../../images/bgElements/bg_diamond_triangle.png';
+import twoDiamndsTriangleBlue from '../../images/bgElements/bg_2diamonds_triangle_blue.png';
+import twoYellowBlueTriangles from '../../images/bgElements/bg_2blue_yellow_triangles.png';
+import boyAndGirl from '../../images/contentImages/boy_and_girl.png?sizes[]=360,sizes[]=768,sizes[]=1200,sizes=[]1600';
+import boyAndGirlWebp from '../../images/contentImages/boy_and_girl.png?sizes[]=360,sizes[]=768,sizes[]=1200,sizes=[]1600&format=webp';
+import activity1 from '../../images/contentImages/activity_1.png?sizes[]=360,sizes[]=768,sizes[]=1200,sizes=[]1600';
+import activity2 from '../../images/contentImages/activity_2.png?sizes[]=360,sizes[]=768,sizes[]=1200,sizes=[]1600';
+import activity3 from '../../images/contentImages/activity_3.png?sizes[]=360,sizes[]=768,sizes[]=1200,sizes=[]1600';
+import girlStudying from '../../images/contentImages/girl_studying.png?sizes[]=360,sizes[]=768,sizes[]=1200,sizes=[]1600';
+import girlStudyingWebp from '../../images/contentImages/girl_studying.png?sizes[]=360,sizes[]=768,sizes[]=1200,sizes=[]1600&format=webp';
+import happyPeople from '../../images/contentImages/happy_people.png?sizes[]=360,sizes[]=768,sizes[]=1200,sizes=[]1600';
+import happyPeopleWebp from '../../images/contentImages/happy_people.png?sizes[]=360,sizes[]=768,sizes[]=1200,sizes=[]1600&format=webp';
+import founderMan from '../../images/contentImages/founder_man.png?sizes[]=360,sizes[]=768,sizes[]=1200,sizes=[]1600';
+import founderManWebp from '../../images/contentImages/founder_man.png?sizes[]=360,sizes[]=768,sizes[]=1200,sizes=[]1600&format=webp';
+import founderWoman from '../../images/contentImages/founder_woman.png?sizes[]=360,sizes[]=768,sizes[]=1200,sizes=[]1600';
+import founderWomanWebp from '../../images/contentImages/founder_woman.png?sizes[]=360,sizes[]=768,sizes[]=1200,sizes=[]1600&format=webp';
 
 function HomeContent({ data, loading }) {
   const theme = useTheme();
@@ -127,7 +154,7 @@ function HomeContent({ data, loading }) {
                     left: '20px',
                     width: '12px',
                     height: '12px',
-                    backgroundImage: `url(${process.env.PUBLIC_URL}/bgElements/bg_diamnd_blue_darkblue.png)`,
+                    backgroundImage: `url(${diamndBlueDarkblue})`,
                   },
                 }}>
                 <ContainedButton btnName="btnContainedBlue" text="Долучитися" />
@@ -150,8 +177,8 @@ function HomeContent({ data, loading }) {
                   width: { xs: '21px', md: '122px', lg: '97px', xl: '152px' },
                   height: { xs: '21px', md: '103px', lg: '91px', xl: '127px' },
                   backgroundImage: {
-                    xs: `url(${process.env.PUBLIC_URL}/bgElements/bg_diamnd_blue_yellow.png)`,
-                    md: `url(${process.env.PUBLIC_URL}/bgElements/bg_2diamonds_triangle.png)`,
+                    xs: `url(${diamndBlueYellow})`,
+                    md: `url(${twoDiamndsTriangle})`,
                   },
                 },
                 '::after': {
@@ -175,7 +202,7 @@ function HomeContent({ data, loading }) {
                     lg: '113px',
                     xl: '215px',
                   },
-                  backgroundImage: `url(${process.env.PUBLIC_URL}/bgElements/bg_3triangles.png)`,
+                  backgroundImage: `url(${threeTriangles})`,
                 },
               }}>
               <Box
@@ -213,7 +240,7 @@ function HomeContent({ data, loading }) {
                     bottom: { xs: '' },
                     width: { xs: '30px', md: '66px', lg: '42px', xl: '82px' },
                     height: { xs: '30px', md: '66px', lg: '46px', xl: '82px' },
-                    backgroundImage: `url(${process.env.PUBLIC_URL}/bgElements/bg_squareTriangles.png)`,
+                    backgroundImage: `url(${squareTriangles})`,
                   },
                   '::after': {
                     ...defaultStylesBgEl,
@@ -222,15 +249,20 @@ function HomeContent({ data, loading }) {
                     left: '109px',
                     width: '19px',
                     height: '19px',
-                    backgroundImage: `url(${process.env.PUBLIC_URL}/bgElements/bg_light_blue_triangle.png)`,
+                    backgroundImage: `url(${lightBlueTriangle}`,
                   },
                 }}>
-                <img
-                  src={`${process.env.PUBLIC_URL}/images/boy_and_girl.png`}
-                  alt="boy and girl smilling"
-                  width="100%"
-                  height="100%"
-                />
+                <picture>
+                  <source srcSet={boyAndGirlWebp.srcSet} type="image/webp" />
+                  <img
+                    src={boyAndGirl.src}
+                    srcSet={boyAndGirl.srcSet}
+                    alt="boy and girl smilling"
+                    width="100%"
+                    height="100%"
+                    loading="lazy"
+                  />
+                </picture>
               </Box>
             </Box>
           </Stack>
@@ -244,7 +276,7 @@ function HomeContent({ data, loading }) {
             }}>
             <Box
               sx={{
-                backgroundImage: `linear-gradient(rgba(67, 102, 227, 0.90), rgba(67, 102, 227, 0.90)), url(${process.env.PUBLIC_URL}/images/activity_1.png)`,
+                backgroundImage: `linear-gradient(rgba(67, 102, 227, 0.90), rgba(67, 102, 227, 0.90)), url(${activity1})`,
                 backgroundRepeat: 'no-repeat',
                 backgroundSize: 'cover',
                 position: 'relative',
@@ -287,7 +319,7 @@ function HomeContent({ data, loading }) {
             </Box>
             <Box
               sx={{
-                backgroundImage: `linear-gradient(rgba(249, 152, 32, 0.90), rgba(249, 152, 32, 0.90)), url(${process.env.PUBLIC_URL}/images/activity_2.png)`,
+                backgroundImage: `linear-gradient(rgba(249, 152, 32, 0.90), rgba(249, 152, 32, 0.90)), url(${activity2})`,
                 backgroundRepeat: 'no-repeat',
                 backgroundSize: 'cover',
                 position: 'relative',
@@ -330,7 +362,7 @@ function HomeContent({ data, loading }) {
             </Box>
             <Box
               sx={{
-                backgroundImage: `linear-gradient(rgba(94, 117, 199, 0.90), rgba(94, 117, 199, 0.90)), url(${process.env.PUBLIC_URL}/images/activity_3.png)`,
+                backgroundImage: `linear-gradient(rgba(94, 117, 199, 0.90), rgba(94, 117, 199, 0.90)), url(${activity3})`,
                 backgroundRepeat: 'no-repeat',
                 backgroundSize: 'cover',
                 position: 'relative',
@@ -427,7 +459,7 @@ function HomeContent({ data, loading }) {
                     },
                     width: { xs: '20px', md: '49px', lg: '54px', xl: '46px' },
                     height: { xs: '20px', md: '49px', lg: '54px', xl: '46px' },
-                    backgroundImage: `url(${process.env.PUBLIC_URL}/bgElements/bg_light_blue_triangle.png)`,
+                    backgroundImage: `url(${lightBlueTriangle})`,
                   },
                   '::before': {
                     ...defaultStylesBgEl,
@@ -440,7 +472,7 @@ function HomeContent({ data, loading }) {
                     },
                     width: { xs: '12px', md: '32px', lg: '32px', xl: '36px' },
                     height: { xs: '12px', md: '32px', lg: '32px', xl: '36px' },
-                    backgroundImage: `url(${process.env.PUBLIC_URL}/bgElements/bg_diamnd_blue_darkblue.png)`,
+                    backgroundImage: `url(${diamndBlueDarkblue})`,
                   },
                 }}>
                 <Box
@@ -465,7 +497,7 @@ function HomeContent({ data, loading }) {
                         lg: '41px',
                         xl: '58px',
                       },
-                      backgroundImage: `url(${process.env.PUBLIC_URL}/bgElements/bg_diamnd_blue_yellow.png)`,
+                      backgroundImage: `url(${diamndBlueYellow})`,
                     },
                   }}>
                   <Typography
@@ -502,12 +534,17 @@ function HomeContent({ data, loading }) {
                   },
                   paddingRight: { xs: '21px', md: '36px' },
                 }}>
-                <img
-                  src={`${process.env.PUBLIC_URL}/images/girl_studying.png`}
-                  alt="girl studying at home"
-                  width="100%"
-                  height="100%"
-                />
+                <picture>
+                  <source srcSet={girlStudyingWebp.srcSet} type="image/webp" />
+                  <img
+                    src={girlStudying.src}
+                    srcSet={girlStudying.srcSet}
+                    alt="girl studying at home"
+                    width="100%"
+                    height="100%"
+                    loading="lazy"
+                  />
+                </picture>
               </Box>
             </Stack>
             <Stack
@@ -537,7 +574,7 @@ function HomeContent({ data, loading }) {
                     right: { xs: '39px', md: '22px', lg: '' },
                     width: { xs: '12px', md: '32px', lg: '27px', xl: '38px' },
                     height: { xs: '12px', md: '32px', lg: '27px', xl: '30px' },
-                    backgroundImage: `url(${process.env.PUBLIC_URL}/bgElements/bg_light_blue_triangle.png)`,
+                    backgroundImage: `url(${lightBlueTriangle})`,
                     transform: 'rotate(90deg)',
                   },
                   '::before': {
@@ -547,7 +584,7 @@ function HomeContent({ data, loading }) {
                     left: { lg: '17px', xl: '-125px' },
                     width: { xs: '13px', md: '34px', lg: '41px' },
                     height: { xs: '13px', md: '34px', lg: '41px' },
-                    backgroundImage: `url(${process.env.PUBLIC_URL}/bgElements/bg_yellow_triangle.png)`,
+                    backgroundImage: `url(${yellowTriangle})`,
                   },
                 }}>
                 <Box
@@ -573,7 +610,7 @@ function HomeContent({ data, loading }) {
                         lg: '41px',
                         xl: '58px',
                       },
-                      backgroundImage: `url(${process.env.PUBLIC_URL}/bgElements/bg_diamnd_blue_yellow.png)`,
+                      backgroundImage: `url(${diamndBlueYellow})`,
                     },
                   }}>
                   <Typography
@@ -612,12 +649,17 @@ function HomeContent({ data, loading }) {
                     xl: '652px',
                   },
                 }}>
-                <img
-                  src={`${process.env.PUBLIC_URL}/images/happy_people.png`}
-                  alt="three men and a woman standing and smiling"
-                  width="100%"
-                  height="100%"
-                />
+                <picture>
+                  <source srcSet={happyPeopleWebp.srcSet} type="image/webp" />
+                  <img
+                    src={happyPeople.src}
+                    srcSet={happyPeople.srcSet}
+                    alt="happy people standing"
+                    width="100%"
+                    height="100%"
+                    loading="lazy"
+                  />
+                </picture>
               </Box>
             </Stack>
           </Stack>
@@ -713,7 +755,7 @@ function HomeContent({ data, loading }) {
                         lg: '24px',
                         xl: '34px',
                       },
-                      backgroundImage: `url(${process.env.PUBLIC_URL}/bgElements/bg_BlueTriangle.png)`,
+                      backgroundImage: `url(${blueTriangle})`,
                       transform: { md: 'rotatey(180deg)', lg: 'rotatey(0deg)' },
                     },
                     '::after': {
@@ -733,7 +775,7 @@ function HomeContent({ data, loading }) {
                         lg: '107px',
                         xl: '107px',
                       },
-                      backgroundImage: `url(${process.env.PUBLIC_URL}/bgElements/bg_3triangles.png)`,
+                      backgroundImage: `url(${threeTriangles})`,
                     },
                   }}>
                   <Box
@@ -814,7 +856,7 @@ function HomeContent({ data, loading }) {
                       lg: '41px',
                       xl: '41px',
                     },
-                    backgroundImage: `url(${process.env.PUBLIC_URL}/bgElements/bg_2Triangles.png)`,
+                    backgroundImage: `url(${twoTriangles})`,
                   },
                   '::after': {
                     ...defaultStylesBgEl,
@@ -823,7 +865,7 @@ function HomeContent({ data, loading }) {
                     right: { xs: '56px' },
                     width: { xs: '13px', md: '11px', lg: '20px', xl: '20px' },
                     height: { xs: '9px', md: '9px', lg: '14px', xl: '14px' },
-                    backgroundImage: `url(${process.env.PUBLIC_URL}/bgElements/bg_light_blue_triangle.png)`,
+                    backgroundImage: `url(${lightBlueTriangle})`,
                     transform: 'rotateZ(270deg)',
                   },
                 }}>
@@ -846,7 +888,7 @@ function HomeContent({ data, loading }) {
                         lg: '30px',
                         xl: '41px',
                       },
-                      backgroundImage: `url(${process.env.PUBLIC_URL}/bgElements/bg_yellow_triangle.png)`,
+                      backgroundImage: `url(${yellowTriangle})`,
                       transform: 'rotateZ(180deg)',
                     },
                   }}>
@@ -932,7 +974,7 @@ function HomeContent({ data, loading }) {
                     left: '-97px',
                     width: '20px',
                     height: '14px',
-                    backgroundImage: `url(${process.env.PUBLIC_URL}/bgElements/bg_light_blue_triangle.png)`,
+                    backgroundImage: `url(${lightBlueTriangle})`,
                     transform: 'rotateZ(270deg)',
                   },
                 }}>
@@ -1015,7 +1057,7 @@ function HomeContent({ data, loading }) {
                       lg: '111px',
                       xl: '170px',
                     },
-                    backgroundImage: `url(${process.env.PUBLIC_URL}/bgElements/bg_diamond_triangle.png)`,
+                    backgroundImage: `url(${diamndTriangle})`,
                   },
                   '::after': {
                     ...defaultStylesBgEl,
@@ -1026,7 +1068,7 @@ function HomeContent({ data, loading }) {
                     right: { xs: '' },
                     width: { xs: '20px', md: '58px' },
                     height: { xs: '14px', md: '58px' },
-                    backgroundImage: `url(${process.env.PUBLIC_URL}/bgElements/bg_light_blue_triangle.png)`,
+                    backgroundImage: `url(${lightBlueTriangle})`,
                     transform: 'rotateZ(270deg)',
                   },
                 }}>
@@ -1191,15 +1233,20 @@ function HomeContent({ data, loading }) {
                       lg: '138px',
                       xl: '182px',
                     },
-                    backgroundImage: `url(${process.env.PUBLIC_URL}/bgElements/bg_3triangles.png)`,
+                    backgroundImage: `url(${threeTriangles})`,
                   },
                 }}>
-                <img
-                  src={`${process.env.PUBLIC_URL}/images/founder_man.png`}
-                  alt="Founder of the fond Oleksandr Sinko"
-                  width="100%"
-                  height="100%"
-                />
+                <picture>
+                  <source srcSet={founderManWebp.srcSet} type="image/webp" />
+                  <img
+                    src={founderMan.src}
+                    srcSet={founderMan.srcSet}
+                    alt="Founder of the fond Oleksandr Sinko"
+                    width="100%"
+                    height="100%"
+                    loading="lazy"
+                  />
+                </picture>
               </Box>
             </Stack>
             <Stack
@@ -1294,7 +1341,7 @@ function HomeContent({ data, loading }) {
                       lg: '106px',
                       xl: '151px',
                     },
-                    backgroundImage: `url(${process.env.PUBLIC_URL}/bgElements/bg_2blue_yellow_triangles.png)`,
+                    backgroundImage: `url(${twoYellowBlueTriangles})`,
                     transform: {
                       xs: 'rotateZ(270deg)',
                       md: 'rotateZ(0deg)',
@@ -1314,16 +1361,21 @@ function HomeContent({ data, loading }) {
                     right: { xs: '' },
                     width: { xs: '19px', md: '29px', xl: '41px' },
                     height: { xs: '19px', md: '29px', xl: '41px' },
-                    backgroundImage: `url(${process.env.PUBLIC_URL}/bgElements/bg_blueTriangle90deg.png)`,
+                    backgroundImage: `url(${blueTriangle90})`,
                     transform: { md: 'rotateZ(270deg)', lg: 'rotateZ(0deg)' },
                   },
                 }}>
-                <img
-                  src={`${process.env.PUBLIC_URL}/images/founder_woman.png`}
-                  alt="Founder of the fond Kateryna Sinko"
-                  width="100%"
-                  height="100%"
-                />
+                <picture>
+                  <source srcSet={founderWomanWebp.srcSet} type="image/webp" />
+                  <img
+                    src={founderWoman.src}
+                    srcSet={founderWoman.srcSet}
+                    alt="Founder of the fond Kateryna Sinko"
+                    width="100%"
+                    height="100%"
+                    loading="lazy"
+                  />
+                </picture>
               </Box>
             </Stack>
           </Box>
@@ -1366,7 +1418,7 @@ function HomeContent({ data, loading }) {
               left: { lg: '7px', xl: '133px' },
               width: { md: '147px', lg: '174px', xl: '251px' },
               height: { md: '145px', lg: '174px', xl: '248px' },
-              backgroundImage: `url(${process.env.PUBLIC_URL}/bgElements/bg_leaves.png)`,
+              backgroundImage: `url(${leaves})`,
               transform: { md: 'rotateZ(224deg)', lg: 'rotateZ(192deg)' },
             },
             '::after': {
@@ -1379,7 +1431,7 @@ function HomeContent({ data, loading }) {
               },
               width: { md: '147px', lg: '174px', xl: '227px' },
               height: { md: '145px', lg: '174px', xl: '224px' },
-              backgroundImage: `url(${process.env.PUBLIC_URL}/bgElements/bg_leaves.png)`,
+              backgroundImage: `url(${leaves})`,
               transform: { md: 'rotateZ(99deg)', lg: 'rotateZ(0deg)' },
             },
           }}>
@@ -1422,7 +1474,7 @@ function HomeContent({ data, loading }) {
                   },
                   width: { xs: '48px', md: '50px', lg: '80px', xl: '95px' },
                   height: { xs: '68px', md: '75px', lg: '112px', xl: '135px' },
-                  backgroundImage: `url(${process.env.PUBLIC_URL}/bgElements/bg_3triangles.png)`,
+                  backgroundImage: `url(${threeTriangles})`,
                 },
                 '::after': {
                   ...defaultStylesBgEl,
@@ -1431,7 +1483,7 @@ function HomeContent({ data, loading }) {
                   left: '-216px',
                   width: '135px',
                   height: '114px',
-                  backgroundImage: `url(${process.env.PUBLIC_URL}/bgElements/bg_2diamonds_triangle_blue.png)`,
+                  backgroundImage: `url(${twoDiamndsTriangleBlue})`,
                   transform: { md: 'rotateZ(99deg)', lg: 'rotateZ(0deg)' },
                 },
               }}>
@@ -1471,7 +1523,7 @@ function HomeContent({ data, loading }) {
               },
               width: { xs: '13px', md: '16px', lg: '26px' },
               height: { xs: '13px', md: '16px', lg: '26px' },
-              backgroundImage: `url(${process.env.PUBLIC_URL}/bgElements/bg_yellow_triangle.png)`,
+              backgroundImage: `url(${yellowTriangle})`,
               transform: 'rotateZ(270deg)',
             },
             '::after': {
@@ -1490,7 +1542,7 @@ function HomeContent({ data, loading }) {
               },
               width: { xs: '16px', md: '20px', lg: '32px' },
               height: { xs: '16px', md: '20px', lg: '32px' },
-              backgroundImage: `url(${process.env.PUBLIC_URL}/bgElements/bg_diamnd_blue_darkblue.png)`,
+              backgroundImage: { diamndBlueDarkblue },
               transform: 'rotateZ(90deg)',
             },
           }}>
@@ -1516,7 +1568,7 @@ function HomeContent({ data, loading }) {
                 },
                 width: { xs: '20px', md: '27px', lg: '41px' },
                 height: { xs: '20px', md: '27px', lg: '41px' },
-                backgroundImage: `url(${process.env.PUBLIC_URL}/bgElements/bg_yellow_triangle.png)`,
+                backgroundImage: `url(${yellowTriangle})`,
                 transform: 'rotateZ(180deg)',
               },
               '::after': {
@@ -1543,7 +1595,7 @@ function HomeContent({ data, loading }) {
                   md: '10px',
                   lg: '14px',
                 },
-                backgroundImage: `url(${process.env.PUBLIC_URL}/bgElements/bg_light_blue_triangle.png)`,
+                backgroundImage: `url(${lightBlueTriangle})`,
                 transform: 'rotateZ(270deg)',
               },
             }}>

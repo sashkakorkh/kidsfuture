@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Box, Stack, Typography } from '@mui/material';
 import { ContainedButton } from '../Button';
+import girl from '../../images/contentImages/girl.png?sizes[]=360,sizes[]=768,sizes[]=1200,sizes=[]1600';
+import girlWebp from '../../images/contentImages/girl.png?sizes[]=360,sizes[]=768,sizes[]=1200,sizes=[]1600&format=webp';
 
 function DonateTab() {
   const [activeElement, setActiveElement] = useState('UA');
@@ -57,12 +59,17 @@ function DonateTab() {
             height: { xs: '262px', xl: '287px' },
             zIndex: { xs: '-3' },
           }}>
-          <img
-            src={`${process.env.PUBLIC_URL}/images/girl.png`}
-            alt="smiling girl with long hair"
-            width="100%"
-            height="100%"
-          />
+          <picture>
+            <source srcSet={girlWebp.srcSet} type="image/webp" />
+            <img
+              src={girl}
+              srcSet={girl.srcSet}
+              alt="smiling girl with long hair"
+              width="100%"
+              height="100%"
+              loading="lazy"
+            />
+          </picture>
         </Box>
       </Stack>
       <Box sx={{ maxWidth: { md: '71%' } }}>

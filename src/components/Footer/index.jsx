@@ -12,6 +12,12 @@ import {
 import './styles.scss';
 import Menu from '../Menu/index';
 import { OutlinedButton } from '../Button';
+import logoWhite from '../../images/bgElements/logoWhite.png';
+import phoneIcon from '../../images/contentImages/phone.png';
+import mailLogo from '../../images/contentImages/mail.png';
+import fbLogo from '../../images/contentImages/fb-logo.png';
+import instalogo from '../../images/contentImages/insta-logo.png';
+import youtubeLogo from '../../images/contentImages/youtube-logo.png';
 
 function Footer() {
   const theme = useTheme();
@@ -60,15 +66,10 @@ function Footer() {
               sx={{
                 position: 'relative',
                 top: { xs: '0', md: '-10px' },
-                height: { xs: '36px', md: '74px', lg: '87px' },
-                width: { xs: '44px', md: '87px', lg: '97px' },
+                height: { xs: '2.65rem', md: '6.5rem', lg: '6.9rem' },
+                width: { xs: '2.65rem', md: '6.5rem', lg: '6.9rem' },
               }}>
-              <img
-                src={`${process.env.PUBLIC_URL}/images/logo-white.png`}
-                alt="Logo"
-                height="100%"
-                width="100%"
-              />
+              <img src={logoWhite} alt="logotype" height="100%" width="100%" />
             </Box>
           </Link>
           <Box
@@ -105,7 +106,7 @@ function Footer() {
               sx={{
                 marginBottom: { xs: '8px', md: '25px' },
                 '&:hover img': {
-                  animation: 'tilt-shaking .1s alternate ease infinite',
+                  animation: 'tilt-shaking .1s alternate ease-in-out',
                 },
               }}>
               <Box
@@ -114,8 +115,8 @@ function Footer() {
                   width: { xs: '16px', md: '30px', lg: '31px' },
                 }}>
                 <img
-                  src={`${process.env.PUBLIC_URL}/images/phone.png`}
-                  alt="phone"
+                  src={`${phoneIcon}`}
+                  alt="phone icon"
                   width="100%"
                   height="100%"
                 />
@@ -139,7 +140,7 @@ function Footer() {
               sx={{
                 gap: { xs: '8px', md: '16px' },
                 '&:hover img': {
-                  animation: 'transformToParallelogram 1s infinite',
+                  animation: 'transformToParallelogram 1s ',
                 },
               }}>
               <Box
@@ -148,8 +149,8 @@ function Footer() {
                   width: { xs: '16px', md: '30px', lg: '31px' },
                 }}>
                 <img
-                  src={`${process.env.PUBLIC_URL}/images/mail.png`}
-                  alt="mail"
+                  src={`${mailLogo}`}
+                  alt="mail icon"
                   width="100%"
                   height="100%"
                 />
@@ -192,8 +193,8 @@ function Footer() {
                       width: { xs: '15px', md: '25px', lg: '30px' },
                     }}>
                     <img
-                      src={`${process.env.PUBLIC_URL}/images/fb-logo.png`}
-                      alt="Logo"
+                      src={`${fbLogo}`}
+                      alt="facebook logotype"
                       height="100%"
                       width="100%"
                       style={{ transition: 'all 0.2s ease-in-out' }}
@@ -211,8 +212,8 @@ function Footer() {
                   }}>
                   <Box sx={{ width: { xs: '15px', md: '25px', lg: '30px' } }}>
                     <img
-                      src={`${process.env.PUBLIC_URL}/images/insta-logo.png`}
-                      alt="Logo"
+                      src={`${instalogo}`}
+                      alt="instagram logotype"
                       height="100%"
                       width="100%"
                     />
@@ -229,8 +230,8 @@ function Footer() {
                   }}>
                   <Box sx={{ width: { xs: '15px', md: '25px', lg: '30px' } }}>
                     <img
-                      src={`${process.env.PUBLIC_URL}/images/youtube-logo.png`}
-                      alt="Logo"
+                      src={`${youtubeLogo}`}
+                      alt="youTube logotype"
                       height="100%"
                       width="100%"
                     />
