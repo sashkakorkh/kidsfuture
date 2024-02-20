@@ -92,6 +92,7 @@ function HomeContent({ data, loading }) {
           <Stack
             sx={{
               flexDirection: { xs: 'column', lg: 'row' },
+              justifyContent: 'center',
               gap: { xl: '9px' },
               padding: {
                 xs: '0 1rem 0 1.2rem',
@@ -101,7 +102,7 @@ function HomeContent({ data, loading }) {
               },
               marginTop: { xs: '1.67rem', md: '52px', lg: '54px' },
             }}>
-            <Stack sx={{ maxWidth: { lg: '526px', xl: '567px' } }}>
+            <Stack sx={{ maxWidth: { lg: '526px', xl: '50%' } }}>
               <Typography
                 variant="h1"
                 component="h1"

@@ -120,7 +120,7 @@ function Header() {
                   marginLeft: {
                     md: '.8rem',
                     lg: '5%',
-                    xl: '3.9rem',
+                    xl: '10%',
                   },
                   display: { xs: 'none', md: 'flex' },
                   gap: { md: '.56rem', lg: '0' },
@@ -161,7 +161,7 @@ function Header() {
                   width: '55%',
                   height: 'auto',
                   backgroundColor: '#FFF',
-                  borderRadius: '1.43rem 0px 0px 1.43rem',
+                  borderRadius: '1.43rem 0 0 1.43rem',
                   border: '4px solid',
                   borderColor: theme.palette.colors.mainfirst,
                 },
