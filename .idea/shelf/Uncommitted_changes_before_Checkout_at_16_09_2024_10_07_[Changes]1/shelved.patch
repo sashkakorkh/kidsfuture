@@ -1,0 +1,699 @@
+Index: package.json
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>{\r\n  \"name\": \"kids-future\",\r\n  \"version\": \"0.1.0\",\r\n  \"private\": true,\r\n  \"dependencies\": {\r\n    \"@babel/plugin-proposal-private-property-in-object\": \"^7.21.11\",\r\n    \"@emotion/react\": \"^11.11.1\",\r\n    \"@emotion/styled\": \"^11.11.0\",\r\n    \"@expo-google-fonts/merriweather\": \"^0.2.3\",\r\n    \"@mui/icons-material\": \"^5.14.16\",\r\n    \"@mui/material\": \"^5.14.16\",\r\n    \"@testing-library/jest-dom\": \"^5.17.0\",\r\n    \"@testing-library/react\": \"^13.4.0\",\r\n    \"@testing-library/user-event\": \"^13.5.0\",\r\n    \"image-minimizer-webpack-plugin\": \"^4.0.0\",\r\n    \"imagemin\": \"^8.0.1\",\r\n    \"imagemin-mozjpeg\": \"^10.0.0\",\r\n    \"imagemin-pngquant\": \"^9.0.2\",\r\n    \"imagemin-svgo\": \"^10.0.1\",\r\n    \"imagemin-webp\": \"^8.0.0\",\r\n    \"npm-run-all\": \"^4.1.1\",\r\n    \"npm-watch\": \"^0.3.0\",\r\n    \"prettier\": \"^3.0.3\",\r\n    \"prop-types\": \"^15.8.1\",\r\n    \"react\": \"^18.2.0\",\r\n    \"react-dom\": \"^18.2.0\",\r\n    \"react-router\": \"^6.18.0\",\r\n    \"react-router-dom\": \"^6.18.0\",\r\n    \"react-scripts\": \"5.0.1\",\r\n    \"react-slick\": \"^0.29.0\",\r\n    \"responsive-loader\": \"^3.1.2\",\r\n    \"sass\": \"^1.69.5\",\r\n    \"sharp\": \"^0.33.2\",\r\n    \"slick-carousel\": \"^1.8.1\",\r\n    \"stylelint\": \"^8.2.0\",\r\n    \"stylelint-config-standard\": \"^17.0.0\",\r\n    \"stylelint-order\": \"^0.7.0\",\r\n    \"web-vitals\": \"^2.1.4\"\r\n  },\r\n  \"scripts\": {\r\n    \"start-js\": \"craco start\",\r\n    \"start\": \"npm-run-all -p watch-styles-sass start-js\",\r\n    \"build\": \"npm run eslint && npm run stylelint-build && craco build\",\r\n    \"eject\": \"craco eject\",\r\n    \"stylelint-dev\": \"stylelint 'src/**/*.scss' --cache --cache-location './.stylelintcache'; exit 0\",\r\n    \"stylelint-build\": \"stylelint 'src/**/*.scss'\",\r\n    \"watch-styles-sass\": \"npm-watch\",\r\n    \"stylelint-fix-sass\": \"stylelint --fix 'src/**/*.scss'\",\r\n    \"eslint\": \"eslint src/**/*.js src/**/*.jsx\"\r\n  },\r\n  \"watch\": {\r\n    \"stylelint-dev\": {\r\n      \"patterns\": [\r\n        \"/src/**/*.scss\"\r\n      ],\r\n      \"extensions\": \"scss\"\r\n    },\r\n    \"eslint\": {\r\n      \"patterns\": [\r\n        \"/src/**/*.js\",\r\n        \"/src/**/*.jsx\"\r\n      ],\r\n      \"extensions\": \"js\"\r\n    }\r\n  },\r\n  \"eslintConfig\": {\r\n    \"extends\": [\r\n      \"react-app\",\r\n      \"react-app/jest\"\r\n    ]\r\n  },\r\n  \"browserslist\": {\r\n    \"production\": [\r\n      \">0.2%\",\r\n      \"not dead\",\r\n      \"not op_mini all\"\r\n    ],\r\n    \"development\": [\r\n      \"last 1 chrome version\",\r\n      \"last 1 firefox version\",\r\n      \"last 1 safari version\"\r\n    ]\r\n  },\r\n  \"devDependencies\": {\r\n    \"@craco/craco\": \"^7.1.0\",\r\n    \"eslint-config-airbnb\": \"^19.0.4\",\r\n    \"eslint-config-airbnb-base\": \"^15.0.0\",\r\n    \"eslint-config-prettier\": \"^9.0.0\",\r\n    \"eslint-plugin-import\": \"^2.29.0\",\r\n    \"eslint-plugin-jsx-a11y\": \"^6.7.1\",\r\n    \"eslint-plugin-prettier\": \"^5.0.1\",\r\n    \"eslint-plugin-react\": \"^7.33.2\",\r\n    \"eslint-plugin-regexp\": \"^2.2.0\",\r\n    \"standard\": \"^10.0.3\"\r\n  }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/package.json b/package.json
+--- a/package.json	
++++ b/package.json	
+@@ -46,7 +46,8 @@
+     "stylelint-build": "stylelint 'src/**/*.scss'",
+     "watch-styles-sass": "npm-watch",
+     "stylelint-fix-sass": "stylelint --fix 'src/**/*.scss'",
+-    "eslint": "eslint src/**/*.js src/**/*.jsx"
++    "eslint": "eslint src/**/*.js src/**/*.jsx",
++    "watch": "npm-watch"
+   },
+   "watch": {
+     "stylelint-dev": {
+Index: src/components/Button/index.jsx
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import React from 'react';\r\nimport { Button, useTheme } from '@mui/material';\r\nimport PropTypes from 'prop-types';\r\nimport { NavLink } from 'react-router-dom';\r\n\r\nconst defaultBtnStyles = {\r\n  borderRadius: '48px',\r\n  padding: '0',\r\n  boxShadow: 'unset',\r\n  textWrap: 'nowrap',\r\n  lineHeight: 'normal',\r\n  textAlign: 'center',\r\n  overflow: 'hidden',\r\n  transition: 'all 0.2s ease-in-out',\r\n  willChange: 'transform',\r\n  zIndex: 0,\r\n  ':hover': {\r\n    cursor: 'pointer',\r\n  },\r\n};\r\n\r\nexport function OutlinedButton({ textColorBlack, text, btnSupport }) {\r\n  const theme = useTheme();\r\n  const outlinedDefaultStyles = {\r\n    backgroundColor: 'transparent',\r\n    border: textColorBlack\r\n      ? `1px solid ${theme.palette.colors.mainsecond}`\r\n      : '1px solid white',\r\n    color: textColorBlack ? 'black' : 'white',\r\n  };\r\n\r\n  const btnSupportStyle = {\r\n    ...defaultBtnStyles,\r\n    ...outlinedDefaultStyles,\r\n    '&::after': {\r\n      backgroundColor: textColorBlack\r\n        ? `${theme.palette.colors.mainsecond}`\r\n        : 'white',\r\n      borderRadius: '48px',\r\n      content: '\"\"',\r\n      display: 'block',\r\n      height: ' 100%',\r\n      width: '100%',\r\n      position: 'absolute',\r\n      left: 0,\r\n      top: 0,\r\n      transform: 'translate(-100%, 0) rotate(10deg)',\r\n      transformOrigin: 'top left',\r\n      transition: '.2s transform ease-out',\r\n      willChange: 'transform',\r\n      zIndex: -1,\r\n    },\r\n    '&:hover::after': { transform: 'translate(0, 0)' },\r\n    ' &:hover': {\r\n      border: '2px solid transparent',\r\n      color: textColorBlack ? 'white' : `${theme.palette.colors.mainsecond}`,\r\n      transform: 'scale(1.05)',\r\n      willChange: 'transform',\r\n    },\r\n    height: {\r\n      xs: '2rem',\r\n      lg: '2.7rem',\r\n    },\r\n    width: {\r\n      xs: '7.8rem',\r\n      md: '11.2rem',\r\n      lg: '14.7rem',\r\n    },\r\n    fontSize: {\r\n      xs: '0.7rem',\r\n      md: '0.86rem',\r\n      lg: '1.125rem',\r\n    },\r\n    textTransform: 'uppercase',\r\n    fontWeight: theme.typography.const.fontWeight.bold,\r\n  };\r\n\r\n  const btnDonateStyle = {\r\n    ...defaultBtnStyles,\r\n    ...outlinedDefaultStyles,\r\n    height: { xs: '36px', md: '34px' },\r\n    width: { xs: '136px', md: '145px' },\r\n    fontSize: { xs: '0.812rem', md: '1rem' },\r\n    textTransform: 'capitalize',\r\n    fontWeight: theme.typography.const.fontWeight.normal,\r\n    '&:hover': {\r\n      border: '3px solid white',\r\n      transform: 'scale(0.95)',\r\n      fontWeight: theme.typography.const.fontWeight.bold,\r\n    },\r\n  };\r\n  const outlinedStyles = btnSupport ? btnSupportStyle : btnDonateStyle;\r\n  return (\r\n    /*  <NavLink to=\"/#donate\" style={{ textDecoration: 'none' }}> */\r\n    <Button\r\n      component={NavLink}\r\n      to=\"/#donate\"\r\n      variant=\"outlined\"\r\n      sx={outlinedStyles}>\r\n      {text}\r\n    </Button>\r\n    /*     </NavLink> */\r\n  );\r\n}\r\n\r\nexport function ContainedButton({ btnName, text, wider, onClick }) {\r\n  const theme = useTheme();\r\n  const buttons = {\r\n    btnContainedBlue: {\r\n      ...defaultBtnStyles,\r\n      height: {\r\n        xs: '34px',\r\n        md: '49px',\r\n        lg: '43px',\r\n        xl: '54px',\r\n      },\r\n      width: {\r\n        xs: '128px',\r\n        md: '202px',\r\n        lg: '186px',\r\n        xl: '254px',\r\n      },\r\n      fontSize: {\r\n        xs: '0.875rem',\r\n        md: '1rem',\r\n        xl: '1.25rem',\r\n      },\r\n      textTransform: 'uppercase',\r\n      fontWeight: theme.typography.const.fontWeight.bold,\r\n      backgroundColor: theme.palette.colors.mainsecond,\r\n      color: 'white',\r\n      '&::after': {\r\n        backgroundColor: `${theme.palette.colors.mainfirst}`,\r\n        borderRadius: '48px',\r\n        content: '\"\"',\r\n        display: 'block',\r\n        height: ' 100%',\r\n        width: '100%',\r\n        position: 'absolute',\r\n        left: 0,\r\n        top: 0,\r\n        transform: 'translate(-100%, 0) rotate(10deg)',\r\n        transformOrigin: 'top left',\r\n        transition: '.2s transform ease-out',\r\n        willChange: 'transform',\r\n        zIndex: -1,\r\n      },\r\n      '&:hover::after': { transform: 'translate(0, 0)' },\r\n      ' &:hover': {\r\n        transform: 'scale(1.05)',\r\n        willChange: 'transform',\r\n      },\r\n    },\r\n    btnContainedWhite: {\r\n      ...defaultBtnStyles,\r\n      height: {\r\n        xs: '34px',\r\n        md: '41px',\r\n      },\r\n      width: {\r\n        xs: '128px',\r\n        md: wider ? '184px' : '154px',\r\n      },\r\n      fontSize: {\r\n        xs: '0.875rem',\r\n        md: '1rem',\r\n      },\r\n      textTransform: 'uppercase',\r\n      fontWeight: theme.typography.const.fontWeight.bold,\r\n      backgroundColor: 'white',\r\n      color: 'black',\r\n      '&::after': {\r\n        backgroundColor: `${theme.palette.colors.mainfirst}`,\r\n        borderRadius: '48px',\r\n        content: '\"\"',\r\n        display: 'block',\r\n        height: ' 100%',\r\n        width: '100%',\r\n        position: 'absolute',\r\n        left: 0,\r\n        top: 0,\r\n        transform: 'translate(-100%, 0) rotate(10deg)',\r\n        transformOrigin: 'top left',\r\n        transition: '.2s transform ease-out',\r\n        willChange: 'transform',\r\n        zIndex: -1,\r\n      },\r\n      '&:hover::after': { transform: 'translate(0, 0)' },\r\n      ' &:hover': {\r\n        backgroundColor: 'transparent',\r\n        transform: 'scale(1.05)',\r\n        willChange: 'transform',\r\n      },\r\n    },\r\n    btnContainedCurrency: {\r\n      fontSize: { xs: '1.25rem', md: '1.5rem' },\r\n      fontWeight: theme.typography.const.fontWeight.normal,\r\n      width: { xs: '80px', md: '108px' },\r\n      height: { xs: ' 45px', md: '72px' },\r\n      lineHeight: 'normal',\r\n      textTransform: 'uppercase',\r\n      borderRadius: { xs: '15px', md: '25px' },\r\n      color: 'black',\r\n      background: theme.palette.colors.mainfirst,\r\n      boxShadow: 'unset',\r\n      textWrap: 'nowrap',\r\n      overflow: 'hidden',\r\n      willChange: 'transform',\r\n      zIndex: 0,\r\n      '&::after': {\r\n        backgroundColor: theme.palette.colors.mainsecond,\r\n        borderRadius: { xs: '15px', md: '25px' },\r\n        content: '\"\"',\r\n        display: 'block',\r\n        height: ' 100%',\r\n        width: '100%',\r\n        position: 'absolute',\r\n        left: 0,\r\n        top: 0,\r\n        transform: 'translate(-100%, 0) rotate(10deg)',\r\n        transformOrigin: 'top left',\r\n        transition: '.2s transform ease-out',\r\n        willChange: 'transform',\r\n        zIndex: -2,\r\n      },\r\n      '&:hover::after': { transform: 'translate(0, 0)' },\r\n      ' &:hover': {\r\n        backgroundColor: 'transparent',\r\n        transform: 'scale(1.05)',\r\n        willChange: 'transform',\r\n      },\r\n    },\r\n  };\r\n\r\n  return (\r\n    <>\r\n      {btnName !== 'btnContainedCurrency' && (\r\n        <NavLink to=\"/#donate\">\r\n          <Button variant=\"contained\" sx={buttons[btnName]}>\r\n            {text}\r\n          </Button>\r\n        </NavLink>\r\n      )}\r\n      {btnName === 'btnContainedCurrency' && (\r\n        <Button variant=\"contained\" sx={buttons[btnName]} onClick={onClick}>\r\n          {text}\r\n        </Button>\r\n      )}\r\n    </>\r\n  );\r\n}\r\n\r\nexport function TextButton({ text, readBtn }) {\r\n  const theme = useTheme();\r\n  const textBtnStyles = {\r\n    ...defaultBtnStyles,\r\n    textTransform: 'uppercase',\r\n    justifyContent: readBtn ? 'flex-start' : 'flex-end',\r\n    fontWeight: theme.typography.const.fontWeight.bold,\r\n    color: theme.palette.colors.mainsecond,\r\n    lineHeight: 'normal',\r\n    padding: '0 5px',\r\n    width: '100px',\r\n    fontSize: { xs: '0.875rem', md: '1rem' },\r\n    marginTop: readBtn ? undefined : { xs: '17px', md: '48px' },\r\n    '&::after': {\r\n      content: '\"\"',\r\n      backgroundImage: `url(${process.env.PUBLIC_URL}/bgElements/arrowSlider.png)`,\r\n      height: '18px',\r\n      width: '16px',\r\n      backgroundRepeat: 'no-repeat',\r\n      backgroundSize: 'contain',\r\n      position: 'absolute',\r\n      opacity: 0,\r\n      top: '1px',\r\n      left: readBtn ? '75px' : 0,\r\n      transform: readBtn ? 'unset' : 'rotate(180deg)',\r\n    },\r\n    '&:hover::after': {\r\n      opacity: 1,\r\n      left: readBtn ? '85px' : 0,\r\n    },\r\n    '&:hover': {\r\n      transform: 'scale(1.08)',\r\n      paddingLeft: '10px',\r\n    },\r\n  };\r\n  return <Button sx={textBtnStyles}>{text}</Button>;\r\n}\r\n\r\nOutlinedButton.propTypes = {\r\n  text: PropTypes.string.isRequired,\r\n  textColorBlack: PropTypes.bool.isRequired,\r\n  btnSupport: PropTypes.bool.isRequired,\r\n};\r\n\r\nContainedButton.propTypes = {\r\n  text: PropTypes.string.isRequired,\r\n  btnName: PropTypes.string.isRequired,\r\n  wider: PropTypes.bool,\r\n  onClick: PropTypes.func,\r\n};\r\n\r\nContainedButton.defaultProps = {\r\n  wider: false,\r\n  onClick: () => {},\r\n};\r\n\r\nTextButton.propTypes = {\r\n  text: PropTypes.string.isRequired,\r\n  readBtn: PropTypes.bool.isRequired,\r\n};\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/components/Button/index.jsx b/src/components/Button/index.jsx
+--- a/src/components/Button/index.jsx	
++++ b/src/components/Button/index.jsx	
+@@ -59,12 +59,12 @@
+     },
+     height: {
+       xs: '2rem',
+-      lg: '2.7rem',
++      lg: '2.65rem',
+     },
+     width: {
+       xs: '7.8rem',
+       md: '11.2rem',
+-      lg: '14.7rem',
++      lg: '14.5rem',
+     },
+     fontSize: {
+       xs: '0.7rem',
+@@ -91,7 +91,6 @@
+   };
+   const outlinedStyles = btnSupport ? btnSupportStyle : btnDonateStyle;
+   return (
+-    /*  <NavLink to="/#donate" style={{ textDecoration: 'none' }}> */
+     <Button
+       component={NavLink}
+       to="/#donate"
+@@ -99,7 +98,6 @@
+       sx={outlinedStyles}>
+       {text}
+     </Button>
+-    /*     </NavLink> */
+   );
+ }
+ 
+@@ -109,16 +107,16 @@
+     btnContainedBlue: {
+       ...defaultBtnStyles,
+       height: {
+-        xs: '34px',
++        xs: '2.1rem',
+         md: '49px',
+-        lg: '43px',
+-        xl: '54px',
++        lg: '2.69rem',
++        xl: '3.4rem',
+       },
+       width: {
+-        xs: '128px',
++        xs: '8rem',
+         md: '202px',
+-        lg: '186px',
+-        xl: '254px',
++        lg: '11.625rem',
++        xl: '15.875rem',
+       },
+       fontSize: {
+         xs: '0.875rem',
+Index: src/theme/theme.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>// eslint-disable-next-line import/no-extraneous-dependencies\r\nimport { createTheme } from '@mui/material/styles';\r\n\r\nconst theme = createTheme({\r\n  spacing: 4,\r\n  palette: {\r\n    colors: {\r\n      mainfirst: '#F99820',\r\n      mainsecond: '#4366E3',\r\n      buttonclick: '#D6821A',\r\n      lightsecond: '#8EA3EE',\r\n      footercontrast: '#1339C1',\r\n      circle: '#FAAD4D',\r\n      divider: '#D7D7D7',\r\n    },\r\n  },\r\n  breakpoints: {\r\n    values: {\r\n      xs: 360,\r\n      sm: 480,\r\n      md: 767,\r\n      lg: 1024,\r\n      xl: 1600,\r\n    },\r\n  },\r\n  typography: {\r\n    const: {\r\n      fontWeight: {\r\n        normal: 400,\r\n        bold: 700,\r\n      },\r\n      fontFamily: {\r\n        primary: 'PT Sans, sans-serif',\r\n        secondary: 'Merriweather, serif',\r\n      },\r\n    },\r\n    fontFamily: 'PT Sans, sans-serif',\r\n    fontColor: 'black',\r\n  },\r\n});\r\n\r\nexport default theme;\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/theme/theme.js b/src/theme/theme.js
+--- a/src/theme/theme.js	
++++ b/src/theme/theme.js	
+@@ -20,10 +20,14 @@
+       sm: 480,
+       md: 767,
+       lg: 1024,
+-      xl: 1600,
++      xl: 1500,
+     },
+   },
+   typography: {
++    fontFamily: 'PT Sans, sans-serif',
++    fontColor: 'black',
++    letterSpacing: 'normal',
++    lineHeight: 'normal',
+     const: {
+       fontWeight: {
+         normal: 400,
+@@ -34,8 +38,20 @@
+         secondary: 'Merriweather, serif',
+       },
+     },
+-    fontFamily: 'PT Sans, sans-serif',
+-    fontColor: 'black',
++  },
++  components: {
++    MuiTypography: {
++      defaultProps: {
++        letterSpacing: 'initial',
++        lineHeight: 'normal',
++      },
++    },
++    MuiButton: {
++      defaultProps: {
++        letterSpacing: 'initial',
++        lineHeight: 'normal',
++      },
++    },
+   },
+ });
+ 
+Index: .idea/kids-future.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/kids-future.iml b/.idea/kids-future.iml
+new file mode 100644
+--- /dev/null	
++++ b/.idea/kids-future.iml	
+@@ -0,0 +1,12 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<module type="WEB_MODULE" version="4">
++  <component name="NewModuleRootManager">
++    <content url="file://$MODULE_DIR$">
++      <excludeFolder url="file://$MODULE_DIR$/.tmp" />
++      <excludeFolder url="file://$MODULE_DIR$/temp" />
++      <excludeFolder url="file://$MODULE_DIR$/tmp" />
++    </content>
++    <orderEntry type="inheritedJdk" />
++    <orderEntry type="sourceFolder" forTests="false" />
++  </component>
++</module>
+\ No newline at end of file
+Index: .idea/inspectionProfiles/Project_Default.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/inspectionProfiles/Project_Default.xml b/.idea/inspectionProfiles/Project_Default.xml
+new file mode 100644
+--- /dev/null	
++++ b/.idea/inspectionProfiles/Project_Default.xml	
+@@ -0,0 +1,7 @@
++<component name="InspectionProjectProfileManager">
++  <profile version="1.0">
++    <option name="myName" value="Project Default" />
++    <inspection_tool class="Eslint" enabled="true" level="WARNING" enabled_by_default="true" />
++    <inspection_tool class="Stylelint" enabled="true" level="ERROR" enabled_by_default="true" />
++  </profile>
++</component>
+\ No newline at end of file
+Index: .idea/prettier.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/prettier.xml b/.idea/prettier.xml
+new file mode 100644
+--- /dev/null	
++++ b/.idea/prettier.xml	
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="PrettierConfiguration">
++    <option name="myConfigurationMode" value="MANUAL" />
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/codeStyles/Project.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/codeStyles/Project.xml b/.idea/codeStyles/Project.xml
+new file mode 100644
+--- /dev/null	
++++ b/.idea/codeStyles/Project.xml	
+@@ -0,0 +1,67 @@
++<component name="ProjectCodeStyleConfiguration">
++  <code_scheme name="Project" version="173">
++    <HTMLCodeStyleSettings>
++      <option name="HTML_SPACE_INSIDE_EMPTY_TAG" value="true" />
++    </HTMLCodeStyleSettings>
++    <JSCodeStyleSettings version="0">
++      <option name="FORCE_SEMICOLON_STYLE" value="true" />
++      <option name="SPACE_BEFORE_GENERATOR_MULT" value="true" />
++      <option name="SPACE_BEFORE_FUNCTION_LEFT_PARENTH" value="false" />
++      <option name="USE_DOUBLE_QUOTES" value="false" />
++      <option name="FORCE_QUOTE_STYlE" value="true" />
++      <option name="ENFORCE_TRAILING_COMMA" value="Remove" />
++      <option name="SPACES_WITHIN_OBJECT_LITERAL_BRACES" value="true" />
++      <option name="SPACES_WITHIN_IMPORTS" value="true" />
++    </JSCodeStyleSettings>
++    <TypeScriptCodeStyleSettings version="0">
++      <option name="FORCE_SEMICOLON_STYLE" value="true" />
++      <option name="SPACE_BEFORE_FUNCTION_LEFT_PARENTH" value="false" />
++      <option name="USE_DOUBLE_QUOTES" value="false" />
++      <option name="FORCE_QUOTE_STYlE" value="true" />
++      <option name="ENFORCE_TRAILING_COMMA" value="Remove" />
++      <option name="SPACES_WITHIN_OBJECT_LITERAL_BRACES" value="true" />
++      <option name="SPACES_WITHIN_IMPORTS" value="true" />
++    </TypeScriptCodeStyleSettings>
++    <VueCodeStyleSettings>
++      <option name="INTERPOLATION_NEW_LINE_AFTER_START_DELIMITER" value="false" />
++      <option name="INTERPOLATION_NEW_LINE_BEFORE_END_DELIMITER" value="false" />
++    </VueCodeStyleSettings>
++    <codeStyleSettings language="HTML">
++      <option name="SOFT_MARGINS" value="80" />
++      <indentOptions>
++        <option name="INDENT_SIZE" value="2" />
++        <option name="CONTINUATION_INDENT_SIZE" value="2" />
++        <option name="TAB_SIZE" value="2" />
++      </indentOptions>
++    </codeStyleSettings>
++    <codeStyleSettings language="JavaScript">
++      <option name="KEEP_BLANK_LINES_IN_CODE" value="1" />
++      <option name="ALIGN_MULTILINE_PARAMETERS" value="false" />
++      <option name="ALIGN_MULTILINE_FOR" value="false" />
++      <option name="SPACE_BEFORE_METHOD_PARENTHESES" value="true" />
++      <option name="TERNARY_OPERATION_SIGNS_ON_NEXT_LINE" value="true" />
++      <option name="KEEP_SIMPLE_BLOCKS_IN_ONE_LINE" value="true" />
++      <option name="KEEP_SIMPLE_METHODS_IN_ONE_LINE" value="true" />
++      <option name="SOFT_MARGINS" value="80" />
++      <indentOptions>
++        <option name="INDENT_SIZE" value="2" />
++        <option name="CONTINUATION_INDENT_SIZE" value="2" />
++        <option name="TAB_SIZE" value="2" />
++      </indentOptions>
++    </codeStyleSettings>
++    <codeStyleSettings language="TypeScript">
++      <option name="SOFT_MARGINS" value="80" />
++      <indentOptions>
++        <option name="INDENT_SIZE" value="2" />
++        <option name="CONTINUATION_INDENT_SIZE" value="2" />
++        <option name="TAB_SIZE" value="2" />
++      </indentOptions>
++    </codeStyleSettings>
++    <codeStyleSettings language="Vue">
++      <option name="SOFT_MARGINS" value="80" />
++      <indentOptions>
++        <option name="CONTINUATION_INDENT_SIZE" value="2" />
++      </indentOptions>
++    </codeStyleSettings>
++  </code_scheme>
++</component>
+\ No newline at end of file
+Index: .idea/codeStyles/codeStyleConfig.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/codeStyles/codeStyleConfig.xml b/.idea/codeStyles/codeStyleConfig.xml
+new file mode 100644
+--- /dev/null	
++++ b/.idea/codeStyles/codeStyleConfig.xml	
+@@ -0,0 +1,5 @@
++<component name="ProjectCodeStyleConfiguration">
++  <state>
++    <option name="USE_PER_PROJECT_SETTINGS" value="true" />
++  </state>
++</component>
+\ No newline at end of file
+Index: .idea/modules.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/modules.xml b/.idea/modules.xml
+new file mode 100644
+--- /dev/null	
++++ b/.idea/modules.xml	
+@@ -0,0 +1,8 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="ProjectModuleManager">
++    <modules>
++      <module fileurl="file://$PROJECT_DIR$/.idea/kids-future.iml" filepath="$PROJECT_DIR$/.idea/kids-future.iml" />
++    </modules>
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/vcs.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/vcs.xml b/.idea/vcs.xml
+new file mode 100644
+--- /dev/null	
++++ b/.idea/vcs.xml	
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="VcsDirectoryMappings">
++    <mapping directory="" vcs="Git" />
++  </component>
++</project>
+\ No newline at end of file
+Index: src/components/Header/index.jsx
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import React, { useState } from 'react';\r\nimport { NavLink, Outlet } from 'react-router-dom';\r\nimport {\r\n  AppBar,\r\n  Box,\r\n  Container,\r\n  IconButton,\r\n  List,\r\n  Stack,\r\n  SwipeableDrawer,\r\n  Toolbar,\r\n  useTheme,\r\n} from '@mui/material';\r\nimport CloseRoundedIcon from '@mui/icons-material/CloseRounded';\r\nimport Menu from '../Menu/index';\r\nimport Footer from '../Footer';\r\nimport { OutlinedButton } from '../Button';\r\nimport logoBlue from '../../images/bgElements/logoBlue.png';\r\nimport menuIcon from '../../images/bgElements/menuIcon.png';\r\n\r\nfunction Header() {\r\n  const [open, setMenuOpen] = useState(false);\r\n  const theme = useTheme();\r\n  const burgerMenuStyle = {\r\n    containerStyle: {\r\n      padding: '.67rem 0',\r\n    },\r\n    itemStyle: {\r\n      fontSize: {\r\n        xs: '1rem',\r\n        md: '.75rem',\r\n        xl: '1rem',\r\n      },\r\n    },\r\n  };\r\n  const headerMenuStyle = {\r\n    containerStyle: {\r\n      fontStretch: { md: 'extra-condensed' },\r\n    },\r\n    itemStyle: {\r\n      fontSize: {\r\n        xs: '1rem',\r\n        md: '.725rem',\r\n        lg: '1rem',\r\n      },\r\n      marginRight: { lg: '1.47rem' },\r\n      marginLeft: { md: '.5rem', lg: '0' },\r\n      lineHeight: 'normal',\r\n      fontStretch: 'extra-condensed',\r\n      transition: 'all 0.2s ease-in-out',\r\n      '&:hover': {\r\n        transform: 'scale(1.1)',\r\n      },\r\n    },\r\n  };\r\n\r\n  const toggleDrawer = (openMenu) => (event) => {\r\n    if (\r\n      event.type === 'keydown' &&\r\n      (event.key === 'Tab' || event.key === 'Shift')\r\n    ) {\r\n      return;\r\n    }\r\n    setMenuOpen(openMenu);\r\n  };\r\n\r\n  return (\r\n    <div\r\n      style={{\r\n        overflow: 'hidden',\r\n        display: 'flex',\r\n        flexDirection: 'column',\r\n        minHeight: '100vh',\r\n      }}>\r\n      <AppBar\r\n        position=\"static\"\r\n        sx={{\r\n          backgroundColor: 'white',\r\n          boxShadow: 'none',\r\n          padding: '0',\r\n          margin: '0',\r\n        }}>\r\n        <Container maxWidth=\"xl\" disableGutters>\r\n          <Toolbar\r\n            disableGutters\r\n            sx={{\r\n              justifyContent: 'space-between',\r\n              padding: {\r\n                xs: '1rem 1.28rem 1rem 1.25rem',\r\n                md: '1rem 2.2rem 1rem 2rem',\r\n                lg: '1.06rem 3.1rem 1.06rem 2.8rem',\r\n              },\r\n            }}>\r\n            <Stack direction=\"row\" alignItems=\"center\">\r\n              <NavLink to=\"/\">\r\n                <Box\r\n                  sx={{\r\n                    height: {\r\n                      xs: '3rem',\r\n                      md: '2.8rem',\r\n                      lg: '4.3rem',\r\n                    },\r\n                    width: {\r\n                      xs: '3rem',\r\n                      md: '2.8rem',\r\n                      lg: '4.3rem',\r\n                    },\r\n                  }}>\r\n                  <img\r\n                    src={logoBlue}\r\n                    alt=\"logotype\"\r\n                    width=\"100%\"\r\n                    height=\"100%\"\r\n                  />\r\n                </Box>\r\n              </NavLink>\r\n              <Stack\r\n                direction=\"row\"\r\n                sx={{\r\n                  marginLeft: {\r\n                    md: '.8rem',\r\n                    lg: '5%',\r\n                    xl: '10%',\r\n                  },\r\n                  display: { xs: 'none', md: 'flex' },\r\n                  gap: { md: '.56rem', lg: '0' },\r\n                }}>\r\n                <Menu tag=\"div\" styleConfig={headerMenuStyle} />\r\n              </Stack>\r\n            </Stack>\r\n            <Box sx={{ marginRight: { xs: '1rem', md: '1%', xl: '0' } }}>\r\n              <OutlinedButton\r\n                textColorBlack\r\n                text=\"Підтримати фонд\"\r\n                btnSupport\r\n              />\r\n            </Box>\r\n            <IconButton\r\n              aria-label=\"open drawer\"\r\n              onClick={toggleDrawer(true)}\r\n              sx={{\r\n                lineHeight: '1',\r\n                display: {\r\n                  xs: 'inline-flex',\r\n                  md: 'none',\r\n                },\r\n                padding: '0',\r\n                marginLeft: { xs: '.6rem', md: '0' },\r\n                width: '1.29rem',\r\n                height: '1.2rem',\r\n              }}>\r\n              <img src={menuIcon} alt=\"menu-icon\" />\r\n            </IconButton>\r\n            <SwipeableDrawer\r\n              anchor=\"right\"\r\n              open={open}\r\n              onClose={toggleDrawer(false)}\r\n              onOpen={toggleDrawer(true)}\r\n              PaperProps={{\r\n                style: {\r\n                  width: '55%',\r\n                  height: 'auto',\r\n                  backgroundColor: '#FFF',\r\n                  borderRadius: '1.43rem 0 0 1.43rem',\r\n                  border: '4px solid',\r\n                  borderColor: theme.palette.colors.mainfirst,\r\n                },\r\n              }}>\r\n              <IconButton\r\n                onClick={toggleDrawer(false)}\r\n                sx={{\r\n                  color: theme.palette.colors.mainsecond,\r\n                  justifyContent: 'end',\r\n                  padding: '0',\r\n                  marginRight: { xs: '.2rem', sm: '0' },\r\n                }}>\r\n                <CloseRoundedIcon fontSize=\"Large\" />\r\n              </IconButton>\r\n              <List disablePadding sx={{ margin: '0 1.6rem 0 1.6rem' }}>\r\n                <Menu\r\n                  tag=\"li\"\r\n                  styleConfig={burgerMenuStyle}\r\n                  functionToggle={toggleDrawer}\r\n                  open={open}\r\n                />\r\n              </List>\r\n            </SwipeableDrawer>\r\n          </Toolbar>\r\n        </Container>\r\n      </AppBar>\r\n      <main>\r\n        <Outlet />\r\n      </main>\r\n      <Footer />\r\n    </div>\r\n  );\r\n}\r\n\r\nexport default Header;\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/components/Header/index.jsx b/src/components/Header/index.jsx
+--- a/src/components/Header/index.jsx	
++++ b/src/components/Header/index.jsx	
+@@ -34,9 +34,7 @@
+     },
+   };
+   const headerMenuStyle = {
+-    containerStyle: {
+-      fontStretch: { md: 'extra-condensed' },
+-    },
++    containerStyle: {},
+     itemStyle: {
+       fontSize: {
+         xs: '1rem',
+@@ -45,8 +43,6 @@
+       },
+       marginRight: { lg: '1.47rem' },
+       marginLeft: { md: '.5rem', lg: '0' },
+-      lineHeight: 'normal',
+-      fontStretch: 'extra-condensed',
+       transition: 'all 0.2s ease-in-out',
+       '&:hover': {
+         transform: 'scale(1.1)',
+@@ -119,8 +115,8 @@
+                 sx={{
+                   marginLeft: {
+                     md: '.8rem',
+-                    lg: '5%',
+-                    xl: '10%',
++                    lg: '2rem',
++                    xl: '4rem',
+                   },
+                   display: { xs: 'none', md: 'flex' },
+                   gap: { md: '.56rem', lg: '0' },
+Index: .idea/.gitignore
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/.gitignore b/.idea/.gitignore
+new file mode 100644
+--- /dev/null	
++++ b/.idea/.gitignore	
+@@ -0,0 +1,5 @@
++# Default ignored files
++/shelf/
++/workspace.xml
++# Editor-based HTTP Client requests
++/httpRequests/
+Index: .idea/jsLinters/eslint.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/jsLinters/eslint.xml b/.idea/jsLinters/eslint.xml
+new file mode 100644
+--- /dev/null	
++++ b/.idea/jsLinters/eslint.xml	
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="EslintConfiguration">
++    <custom-configuration-file used="true" path="$PROJECT_DIR$/.eslintrc" />
++  </component>
++</project>
+\ No newline at end of file
+Index: src/pages/Home/index.jsx
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import React from 'react';\r\nimport PropTypes from 'prop-types';\r\nimport {\r\n  Box,\r\n  Container,\r\n  Stack,\r\n  Typography,\r\n  Grid,\r\n  useTheme,\r\n} from '@mui/material';\r\nimport { ContainedButton, OutlinedButton } from '../../components/Button';\r\nimport Carousel from '../../components/Carousel';\r\nimport CardNewsItem from '../../components/CardForNewsItem';\r\nimport DonateTab from '../../components/Donate';\r\nimport RenderPartners from '../../components/Partners';\r\nimport diamndBlueDarkblue from '../../images/bgElements/bg_diamnd_blue_darkblue.png';\r\nimport diamndBlueYellow from '../../images/bgElements/bg_diamnd_blue_yellow.png';\r\nimport twoDiamndsTriangle from '../../images/bgElements/bg_2diamonds_triangle.png';\r\nimport threeTriangles from '../../images/bgElements/bg_3triangles.png';\r\nimport squareTriangles from '../../images/bgElements/bg_squareTriangles.png';\r\nimport lightBlueTriangle from '../../images/bgElements/bg_light_blue_triangle.png';\r\nimport yellowTriangle from '../../images/bgElements/bg_yellow_triangle.png';\r\nimport blueTriangle from '../../images/bgElements/bg_BlueTriangle.png';\r\nimport blueTriangle90 from '../../images/bgElements/bg_blueTriangle90deg.png';\r\nimport twoTriangles from '../../images/bgElements/bg_2Triangles.png';\r\nimport leaves from '../../images/bgElements/bg_leaves.png';\r\nimport diamndTriangle from '../../images/bgElements/bg_diamond_triangle.png';\r\nimport twoDiamndsTriangleBlue from '../../images/bgElements/bg_2diamonds_triangle_blue.png';\r\nimport twoYellowBlueTriangles from '../../images/bgElements/bg_2blue_yellow_triangles.png';\r\nimport boyAndGirl from '../../images/contentImages/boy_and_girl.png?sizes[]=360,sizes[]=768,sizes[]=1200,sizes=[]1600';\r\nimport boyAndGirlWebp from '../../images/contentImages/boy_and_girl.png?sizes[]=360,sizes[]=768,sizes[]=1200,sizes=[]1600&format=webp';\r\nimport activity1 from '../../images/contentImages/activity_1.png?sizes[]=360,sizes[]=768,sizes[]=1200,sizes=[]1600';\r\nimport activity2 from '../../images/contentImages/activity_2.png?sizes[]=360,sizes[]=768,sizes[]=1200,sizes=[]1600';\r\nimport activity3 from '../../images/contentImages/activity_3.png?sizes[]=360,sizes[]=768,sizes[]=1200,sizes=[]1600';\r\nimport girlStudying from '../../images/contentImages/girl_studying.png?sizes[]=360,sizes[]=768,sizes[]=1200,sizes=[]1600';\r\nimport girlStudyingWebp from '../../images/contentImages/girl_studying.png?sizes[]=360,sizes[]=768,sizes[]=1200,sizes=[]1600&format=webp';\r\nimport happyPeople from '../../images/contentImages/happy_people.png?sizes[]=360,sizes[]=768,sizes[]=1200,sizes=[]1600';\r\nimport happyPeopleWebp from '../../images/contentImages/happy_people.png?sizes[]=360,sizes[]=768,sizes[]=1200,sizes=[]1600&format=webp';\r\nimport founderMan from '../../images/contentImages/founder_man.png?sizes[]=360,sizes[]=768,sizes[]=1200,sizes=[]1600';\r\nimport founderManWebp from '../../images/contentImages/founder_man.png?sizes[]=360,sizes[]=768,sizes[]=1200,sizes=[]1600&format=webp';\r\nimport founderWoman from '../../images/contentImages/founder_woman.png?sizes[]=360,sizes[]=768,sizes[]=1200,sizes=[]1600';\r\nimport founderWomanWebp from '../../images/contentImages/founder_woman.png?sizes[]=360,sizes[]=768,sizes[]=1200,sizes=[]1600&format=webp';\r\n\r\nfunction HomeContent({ data, loading }) {\r\n  const theme = useTheme();\r\n  const sectionTitleStyles = {\r\n    fontFamily: theme.typography.const.fontFamily.secondary,\r\n    fontWeight: theme.typography.const.fontWeight.normal,\r\n    lineHeight: 'normal',\r\n    textAlign: 'center',\r\n    fontSize: {\r\n      xs: '1.25rem',\r\n      md: '2.5rem',\r\n      lg: '2.3rem',\r\n      xl: '2.5rem',\r\n    },\r\n    marginBottom: {\r\n      xs: '11px',\r\n      md: '16px',\r\n      xl: '11px',\r\n    },\r\n  };\r\n\r\n  const circleBoxTitleStyles = {\r\n    fontSize: { xs: '1.125rem', md: '1.25rem', lg: '1.5rem' },\r\n    fontWeight: theme.typography.const.fontWeight.bold,\r\n    marginBottom: { xs: '8px', lg: '16px' },\r\n    textAlign: 'center',\r\n  };\r\n\r\n  const circleTextStyles = {\r\n    fontSize: {\r\n      xs: '0.875rem',\r\n      md: '1rem',\r\n      lg: '1.125rem',\r\n    },\r\n    lineHeight: '1.3',\r\n    marginBottom: { xs: '16px', lg: '32px', xl: '20px' },\r\n    textAlign: 'left',\r\n  };\r\n\r\n  const defaultStylesBgEl = {\r\n    content: '\"\"',\r\n    position: 'absolute',\r\n    backgroundRepeat: 'no-repeat',\r\n    backgroundSize: 'contain',\r\n  };\r\n  return (\r\n    <div>\r\n      <section id=\"banner\" className=\"scroll-section\">\r\n        <Container maxWidth=\"xl\" disableGutters>\r\n          <Stack\r\n            sx={{\r\n              flexDirection: { xs: 'column', lg: 'row' },\r\n              justifyContent: 'center',\r\n              gap: { xl: '9px' },\r\n              padding: {\r\n                xs: '0 1rem 0 1.2rem',\r\n                md: '0 6rem',\r\n                lg: '0 4rem 0 6rem',\r\n                xl: '0 5rem 0 11rem',\r\n              },\r\n              marginTop: { xs: '1.67rem', md: '52px', lg: '54px' },\r\n            }}>\r\n            <Stack sx={{ maxWidth: { lg: '526px', xl: '50%' } }}>\r\n              <Typography\r\n                variant=\"h1\"\r\n                component=\"h1\"\r\n                sx={{\r\n                  fontFamily: theme.typography.const.fontFamily.secondary,\r\n                  fontWeight: theme.typography.const.fontWeight.bold,\r\n                  lineHeight: '1.245',\r\n                  fontSize: {\r\n                    xs: '2.25rem',\r\n                    md: '3.25rem',\r\n                    lg: '2.5rem',\r\n                    xl: '4rem',\r\n                  },\r\n                }}>\r\n                Розвиток. Діти. Майбутнє.\r\n              </Typography>\r\n              <Typography\r\n                sx={{\r\n                  lineHeight: '1.3',\r\n                  textAlign: 'left',\r\n                  fontFamily: theme.typography.const.fontFamily.primary,\r\n                  fontSize: {\r\n                    xs: '1rem',\r\n                    md: '1.25rem',\r\n                    lg: '1rem',\r\n                    xl: '1.25rem',\r\n                  },\r\n                  margin: {\r\n                    xs: '.5rem 0 1rem 0',\r\n                    md: '11px 0 14px 0',\r\n                    lg: '22px 0 30px 0',\r\n                    xl: '22px 0 51px 0',\r\n                  },\r\n                  padding: {\r\n                    xs: '0 1.5rem 0 0',\r\n                    md: '0 7.5rem 0 0',\r\n                    lg: '0',\r\n                    xl: '0 3rem 0 0',\r\n                  },\r\n                }}>\r\n                Ми - сімейний благодійний фонд, який розробляє та підтримує\r\n                проєкти, що спрямовані на всебічний розвиток дітей та підлітків.\r\n              </Typography>\r\n              <Box\r\n                sx={{\r\n                  '::before': {\r\n                    ...defaultStylesBgEl,\r\n                    display: { md: 'none' },\r\n                    bottom: '130px',\r\n                    left: '20px',\r\n                    width: '12px',\r\n                    height: '12px',\r\n                    backgroundImage: `url(${diamndBlueDarkblue})`,\r\n                  },\r\n                }}>\r\n                <ContainedButton btnName=\"btnContainedBlue\" text=\"Долучитися\" />\r\n              </Box>\r\n            </Stack>\r\n            <Box\r\n              sx={{\r\n                position: 'relative',\r\n                height: {\r\n                  lg: '359px',\r\n                  xl: '550px',\r\n                },\r\n                width: {\r\n                  xl: '1454px',\r\n                },\r\n                '::before': {\r\n                  ...defaultStylesBgEl,\r\n                  top: { xs: '62px', md: '64px', lg: '227px', xl: '366px' },\r\n                  left: { xs: '27px', md: '-83px', lg: '-116px', xl: '-176px' },\r\n                  width: { xs: '21px', md: '122px', lg: '97px', xl: '152px' },\r\n                  height: { xs: '21px', md: '103px', lg: '91px', xl: '127px' },\r\n                  backgroundImage: {\r\n                    xs: `url(${diamndBlueYellow})`,\r\n                    md: `url(${twoDiamndsTriangle})`,\r\n                  },\r\n                },\r\n                '::after': {\r\n                  ...defaultStylesBgEl,\r\n                  top: {\r\n                    xs: '-21px',\r\n                    md: '-52px',\r\n                    lg: '-37px',\r\n                    xl: '-23px',\r\n                  },\r\n                  right: { xs: '46px', md: '10px', lg: '2px', xl: '40px' },\r\n                  width: {\r\n                    xs: '66px',\r\n                    md: '122px',\r\n                    lg: '79px',\r\n                    xl: '151px',\r\n                  },\r\n                  height: {\r\n                    xs: '94px',\r\n                    md: '174px',\r\n                    lg: '113px',\r\n                    xl: '215px',\r\n                  },\r\n                  backgroundImage: `url(${threeTriangles})`,\r\n                },\r\n              }}>\r\n              <Box\r\n                sx={{\r\n                  bottom: { lg: '40px', xl: '44px' },\r\n                  right: { xl: '24px' },\r\n                  height: {\r\n                    xs: '275px',\r\n                    md: '459px',\r\n                    lg: '399px',\r\n                    xl: '597px',\r\n                  },\r\n                  width: {\r\n                    xs: '328px',\r\n                    md: '544px',\r\n                    lg: '459px',\r\n                    xl: '705px',\r\n                  },\r\n                  margin: {\r\n                    xs: '98px auto 0',\r\n                    md: '68px 22px 0 22px',\r\n                    lg: '0',\r\n                  },\r\n                  position: 'relative',\r\n                  '::before': {\r\n                    ...defaultStylesBgEl,\r\n                    top: { xs: '43px', md: '104px', lg: '322px', xl: '444px' },\r\n                    left: { xs: '', md: '' },\r\n                    right: {\r\n                      xs: '20px',\r\n                      md: '-66px',\r\n                      lg: '-53px',\r\n                      xl: '-88px',\r\n                    },\r\n                    bottom: { xs: '' },\r\n                    width: { xs: '30px', md: '66px', lg: '42px', xl: '82px' },\r\n                    height: { xs: '30px', md: '66px', lg: '46px', xl: '82px' },\r\n                    backgroundImage: `url(${squareTriangles})`,\r\n                  },\r\n                  '::after': {\r\n                    ...defaultStylesBgEl,\r\n                    display: { md: 'none' },\r\n                    top: '-46px',\r\n                    left: '109px',\r\n                    width: '19px',\r\n                    height: '19px',\r\n                    backgroundImage: `url(${lightBlueTriangle}`,\r\n                  },\r\n                }}>\r\n                <picture>\r\n                  <source srcSet={boyAndGirlWebp.srcSet} type=\"image/webp\" />\r\n                  <img\r\n                    src={boyAndGirl.src}\r\n                    srcSet={boyAndGirl.srcSet}\r\n                    alt=\"boy and girl smilling\"\r\n                    width=\"100%\"\r\n                    height=\"100%\"\r\n                    loading=\"lazy\"\r\n                  />\r\n                </picture>\r\n              </Box>\r\n            </Box>\r\n          </Stack>\r\n        </Container>\r\n      </section>\r\n      <section>\r\n        <Container maxWidth=\"100%\" disableGutters>\r\n          <Stack\r\n            sx={{\r\n              flexDirection: { xs: 'column', md: 'row' },\r\n            }}>\r\n            <Box\r\n              sx={{\r\n                backgroundImage: `linear-gradient(rgba(67, 102, 227, 0.90), rgba(67, 102, 227, 0.90)), url(${activity1})`,\r\n                backgroundRepeat: 'no-repeat',\r\n                backgroundSize: 'cover',\r\n                position: 'relative',\r\n                minWidth: { md: '15rem' },\r\n                padding: {\r\n                  xs: '36px 68px 34px 20px',\r\n                  md: '48px 40px 65px 34px',\r\n                  lg: '68px 56px 67px 31px',\r\n                  xl: '69px 133px 68px 51px',\r\n                },\r\n              }}>\r\n              <Typography\r\n                component=\"h3\"\r\n                sx={{\r\n                  fontSize: { xs: '1.25rem', lg: '2rem' },\r\n                  lineHeight: 'normal',\r\n                  marginBottom: '8px',\r\n                  color: 'white',\r\n                  textAlign: 'left',\r\n                  fontWeight: theme.typography.const.fontWeight.bold,\r\n                }}>\r\n                Інструменти\r\n              </Typography>\r\n              <Typography\r\n                sx={{\r\n                  fontSize: { xs: '0.875rem', md: '1rem', lg: '1.125rem' },\r\n                  lineHeight: '1.3',\r\n                  marginBottom: '19px',\r\n                  color: 'white',\r\n                  textAlign: 'left',\r\n                }}>\r\n                Ми збираємо гроші на різноманітні засоби - для шкіл, садочків,\r\n                творчих майстерень, центрів розвитку діток\r\n              </Typography>\r\n              <OutlinedButton\r\n                textColorBlack={false}\r\n                text=\"задонатити\"\r\n                btnSupport={false}\r\n              />\r\n            </Box>\r\n            <Box\r\n              sx={{\r\n                backgroundImage: `linear-gradient(rgba(249, 152, 32, 0.90), rgba(249, 152, 32, 0.90)), url(${activity2})`,\r\n                backgroundRepeat: 'no-repeat',\r\n                backgroundSize: 'cover',\r\n                position: 'relative',\r\n                minWidth: { md: '15rem' },\r\n                padding: {\r\n                  xs: '36px 68px 34px 20px',\r\n                  md: '47px 67px 65px 36px',\r\n                  lg: '69px 65px 68px 38px',\r\n                  xl: '69px 190px 68px 51px',\r\n                },\r\n              }}>\r\n              <Typography\r\n                component=\"h3\"\r\n                sx={{\r\n                  fontSize: { xs: '1.25rem', lg: '2rem' },\r\n                  lineHeight: '1.3',\r\n                  marginBottom: '8px',\r\n                  color: 'white',\r\n                  textAlign: 'left',\r\n                  fontWeight: theme.typography.const.fontWeight.bold,\r\n                }}>\r\n                Пізнання\r\n              </Typography>\r\n              <Typography\r\n                sx={{\r\n                  fontSize: { xs: '0.875rem', md: '1rem', lg: '1.125rem' },\r\n                  lineHeight: '1.3',\r\n                  marginBottom: '19px',\r\n                  color: 'white',\r\n                  textAlign: 'left',\r\n                }}>\r\n                Ми розробляємо та впроваджуємо різнопланові програми та проєкти\r\n                для розвитку дітей.\r\n              </Typography>\r\n              <OutlinedButton\r\n                textColorBlack={false}\r\n                text=\"задонатити\"\r\n                btnSupport={false}\r\n              />\r\n            </Box>\r\n            <Box\r\n              sx={{\r\n                backgroundImage: `linear-gradient(rgba(94, 117, 199, 0.90), rgba(94, 117, 199, 0.90)), url(${activity3})`,\r\n                backgroundRepeat: 'no-repeat',\r\n                backgroundSize: 'cover',\r\n                position: 'relative',\r\n                minWidth: { md: '15rem' },\r\n                padding: {\r\n                  xs: '34px 68px 35px 20px',\r\n                  md: '47px 38px 66px 34px',\r\n                  lg: '69px 43px 68px 39px',\r\n                  xl: '69px 112px 68px 51px',\r\n                },\r\n              }}>\r\n              <Typography\r\n                component=\"h3\"\r\n                sx={{\r\n                  fontSize: { xs: '1.25rem', lg: '2rem' },\r\n                  lineHeight: 'normal',\r\n                  marginBottom: '8px',\r\n                  color: 'white',\r\n                  textAlign: 'left',\r\n                  fontWeight: theme.typography.const.fontWeight.bold,\r\n                }}>\r\n                Розвиток\r\n              </Typography>\r\n              <Typography\r\n                sx={{\r\n                  fontSize: { xs: '0.875rem', md: '1rem', lg: '1.125rem' },\r\n                  lineHeight: '1.3',\r\n                  marginBottom: '20px',\r\n                  color: 'white',\r\n                  textAlign: 'left',\r\n                }}>\r\n                Навчальна платформа, курси ІТ та анімації, а також інші проєкти,\r\n                мета яких допомогти дитині визначитись у житті.\r\n              </Typography>\r\n              <OutlinedButton\r\n                textColorBlack={false}\r\n                text=\"задонатити\"\r\n                btnSupport={false}\r\n              />\r\n            </Box>\r\n          </Stack>\r\n        </Container>\r\n      </section>\r\n      <section id=\"about\" className=\"scroll-section\">\r\n        <Container maxWidth=\"xl\" disableGutters>\r\n          <Stack\r\n            sx={{\r\n              margin: {\r\n                xs: '48px 0',\r\n                md: '103px 0 100px',\r\n                lg: '91px 0 40px 0',\r\n              },\r\n              padding: {\r\n                xs: '0 1.5rem',\r\n                md: '0 5rem',\r\n                lg: '0 2.5rem 0 3rem',\r\n                xl: '0 5rem 0 8.7rem',\r\n              },\r\n            }}>\r\n            <Stack\r\n              sx={{\r\n                flexDirection: { xs: 'column', lg: 'row-reverse' },\r\n                justifyContent: { lg: 'space-evenly', xl: 'flex-end' },\r\n                alignItems: 'center',\r\n                gap: { lg: '50px', xl: '141px' },\r\n                marginBottom: {\r\n                  xs: '54px',\r\n                  md: '48px',\r\n                  lg: '0',\r\n                },\r\n              }}>\r\n              <Box\r\n                sx={{\r\n                  position: 'relative',\r\n                  marginBottom: {\r\n                    xs: '22px',\r\n                    md: '50px',\r\n                    lg: '0',\r\n                    xl: '103px',\r\n                  },\r\n                  '::after': {\r\n                    ...defaultStylesBgEl,\r\n                    top: {\r\n                      xs: '-28px',\r\n                      md: '-33px',\r\n                      lg: '-183px',\r\n                      xl: '-95px',\r\n                    },\r\n                    right: {\r\n                      xs: '24px',\r\n                      md: '-105px',\r\n                      lg: '27px',\r\n                      xl: '-204px',\r\n                    },\r\n                    width: { xs: '20px', md: '49px', lg: '54px', xl: '46px' },\r\n                    height: { xs: '20px', md: '49px', lg: '54px', xl: '46px' },\r\n                    backgroundImage: `url(${lightBlueTriangle})`,\r\n                  },\r\n                  '::before': {\r\n                    ...defaultStylesBgEl,\r\n                    top: { xs: '12px', md: '87px', lg: '-81px', xl: '38px' },\r\n                    right: {\r\n                      xs: '-4px',\r\n                      md: '-159px',\r\n                      lg: '-32px',\r\n                      xl: '-275px',\r\n                    },\r\n                    width: { xs: '12px', md: '32px', lg: '32px', xl: '36px' },\r\n                    height: { xs: '12px', md: '32px', lg: '32px', xl: '36px' },\r\n                    backgroundImage: `url(${diamndBlueDarkblue})`,\r\n                  },\r\n                }}>\r\n                <Box\r\n                  sx={{\r\n                    maxWidth: { md: '360px' },\r\n                    padding: { xs: '0 2rem 0 4rem', md: '0 0rem 0 2.1rem' },\r\n                    position: 'relative',\r\n                    margin: { xs: '0 auto' },\r\n                    '::after': {\r\n                      ...defaultStylesBgEl,\r\n                      top: { xs: '-1px', md: '-2px', lg: '0', xl: '-4px' },\r\n                      left: {\r\n                        xs: '31px',\r\n                        md: '-40px',\r\n                        lg: '-23px',\r\n                        xl: '-39px',\r\n                      },\r\n                      width: { xs: '25px', md: '58px', lg: '41px', xl: '58px' },\r\n                      height: {\r\n                        xs: '25px',\r\n                        md: '58px',\r\n                        lg: '41px',\r\n                        xl: '58px',\r\n                      },\r\n                      backgroundImage: `url(${diamndBlueYellow})`,\r\n                    },\r\n                  }}>\r\n                  <Typography\r\n                    component=\"h2\"\r\n                    sx={{ ...sectionTitleStyles, textAlign: 'left' }}>\r\n                    Мета\r\n                  </Typography>\r\n                  <Typography\r\n                    sx={{\r\n                      lineHeight: '1.3',\r\n                      fontSize: {\r\n                        xs: '0.875rem',\r\n                        md: '1.25rem',\r\n                        lg: '1.125rem',\r\n                        xl: '1.25rem',\r\n                      },\r\n                    }}>\r\n                    Дати дітям впевненість у власному щасливому майбутньому.\r\n                  </Typography>\r\n                </Box>\r\n              </Box>\r\n              <Box\r\n                sx={{\r\n                  maxWidth: {\r\n                    xs: '320px',\r\n                    md: '680px',\r\n                    lg: '709px',\r\n                  },\r\n                  height: {\r\n                    xs: '237px',\r\n                    md: '473px',\r\n                    lg: '372px',\r\n                    xl: '473px',\r\n                  },\r\n                  paddingRight: { xs: '21px', md: '36px' },\r\n                }}>\r\n                <picture>\r\n                  <source srcSet={girlStudyingWebp.srcSet} type=\"image/webp\" />\r\n                  <img\r\n                    src={girlStudying.src}\r\n                    srcSet={girlStudying.srcSet}\r\n                    alt=\"girl studying at home\"\r\n                    width=\"100%\"\r\n                    height=\"100%\"\r\n                    loading=\"lazy\"\r\n                  />\r\n                </picture>\r\n              </Box>\r\n            </Stack>\r\n            <Stack\r\n              sx={{\r\n                flexDirection: { xs: 'column', lg: 'row' },\r\n                justifyContent: { lg: 'space-evenly' },\r\n                alignItems: 'center',\r\n              }}>\r\n              <Box\r\n                sx={{\r\n                  position: 'relative',\r\n                  marginBottom: {\r\n                    xs: '26px',\r\n                    md: '50px',\r\n                    lg: '0',\r\n                    xl: '54px',\r\n                  },\r\n                  '::after': {\r\n                    ...defaultStylesBgEl,\r\n                    top: {\r\n                      xs: '-12px',\r\n                      md: '-120px',\r\n                      lg: '377px',\r\n                      xl: '339px',\r\n                    },\r\n                    left: { lg: '80px', xl: '-62px' },\r\n                    right: { xs: '39px', md: '22px', lg: '' },\r\n                    width: { xs: '12px', md: '32px', lg: '27px', xl: '38px' },\r\n                    height: { xs: '12px', md: '32px', lg: '27px', xl: '30px' },\r\n                    backgroundImage: `url(${lightBlueTriangle})`,\r\n                    transform: 'rotate(90deg)',\r\n                  },\r\n                  '::before': {\r\n                    ...defaultStylesBgEl,\r\n                    top: { xs: '-41px', md: '-41px', lg: '289px', xl: '254px' },\r\n                    right: { xs: '61px', md: '-69px', lg: '' },\r\n                    left: { lg: '17px', xl: '-125px' },\r\n                    width: { xs: '13px', md: '34px', lg: '41px' },\r\n                    height: { xs: '13px', md: '34px', lg: '41px' },\r\n                    backgroundImage: `url(${yellowTriangle})`,\r\n                  },\r\n                }}>\r\n                <Box\r\n                  sx={{\r\n                    maxWidth: { md: '374px' },\r\n                    padding: { xs: '0 2rem 0 3.9rem', md: '0' },\r\n                    position: 'relative',\r\n                    marginLeft: { md: '69px', lg: '51px' },\r\n                    top: { lg: '-52px' },\r\n                    '::after': {\r\n                      ...defaultStylesBgEl,\r\n                      top: { xs: '-3px', md: '-4px', lg: '1px', xl: '-3px' },\r\n                      left: {\r\n                        xs: '29px',\r\n                        md: '-75px',\r\n                        lg: '-55px',\r\n                        xl: '-73px',\r\n                      },\r\n                      width: { xs: '25px', md: '58px', lg: '41px', xl: '58px' },\r\n                      height: {\r\n                        xs: '25px',\r\n                        md: '58px',\r\n                        lg: '41px',\r\n                        xl: '58px',\r\n                      },\r\n                      backgroundImage: `url(${diamndBlueYellow})`,\r\n                    },\r\n                  }}>\r\n                  <Typography\r\n                    component=\"h2\"\r\n                    sx={{ ...sectionTitleStyles, textAlign: 'left' }}>\r\n                    Цінності\r\n                  </Typography>\r\n                  <Typography\r\n                    sx={{\r\n                      lineHeight: '1.3',\r\n                      fontSize: {\r\n                        xs: '0.875rem',\r\n                        md: '1.25rem',\r\n                        lg: '1.125rem',\r\n                      },\r\n                    }}>\r\n                    Сім’я, розвиток, щасливе майбутнє дитини, родини, України.\r\n                  </Typography>\r\n                </Box>\r\n              </Box>\r\n              <Box\r\n                sx={{\r\n                  position: { lg: 'relative' },\r\n                  top: { lg: '-83px' },\r\n                  right: { xl: '-30px' },\r\n                  maxWidth: {\r\n                    xs: '320px',\r\n                    md: '680px',\r\n                    lg: '530px',\r\n                    xl: '709px',\r\n                  },\r\n                  height: {\r\n                    xs: '329px',\r\n                    md: '648px',\r\n                    lg: '559px',\r\n                    xl: '652px',\r\n                  },\r\n                }}>\r\n                <picture>\r\n                  <source srcSet={happyPeopleWebp.srcSet} type=\"image/webp\" />\r\n                  <img\r\n                    src={happyPeople.src}\r\n                    srcSet={happyPeople.srcSet}\r\n                    alt=\"happy people standing\"\r\n                    width=\"100%\"\r\n                    height=\"100%\"\r\n                    loading=\"lazy\"\r\n                  />\r\n                </picture>\r\n              </Box>\r\n            </Stack>\r\n          </Stack>\r\n        </Container>\r\n      </section>\r\n      <section id=\"cooperation\" className=\"scroll-section\">\r\n        <Container\r\n          maxWidth=\"xl\"\r\n          disableGutters\r\n          sx={{ marginBottom: { xs: '48px', md: '95px', xl: '151px' } }}>\r\n          <Box\r\n            sx={{\r\n              padding: { xs: '0 1.25rem', md: '0', lg: '0 1rem' },\r\n            }}>\r\n            <Box\r\n              sx={{\r\n                margin: {\r\n                  xs: '0 auto 24px',\r\n                  md: '0 auto 11px',\r\n                  lg: '0 auto 70px',\r\n                  xl: '0 auto 86px',\r\n                },\r\n                textAlign: 'center',\r\n              }}>\r\n              <Typography sx={sectionTitleStyles}>Співпраця</Typography>\r\n              <Typography\r\n                sx={{\r\n                  fontSize: { xs: '0.875rem', md: '1.125rem' },\r\n                  textAlign: 'left',\r\n                  padding: { md: '0 2rem', lg: '0 9rem', xl: '0 21rem' },\r\n                  lineHeight: '1.3',\r\n                  marginTop: { xs: '1rem', md: '1.4rem' },\r\n                }}>\r\n                Якщо у вас є бажання робити дійсно добру справу, інвестувати\r\n                свій час, знання та вміння, а також можливі ресурси у розвиток\r\n                дітей України - запрошуємо до співпраці.\r\n              </Typography>\r\n            </Box>\r\n          </Box>\r\n          <Box>\r\n            <Box\r\n              sx={{\r\n                display: 'grid',\r\n                gridTemplateColumns: { xs: '1fr', md: 'repeat(2, 1fr)' },\r\n                gridTemplateRows: {\r\n                  xs: 'repeat(4, 1fr)',\r\n                  md: 'repeat(2, 1fr)',\r\n                },\r\n                gridColumnGap: { xs: '0', md: '10px', lg: '17px' },\r\n                gridRowGap: { xs: '26px', md: '10px', lg: '17px' },\r\n                padding: {\r\n                  xs: '0 1.25rem 0 1.25rem',\r\n                  md: '0 2.5rem 0 1.9rem',\r\n                  lg: '0 1rem 0 1rem',\r\n                },\r\n              }}>\r\n              <Box sx={{ justifySelf: { xs: 'center', md: 'flex-end' } }}>\r\n                <Box\r\n                  sx={{\r\n                    width: {\r\n                      xs: '320px',\r\n                      md: '344px',\r\n                      lg: '450px',\r\n                      xl: '549px',\r\n                    },\r\n                    height: {\r\n                      xs: '320px',\r\n                      md: '378px',\r\n                      lg: '450px',\r\n                      xl: '549px',\r\n                    },\r\n                    borderRadius: { xs: '320px', md: '309px 300px 0px 323px' },\r\n                    background: {\r\n                      xs: theme.palette.colors.mainsecond,\r\n                      md: theme.palette.colors.circle,\r\n                    },\r\n                    opacity: { xs: '.8', md: '.9' },\r\n                    position: 'relative',\r\n                    '::before': {\r\n                      ...defaultStylesBgEl,\r\n                      top: { xs: '12px', md: '-115px', lg: '41px', xl: '75px' },\r\n                      left: {\r\n                        xs: '5px',\r\n                        md: '665px',\r\n                        lg: '927px',\r\n                        xl: '1225px',\r\n                      },\r\n                      right: { xs: '' },\r\n                      width: { xs: '29px', md: '24px', lg: '30px', xl: '47px' },\r\n                      height: {\r\n                        xs: '22px',\r\n                        md: '19px',\r\n                        lg: '24px',\r\n                        xl: '34px',\r\n                      },\r\n                      backgroundImage: `url(${blueTriangle})`,\r\n                      transform: { md: 'rotatey(180deg)', lg: 'rotatey(0deg)' },\r\n                    },\r\n                    '::after': {\r\n                      ...defaultStylesBgEl,\r\n                      top: {\r\n                        xs: '-38px',\r\n                        md: '772px',\r\n                        lg: '-55px',\r\n                        xl: '37px',\r\n                      },\r\n                      left: { xs: '', md: '3px', lg: '-44px', xl: '-114px' },\r\n                      right: { xs: '1px' },\r\n                      width: { xs: '48px', md: '35px', lg: '75px', xl: '75px' },\r\n                      height: {\r\n                        xs: '68px',\r\n                        md: '49px',\r\n                        lg: '107px',\r\n                        xl: '107px',\r\n                      },\r\n                      backgroundImage: `url(${threeTriangles})`,\r\n                    },\r\n                  }}>\r\n                  <Box\r\n                    sx={{\r\n                      color: 'white',\r\n                      padding: {\r\n                        xs: '62px 50px 0 50px',\r\n                        md: '92px 0 0 21px',\r\n                        lg: '100px 40px 0 62px',\r\n                        xl: '143px 110px 0 98px',\r\n                      },\r\n                      display: 'flex',\r\n                      alignItems: 'center',\r\n                      flexDirection: 'column',\r\n                    }}>\r\n                    <Typography\r\n                      component=\"h4\"\r\n                      sx={{\r\n                        fontSize: {\r\n                          xs: '1.125rem',\r\n                          md: '1.25rem',\r\n                          lg: '1.5rem',\r\n                        },\r\n                        fontWeight: theme.typography.const.fontWeight.bold,\r\n                        margin: {\r\n                          xs: '0 0 8px 0',\r\n                          md: '0 18px 6px 0',\r\n                          lg: '16px',\r\n                          xl: '14px',\r\n                        },\r\n                        textAlign: 'center',\r\n                      }}>\r\n                      Бізнес\r\n                    </Typography>\r\n                    <Typography sx={circleTextStyles}>\r\n                      Долучайтесь до створення проектів та програм, які\r\n                      допоможуть дітям реалізувати свій потенціал. Ваша\r\n                      підтримка може стати кроком до покращення життя багатьох\r\n                      маленьких українців\r\n                    </Typography>\r\n                    <Box sx={{ marginRight: { md: '17px', xl: '0' } }}>\r\n                      <ContainedButton\r\n                        btnName=\"btnContainedWhite\"\r\n                        text=\"Долучитися\"\r\n                      />\r\n                    </Box>\r\n                  </Box>\r\n                </Box>\r\n              </Box>\r\n              <Box\r\n                sx={{\r\n                  justifySelf: { xs: 'center', md: 'flex-start' },\r\n                  position: 'relative',\r\n                  '::before': {\r\n                    ...defaultStylesBgEl,\r\n                    top: {\r\n                      xs: '',\r\n                      md: '376px',\r\n                      lg: '446px',\r\n                      xl: '551px',\r\n                    },\r\n                    bottom: { xs: '-22px' },\r\n                    left: {\r\n                      xs: '2px',\r\n                      md: '300px',\r\n                      lg: '397px',\r\n                      xl: '549px',\r\n                    },\r\n                    width: {\r\n                      xs: '36px',\r\n                      md: '40px',\r\n                      lg: '57px',\r\n                      xl: '82px',\r\n                    },\r\n                    height: {\r\n                      xs: '18px',\r\n                      md: '20px',\r\n                      lg: '41px',\r\n                      xl: '41px',\r\n                    },\r\n                    backgroundImage: `url(${twoTriangles})`,\r\n                  },\r\n                  '::after': {\r\n                    ...defaultStylesBgEl,\r\n                    top: { xs: '-35px', md: '350px', lg: '466px', xl: '580px' },\r\n                    left: { xs: '', md: '-351px', lg: '-502px', xl: '-725px' },\r\n                    right: { xs: '56px' },\r\n                    width: { xs: '13px', md: '11px', lg: '20px', xl: '20px' },\r\n                    height: { xs: '9px', md: '9px', lg: '14px', xl: '14px' },\r\n                    backgroundImage: `url(${lightBlueTriangle})`,\r\n                    transform: 'rotateZ(270deg)',\r\n                  },\r\n                }}>\r\n                <Box\r\n                  sx={{\r\n                    '::before': {\r\n                      ...defaultStylesBgEl,\r\n                      top: { xs: '0', md: '380px', lg: '515px', xl: '632px' },\r\n                      left: {\r\n                        xs: '',\r\n                        md: '-314px',\r\n                        lg: '-456px',\r\n                        xl: '-661px',\r\n                      },\r\n                      right: { xs: '0' },\r\n                      width: { xs: '27px', md: '23px', lg: '30px', xl: '41px' },\r\n                      height: {\r\n                        xs: '27px',\r\n                        md: '24px',\r\n                        lg: '30px',\r\n                        xl: '41px',\r\n                      },\r\n                      backgroundImage: `url(${yellowTriangle})`,\r\n                      transform: 'rotateZ(180deg)',\r\n                    },\r\n                  }}>\r\n                  <Box\r\n                    sx={{\r\n                      width: {\r\n                        xs: '320px',\r\n                        md: '344px',\r\n                        lg: '450px',\r\n                        xl: '549px',\r\n                      },\r\n                      height: {\r\n                        xs: '320px',\r\n                        md: '376px',\r\n                        lg: '450px',\r\n                        xl: '549px',\r\n                      },\r\n                      borderRadius: {\r\n                        xs: '320px',\r\n                        md: '300px 309px 323px 0px',\r\n                      },\r\n                      background: {\r\n                        xs: theme.palette.colors.circle,\r\n                        md: theme.palette.colors.mainsecond,\r\n                      },\r\n                      opacity: { xs: '.9', md: '.8' },\r\n                    }}>\r\n                    <Box\r\n                      sx={{\r\n                        color: 'white',\r\n                        padding: {\r\n                          xs: '62px 50px 0 50px',\r\n                          md: '101px 10px 0 21px',\r\n                          lg: '100px 88px 0 42px',\r\n                          xl: '142px 122px 0 115px',\r\n                        },\r\n                        display: 'flex',\r\n                        alignItems: 'center',\r\n                        flexDirection: 'column',\r\n                      }}>\r\n                      <Typography\r\n                        component=\"h4\"\r\n                        sx={{\r\n                          fontSize: {\r\n                            xs: '1.125rem',\r\n                            md: '1.25rem',\r\n                            lg: '1.5rem',\r\n                          },\r\n                          fontWeight: theme.typography.const.fontWeight.bold,\r\n                          margin: {\r\n                            xs: '0 0 8px 0',\r\n                            md: '0 16px 6px 0',\r\n                            lg: '16px',\r\n                            xl: '15px',\r\n                          },\r\n                          textAlign: 'center',\r\n                        }}>\r\n                        ГО\r\n                      </Typography>\r\n                      <Typography sx={circleTextStyles}>\r\n                        Готові співпрацювати задля створення проектів для\r\n                        розвитку дітей? Звертайтеся до нас, разом ми можемо\r\n                        зробити більше для дітей та їх майбутнього\r\n                      </Typography>\r\n                      <Box sx={{ margin: { md: '0 14px 0 0', xl: '0' } }}>\r\n                        <ContainedButton\r\n                          btnName=\"btnContainedWhite\"\r\n                          text=\"Долучитися\"\r\n                        />\r\n                      </Box>\r\n                    </Box>\r\n                  </Box>\r\n                </Box>\r\n              </Box>\r\n              <Box\r\n                sx={{\r\n                  justifySelf: { xs: 'center', md: 'flex-end' },\r\n                  position: 'relative',\r\n                  '::before': {\r\n                    ...defaultStylesBgEl,\r\n                    display: { xl: 'block' },\r\n                    top: '502px',\r\n                    left: '-97px',\r\n                    width: '20px',\r\n                    height: '14px',\r\n                    backgroundImage: `url(${lightBlueTriangle})`,\r\n                    transform: 'rotateZ(270deg)',\r\n                  },\r\n                }}>\r\n                <Box\r\n                  sx={{\r\n                    width: {\r\n                      xs: '320px',\r\n                      md: '344px',\r\n                      lg: '450px',\r\n                      xl: '549px',\r\n                    },\r\n                    height: {\r\n                      xs: '320px',\r\n                      md: '376px',\r\n                      lg: '450px',\r\n                      xl: '549px',\r\n                    },\r\n                    borderRadius: { xs: '320px', md: '323px 0px 309px 300px' },\r\n                    background: theme.palette.colors.mainsecond,\r\n                    opacity: '0.8',\r\n                  }}>\r\n                  <Box\r\n                    sx={{\r\n                      color: 'white',\r\n                      padding: {\r\n                        xs: '62px 50px 0 50px',\r\n                        md: '88px 24px 0 30px',\r\n                        lg: '100px 42px 0 67px',\r\n                        xl: '158px 99px 0 104px',\r\n                      },\r\n                      display: 'flex',\r\n                      alignItems: 'center',\r\n                      flexDirection: 'column',\r\n                    }}>\r\n                    <Typography\r\n                      component=\"h4\"\r\n                      sx={{\r\n                        fontSize: {\r\n                          xs: '1.125rem',\r\n                          md: '1.25rem',\r\n                          lg: '1.5rem',\r\n                        },\r\n                        fontWeight: theme.typography.const.fontWeight.bold,\r\n                        marginBottom: {\r\n                          xs: '8px',\r\n                          md: '5px',\r\n                          lg: '16px',\r\n                          xl: '14px',\r\n                        },\r\n                        textAlign: 'center',\r\n                      }}>\r\n                      Фонд\r\n                    </Typography>\r\n                    <Typography sx={circleTextStyles}>\r\n                      Ми відкриті для обміну ідеями, знаннями та досвідом в\r\n                      роботі з дітьми та створенні проектів, які б забезпечували\r\n                      розвиток їх талантів та навичок. Втілимо мрії дітей разом\r\n                    </Typography>\r\n                    <ContainedButton\r\n                      btnName=\"btnContainedWhite\"\r\n                      text=\"Долучитися\"\r\n                    />\r\n                  </Box>\r\n                </Box>\r\n              </Box>\r\n              <Box\r\n                sx={{\r\n                  justifySelf: { xs: 'center', md: 'flex-start' },\r\n                  position: 'relative',\r\n                  '::before': {\r\n                    ...defaultStylesBgEl,\r\n                    top: { xs: '-41px', md: '368px', lg: '389px', xl: '403px' },\r\n                    bottom: { xs: '' },\r\n                    left: { xs: '', md: '279px', lg: '437px', xl: '588px' },\r\n                    right: { xs: '1px' },\r\n                    width: { xs: '47px', md: '62px', lg: '87px', xl: '109px' },\r\n                    height: {\r\n                      xs: '74px',\r\n                      md: '96px',\r\n                      lg: '111px',\r\n                      xl: '170px',\r\n                    },\r\n                    backgroundImage: `url(${diamndTriangle})`,\r\n                  },\r\n                  '::after': {\r\n                    ...defaultStylesBgEl,\r\n                    display: { md: 'none' },\r\n                    top: { xs: '', md: '-10px' },\r\n                    bottom: { xs: '2px' },\r\n                    left: { xs: '1px', md: '-10px' },\r\n                    right: { xs: '' },\r\n                    width: { xs: '20px', md: '58px' },\r\n                    height: { xs: '14px', md: '58px' },\r\n                    backgroundImage: `url(${lightBlueTriangle})`,\r\n                    transform: 'rotateZ(270deg)',\r\n                  },\r\n                }}>\r\n                <Box\r\n                  sx={{\r\n                    width: '100%',\r\n                    maxWidth: {\r\n                      xs: '320px',\r\n                      md: '344px',\r\n                      lg: '450px',\r\n                      xl: '549px',\r\n                    },\r\n                    height: {\r\n                      xs: '320px',\r\n                      md: '376px',\r\n                      lg: '450px',\r\n                      xl: '549px',\r\n                    },\r\n                    borderRadius: { xs: '320px', md: '0 323px 309px 300px' },\r\n                    background: theme.palette.colors.circle,\r\n                    opacity: '0.9',\r\n                  }}>\r\n                  <Box\r\n                    sx={{\r\n                      color: 'white',\r\n                      padding: {\r\n                        xs: '37px 50px 0 50px',\r\n                        md: '54px 34px 0 34px',\r\n                        lg: '75px 41px 0 42px',\r\n                        xl: '148px 62px 0 65px',\r\n                      },\r\n                      display: 'flex',\r\n                      alignItems: 'center',\r\n                      flexDirection: 'column',\r\n                    }}>\r\n                    <Typography component=\"h4\" sx={circleBoxTitleStyles}>\r\n                      Волонтери\r\n                    </Typography>\r\n                    <Typography sx={circleTextStyles}>\r\n                      Обожнюєте розвивати таланти та навички дітей? Наші проекти\r\n                      та програми потребують волонтерської допомоги в проведенні\r\n                      різноманітних заходів, розвитку креативних ідей та роботі\r\n                      з дітьми. Долучайтеся до нас та станьте частиною команди,\r\n                      яка змінює життя дітей на краще.\r\n                    </Typography>\r\n                    <ContainedButton\r\n                      btnName=\"btnContainedWhite\"\r\n                      text=\"Долучитися\"\r\n                      wider\r\n                    />\r\n                  </Box>\r\n                </Box>\r\n              </Box>\r\n            </Box>\r\n          </Box>\r\n        </Container>\r\n      </section>\r\n      <section id=\"team\" className=\"scroll-section\">\r\n        <Container\r\n          maxWidth=\"xl\"\r\n          disableGutters\r\n          sx={{ marginBottom: { xs: '47px', md: '72px', xl: '129px' } }}>\r\n          <Typography sx={sectionTitleStyles}>Команда</Typography>\r\n          <Box\r\n            sx={{\r\n              display: 'flex',\r\n              flexDirection: 'column',\r\n              alignItems: 'center',\r\n              padding: {\r\n                xs: '0 1.28rem 0 1.38rem',\r\n                md: '0 2.3rem 0 2.2rem',\r\n                xl: '0 2.3rem 0 3.2rem',\r\n              },\r\n              marginTop: { xs: '20px', md: '49px' },\r\n            }}>\r\n            <Stack\r\n              sx={{\r\n                flexDirection: { xs: 'column', md: 'row' },\r\n                alignItems: 'center',\r\n                justifyContent: 'flex-start',\r\n                marginBottom: { xs: '26px', md: '0', lg: '50px', xl: '25px' },\r\n              }}>\r\n              <Box sx={{ maxWidth: { md: '500px', lg: '650px', xl: '820px' } }}>\r\n                <Typography\r\n                  sx={{\r\n                    fontSize: {\r\n                      xs: '1.125rem',\r\n                      md: '1.5rem',\r\n                      lg: '1.8rem',\r\n                      xl: '2rem',\r\n                    },\r\n                    marginBottom: { xs: '7px', xl: '0' },\r\n                    lineHeight: 'normal',\r\n                  }}>\r\n                  Олександр Синько\r\n                </Typography>\r\n                <Typography\r\n                  sx={{\r\n                    fontSize: { xs: '1rem', md: '1.25rem', lg: '1.5rem' },\r\n                    fontWeight: theme.typography.const.fontWeight.bold,\r\n                    marginBottom: { xs: '8px', xl: '2px' },\r\n                    lineHeight: 'normal',\r\n                  }}>\r\n                  Засновник фонду\r\n                </Typography>\r\n                <Box\r\n                  sx={{\r\n                    marginBottom: { xs: '25px' },\r\n                  }}>\r\n                  <Typography\r\n                    sx={{\r\n                      marginBottom: '8px',\r\n                      fontSize: { xs: '0.875rem', md: '1rem', lg: '1.125rem' },\r\n                      lineHeight: 'normal',\r\n                    }}>\r\n                    Режисер, продюсер, спортивний тренер, менеджер спортивного\r\n                    клубу.\r\n                  </Typography>\r\n                  <Typography\r\n                    sx={{\r\n                      fontSize: { xs: '0.875rem', md: '1rem', lg: '1.125rem' },\r\n                      lineHeight: 'normal',\r\n                    }}>\r\n                    17 років у медія індустрії, працював на дитячо-молодіжних\r\n                    програмах, створював мультсеріали для дошкільнят та\r\n                    повнометражний анімаційний фільм Більше 20 років тренерскої\r\n                    діяльності 3 дітьми та підлітками. Серед Вихованців багато\r\n                    призерів у тому числі чемпіони світу.\r\n                  </Typography>\r\n                </Box>\r\n              </Box>\r\n              <Box\r\n                sx={{\r\n                  width: '173px',\r\n                  height: '173px',\r\n                  position: 'relative',\r\n                  bottom: { md: '30px', xl: '13px' },\r\n                  marginLeft: { md: '20px', xl: '26px' },\r\n                  '::before': {\r\n                    ...defaultStylesBgEl,\r\n                    top: {\r\n                      xs: '',\r\n                      md: '205px',\r\n                      xl: '145px',\r\n                    },\r\n                    bottom: { xs: '-50px' },\r\n                    left: {\r\n                      xs: '',\r\n                      md: '108px',\r\n                      xl: '245px',\r\n                    },\r\n                    right: { xs: '-73px' },\r\n                    width: {\r\n                      xs: '48px',\r\n                      md: '61px',\r\n                      lg: '78px',\r\n                      xl: '128px',\r\n                    },\r\n                    height: {\r\n                      xs: '68px',\r\n                      md: '86px',\r\n                      lg: '138px',\r\n                      xl: '182px',\r\n                    },\r\n                    backgroundImage: `url(${threeTriangles})`,\r\n                  },\r\n                }}>\r\n                <picture>\r\n                  <source srcSet={founderManWebp.srcSet} type=\"image/webp\" />\r\n                  <img\r\n                    src={founderMan.src}\r\n                    srcSet={founderMan.srcSet}\r\n                    alt=\"Founder of the fond Oleksandr Sinko\"\r\n                    width=\"100%\"\r\n                    height=\"100%\"\r\n                    loading=\"lazy\"\r\n                  />\r\n                </picture>\r\n              </Box>\r\n            </Stack>\r\n            <Stack\r\n              sx={{\r\n                flexDirection: { xs: 'column', md: 'row-reverse' },\r\n                alignItems: 'center',\r\n                justifyContent: 'flex-start',\r\n              }}>\r\n              <Box\r\n                sx={{\r\n                  maxWidth: { md: '500px', lg: '650px', xl: '753px' },\r\n                }}>\r\n                <Typography\r\n                  sx={{\r\n                    fontSize: {\r\n                      xs: '1.125rem',\r\n                      md: '1.5rem',\r\n                      lg: '1.8rem',\r\n                      xl: '2rem',\r\n                    },\r\n                    marginBottom: { xs: '8px', xl: '0' },\r\n                    lineHeight: 'normal',\r\n                  }}>\r\n                  Катерина Синько\r\n                </Typography>\r\n                <Typography\r\n                  sx={{\r\n                    fontSize: { xs: '1rem', md: '1.25rem', lg: '1.5rem' },\r\n                    fontWeight: theme.typography.const.fontWeight.bold,\r\n                    marginBottom: { xs: '8px', xl: '7px' },\r\n                    lineHeight: 'normal',\r\n                  }}>\r\n                  Засновниця фонду\r\n                </Typography>\r\n                <Box\r\n                  sx={{\r\n                    marginBottom: { xs: '26px' },\r\n                  }}>\r\n                  <Typography\r\n                    sx={{\r\n                      marginBottom: '8px',\r\n                      fontSize: { xs: '0.875rem', md: '1rem', lg: '1.125rem' },\r\n                      lineHeight: 'normal',\r\n                    }}>\r\n                    Адептка сімейного бізнесу, більше 15 років в PR, маркетингу,\r\n                    продажах.\r\n                  </Typography>\r\n                  <Typography\r\n                    sx={{\r\n                      fontSize: { xs: '0.875rem', md: '1rem', lg: '1.125rem' },\r\n                      lineHeight: 'normal',\r\n                    }}>\r\n                    Приймала участь у реалізації низки проектів у здоров &apos;\r\n                    ї (ціль ООН). Авторка власних проектів для інвесторів та\r\n                    стартапів, а також для агро і сімейного фермерства та\r\n                    інвестування в Україну.\r\n                  </Typography>\r\n                </Box>\r\n              </Box>\r\n              <Box\r\n                sx={{\r\n                  width: '173px',\r\n                  height: '173px',\r\n                  position: 'relative',\r\n                  marginRight: { md: '24px', xl: '78px' },\r\n                  right: { xs: '21px', md: '4px', xl: '0' },\r\n                  bottom: { md: '20px', xl: '15px' },\r\n                  '::before': {\r\n                    ...defaultStylesBgEl,\r\n                    top: {\r\n                      xs: '',\r\n                      md: '226px',\r\n                      lg: '-260px',\r\n                      xl: '-219px',\r\n                    },\r\n                    bottom: { xs: '95px' },\r\n                    left: {\r\n                      xs: '-65px',\r\n                      md: '538px',\r\n                      lg: '-34px',\r\n                      xl: '-217px',\r\n                    },\r\n                    width: {\r\n                      xs: '52px',\r\n                      md: '56px',\r\n                      lg: '78px',\r\n                      xl: '124px',\r\n                    },\r\n                    height: {\r\n                      xs: '71px',\r\n                      md: '87px',\r\n                      lg: '106px',\r\n                      xl: '151px',\r\n                    },\r\n                    backgroundImage: `url(${twoYellowBlueTriangles})`,\r\n                    transform: {\r\n                      xs: 'rotateZ(270deg)',\r\n                      md: 'rotateZ(0deg)',\r\n                      lg: 'rotateZ(270deg)',\r\n                    },\r\n                  },\r\n                  '::after': {\r\n                    ...defaultStylesBgEl,\r\n                    top: { xs: '', md: '198px', lg: '92px', xl: '80px' },\r\n                    bottom: { xs: '3px' },\r\n                    left: {\r\n                      xs: '-45px',\r\n                      md: '-2px',\r\n                      lg: '-52px',\r\n                      xl: '-190px',\r\n                    },\r\n                    right: { xs: '' },\r\n                    width: { xs: '19px', md: '29px', xl: '41px' },\r\n                    height: { xs: '19px', md: '29px', xl: '41px' },\r\n                    backgroundImage: `url(${blueTriangle90})`,\r\n                    transform: { md: 'rotateZ(270deg)', lg: 'rotateZ(0deg)' },\r\n                  },\r\n                }}>\r\n                <picture>\r\n                  <source srcSet={founderWomanWebp.srcSet} type=\"image/webp\" />\r\n                  <img\r\n                    src={founderWoman.src}\r\n                    srcSet={founderWoman.srcSet}\r\n                    alt=\"Founder of the fond Kateryna Sinko\"\r\n                    width=\"100%\"\r\n                    height=\"100%\"\r\n                    loading=\"lazy\"\r\n                  />\r\n                </picture>\r\n              </Box>\r\n            </Stack>\r\n          </Box>\r\n        </Container>\r\n      </section>\r\n      <section id=\"news\" className=\"scroll-section\">\r\n        <Container\r\n          maxWidth=\"xl\"\r\n          disableGutters\r\n          sx={{ marginBottom: { xs: '50px', md: '100px', xl: '82px' } }}>\r\n          <Typography sx={sectionTitleStyles}>Новини</Typography>\r\n          <Box\r\n            sx={{\r\n              width: { xs: '92%', md: '90%', xl: '88%' },\r\n              margin: {\r\n                xs: '20px auto 0 auto',\r\n                md: '30px auto 0 auto',\r\n                lg: '50px auto 0 auto',\r\n              },\r\n            }}>\r\n            <Carousel\r\n              items={data}\r\n              showPagination={false}\r\n              isLoading={loading}\r\n              renderContent={(item) => <CardNewsItem item={item} />}\r\n            />\r\n          </Box>\r\n        </Container>\r\n      </section>\r\n      <section id=\"donate\" className=\"scroll-section\">\r\n        <Container\r\n          maxWidth=\"xl\"\r\n          disableGutters\r\n          sx={{\r\n            marginBottom: { xs: '39px', md: '163px', xl: '249px' },\r\n            position: 'relative',\r\n            '::before': {\r\n              ...defaultStylesBgEl,\r\n              top: { md: '20px', lg: '-1px', xl: '14px' },\r\n              left: { lg: '7px', xl: '133px' },\r\n              width: { md: '147px', lg: '174px', xl: '251px' },\r\n              height: { md: '145px', lg: '174px', xl: '248px' },\r\n              backgroundImage: `url(${leaves})`,\r\n              transform: { md: 'rotateZ(224deg)', lg: 'rotateZ(192deg)' },\r\n            },\r\n            '::after': {\r\n              ...defaultStylesBgEl,\r\n              bottom: { md: '-83px', lg: '-61px', xl: '-56px' },\r\n              right: {\r\n                md: '169px',\r\n                lg: '2px',\r\n                xl: '208px',\r\n              },\r\n              width: { md: '147px', lg: '174px', xl: '227px' },\r\n              height: { md: '145px', lg: '174px', xl: '224px' },\r\n              backgroundImage: `url(${leaves})`,\r\n              transform: { md: 'rotateZ(99deg)', lg: 'rotateZ(0deg)' },\r\n            },\r\n          }}>\r\n          <Typography sx={sectionTitleStyles}>Донати</Typography>\r\n          <Box\r\n            sx={{\r\n              padding: {\r\n                md: '0 2.5rem 0 2.3rem',\r\n                lg: '0 5.5rem 0 5.3rem',\r\n                xl: '0 19rem',\r\n              },\r\n            }}>\r\n            <Box\r\n              sx={{\r\n                position: 'relative',\r\n                backgroundColor: 'white',\r\n                zIndex: '3',\r\n                padding: {\r\n                  xs: '0 1.25rem 0 1.25rem',\r\n                  md: '1.7rem 3.6rem 2.12rem 3.6rem',\r\n                  xl: '3.7rem 6.7rem 2.12rem 6.6rem',\r\n                },\r\n                marginTop: { xs: '16px', md: '68px', lg: '50px' },\r\n                borderRadius: { md: '60px' },\r\n                border: { md: ` 4px solid ${theme.palette.colors.mainfirst}` },\r\n                height: { md: '450px', xl: '485px' },\r\n                '::before': {\r\n                  ...defaultStylesBgEl,\r\n                  top: {\r\n                    xs: '-88px',\r\n                    md: '-118px',\r\n                    lg: '-135px',\r\n                    xl: '-118px',\r\n                  },\r\n                  right: {\r\n                    xs: '19px',\r\n                    md: '-4px',\r\n                    lg: '-73px',\r\n                    xl: '-182px',\r\n                  },\r\n                  width: { xs: '48px', md: '50px', lg: '80px', xl: '95px' },\r\n                  height: { xs: '68px', md: '75px', lg: '112px', xl: '135px' },\r\n                  backgroundImage: `url(${threeTriangles})`,\r\n                },\r\n                '::after': {\r\n                  ...defaultStylesBgEl,\r\n                  display: { xs: 'none', xl: 'block' },\r\n                  bottom: '-52px',\r\n                  left: '-216px',\r\n                  width: '135px',\r\n                  height: '114px',\r\n                  backgroundImage: `url(${twoDiamndsTriangleBlue})`,\r\n                  transform: { md: 'rotateZ(99deg)', lg: 'rotateZ(0deg)' },\r\n                },\r\n              }}>\r\n              <Typography\r\n                sx={{\r\n                  fontSize: { xs: '0.875rem', md: '1.25rem' },\r\n                  lineHeight: 'normal',\r\n                  marginBottom: { xs: '30px', md: '35px', xl: '61px' },\r\n                }}>\r\n                Допомогти дитині зрозуміти її вподобання та таланти, і створити\r\n                необхідну атмосферу для її розвитку.\r\n              </Typography>\r\n              <DonateTab />\r\n            </Box>\r\n          </Box>\r\n        </Container>\r\n      </section>\r\n      <section id=\"partners\" className=\"scroll-section\">\r\n        <Container\r\n          maxWidth=\"xl\"\r\n          disableGutters\r\n          sx={{\r\n            position: 'relative',\r\n            '::before': {\r\n              ...defaultStylesBgEl,\r\n              top: {\r\n                xs: '-17px',\r\n                md: '19px',\r\n                lg: '-48px',\r\n                xl: '-22px',\r\n              },\r\n              left: {\r\n                xs: '29px',\r\n                md: '39px',\r\n                lg: '137px',\r\n                xl: '226px',\r\n              },\r\n              width: { xs: '13px', md: '16px', lg: '26px' },\r\n              height: { xs: '13px', md: '16px', lg: '26px' },\r\n              backgroundImage: `url(${yellowTriangle})`,\r\n              transform: 'rotateZ(270deg)',\r\n            },\r\n            '::after': {\r\n              ...defaultStylesBgEl,\r\n              top: {\r\n                xs: '9px',\r\n                md: '47px',\r\n                lg: '33px',\r\n                xl: '40px',\r\n              },\r\n              left: {\r\n                xs: '79px',\r\n                md: '177px',\r\n                lg: '287px',\r\n                xl: '451px',\r\n              },\r\n              width: { xs: '16px', md: '20px', lg: '32px' },\r\n              height: { xs: '16px', md: '20px', lg: '32px' },\r\n              backgroundImage: { diamndBlueDarkblue },\r\n              transform: 'rotateZ(90deg)',\r\n            },\r\n          }}>\r\n          <Typography sx={sectionTitleStyles}>Партнери</Typography>\r\n          <Box\r\n            sx={{\r\n              position: 'relative',\r\n              padding: { xs: '0 1.25rem', sm: '0 2.25rem', lg: '0 2.25rem' },\r\n              margin: { xs: '20px 0 50px 0', md: '50px 0 100px 0' },\r\n              '::before': {\r\n                ...defaultStylesBgEl,\r\n                top: {\r\n                  xs: '-23px',\r\n                  md: '-41px',\r\n                  lg: '-50px',\r\n                  xl: '-46px',\r\n                },\r\n                right: {\r\n                  xs: '33px',\r\n                  md: '39px',\r\n                  lg: '101px',\r\n                  xl: '240px',\r\n                },\r\n                width: { xs: '20px', md: '27px', lg: '41px' },\r\n                height: { xs: '20px', md: '27px', lg: '41px' },\r\n                backgroundImage: `url(${yellowTriangle})`,\r\n                transform: 'rotateZ(180deg)',\r\n              },\r\n              '::after': {\r\n                ...defaultStylesBgEl,\r\n                top: {\r\n                  xs: '-46px',\r\n                  md: '-66px',\r\n                  lg: '-78px',\r\n                  xl: '-75px',\r\n                },\r\n                right: {\r\n                  xs: '93px',\r\n                  md: '203px',\r\n                  lg: '310px',\r\n                  xl: '482px',\r\n                },\r\n                width: {\r\n                  xs: '10px',\r\n                  md: '13px',\r\n                  lg: '20px',\r\n                },\r\n                height: {\r\n                  xs: '8px',\r\n                  md: '10px',\r\n                  lg: '14px',\r\n                },\r\n                backgroundImage: `url(${lightBlueTriangle})`,\r\n                transform: 'rotateZ(270deg)',\r\n              },\r\n            }}>\r\n            <Grid\r\n              container\r\n              columns={15}\r\n              spacing={{ xs: 5, sm: 3, md: 3, lg: 6 }}\r\n              sx={{ padding: { sm: '0 1.125rem' } }}>\r\n              <RenderPartners />\r\n            </Grid>\r\n          </Box>\r\n        </Container>\r\n      </section>\r\n    </div>\r\n  );\r\n}\r\n\r\nexport default HomeContent;\r\n\r\nHomeContent.propTypes = {\r\n  data: PropTypes.arrayOf(\r\n    PropTypes.shape({\r\n      title: PropTypes.string.isRequired,\r\n      text: PropTypes.string.isRequired,\r\n      id: PropTypes.number.isRequired,\r\n      imagePath: PropTypes.arrayOf(PropTypes.string).isRequired,\r\n    })\r\n  ).isRequired,\r\n  loading: PropTypes.bool.isRequired,\r\n};\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/pages/Home/index.jsx b/src/pages/Home/index.jsx
+--- a/src/pages/Home/index.jsx	
++++ b/src/pages/Home/index.jsx	
+@@ -93,90 +93,111 @@
+             sx={{
+               flexDirection: { xs: 'column', lg: 'row' },
+               justifyContent: 'center',
+-              gap: { xl: '9px' },
+-              padding: {
+-                xs: '0 1rem 0 1.2rem',
+-                md: '0 6rem',
+-                lg: '0 4rem 0 6rem',
+-                xl: '0 5rem 0 11rem',
++              paddingBottom: { xl: '0.3rem' },
++              margin: {
++                xs: '1.67rem auto 0 ',
++                md: '3.25rem auto 0',
++                lg: '0 auto',
+               },
+-              marginTop: { xs: '1.67rem', md: '52px', lg: '54px' },
++              width: { xs: '89%', lg: '80%', xl: '83%' },
+             }}>
+-            <Stack sx={{ maxWidth: { lg: '526px', xl: '50%' } }}>
+-              <Typography
+-                variant="h1"
+-                component="h1"
+-                sx={{
+-                  fontFamily: theme.typography.const.fontFamily.secondary,
+-                  fontWeight: theme.typography.const.fontWeight.bold,
+-                  lineHeight: '1.245',
+-                  fontSize: {
+-                    xs: '2.25rem',
+-                    md: '3.25rem',
+-                    lg: '2.5rem',
+-                    xl: '4rem',
+-                  },
+-                }}>
+-                Розвиток. Діти. Майбутнє.
+-              </Typography>
+-              <Typography
+-                sx={{
+-                  lineHeight: '1.3',
+-                  textAlign: 'left',
+-                  fontFamily: theme.typography.const.fontFamily.primary,
+-                  fontSize: {
+-                    xs: '1rem',
+-                    md: '1.25rem',
+-                    lg: '1rem',
+-                    xl: '1.25rem',
+-                  },
+-                  margin: {
+-                    xs: '.5rem 0 1rem 0',
+-                    md: '11px 0 14px 0',
+-                    lg: '22px 0 30px 0',
+-                    xl: '22px 0 51px 0',
+-                  },
+-                  padding: {
+-                    xs: '0 1.5rem 0 0',
+-                    md: '0 7.5rem 0 0',
+-                    lg: '0',
+-                    xl: '0 3rem 0 0',
+-                  },
+-                }}>
+-                Ми - сімейний благодійний фонд, який розробляє та підтримує
+-                проєкти, що спрямовані на всебічний розвиток дітей та підлітків.
+-              </Typography>
+-              <Box
+-                sx={{
+-                  '::before': {
+-                    ...defaultStylesBgEl,
+-                    display: { md: 'none' },
+-                    bottom: '130px',
+-                    left: '20px',
+-                    width: '12px',
+-                    height: '12px',
+-                    backgroundImage: `url(${diamndBlueDarkblue})`,
+-                  },
+-                }}>
+-                <ContainedButton btnName="btnContainedBlue" text="Долучитися" />
+-              </Box>
+-            </Stack>
++            <Box
++              sx={{
++                height: 'fit-content',
++                position: 'relative',
++                top: { lg: '2.5rem', xl: '3.1rem' },
++                paddingLeft: { md: '3.4rem', lg: 'initial' },
++              }}>
++              <Stack
++                sx={{
++                  maxWidth: { lg: '88%', xl: '100%' },
++                  paddingLeft: { lg: '10%', xl: '6.5%' },
++                }}>
++                <Typography
++                  variant="h1"
++                  component="h1"
++                  sx={{
++                    fontFamily: theme.typography.const.fontFamily.secondary,
++                    fontWeight: theme.typography.const.fontWeight.bold,
++                    lineHeight: '1.245',
++                    fontSize: {
++                      xs: '2.25rem',
++                      md: '3.25rem',
++                      lg: '2.8rem',
++                      xl: '4rem',
++                    },
++                  }}>
++                  Розвиток. Діти. Майбутнє.
++                </Typography>
++                <Typography
++                  sx={{
++                    lineHeight: '1.3',
++                    textAlign: 'left',
++                    fontFamily: theme.typography.const.fontFamily.primary,
++                    fontSize: {
++                      xs: '1rem',
++                      md: '1.25rem',
++                      lg: '1.125rem',
++                      xl: '1.25rem',
++                    },
++                    margin: {
++                      xs: '.5rem 0 1.1rem 0',
++                      md: '.6875rem 0 .875rem 0',
++                      lg: '1.375rem 0 1.875rem 0',
++                      xl: '1.375rem 0 3.18rem 0',
++                    },
++                    padding: {
++                      xs: '0 3.24rem 0 0',
++                      md: '0 7.5rem 0 0',
++                      lg: '0 2rem 0 0',
++                      xl: '0 3rem 0 0',
++                    },
++                  }}>
++                  Ми - сімейний благодійний фонд, який розробляє та підтримує
++                  проєкти, що спрямовані на всебічний розвиток дітей та
++                  підлітків.
++                </Typography>
++                <Box
++                  sx={{
++                    '::before': {
++                      ...defaultStylesBgEl,
++                      display: { md: 'none' },
++                      bottom: '-60%',
++                      left: '1%',
++                      width: '6%',
++                      height: '6%',
++                      backgroundImage: `url(${diamndBlueDarkblue})`,
++                    },
++                  }}>
++                  <ContainedButton
++                    btnName="btnContainedBlue"
++                    text="Долучитися"
++                  />
++                </Box>
++              </Stack>
++            </Box>
+             <Box
+               sx={{
+                 position: 'relative',
+-                height: {
+-                  lg: '359px',
+-                  xl: '550px',
+-                },
+-                width: {
+-                  xl: '1454px',
+-                },
++                top: { lg: '0.4rem', xl: '.68rem' },
++                right: { xl: '1.9rem' },
++                width: { xs: '102%', lg: '87%', xl: '100%' },
+                 '::before': {
+                   ...defaultStylesBgEl,
+-                  top: { xs: '62px', md: '64px', lg: '227px', xl: '366px' },
+-                  left: { xs: '27px', md: '-83px', lg: '-116px', xl: '-176px' },
+-                  width: { xs: '21px', md: '122px', lg: '97px', xl: '152px' },
+-                  height: { xs: '21px', md: '103px', lg: '91px', xl: '127px' },
++                  top: { xs: '16%', md: '64px', lg: '68%', xl: '68%' },
++                  left: {
++                    xs: '8%',
++                    md: '-83px',
++                    lg: '-23%',
++                    xl: ' -22%',
++                  },
++                  width: { xs: '7%', md: '122px', lg: '97px', xl: '21%' },
++                  height: {
++                    xs: '6%',
++                    md: '103px',
++                    lg: '91px',
++                    xl: '21%',
++                  },
+                   backgroundImage: {
+                     xs: `url(${diamndBlueYellow})`,
+                     md: `url(${twoDiamndsTriangle})`,
+@@ -185,72 +206,67 @@
+                 '::after': {
+                   ...defaultStylesBgEl,
+                   top: {
+-                    xs: '-21px',
++                    xs: '-6%',
+                     md: '-52px',
+-                    lg: '-37px',
+-                    xl: '-23px',
++                    lg: '4%',
++                    xl: '3%',
+                   },
+-                  right: { xs: '46px', md: '10px', lg: '2px', xl: '40px' },
++                  right: { xs: '15%', md: '10px', lg: '-8%', xl: '-7%' },
+                   width: {
+-                    xs: '66px',
++                    xs: '20%',
+                     md: '122px',
+-                    lg: '79px',
+-                    xl: '151px',
++                    lg: '20%',
++                    xl: ' 22%',
+                   },
+                   height: {
+-                    xs: '94px',
++                    xs: '30%',
+                     md: '174px',
+-                    lg: '113px',
+-                    xl: '215px',
++                    lg: '31%',
++                    xl: '36%',
+                   },
+                   backgroundImage: `url(${threeTriangles})`,
+                 },
+               }}>
+               <Box
+                 sx={{
+-                  bottom: { lg: '40px', xl: '44px' },
+-                  right: { xl: '24px' },
+-                  height: {
+-                    xs: '275px',
+-                    md: '459px',
+-                    lg: '399px',
+-                    xl: '597px',
+-                  },
+-                  width: {
+-                    xs: '328px',
+-                    md: '544px',
+-                    lg: '459px',
+-                    xl: '705px',
+-                  },
+                   margin: {
+-                    xs: '98px auto 0',
++                    xs: '5.75rem auto 0',
+                     md: '68px 22px 0 22px',
+                     lg: '0',
+                   },
++                  top: { xs: '0.4rem', md: 'initial' },
+                   position: 'relative',
+                   '::before': {
+                     ...defaultStylesBgEl,
+-                    top: { xs: '43px', md: '104px', lg: '322px', xl: '444px' },
+-                    left: { xs: '', md: '' },
++                    top: {
++                      xs: '15%',
++                      md: '104px',
++                      lg: '81%',
++                      xl: '74%',
++                    },
+                     right: {
+-                      xs: '20px',
++                      xs: '6%',
+                       md: '-66px',
+-                      lg: '-53px',
+-                      xl: '-88px',
++                      lg: '-21%',
++                      xl: '-29%',
+                     },
+-                    bottom: { xs: '' },
+-                    width: { xs: '30px', md: '66px', lg: '42px', xl: '82px' },
+-                    height: { xs: '30px', md: '66px', lg: '46px', xl: '82px' },
++                    width: { xs: '9%', md: '66px', lg: '10%', xl: '28%' },
++                    height: {
++                      xs: '10%',
++                      md: '66px',
++                      lg: '46px',
++                      xl: '13%',
++                    },
+                     backgroundImage: `url(${squareTriangles})`,
+                   },
+                   '::after': {
+                     ...defaultStylesBgEl,
+                     display: { md: 'none' },
+-                    top: '-46px',
+-                    left: '109px',
+-                    width: '19px',
+-                    height: '19px',
+-                    backgroundImage: `url(${lightBlueTriangle}`,
++                    top: '-17%',
++                    left: '33%',
++                    width: '8%',
++                    height: '7%',
++                    backgroundImage: `url(${lightBlueTriangle})`,
+                   },
+                 }}>
+                 <picture>
