@@ -5,6 +5,7 @@ import 'slick-carousel/slick/slick-theme.css';
 import './styles.scss';
 import PropTypes from 'prop-types';
 import { useLocation } from 'react-router-dom';
+import arrowSlider from '../../images/bgElements/arrowSlider.png';
 
 function SamplePrevArrow({
   className,
@@ -24,7 +25,7 @@ function SamplePrevArrow({
       style={{
         ...style,
         display: 'block',
-        backgroundImage: `url(${process.env.PUBLIC_URL}/bgElements/arrowSlider.png)`,
+        backgroundImage: `url(${arrowSlider}`,
         backgroundRepeat: 'no-repeat',
         transform: 'rotate(180deg)',
         backgroundSize: 'contain',
@@ -76,7 +77,7 @@ function SampleNextArrow({
       style={{
         ...style,
         display: 'block',
-        backgroundImage: `url(${process.env.PUBLIC_URL}/bgElements/arrowSlider.png)`,
+        backgroundImage: `url(${arrowSlider}`,
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'contain',
       }}

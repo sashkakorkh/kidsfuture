@@ -2,7 +2,7 @@ import React from 'react';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
-import { Divider, Typography, useTheme } from '@mui/material';
+import { Divider, Link, Typography, useTheme } from '@mui/material';
 import { NavLink } from 'react-router-dom';
 
 const LinkText = styled(Typography)`
@@ -38,7 +38,7 @@ const menuItems = [
   },
   {
     text: 'Партнери',
-    link: '#',
+    link: '/#partners',
   },
 ];
 
@@ -51,11 +51,11 @@ function Menu({ tag, styleConfig, functionToggle }) {
       {menuItems.map((item, index) => (
         <React.Fragment key={item.text}>
           <ElementTag style={containerStyle} onClick={functionToggle(false)}>
-            <NavLink to={item.link} style={{ textDecoration: 'none' }}>
+            <Link to={item.link} component={NavLink} underline="none">
               <LinkText sx={itemStyle} style={itemStyle} noWrap>
                 {item.text}
               </LinkText>
-            </NavLink>
+            </Link>
           </ElementTag>
           {tag === 'li' && index !== menuItems.length - 1 && (
             <Divider
