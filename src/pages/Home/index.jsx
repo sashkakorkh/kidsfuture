@@ -27,19 +27,8 @@ import leaves from '../../images/bgElements/bg_leaves.png';
 import diamndTriangle from '../../images/bgElements/bg_diamond_triangle.png';
 import twoDiamndsTriangleBlue from '../../images/bgElements/bg_2diamonds_triangle_blue.png';
 import twoYellowBlueTriangles from '../../images/bgElements/bg_2blue_yellow_triangles.png';
-import boyAndGirl from '../../images/contentImages/boy_and_girl.png?sizes[]=360,sizes[]=768,sizes[]=1200,sizes=[]1600';
-import boyAndGirlWebp from '../../images/contentImages/boy_and_girl.png?sizes[]=360,sizes[]=768,sizes[]=1200,sizes=[]1600&format=webp';
-import activity1 from '../../images/contentImages/activity_1.png?sizes[]=360,sizes[]=768,sizes[]=1200,sizes=[]1600';
-import activity2 from '../../images/contentImages/activity_2.png?sizes[]=360,sizes[]=768,sizes[]=1200,sizes=[]1600';
-import activity3 from '../../images/contentImages/activity_3.png?sizes[]=360,sizes[]=768,sizes[]=1200,sizes=[]1600';
-import girlStudying from '../../images/contentImages/girl_studying.png?sizes[]=360,sizes[]=768,sizes[]=1200,sizes=[]1600';
-import girlStudyingWebp from '../../images/contentImages/girl_studying.png?sizes[]=360,sizes[]=768,sizes[]=1200,sizes=[]1600&format=webp';
-import happyPeople from '../../images/contentImages/happy_people.png?sizes[]=360,sizes[]=768,sizes[]=1200,sizes=[]1600';
-import happyPeopleWebp from '../../images/contentImages/happy_people.png?sizes[]=360,sizes[]=768,sizes[]=1200,sizes=[]1600&format=webp';
-import founderMan from '../../images/contentImages/founder_man.png?sizes[]=360,sizes[]=768,sizes[]=1200,sizes=[]1600';
-import founderManWebp from '../../images/contentImages/founder_man.png?sizes[]=360,sizes[]=768,sizes[]=1200,sizes=[]1600&format=webp';
-import founderWoman from '../../images/contentImages/founder_woman.png?sizes[]=360,sizes[]=768,sizes[]=1200,sizes=[]1600';
-import founderWomanWebp from '../../images/contentImages/founder_woman.png?sizes[]=360,sizes[]=768,sizes[]=1200,sizes=[]1600&format=webp';
+import { images } from '../../assets/images';
+import getBackgroundImage from '../../utilities/getBackgroundImg';
 
 function HomeContent({ data, loading }) {
   const theme = useTheme();
@@ -254,10 +243,13 @@ function HomeContent({ data, loading }) {
                   },
                 }}>
                 <picture>
-                  <source srcSet={boyAndGirlWebp.srcSet} type="image/webp" />
+                  <source
+                    srcSet={images.boyAndGirlWebp.srcSet}
+                    type="image/webp"
+                  />
                   <img
-                    src={boyAndGirl.src}
-                    srcSet={boyAndGirl.srcSet}
+                    src={images.boyAndGirl.src}
+                    srcSet={images.boyAndGirl.srcSet}
                     alt="boy and girl smilling"
                     width="100%"
                     height="100%"
@@ -277,7 +269,11 @@ function HomeContent({ data, loading }) {
             }}>
             <Box
               sx={{
-                backgroundImage: `linear-gradient(rgba(67, 102, 227, 0.90), rgba(67, 102, 227, 0.90)), url(${activity1})`,
+                backgroundImage: getBackgroundImage(
+                  images.activity1,
+                  images.activity1Webp,
+                  'linear-gradient(rgba(67, 102, 227, 0.90), rgba(67, 102, 227, 0.90))'
+                ),
                 backgroundRepeat: 'no-repeat',
                 backgroundSize: 'cover',
                 position: 'relative',
@@ -320,7 +316,11 @@ function HomeContent({ data, loading }) {
             </Box>
             <Box
               sx={{
-                backgroundImage: `linear-gradient(rgba(249, 152, 32, 0.90), rgba(249, 152, 32, 0.90)), url(${activity2})`,
+                backgroundImage: getBackgroundImage(
+                  images.activity2,
+                  images.activity2Webp,
+                  'linear-gradient(rgba(67, 102, 227, 0.90), rgba(67, 102, 227, 0.90))'
+                ),
                 backgroundRepeat: 'no-repeat',
                 backgroundSize: 'cover',
                 position: 'relative',
@@ -363,7 +363,11 @@ function HomeContent({ data, loading }) {
             </Box>
             <Box
               sx={{
-                backgroundImage: `linear-gradient(rgba(94, 117, 199, 0.90), rgba(94, 117, 199, 0.90)), url(${activity3})`,
+                backgroundImage: getBackgroundImage(
+                  images.activity3,
+                  images.activity3Webp,
+                  'linear-gradient(rgba(67, 102, 227, 0.90), rgba(67, 102, 227, 0.90))'
+                ),
                 backgroundRepeat: 'no-repeat',
                 backgroundSize: 'cover',
                 position: 'relative',
@@ -536,10 +540,13 @@ function HomeContent({ data, loading }) {
                   paddingRight: { xs: '21px', md: '36px' },
                 }}>
                 <picture>
-                  <source srcSet={girlStudyingWebp.srcSet} type="image/webp" />
+                  <source
+                    srcSet={images.girlStudyingWebp.srcSet}
+                    type="image/webp"
+                  />
                   <img
-                    src={girlStudying.src}
-                    srcSet={girlStudying.srcSet}
+                    src={images.girlStudying.src}
+                    srcSet={images.girlStudying.srcSet}
                     alt="girl studying at home"
                     width="100%"
                     height="100%"
@@ -651,10 +658,13 @@ function HomeContent({ data, loading }) {
                   },
                 }}>
                 <picture>
-                  <source srcSet={happyPeopleWebp.srcSet} type="image/webp" />
+                  <source
+                    srcSet={images.happyPeopleWebp.srcSet}
+                    type="image/webp"
+                  />
                   <img
-                    src={happyPeople.src}
-                    srcSet={happyPeople.srcSet}
+                    src={images.happyPeople.src}
+                    srcSet={images.happyPeople.srcSet}
                     alt="happy people standing"
                     width="100%"
                     height="100%"
@@ -1238,10 +1248,13 @@ function HomeContent({ data, loading }) {
                   },
                 }}>
                 <picture>
-                  <source srcSet={founderManWebp.srcSet} type="image/webp" />
+                  <source
+                    srcSet={images.founderManWebp.srcSet}
+                    type="image/webp"
+                  />
                   <img
-                    src={founderMan.src}
-                    srcSet={founderMan.srcSet}
+                    src={images.founderMan.src}
+                    srcSet={images.founderMan.srcSet}
                     alt="Founder of the fond Oleksandr Sinko"
                     width="100%"
                     height="100%"
@@ -1367,10 +1380,13 @@ function HomeContent({ data, loading }) {
                   },
                 }}>
                 <picture>
-                  <source srcSet={founderWomanWebp.srcSet} type="image/webp" />
+                  <source
+                    srcSet={images.founderWomanWebp.srcSet}
+                    type="image/webp"
+                  />
                   <img
-                    src={founderWoman.src}
-                    srcSet={founderWoman.srcSet}
+                    src={images.founderWoman.src}
+                    srcSet={images.founderWoman.srcSet}
                     alt="Founder of the fond Kateryna Sinko"
                     width="100%"
                     height="100%"

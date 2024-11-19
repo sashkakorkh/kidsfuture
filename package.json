@@ -40,13 +40,14 @@
   "scripts": {
     "start-js": "craco start",
     "start": "npm-run-all -p watch-styles-sass start-js",
-    "build": "npm run eslint && npm run stylelint-build && craco build",
+    "build": "npm run compress-images eslint && npm run stylelint-build && craco build",
     "eject": "craco eject",
     "stylelint-dev": "stylelint 'src/**/*.scss' --cache --cache-location './.stylelintcache'; exit 0",
     "stylelint-build": "stylelint 'src/**/*.scss'",
     "watch-styles-sass": "npm-watch",
     "stylelint-fix-sass": "stylelint --fix 'src/**/*.scss'",
-    "eslint": "eslint src/**/*.js src/**/*.jsx"
+    "eslint": "eslint src/**/*.js src/**/*.jsx",
+    "compress-images": "node compress-images.js"
   },
   "watch": {
     "stylelint-dev": {

@@ -37,6 +37,30 @@ const theme = createTheme({
     fontFamily: 'PT Sans, sans-serif',
     fontColor: 'black',
   },
+  components: {
+    MuiAppBar: {
+      styleOverrides: {
+        root: {
+          backgroundColor: 'white',
+          boxShadow: 'none',
+          margin: '0 auto',
+        },
+      },
+    },
+    MuiToolbar: {
+      styleOverrides: {
+        root: {
+          justifyContent: 'space-between',
+          paddingTop: '1rem',
+          paddingBottom: '1rem',
+          paddingRight: { xs: ' 1.28rem', md: '2.2rem', lg: '3.1rem' },
+          paddingLeft: { xs: ' 1.25rem', md: '2rem', lg: '2.8rem' },
+          maxWidth: '1600px',
+        },
+      },
+    },
+  },
+  customUtilities: {},
 });
 
 export default theme;

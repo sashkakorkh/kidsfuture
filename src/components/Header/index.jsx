@@ -3,7 +3,6 @@ import { NavLink, Outlet } from 'react-router-dom';
 import {
   AppBar,
   Box,
-  Container,
   IconButton,
   List,
   Stack,
@@ -11,12 +10,11 @@ import {
   Toolbar,
   useTheme,
 } from '@mui/material';
-import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import Menu from '../Menu/index';
 import Footer from '../Footer';
 import { OutlinedButton } from '../Button';
-import logoBlue from '../../images/bgElements/logoBlue.png';
-import menuIcon from '../../images/bgElements/menuIcon.png';
+import { images } from '../../assets/images';
+import sprites from '../../images/svg/sprites.svg';
 
 function Header() {
   const [open, setMenuOpen] = useState(false);
@@ -65,134 +63,109 @@ function Header() {
   };
 
   return (
-    <div
-      style={{
-        overflow: 'hidden',
-        display: 'flex',
-        flexDirection: 'column',
-        minHeight: '100vh',
-      }}>
-      <AppBar
-        position="static"
-        sx={{
-          backgroundColor: 'white',
-          boxShadow: 'none',
-          padding: '0',
-          margin: '0',
-        }}>
-        <Container maxWidth="xl" disableGutters>
-          <Toolbar
-            disableGutters
+    <>
+      <AppBar position="static">
+        <Toolbar>
+          <Stack direction="row" alignItems="center">
+            <NavLink to="/">
+              <Box
+                sx={{
+                  height: {
+                    xs: '3rem',
+                    md: '2.8rem',
+                    lg: '4.3rem',
+                  },
+                  width: {
+                    xs: '3rem',
+                    md: '2.8rem',
+                    lg: '4.3rem',
+                  },
+                }}>
+                <img
+                  src={images.logoBlue}
+                  alt="logotype of the fund hands of adult in blue color holding child hands"
+                  width="100%"
+                  height="100%"
+                  loading="lazy"
+                />
+              </Box>
+            </NavLink>
+            <Stack
+              direction="row"
+              sx={{
+                marginLeft: {
+                  md: '.8rem',
+                  lg: '2rem',
+                },
+                display: { xs: 'none', md: 'flex' },
+                gap: { md: '.56rem', lg: '0' },
+              }}>
+              <Menu tag="div" styleConfig={headerMenuStyle} />
+            </Stack>
+          </Stack>
+          <Box sx={{ marginRight: { xs: '1rem', md: '0.5rem', xl: '0' } }}>
+            <OutlinedButton textColorBlack text="Підтримати фонд" btnSupport />
+          </Box>
+          <IconButton
+            aria-label="open drawer"
+            onClick={toggleDrawer(true)}
             sx={{
-              justifyContent: 'space-between',
-              padding: {
-                xs: '1rem 1.28rem 1rem 1.25rem',
-                md: '1rem 2.2rem 1rem 2rem',
-                lg: '1.06rem 3.1rem 1.06rem 2.8rem',
+              lineHeight: '1',
+              display: {
+                xs: 'inline-flex',
+                md: 'none',
+              },
+              padding: '0',
+              marginLeft: { xs: '.6rem', md: '0' },
+              width: '1.29rem',
+              height: '1.2rem',
+            }}>
+            <svg className="icon">
+              <use href={`${sprites}#menu`} />
+            </svg>
+          </IconButton>
+          <SwipeableDrawer
+            anchor="right"
+            open={open}
+            onClose={toggleDrawer(false)}
+            onOpen={toggleDrawer(true)}
+            PaperProps={{
+              style: {
+                width: '55%',
+                height: 'auto',
+                backgroundColor: '#FFF',
+                borderRadius: '1.43rem 0 0 1.43rem',
+                border: '4px solid',
+                borderColor: theme.palette.colors.mainfirst,
               },
             }}>
-            <Stack direction="row" alignItems="center">
-              <NavLink to="/">
-                <Box
-                  sx={{
-                    height: {
-                      xs: '3rem',
-                      md: '2.8rem',
-                      lg: '4.3rem',
-                    },
-                    width: {
-                      xs: '3rem',
-                      md: '2.8rem',
-                      lg: '4.3rem',
-                    },
-                  }}>
-                  <img
-                    src={logoBlue}
-                    alt="logotype"
-                    width="100%"
-                    height="100%"
-                  />
-                </Box>
-              </NavLink>
-              <Stack
-                direction="row"
-                sx={{
-                  marginLeft: {
-                    md: '.8rem',
-                    lg: '5%',
-                    xl: '10%',
-                  },
-                  display: { xs: 'none', md: 'flex' },
-                  gap: { md: '.56rem', lg: '0' },
-                }}>
-                <Menu tag="div" styleConfig={headerMenuStyle} />
-              </Stack>
-            </Stack>
-            <Box sx={{ marginRight: { xs: '1rem', md: '1%', xl: '0' } }}>
-              <OutlinedButton
-                textColorBlack
-                text="Підтримати фонд"
-                btnSupport
-              />
-            </Box>
             <IconButton
-              aria-label="open drawer"
-              onClick={toggleDrawer(true)}
+              onClick={toggleDrawer(false)}
               sx={{
-                lineHeight: '1',
-                display: {
-                  xs: 'inline-flex',
-                  md: 'none',
-                },
-                padding: '0',
-                marginLeft: { xs: '.6rem', md: '0' },
-                width: '1.29rem',
-                height: '1.2rem',
+                justifyContent: 'end',
+                padding: '0.3rem',
+                marginRight: { xs: '.2rem', sm: '0' },
               }}>
-              <img src={menuIcon} alt="menu-icon" />
+              <svg style={{ width: '16px', height: '16px' }} className="icon">
+                <use href={`${sprites}#close_icon`} />
+              </svg>
             </IconButton>
-            <SwipeableDrawer
-              anchor="right"
-              open={open}
-              onClose={toggleDrawer(false)}
-              onOpen={toggleDrawer(true)}
-              PaperProps={{
-                style: {
-                  width: '55%',
-                  height: 'auto',
-                  backgroundColor: '#FFF',
-                  borderRadius: '1.43rem 0 0 1.43rem',
-                  border: '4px solid',
-                  borderColor: theme.palette.colors.mainfirst,
-                },
-              }}>
-              <IconButton
-                onClick={toggleDrawer(false)}
-                sx={{
-                  color: theme.palette.colors.mainsecond,
-                  justifyContent: 'end',
-                  padding: '0',
-                  marginRight: { xs: '.2rem', sm: '0' },
-                }}>
-                <CloseRoundedIcon fontSize="Large" />
-              </IconButton>
-              <List disablePadding sx={{ margin: '0 1.6rem 0 1.6rem' }}>
-                <Menu
-                  tag="li"
-                  styleConfig={burgerMenuStyle}
-                  functionToggle={toggleDrawer}
-                  open={open}
-                />
-              </List>
-            </SwipeableDrawer>
-          </Toolbar>
-        </Container>
+            <List disablePadding sx={{ margin: '0 1.6rem 0 1.6rem' }}>
+              <Menu
+                tag="li"
+                styleConfig={burgerMenuStyle}
+                functionToggle={toggleDrawer}
+                open={open}
+              />
+            </List>
+          </SwipeableDrawer>
+        </Toolbar>
       </AppBar>
       <main>
         <Outlet />
       </main>
       <Footer />
-    </div>
+    </>
   );
 }
 
